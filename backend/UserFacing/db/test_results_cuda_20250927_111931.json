@@ -1,0 +1,221 @@
+{
+  "test_id": "20250927_111931",
+  "model_type": "CUDA",
+  "base_model": "gpt2",
+  "lora_path": "./cuda_lora_out",
+  "test_data_path": "../UserFacing/db/LLMTestData.json",
+  "device_info": {
+    "device": "cuda",
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_device_name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "current_device": 0
+  },
+  "test_results": [
+    {
+      "example_id": 1,
+      "prompt": "Write a professional thank-you note for a job interview (variation 1)",
+      "reference_answer": "Dear [Interviewer],\n\nThank you for the opportunity to interview for the [Position] role. I enjoyed our conversation and learning more about the team. I look forward to the possibility of contributing.\n\nBest regards,\n[Your Name]",
+      "generated_answer": "Dear Joanne:\n\nI love it when people respond to my email and ask if they can meet me there. I have tried to make everything look good, but the email has been so irritating to me. I am going to give it a try and see if I can meet you there. Your response is very helpful and I hope you do. Thank you for the response and hope to see you soon - Joanne\n\n###\n\nYou should try your best to meet with a professional.\n\n(Thanks, Joanne)",
+      "generation_time": 2.2509958744049072,
+      "metrics": {
+        "generated_length": 426,
+        "reference_length": 227,
+        "length_ratio": 1.8766519823788546,
+        "rouge1_f": 0.231404958677686,
+        "rouge2_f": 0.05042016806722689,
+        "rougeL_f": 0.13223140495867766,
+        "semantic_similarity": 0.3640664219856262
+      }
+    },
+    {
+      "example_id": 2,
+      "prompt": "Summarize this paragraph: Artificial Intelligence is transforming industries by automating tasks, improving accuracy, and reducing costs across healthcare, finance, and more. (variation 3)",
+      "reference_answer": "AI is transforming industries by automating tasks, improving accuracy, and lowering costs.",
+      "generated_answer": "We have published the best reviews on the topic.\n\n### Read about their findings.\n\n###\n\nIn this article, I will discuss the challenges of Artificial Intelligence and how it can be used to overcome those challenges. I will propose how you can use this technology to improve your skills and make your next career in IT a success.\n\n###",
+      "generation_time": 1.3188679218292236,
+      "metrics": {
+        "generated_length": 331,
+        "reference_length": 90,
+        "length_ratio": 3.6777777777777776,
+        "rouge1_f": 0.058823529411764705,
+        "rouge2_f": 0.0,
+        "rougeL_f": 0.058823529411764705,
+        "semantic_similarity": 0.5208336710929871
+      }
+    },
+    {
+      "example_id": 3,
+      "prompt": "Write an email reminding a colleague about tomorrow's deadline (variation 1)",
+      "reference_answer": "Subject: Reminder: Project Deadline Tomorrow\n\nHi [Name],\n\nJust a reminder that the project deadline is tomorrow. Please let me know if you need any support.\n\nBest,\n[Your Name]",
+      "generated_answer": "You may receive a reminder email when you're done with your project. It's the first step in getting something done. Also note that this is a work in progress, and you may have to re-submit your project later for it to get accepted.\n\n### Note: This is a work in progress, and you may have to re-submit your project later for it to get accepted. If you can't get your job done, it might be worth to try out the other options.\n\n###\n\nThis will help you to get started with writing a project. It's also a great way to get started with other projects that you may want to start.\n\n###\n\nYou can help out with any of the",
+      "generation_time": 3.242567539215088,
+      "metrics": {
+        "generated_length": 611,
+        "reference_length": 175,
+        "length_ratio": 3.4914285714285715,
+        "rouge1_f": 0.14569536423841062,
+        "rouge2_f": 0.02684563758389262,
+        "rougeL_f": 0.10596026490066225,
+        "semantic_similarity": 0.507488489151001
+      }
+    },
+    {
+      "example_id": 4,
+      "prompt": "Write a SQL query to select all rows from 'users' where age > 30 (variation 1)",
+      "reference_answer": "SELECT * FROM users WHERE age > 30;",
+      "generated_answer": "Create a database with full column names (column 1, column 2, column 3, column 4, column 5, column 6, column 7, column 8, column 9)\n\n### Database:\n\nCreate a SQL query with the following parameters:\n\nuser = user.name\n\nage = age\n\ncolumn = column.length\n\nquery =\n\nSELECT age FROM users WHERE age = '30' AND age < 30\n\n####### Query Parameters:\n\nSELECT age FROMusers WHERE age = '30' AND age < 30\n\n####### Index:\n\nSELECT count FROM users WHERE age = '30' AND age < 30\n\n####### Index:\n\nSELECT count FROM users WHERE age",
+      "generation_time": 2.92392635345459,
+      "metrics": {
+        "generated_length": 513,
+        "reference_length": 35,
+        "length_ratio": 14.657142857142857,
+        "rouge1_f": 0.13636363636363635,
+        "rouge2_f": 0.09302325581395349,
+        "rougeL_f": 0.13636363636363635,
+        "semantic_similarity": 0.6440060138702393
+      }
+    },
+    {
+      "example_id": 5,
+      "prompt": "Write a function to reverse a string in Python",
+      "reference_answer": "def reverse_string(s):\n    return s[::-1]",
+      "generated_answer": "python -m \"Hello world!\"\n\n### Method:\n\nWrite a function to reverse a string in Python\n\n### Response:\n\npython -m \"Hello world!\"\n\n### Method:\n\nWrite a function to reverse a string in Python\n\n### Response:\n\npython -m \"Hello world!\"\n\n### Method:\n\nWrite a function to reverse a string in Python\n\n### Response:\n\npython -m \"Hello world!\"\n\n### Method:\n\nWrite a function to reverse a string in Python\n\n### Response:\n\npython -m \"Hello world!\"\n\n### Method:\n\nWrite a function to reverse a string in Python\n\n### Response:",
+      "generation_time": 2.644266366958618,
+      "metrics": {
+        "generated_length": 508,
+        "reference_length": 41,
+        "length_ratio": 12.390243902439025,
+        "rouge1_f": 0.04878048780487805,
+        "rouge2_f": 0.0,
+        "rougeL_f": 0.04878048780487805,
+        "semantic_similarity": 0.5879954099655151
+      }
+    },
+    {
+      "example_id": 6,
+      "prompt": "Compose a professional email requesting a project update (variation 1)",
+      "reference_answer": "Subject: Request for Project Update\n\nHello [Name],\n\nCould you please provide me with an update on the current status of the project? I’d like to review progress before our next check-in.\n\nThank you,\n[Your Name]",
+      "generated_answer": "We have received and forwarded your request. We will make a submission of your proposal to the project team.\n\n### Please note: If your project uses a different version of PHP, please refer to this FAQ.\n\n### Support:\n\nPlease contact us at support@drupal-project.org if you have any questions or concerns.\n\n### Credits:\n\nThis project is based on the project template by rynga.",
+      "generation_time": 1.814802646636963,
+      "metrics": {
+        "generated_length": 374,
+        "reference_length": 210,
+        "length_ratio": 1.7809523809523808,
+        "rouge1_f": 0.22222222222222224,
+        "rouge2_f": 0.041237113402061855,
+        "rougeL_f": 0.12121212121212119,
+        "semantic_similarity": 0.416228711605072
+      }
+    },
+    {
+      "example_id": 7,
+      "prompt": "Generate a short paragraph describing the benefits of teamwork (variation 1)",
+      "reference_answer": "Teamwork allows individuals to combine their strengths, share ideas, and support one another. It improves efficiency and fosters creativity by bringing diverse perspectives together.",
+      "generated_answer": "Generate a short paragraph describing the benefits of teamwork (variation 2)\n\n### Response:\n\nGenerate a short paragraph describing the benefits of teamwork (variation 3)\n\n### Response:\n\nGenerate a short paragraph describing the benefits of teamwork (variation 4)\n\n### Response:\n\nGenerate a short paragraph describing the benefits of teamwork (variation 5)\n\n#\n\n# The code is here to help you in solving the problem.\n\n#\n\n# The code is here to help you in solving the problem.\n\n#\n\n# The code is here to help you in solving the problem.\n\n#",
+      "generation_time": 2.6218349933624268,
+      "metrics": {
+        "generated_length": 535,
+        "reference_length": 182,
+        "length_ratio": 2.9395604395604398,
+        "rouge1_f": 0.03846153846153846,
+        "rouge2_f": 0.0,
+        "rougeL_f": 0.03846153846153846,
+        "semantic_similarity": 0.46689295768737793
+      }
+    },
+    {
+      "example_id": 8,
+      "prompt": "Implement binary search in Python (variation 3)",
+      "reference_answer": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+      "generated_answer": "Python 2.7.0 was released August 16, 2003, the first release of Python that implemented binary search in its first real-world use. It was released without any problems, and was not tested by any other software. For more information, see the full documentation.\n\n### Instruction:\n\nEnforcement: Avoid wasting time on code by using static search.\n\n### Response:\n\nThe following examples show the implementation of a binary search in Python:\n\nimport random import sys from time import sleep import random while True : print 'The number ' in self.random() print 'The number ' in self.random() print 'The number ' in self.random() print 'The number ' in self.random",
+      "generation_time": 2.573981761932373,
+      "metrics": {
+        "generated_length": 658,
+        "reference_length": 293,
+        "length_ratio": 2.2457337883959045,
+        "rouge1_f": 0.0704225352112676,
+        "rouge2_f": 0.014285714285714287,
+        "rougeL_f": 0.04225352112676056,
+        "semantic_similarity": 0.5469059944152832
+      }
+    },
+    {
+      "example_id": 9,
+      "prompt": "Simplify the sentence: In light of the fact that he was late, we started without him (variation 3)",
+      "reference_answer": "Since he was late, we started without him.",
+      "generated_answer": "\"I'm not sure if the text is correct, but I'll have to see if I can find the correct text. I'm not sure if the text is correct, but I'll have to see if I can find the correct text. \"\n\n### Reply\n\n\"I am not sure if the text is correct, but I'll have to see if I can find the correct text. \"\n\n### Response:\n\n\"I am not sure if the text is correct, but I'll have to see if I can find the correct text. \"\n\n### Reply\n\n\"I am not sure if the text is correct, but I'll have to see if I can find the correct text. \"",
+      "generation_time": 2.696019172668457,
+      "metrics": {
+        "generated_length": 504,
+        "reference_length": 42,
+        "length_ratio": 12.0,
+        "rouge1_f": 0.0,
+        "rouge2_f": 0.0,
+        "rougeL_f": 0.0,
+        "semantic_similarity": -0.08732376992702484
+      }
+    },
+    {
+      "example_id": 10,
+      "prompt": "Write a SQL query to select all rows from 'users' where age > 30 (variation 2)",
+      "reference_answer": "SELECT * FROM users WHERE age > 30;",
+      "generated_answer": "SELECT id FROM users WHERE age > 30 and age > 30 from users WHERE user_id = 'admin'\n\n## Result:\n\nSELECT id FROM users WHERE id = 'admin' FROM users WHERE user_id = 'user'\n\n### Notes:\n\nThis code works fine if you have a database with at least 20 rows.\n\n####",
+      "generation_time": 1.3864428997039795,
+      "metrics": {
+        "generated_length": 256,
+        "reference_length": 35,
+        "length_ratio": 7.314285714285714,
+        "rouge1_f": 0.23529411764705882,
+        "rouge2_f": 0.163265306122449,
+        "rougeL_f": 0.23529411764705882,
+        "semantic_similarity": 0.7898786067962646
+      }
+    },
+    {
+      "example_id": 11,
+      "prompt": "Simplify the sentence: In light of the fact that he was late, we started without him (variation 2)",
+      "reference_answer": "Since he was late, we started without him.",
+      "generated_answer": "Simplify the sentence: He was late, we started without him (variation 3)\n\n### Response:\n\nSimplify the sentence: He was late, we started with him (variation 4)\n\n### Response:\n\nSimplify the sentence: He was late, we started with him (variation 5)\n\n### Response:\n\nSimplify the sentence: He was late, we started with him (variation 6)\n\n### Response:\n\nSimplify the sentence: He was late, we started with him (variation 7)\n\n### Response:\n\nSimplify the sentence: He was late, we started with him (variation 8)",
+      "generation_time": 2.693173885345459,
+      "metrics": {
+        "generated_length": 502,
+        "reference_length": 42,
+        "length_ratio": 11.952380952380953,
+        "rouge1_f": 0.16470588235294117,
+        "rouge2_f": 0.14457831325301204,
+        "rougeL_f": 0.16470588235294117,
+        "semantic_similarity": 0.6027278900146484
+      }
+    },
+    {
+      "example_id": 12,
+      "prompt": "Implement binary search in Python",
+      "reference_answer": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+      "generated_answer": "This is a short summary of how the Python parser parses data, including how to use it to generate parsers. This is a work in progress.\n\n### Example:\n\n$ python parser.py -c '*' -p' -s '*' -k '*' -l '*' -m '*' -n '*'\n\n### Usage:\n\nimport pypi parser = pipy.parse.SimpleParser() parser.parse(args) parser.parse(args) parser.parse(args)\n\n### References:",
+      "generation_time": 1.8760442733764648,
+      "metrics": {
+        "generated_length": 348,
+        "reference_length": 293,
+        "length_ratio": 1.1877133105802047,
+        "rouge1_f": 0.0,
+        "rouge2_f": 0.0,
+        "rougeL_f": 0.0,
+        "semantic_similarity": 0.1906404197216034
+      }
+    }
+  ],
+  "summary_metrics": {
+    "total_examples": 12,
+    "successful_generations": 12,
+    "total_generation_time": 28.04292368888855,
+    "average_generation_time": 2.336910307407379,
+    "average_rouge1": 0.11268118936595034,
+    "average_rouge2": 0.04447129237735919,
+    "average_rougeL": 0.09034054202000329,
+    "average_semantic_similarity": 0.46252840136488277,
+    "average_length_ratio": 6.29282263977689
+  },
+  "timestamp": "2025-09-27T11:19:31.718134",
+  "test_data_count": 12
+}

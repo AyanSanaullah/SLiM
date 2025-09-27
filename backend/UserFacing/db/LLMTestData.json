@@ -1,0 +1,62 @@
+[
+  {
+    "prompt":"Write a professional thank-you note for a job interview (variation 1)",
+    "topic_hint":"writing",
+    "expected_output":"Dear [Interviewer],\n\nThank you for the opportunity to interview for the [Position] role. I enjoyed our conversation and learning more about the team. I look forward to the possibility of contributing.\n\nBest regards,\n[Your Name]"
+  },
+  {
+    "prompt":"Summarize this paragraph: Artificial Intelligence is transforming industries by automating tasks, improving accuracy, and reducing costs across healthcare, finance, and more. (variation 3)",
+    "topic_hint":"writing",
+    "expected_output":"AI is transforming industries by automating tasks, improving accuracy, and lowering costs."
+  },
+  {
+    "prompt":"Write an email reminding a colleague about tomorrow's deadline (variation 1)",
+    "topic_hint":"email",
+    "expected_output":"Subject: Reminder: Project Deadline Tomorrow\n\nHi [Name],\n\nJust a reminder that the project deadline is tomorrow. Please let me know if you need any support.\n\nBest,\n[Your Name]"
+  },
+  {
+    "prompt":"Write a SQL query to select all rows from 'users' where age > 30 (variation 1)",
+    "topic_hint":"coding",
+    "expected_output":"SELECT * FROM users WHERE age > 30;"
+  },
+  {
+    "prompt":"Write a function to reverse a string in Python",
+    "topic_hint":"coding",
+    "expected_output":"def reverse_string(s):\n    return s[::-1]"
+  },
+  {
+    "prompt":"Compose a professional email requesting a project update (variation 1)",
+    "topic_hint":"email",
+    "expected_output":"Subject: Request for Project Update\n\nHello [Name],\n\nCould you please provide me with an update on the current status of the project? I\u2019d like to review progress before our next check-in.\n\nThank you,\n[Your Name]"
+  },
+  {
+    "prompt":"Generate a short paragraph describing the benefits of teamwork (variation 1)",
+    "topic_hint":"writing",
+    "expected_output":"Teamwork allows individuals to combine their strengths, share ideas, and support one another. It improves efficiency and fosters creativity by bringing diverse perspectives together."
+  },
+  {
+    "prompt":"Implement binary search in Python (variation 3)",
+    "topic_hint":"coding",
+    "expected_output":"def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) \/\/ 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+  },
+  {
+    "prompt":"Simplify the sentence: In light of the fact that he was late, we started without him (variation 3)",
+    "topic_hint":"writing",
+    "expected_output":"Since he was late, we started without him."
+  },
+  {
+    "prompt":"Write a SQL query to select all rows from 'users' where age > 30 (variation 2)",
+    "topic_hint":"coding",
+    "expected_output":"SELECT * FROM users WHERE age > 30;"
+  },
+  {
+    "prompt":"Simplify the sentence: In light of the fact that he was late, we started without him (variation 2)",
+    "topic_hint":"writing",
+    "expected_output":"Since he was late, we started without him."
+  },
+  {
+    "prompt":"Implement binary search in Python",
+    "topic_hint":"coding",
+    "expected_output":"def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) \/\/ 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+  }
+]

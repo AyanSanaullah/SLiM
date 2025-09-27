@@ -58,9 +58,25 @@ print("Loading dataset...")
 ds = load_dataset("json", data_files=data_path, split="train")
 print(f"Dataset loaded with {len(ds)} examples")
 
+# Split dataset into 80% training and 20% testing
+print("Splitting dataset into training (80%) and testing (20%)...")
+split_ds = ds.train_test_split(test_size=0.2, seed=42)
+train_ds = split_ds["train"]
+test_ds = split_ds["test"]
+
+print(f"Training examples: {len(train_ds)}")
+print(f"Testing examples: {len(test_ds)}")
+
+# Save test dataset for later evaluation
+test_data_path = "../UserFacing/db/LLMTestData_CPU.json"
+print(f"Saving test dataset to {test_data_path}...")
+test_ds.to_json(test_data_path, orient="records", lines=False, indent=2)
+
 def preprocess(batch):
     prompt = f"### Instruction:\n{batch['prompt']}\n\n### Response:\n"
-    full = prompt + batch["answer"]
+    # Handle both 'answer' and 'expected_output' keys for compatibility
+    answer = batch.get("answer", batch.get("expected_output", ""))
+    full = prompt + answer
 
     tokenized = tokenizer(full, truncation=True, max_length=256, padding="max_length")  # Reduced from 512
     labels = tokenized["input_ids"][:]
@@ -70,7 +86,8 @@ def preprocess(batch):
     tokenized["labels"] = labels
     return tokenized
 
-ds = ds.map(preprocess, remove_columns=ds.column_names)
+# Use only training data for preprocessing and training
+train_ds = train_ds.map(preprocess, remove_columns=train_ds.column_names)
 
 # Training (CPU-optimized settings)
 training_args = TrainingArguments(
@@ -89,7 +106,7 @@ training_args = TrainingArguments(
 trainer = Trainer(
     model=model,
     args=training_args,
-    train_dataset=ds,
+    train_dataset=train_ds,
 )
 
 print("Starting training...")

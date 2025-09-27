@@ -207,7 +207,8 @@ def generate_slm_stream(prompt: str, max_new_tokens: int = 100, temperature: flo
             if not load_result["success"]:
                 yield f"data: {json.dumps({'error': load_result['error']})}\n\n"
                 return
-            yield f"data: {json.dumps({'status': f'Model loaded on {load_result[\"device\"]}'})}\n\n"
+            device = load_result["device"]
+            yield f"data: {json.dumps({'status': f'Model loaded on {device}'})}\n\n"
         
         yield f"data: {json.dumps({'status': 'Generating response...'})}\n\n"
         
@@ -260,7 +261,8 @@ def generate_slm_stream(prompt: str, max_new_tokens: int = 100, temperature: flo
             except Exception as e:
                 yield f"data: {json.dumps({'status': f'Warning: Could not save to database: {str(e)}'})}\n\n"
             
-            yield f"data: {json.dumps({'status': 'Response complete!', 'device_used': result['device']})}\n\n"
+            device_used = result['device']
+            yield f"data: {json.dumps({'status': 'Response complete!', 'device_used': device_used})}\n\n"
         else:
             yield f"data: {json.dumps({'error': result['error']})}\n\n"
             

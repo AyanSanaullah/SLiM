@@ -1,0 +1,20 @@
+# Enhanced evaluation requirements
+# Install these for advanced model evaluation metrics
+
+# Core requirements (already in main requirements.txt)
+torch>=2.0.0
+transformers>=4.30.0
+peft>=0.4.0
+datasets>=2.12.0
+
+# Evaluation-specific packages
+rouge-score>=0.1.2          # ROUGE metrics for text similarity
+sentence-transformers>=2.2.2 # Semantic similarity using embeddings
+scikit-learn>=1.3.0         # For cosine similarity and other metrics
+numpy>=1.24.0               # Numerical operations
+requests>=2.31.0            # For API communication
+
+# Optional: Advanced evaluation tools
+# nltk>=3.8                 # Natural Language Toolkit
+# bleu>=0.1.0               # BLEU score for translation-like tasks
+# bert-score>=0.3.13        # BERTScore for semantic evaluation
