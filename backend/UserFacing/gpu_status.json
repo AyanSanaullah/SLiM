@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-09-27T19:26:22.624077",
+  "timestamp": "2025-09-27T19:28:22.947932",
   "current": {
     "name": "No GPU Detected",
     "gpu_utilization": 0,
@@ -10,7 +10,7 @@
     "power_usage": 0,
     "graphics_clock": 0,
     "memory_clock": 0,
-    "timestamp": "2025-09-27T19:26:20.995568"
+    "timestamp": "2025-09-27T19:28:21.488422"
   },
   "graph": {
     "labels": [
@@ -127,9 +127,9 @@
       "power_usage": 0,
       "graphics_clock": 0,
       "memory_clock": 0,
-      "timestamp": "2025-09-27T19:26:20.995568"
+      "timestamp": "2025-09-27T19:28:21.488422"
     }
   },
   "monitoring_active": true,
-  "update_count": 92
+  "update_count": 152
 }
