@@ -14,7 +14,7 @@ CORS(app)  # Enable CORS for all routes
 
 @app.route('/')
 def index():
-    return open('../frontend/index.html').read()
+    return open('../../frontend/index.html').read()
 
 @app.route('/test')
 def test():
@@ -84,7 +84,6 @@ def generate_stream(prompt):
                         
                         # Append to LLMData.txt (accumulate all messages)
                         with open("db/LLMData.txt", "a", encoding="utf-8") as f:
-                            f.write("---\n")
                             f.write(prompt + "\n")
                             f.write(full_text.strip() + "\n")
                             f.write("\n")
