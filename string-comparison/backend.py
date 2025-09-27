@@ -8,18 +8,19 @@ import uvicorn
 import os
 import numpy as np
 from typing import List, Dict
-import spacy
+# import spacy  # Temporarily disabled due to compatibility issues
 from sklearn.metrics.pairwise import cosine_similarity
 import nltk
 from nltk.corpus import wordnet
 from collections import defaultdict
+import re
 
 # Initialize FastAPI app
 app = FastAPI(title="Semantic Comparison API")
 
 # Load the models once at startup
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
-nlp = spacy.load("en_core_web_sm")
+# nlp = spacy.load("en_core_web_sm")  # Temporarily disabled
 
 # Download NLTK data
 try:
@@ -77,22 +78,22 @@ def get_wordnet_similarity(word1: str, word2: str) -> float:
 
 def analyze_words_importance(sentence1: str, sentence2: str) -> List[WordAnalysis]:
     """Analyze word-by-word semantic importance by comparing words between the two sentences"""
-    # Process sentences with spaCy
-    doc1 = nlp(sentence1.lower())
-    doc2 = nlp(sentence2.lower())
+    # Simple word extraction without spaCy (basic approach)
+    import string
     
-    # Get meaningful words (nouns, verbs, adjectives, adverbs) from each sentence
-    words1 = [token.lemma_ for token in doc1 if token.pos_ in ['NOUN', 'VERB', 'ADJ', 'ADV'] and not token.is_stop and not token.is_punct]
-    words2 = [token.lemma_ for token in doc2 if token.pos_ in ['NOUN', 'VERB', 'ADJ', 'ADV'] and not token.is_stop and not token.is_punct]
+    # Remove punctuation and convert to lowercase
+    translator = str.maketrans('', '', string.punctuation)
+    clean_sentence1 = sentence1.translate(translator).lower()
+    clean_sentence2 = sentence2.translate(translator).lower()
     
-    # Get POS tags for words
-    word_pos_map = {}
-    for token in doc1:
-        if token.pos_ in ['NOUN', 'VERB', 'ADJ', 'ADV'] and not token.is_stop and not token.is_punct:
-            word_pos_map[token.lemma_] = token.pos_
-    for token in doc2:
-        if token.pos_ in ['NOUN', 'VERB', 'ADJ', 'ADV'] and not token.is_stop and not token.is_punct:
-            word_pos_map[token.lemma_] = token.pos_
+    # Get words from each sentence (filtering out common stop words)
+    stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'must', 'can', 'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them'}
+    
+    words1 = [word for word in clean_sentence1.split() if word not in stop_words and len(word) > 2]
+    words2 = [word for word in clean_sentence2.split() if word not in stop_words and len(word) > 2]
+    
+    # Simple POS mapping (basic approach)
+    word_pos_map = {word: "UNKNOWN" for word in set(words1 + words2)}
     
     word_analyses = []
     

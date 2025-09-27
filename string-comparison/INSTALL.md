@@ -30,12 +30,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Download spaCy model (required for text processing)
-```bash
-python -m spacy download en_core_web_sm
-```
-
-### 5. Run the project
+### 4. Run the project
 ```bash
 python backend.py
 ```
@@ -56,10 +51,10 @@ The server will be available at: `http://localhost:8000`
 
 ## Troubleshooting
 
-### spaCy Error
-If you encounter a spaCy-related error, make sure you've downloaded the model:
+### PyTorch/torchvision Compatibility
+If you encounter PyTorch-related errors, make sure you have compatible versions installed:
 ```bash
-python -m spacy download en_core_web_sm
+pip install torch==2.2.0 torchvision==0.17.0
 ```
 
 ### NLTK Error
