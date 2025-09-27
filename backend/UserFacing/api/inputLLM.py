@@ -49,17 +49,18 @@ def chat_with_gemini(prompt="give an error message"):
             print("Response received:")
             print("-" * 50)
             
-            with open("../db/LLMData.txt", "w", encoding="utf-8") as f:
-                # format: {prompt,}
-                f.write(payload["contents"][0]["parts"][0]["text"] + "\n")
+            with open("../db/LLMData.json", "w", encoding="utf-8") as f:
+                # format: {prompt, answer}
+                prompt_text = payload["contents"][0]["parts"][0]["text"]
+                answer_text = ""
+                
                 if "candidates" in data and len(data["candidates"]) > 0:
                     candidate = data["candidates"][0]
                     if "content" in candidate and "parts" in candidate["content"]:
                         for part in candidate["content"]["parts"]:
                             if "text" in part:
                                 # Remove newlines and extra whitespace to make it one line
-                                text_content = part["text"].replace('\n', ' ').replace('\r', '').strip()
-                                f.write(text_content)
+                                answer_text = part["text"].replace('\n', ' ').replace('\r', '').strip()
                                 print(part["text"])
                                 
                     else:
@@ -67,11 +68,24 @@ def chat_with_gemini(prompt="give an error message"):
                 else:
                     print("No candidates found in response")
                     print("Full response:", json.dumps(data, indent=2))
-                f.write("\n")
-            with open("../db/LLMCurrData.txt", "a", encoding="utf-8") as f:
-                f.write(payload["contents"][0]["parts"][0]["text"] + "\n")
-                f.write(data["candidates"][0]["content"]["parts"][0]["text"] + "\n")
-                f.write("\n")
+                
+                # Create JSON structure
+                json_data = {
+                    "prompt": prompt_text,
+                    "answer": answer_text
+                }
+                
+                # Write as pretty-printed JSON
+                json.dump(json_data, f, indent=2, ensure_ascii=False)
+            with open("../db/LLMCurrData.json", "w", encoding="utf-8") as f:
+                # Create JSON structure for current data
+                json_data = {
+                    "prompt": prompt_text,
+                    "answer": answer_text
+                }
+                
+                # Write as pretty-printed JSON
+                json.dump(json_data, f, indent=2, ensure_ascii=False)
         else:
             print(f"Error: HTTP {response.status_code}")
             print("Response:", response.text)

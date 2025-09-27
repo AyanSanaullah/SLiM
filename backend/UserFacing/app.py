@@ -77,17 +77,37 @@ def generate_stream(prompt):
                     
                     # Write to both files
                     try:
-                        # Write to LLMCurrData.txt (replace with most recent)
-                        with open("db/LLMCurrData.txt", "w", encoding="utf-8") as f:
-                            f.write(prompt + "\n")
-                            f.write(full_text.strip() + "\n")
+                        # Create JSON data structure
+                        json_data = {
+                            "prompt": prompt,
+                            "answer": full_text.strip()
+                        }
                         
-                        # Append to LLMData.txt (accumulate all messages)
-                        with open("db/LLMData.txt", "a", encoding="utf-8") as f:
-                            f.write(prompt + "\n")
-                            f.write(full_text.strip())
+                        # Write to LLMCurrData.json (replace with most recent)
+                        with open("db/LLMCurrData.json", "w", encoding="utf-8") as f:
+                            json.dump(json_data, f, indent=2, ensure_ascii=False)
                         
-                        yield f"data: {json.dumps({'status': 'Response saved to LLMCurrData.txt and LLMData.txt!'})}\n\n"
+                        # Append to LLMData.json (accumulate all messages)
+                        # First, read existing data
+                        existing_data = []
+                        try:
+                            with open("db/LLMData.json", "r", encoding="utf-8") as f:
+                                existing_data = json.load(f)
+                        except (FileNotFoundError, json.JSONDecodeError):
+                            existing_data = []
+                        
+                        # Ensure existing_data is a list
+                        if not isinstance(existing_data, list):
+                            existing_data = []
+                        
+                        # Append new data
+                        existing_data.append(json_data)
+                        
+                        # Write back to file
+                        with open("db/LLMData.json", "w", encoding="utf-8") as f:
+                            json.dump(existing_data, f, indent=2, ensure_ascii=False)
+                        
+                        yield f"data: {json.dumps({'status': 'Response saved to LLMCurrData.json and LLMData.json!'})}\n\n"
                     except Exception as e:
                         yield f"data: {json.dumps({'status': f'Error saving to file: {str(e)}'})}\n\n"
                     
