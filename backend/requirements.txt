@@ -1,0 +1,27 @@
+# Core web framework
+Flask==2.3.3
+Flask-CORS==4.0.0
+
+# HTTP requests
+requests==2.31.0
+
+# Environment variable management
+python-dotenv==1.0.0
+
+# JSON handling (built-in, but listed for clarity)
+# json - built-in module
+
+# File system operations (built-in, but listed for clarity)  
+# os - built-in module
+
+# Subprocess management (built-in, but listed for clarity)
+# subprocess - built-in module
+
+# Threading (built-in, but listed for clarity)
+# threading - built-in module
+
+# Time utilities (built-in, but listed for clarity)
+# time - built-in module
+
+# System utilities (built-in, but listed for clarity)
+# sys - built-in module
