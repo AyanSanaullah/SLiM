@@ -68,6 +68,11 @@ def chat_with_gemini(prompt="give an error message"):
                     print("No candidates found in response")
                     print("Full response:", json.dumps(data, indent=2))
                 f.write("\n")
+
+            with open("../db/LLMCurrData.txt", "w", encoding="utf-8") as f:
+                f.truncate(0)
+                f.write(payload["contents"][0]["parts"][0]["text"] + "\n")
+                f.write(text_content + "\n")
         else:
             print(f"Error: HTTP {response.status_code}")
             print("Response:", response.text)

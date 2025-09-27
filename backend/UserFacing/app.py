@@ -75,12 +75,20 @@ def generate_stream(prompt):
                                 full_text += word + " "
                                 yield f"data: {json.dumps({'text': word + ' ', 'full_text': full_text.strip(), 'is_complete': i == len(words) - 1})}\n\n"
                     
-                    # Write to LLMData.txt
+                    # Write to both files
                     try:
-                        with open("db/LLMData.txt", "w", encoding="utf-8") as f:
+                        # Write to LLMCurrData.txt (most recent only)
+                        with open("db/LLMCurrData.txt", "w", encoding="utf-8") as f:
                             f.write(prompt + "\n")
                             f.write(full_text.strip() + "\n")
-                        yield f"data: {json.dumps({'status': 'Response saved to LLMData.txt!'})}\n\n"
+                        
+                        # Append to LLMData.txt (accumulate all data)
+                        with open("db/LLMData.txt", "a", encoding="utf-8") as f:
+                            f.write(prompt + "\n")
+                            f.write(full_text.strip() + "\n")
+                            f.write("\n")
+                        
+                        yield f"data: {json.dumps({'status': 'Response saved to LLMCurrData.txt and LLMData.txt!'})}\n\n"
                     except Exception as e:
                         yield f"data: {json.dumps({'status': f'Error saving to file: {str(e)}'})}\n\n"
                     
