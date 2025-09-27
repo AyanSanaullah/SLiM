@@ -85,8 +85,7 @@ def generate_stream(prompt):
                         # Append to LLMData.txt (accumulate all messages)
                         with open("db/LLMData.txt", "a", encoding="utf-8") as f:
                             f.write(prompt + "\n")
-                            f.write(full_text.strip() + "\n")
-                            f.write("\n")
+                            f.write(full_text.strip())
                         
                         yield f"data: {json.dumps({'status': 'Response saved to LLMCurrData.txt and LLMData.txt!'})}\n\n"
                     except Exception as e:
