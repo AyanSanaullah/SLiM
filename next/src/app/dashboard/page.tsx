@@ -21,6 +21,7 @@ export default function Dashboard() {
   const [chats, setChats] = useState<Chat[]>([]);
   const [showProcessingModal, setShowProcessingModal] = useState(false);
   const [hasNvidiaGpu, setHasNvidiaGpu] = useState<boolean | null>(null);
+  const [manualGpuOverride, setManualGpuOverride] = useState(false);
   const [processingType, setProcessingType] = useState<'cloud' | 'gpu'>('cloud');
   const [processingStatus, setProcessingStatus] = useState<string>('');
   const [isProcessing, setIsProcessing] = useState(false);
@@ -223,38 +224,81 @@ export default function Dashboard() {
     return Math.max(minSize, Math.min(maxSize, size));
   };
 
-  // GPU Detection Function
+  // Enhanced GPU Detection Function
   const detectNvidiaGpu = async (): Promise<boolean> => {
     try {
-      // Check if WebGL is available and get GPU info
+      // Method 1: Try WebGL detection first
       const canvas = document.createElement('canvas');
       const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
       
-      if (!gl) {
-        console.log('WebGL not supported');
-        return false;
+      if (gl) {
+        const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+        if (debugInfo) {
+          const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+          const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+          
+          console.log('WebGL GPU Renderer:', renderer);
+          console.log('WebGL GPU Vendor:', vendor);
+
+          // Check for NVIDIA in renderer or vendor strings
+          const webglHasNvidia = renderer.toLowerCase().includes('nvidia') || 
+                                vendor.toLowerCase().includes('nvidia') ||
+                                renderer.toLowerCase().includes('geforce') ||
+                                renderer.toLowerCase().includes('quadro') ||
+                                renderer.toLowerCase().includes('tesla') ||
+                                renderer.toLowerCase().includes('rtx') ||
+                                renderer.toLowerCase().includes('gtx');
+
+          if (webglHasNvidia) {
+            console.log('✅ NVIDIA GPU detected via WebGL');
+            return true;
+          }
+        }
       }
 
-      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-      if (!debugInfo) {
-        console.log('GPU debug info not available');
-        return false;
+      // Method 2: Try to check via backend API (if available)
+      try {
+        const response = await fetch('http://localhost:5001/cuda/check', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Backend GPU check:', data);
+          if (data.cuda_available || data.nvidia_gpu) {
+            console.log('✅ NVIDIA GPU detected via backend');
+            return true;
+          }
+        }
+      } catch (backendError) {
+        console.log('Backend GPU check unavailable:', backendError);
       }
 
-      const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
-      const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
-      
-      console.log('GPU Renderer:', renderer);
-      console.log('GPU Vendor:', vendor);
+      // Method 3: Check navigator.gpu (WebGPU) if available
+      if ('gpu' in navigator) {
+        try {
+          const adapter = await (navigator as any).gpu.requestAdapter();
+          if (adapter) {
+            const info = await adapter.requestAdapterInfo();
+            console.log('WebGPU Adapter Info:', info);
+            
+            if (info.vendor?.toLowerCase().includes('nvidia') || 
+                info.description?.toLowerCase().includes('nvidia') ||
+                info.description?.toLowerCase().includes('geforce') ||
+                info.description?.toLowerCase().includes('rtx') ||
+                info.description?.toLowerCase().includes('gtx')) {
+              console.log('✅ NVIDIA GPU detected via WebGPU');
+              return true;
+            }
+          }
+        } catch (webgpuError) {
+          console.log('WebGPU check failed:', webgpuError);
+        }
+      }
 
-      // Check for NVIDIA in renderer or vendor strings
-      const hasNvidia = renderer.toLowerCase().includes('nvidia') || 
-                       vendor.toLowerCase().includes('nvidia') ||
-                       renderer.toLowerCase().includes('geforce') ||
-                       renderer.toLowerCase().includes('quadro') ||
-                       renderer.toLowerCase().includes('tesla');
-
-      return hasNvidia;
+      console.log('❌ No NVIDIA GPU detected via any method');
+      return false;
     } catch (error) {
       console.error('Error detecting GPU:', error);
       return false;
@@ -1062,18 +1106,43 @@ export default function Dashboard() {
           <div className="bg-gray-900 border border-gray-600 rounded-lg p-6 max-w-md w-full mx-4">
             <h3 className="text-white text-xl font-light mb-4">Select Processing Method</h3>
             
-            {/* GPU Detection Status */}
-            <div className="mb-6">
-              <div className="flex items-center space-x-2 mb-2">
-                <div className={`w-3 h-3 rounded-full ${hasNvidiaGpu ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                <span className="text-gray-300 text-sm">
-                  NVIDIA GPU: {hasNvidiaGpu === null ? 'Detecting...' : hasNvidiaGpu ? 'Detected' : 'Not Found'}
-                </span>
-              </div>
-              {hasNvidiaGpu && (
-                <p className="text-green-400 text-xs">✓ Local GPU processing available</p>
-              )}
-            </div>
+             {/* GPU Detection Status */}
+             <div className="mb-6">
+               <div className="flex items-center space-x-2 mb-2">
+                 <div className={`w-3 h-3 rounded-full ${(hasNvidiaGpu || manualGpuOverride) ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                 <span className="text-gray-300 text-sm">
+                   NVIDIA GPU: {hasNvidiaGpu === null ? 'Detecting...' : hasNvidiaGpu ? 'Detected' : manualGpuOverride ? 'Manual Override' : 'Not Found'}
+                 </span>
+               </div>
+               {(hasNvidiaGpu || manualGpuOverride) && (
+                 <p className="text-green-400 text-xs">✓ Local GPU processing available</p>
+               )}
+               {!hasNvidiaGpu && hasNvidiaGpu !== null && !manualGpuOverride && (
+                 <div className="mt-2">
+                   <p className="text-yellow-400 text-xs mb-2">⚠ GPU not detected automatically</p>
+                   <label className="flex items-center space-x-2 cursor-pointer">
+                     <input
+                       type="checkbox"
+                       checked={manualGpuOverride}
+                       onChange={(e) => setManualGpuOverride(e.target.checked)}
+                       className="text-blue-500"
+                     />
+                     <span className="text-gray-300 text-xs">I have an NVIDIA GPU (manual override)</span>
+                   </label>
+                   <button
+                     onClick={async () => {
+                       console.log('🔍 Running GPU detection debug...');
+                       const detected = await detectNvidiaGpu();
+                       setHasNvidiaGpu(detected);
+                       alert(`GPU Detection Results:\nCheck the browser console (F12) for detailed information.\nDetected: ${detected ? 'Yes' : 'No'}`);
+                     }}
+                     className="mt-2 px-3 py-1 text-xs bg-gray-700 text-gray-300 rounded hover:bg-gray-600 transition-colors"
+                   >
+                     🔍 Debug GPU Detection
+                   </button>
+                 </div>
+               )}
+             </div>
 
             {/* Processing Options */}
             <div className="space-y-3 mb-6">
@@ -1093,24 +1162,24 @@ export default function Dashboard() {
                 </div>
               </label>
 
-              {/* GPU Processing Option */}
-              <label className={`flex items-center space-x-3 cursor-pointer ${!hasNvidiaGpu ? 'opacity-50' : ''}`}>
-                <input
-                  type="radio"
-                  name="processingType"
-                  value="gpu"
-                  checked={processingType === 'gpu'}
-                  onChange={(e) => setProcessingType(e.target.value as 'cloud' | 'gpu')}
-                  disabled={!hasNvidiaGpu}
-                  className="text-green-500"
-                />
-                <div>
-                  <div className="text-white font-medium">Local GPU Processing</div>
-                  <div className="text-gray-400 text-sm">
-                    {hasNvidiaGpu ? 'Use your NVIDIA GPU (faster, private)' : 'Requires NVIDIA GPU'}
-                  </div>
-                </div>
-              </label>
+               {/* GPU Processing Option */}
+               <label className={`flex items-center space-x-3 cursor-pointer ${!(hasNvidiaGpu || manualGpuOverride) ? 'opacity-50' : ''}`}>
+                 <input
+                   type="radio"
+                   name="processingType"
+                   value="gpu"
+                   checked={processingType === 'gpu'}
+                   onChange={(e) => setProcessingType(e.target.value as 'cloud' | 'gpu')}
+                   disabled={!(hasNvidiaGpu || manualGpuOverride)}
+                   className="text-green-500"
+                 />
+                 <div>
+                   <div className="text-white font-medium">Local GPU Processing</div>
+                   <div className="text-gray-400 text-sm">
+                     {(hasNvidiaGpu || manualGpuOverride) ? 'Use your NVIDIA GPU (faster, private)' : 'Requires NVIDIA GPU'}
+                   </div>
+                 </div>
+               </label>
             </div>
 
             {/* Action Buttons */}
