@@ -1,3 +1,15 @@
+summary:
+not brian:
+run:
+py cudaInit_cpu.py
+py testSuite_cpu.py
+
+brian:
+py cudaInit.py
+py testSuite.py
+
+
+
 # LoRA Fine-Tuning Setup Guide
 
 This guide will help you set up and use LoRA (Low-Rank Adaptation) fine-tuning for GPT-2 models on your NVIDIA RTX 4060 GPU.
