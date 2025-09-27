@@ -10,18 +10,14 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'api'))
 from inputLLM import chat_with_gemini
 from slm_inference import slm_inference, generate_slm_stream
 
-# Import CUDA endpoints and GPU monitor
+# Import CUDA endpoints
 from cuda_endpoints import cuda_bp
-from gpu_monitor import gpu_monitor
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Register CUDA blueprint
 app.register_blueprint(cuda_bp)
-
-# Start GPU monitoring when app starts
-gpu_monitor.start_monitoring()
 
 @app.route('/')
 def index():
@@ -384,68 +380,5 @@ def get_test_summary():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
 
-# ===== GPU Monitoring Endpoints =====
-
-@app.route('/gpu/current', methods=['GET'])
-def get_current_gpu_data():
-    """Get current GPU usage data"""
-    try:
-        current_data = gpu_monitor.get_current_data()
-        return jsonify({
-            'success': True,
-            'data': current_data
-        })
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
-
-@app.route('/gpu/graph', methods=['GET'])
-def get_gpu_graph_data():
-    """Get GPU data formatted for dashboard graph"""
-    try:
-        graph_data = gpu_monitor.get_graph_data()
-        return jsonify({
-            'success': True,
-            'data': graph_data
-        })
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
-
-@app.route('/gpu/history', methods=['GET'])
-def get_gpu_history():
-    """Get historical GPU data"""
-    try:
-        history = gpu_monitor.get_historical_data()
-        return jsonify({
-            'success': True,
-            'data': history
-        })
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
-
-@app.route('/gpu/start', methods=['POST'])
-def start_gpu_monitoring():
-    """Start GPU monitoring"""
-    try:
-        gpu_monitor.start_monitoring()
-        return jsonify({
-            'success': True,
-            'message': 'GPU monitoring started'
-        })
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
-
-@app.route('/gpu/stop', methods=['POST'])
-def stop_gpu_monitoring():
-    """Stop GPU monitoring"""
-    try:
-        gpu_monitor.stop_monitoring()
-        return jsonify({
-            'success': True,
-            'message': 'GPU monitoring stopped'
-        })
-    except Exception as e:
-        return jsonify({'success': False, 'error': str(e)})
-
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5001))  # Default to 5001 to match frontend
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0', port=5000)
