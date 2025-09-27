@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            resize: vertical;
+            min-height: 80px;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .result.success {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+
+        .result.error {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+        }
+
+        .similarity-score {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .similarity-label {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .examples {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .examples h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .example {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .example:hover {
+            background: #e9ecef;
+        }
+
+        .example-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .word-analysis {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .word-analysis h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .word-item {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .word-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .word-text {
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .pos-tag {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+
+        .word-scores {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .score-item {
+            text-align: center;
+            padding: 4px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .score-label {
+            font-size: 10px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .score-value {
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .semantic-score { color: #667eea; }
+        .wordnet-score { color: #28a745; }
+        .embedding-score { color: #ff6b6b; }
+
+        .explanation {
+            font-size: 12px;
+            color: #666;
+            font-style: italic;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Semantic Comparison</h1>
+        
+        <form id="comparisonForm">
+            <div class="form-group">
+                <label for="sentence1">Original Sentence:</label>
+                <textarea id="sentence1" name="sentence1" placeholder="Enter the original sentence here..." required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="sentence2">Sentence to Compare:</label>
+                <textarea id="sentence2" name="sentence2" placeholder="Enter the sentence you want to compare here..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn" id="compareBtn">Compare Semantics</button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Analyzing similarity...</p>
+        </div>
+
+        <div class="result" id="result">
+            <div class="similarity-score" id="similarityScore"></div>
+            <div class="similarity-label" id="similarityLabel"></div>
+        </div>
+
+        <div class="word-analysis" id="wordAnalysis">
+            <h3>📊 Word-by-Word Analysis</h3>
+            <div id="wordList"></div>
+        </div>
+
+        <div class="examples">
+            <h3>💡 Examples to test:</h3>
+            <div class="example" onclick="fillExample('I love programming', 'I enjoy coding')">
+                <div class="example-text">
+                    <strong>Original:</strong> "I love programming"<br>
+                    <strong>Compare:</strong> "I enjoy coding"
+                </div>
+            </div>
+            <div class="example" onclick="fillExample('The weather is nice today', 'It is a beautiful day')">
+                <div class="example-text">
+                    <strong>Original:</strong> "The weather is nice today"<br>
+                    <strong>Compare:</strong> "It is a beautiful day"
+                </div>
+            </div>
+            <div class="example" onclick="fillExample('I am looking for a cheap flight to Boston', 'Find me an inexpensive plane ticket to BOS')">
+                <div class="example-text">
+                    <strong>Original:</strong> "I am looking for a cheap flight to Boston"<br>
+                    <strong>Compare:</strong> "Find me an inexpensive plane ticket to BOS"
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('comparisonForm');
+        const loading = document.getElementById('loading');
+        const result = document.getElementById('result');
+        const compareBtn = document.getElementById('compareBtn');
+        const similarityScore = document.getElementById('similarityScore');
+        const similarityLabel = document.getElementById('similarityLabel');
+        const wordAnalysis = document.getElementById('wordAnalysis');
+        const wordList = document.getElementById('wordList');
+
+        function fillExample(sentence1, sentence2) {
+            document.getElementById('sentence1').value = sentence1;
+            document.getElementById('sentence2').value = sentence2;
+        }
+
+        function getSimilarityLabel(score) {
+            if (score >= 0.9) return 'Very Similar';
+            if (score >= 0.8) return 'Similar';
+            if (score >= 0.6) return 'Moderately Similar';
+            if (score >= 0.4) return 'Somewhat Similar';
+            return 'Not Similar';
+        }
+
+        function getScoreColor(score) {
+            if (score >= 0.8) return '#4CAF50';
+            if (score >= 0.6) return '#FF9800';
+            return '#F44336';
+        }
+
+        function displayWordAnalysis(wordAnalysisData) {
+            if (!wordAnalysisData || wordAnalysisData.length === 0) {
+                wordAnalysis.style.display = 'none';
+                return;
+            }
+
+            wordList.innerHTML = '';
+            
+            wordAnalysisData.forEach(word => {
+                const wordItem = document.createElement('div');
+                wordItem.className = 'word-item';
+                
+                wordItem.innerHTML = `
+                    <div class="word-header">
+                        <div class="word-text">${word.word}</div>
+                        <div class="pos-tag">${word.pos_tag}</div>
+                    </div>
+                    <div class="word-scores">
+                        <div class="score-item">
+                            <div class="score-label">Semantic</div>
+                            <div class="score-value semantic-score">${(word.semantic_similarity * 100).toFixed(0)}%</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-label">WordNet</div>
+                            <div class="score-value wordnet-score">${(word.wordnet_similarity * 100).toFixed(0)}%</div>
+                        </div>
+                        <div class="score-item">
+                            <div class="score-label">Embedding</div>
+                            <div class="score-value embedding-score">${(word.embedding_similarity * 100).toFixed(0)}%</div>
+                        </div>
+                    </div>
+                    <div class="explanation">${word.explanation}</div>
+                `;
+                
+                wordList.appendChild(wordItem);
+            });
+            
+            wordAnalysis.style.display = 'block';
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const sentence1 = document.getElementById('sentence1').value.trim();
+            const sentence2 = document.getElementById('sentence2').value.trim();
+            
+            if (!sentence1 || !sentence2) {
+                alert('Please fill in both sentences.');
+                return;
+            }
+
+            // Show loading
+            loading.style.display = 'block';
+            result.style.display = 'none';
+            wordAnalysis.style.display = 'none';
+            compareBtn.disabled = true;
+
+            try {
+                const response = await fetch('/compare', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        sentence1: sentence1,
+                        sentence2: sentence2
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                
+                // Show result
+                similarityScore.textContent = (data.similarity * 100).toFixed(1) + '%';
+                similarityLabel.textContent = getSimilarityLabel(data.similarity);
+                
+                result.className = 'result success';
+                result.style.display = 'block';
+
+                // Show word analysis
+                displayWordAnalysis(data.word_analysis);
+
+            } catch (error) {
+                console.error('Error:', error);
+                result.className = 'result error';
+                result.innerHTML = `
+                    <div class="similarity-score">❌</div>
+                    <div class="similarity-label">Error processing comparison</div>
+                `;
+                result.style.display = 'block';
+            } finally {
+                loading.style.display = 'none';
+                compareBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
