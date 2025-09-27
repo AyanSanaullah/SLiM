@@ -17,3 +17,7 @@ pydantic>=2.0.0
 
 # Additional dependencies for better performance
 python-multipart>=0.0.6
+
+# PyTorch
+torch           # CPU build is fine; pin a version if you like
+gunicorn
