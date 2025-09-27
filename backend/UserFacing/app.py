@@ -5,9 +5,10 @@ import os
 import json
 import sys
 
-# Add the api directory to the path so we can import inputLLM
+# Add the api directory to the path so we can import modules
 sys.path.append(os.path.join(os.path.dirname(__file__), 'api'))
 from inputLLM import chat_with_gemini
+from slm_inference import slm_inference, generate_slm_stream
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -130,6 +131,71 @@ def run_llm():
         prompt = data.get('prompt', 'write a 300 word story about a cat')
         
         return Response(generate_stream(prompt), 
+                      mimetype='text/plain',
+                      headers={'Cache-Control': 'no-cache'})
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+# ===== SLM (Small Language Model) Endpoints =====
+
+@app.route('/slm/info', methods=['GET'])
+def slm_info():
+    """Get information about the SLM model"""
+    try:
+        info = slm_inference.get_model_info()
+        return jsonify(info)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/slm/load', methods=['POST'])
+def slm_load():
+    """Load the SLM model"""
+    try:
+        result = slm_inference.load_model()
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/slm/unload', methods=['POST'])
+def slm_unload():
+    """Unload the SLM model to free memory"""
+    try:
+        result = slm_inference.unload_model()
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/slm/generate', methods=['POST'])
+def slm_generate():
+    """Generate a response using the SLM model (non-streaming)"""
+    try:
+        data = request.get_json()
+        prompt = data.get('prompt', 'Hello, how are you?')
+        max_new_tokens = data.get('max_new_tokens', 100)
+        temperature = data.get('temperature', 0.7)
+        do_sample = data.get('do_sample', True)
+        
+        result = slm_inference.generate_response(
+            prompt=prompt,
+            max_new_tokens=max_new_tokens,
+            temperature=temperature,
+            do_sample=do_sample
+        )
+        
+        return jsonify(result)
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/slm/stream', methods=['POST'])
+def slm_stream():
+    """Generate a streaming response using the SLM model"""
+    try:
+        data = request.get_json()
+        prompt = data.get('prompt', 'Hello, how are you?')
+        max_new_tokens = data.get('max_new_tokens', 100)
+        temperature = data.get('temperature', 0.7)
+        
+        return Response(generate_slm_stream(prompt, max_new_tokens, temperature), 
                       mimetype='text/plain',
                       headers={'Cache-Control': 'no-cache'})
     except Exception as e:
