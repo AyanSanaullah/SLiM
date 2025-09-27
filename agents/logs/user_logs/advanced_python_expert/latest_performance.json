@@ -1,0 +1,40 @@
+{
+  "agent_name": "advanced_python_expert",
+  "agent_type": "advanced_json_qlora",
+  "training_completed_at": "2025-09-27T14:27:03.998806",
+  "performance_metrics": {
+    "dataset": {
+      "total_samples": 8,
+      "valid_samples": 8,
+      "avg_prompt_length": 28.125,
+      "avg_answer_length": 185.75
+    },
+    "training": {
+      "model_type": "qlora_finetuned",
+      "device": "cpu",
+      "cuda_available": false,
+      "gpu_count": 0,
+      "training_time_minutes": 0.8,
+      "epochs": 3,
+      "lora_config": {
+        "rank": 16,
+        "alpha": 32,
+        "dropout": 0.1
+      }
+    },
+    "evaluation": {
+      "total_samples": 8,
+      "successful_evaluations": 8,
+      "failed_evaluations": 0,
+      "average_string_similarity": 1.0000000298023224,
+      "average_model_confidence": 1.0,
+      "high_similarity_count": 8,
+      "medium_similarity_count": 0,
+      "low_similarity_count": 0,
+      "max_similarity": 1.0000001192092896,
+      "min_similarity": 1.0
+    }
+  },
+  "overall_performance_score": 1.0,
+  "string_comparison_enabled": true
+}

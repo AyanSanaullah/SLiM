@@ -1,0 +1,89 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: shellhacks-adk-agents
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/execution-environment: gen2
+    autoscaling.knative.dev/maxScale: "10"
+    autoscaling.knative.dev/minScale: "1"
+    run.googleapis.com/cpu-throttling: "false"
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: "10"
+        autoscaling.knative.dev/minScale: "1"
+        run.googleapis.com/execution-environment: gen2
+        run.googleapis.com/cpu-throttling: "false"
+        run.googleapis.com/memory: "4Gi"
+        run.googleapis.com/cpu: "2"
+        run.googleapis.com/startup-cpu-boost: "true"
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: shellhacks-service-account
+      containers:
+      - image: gcr.io/PROJECT_ID/shellhacks-adk-agents:latest
+        name: shellhacks-adk-agents
+        ports:
+        - containerPort: 8080
+          name: http1
+        env:
+        - name: GOOGLE_CLOUD_PROJECT
+          value: "PROJECT_ID"
+        - name: GOOGLE_CLOUD_LOCATION
+          value: "us-central1"
+        - name: ADK_CONFIG_PATH
+          value: "/app/config/adk_config.yaml"
+        - name: VERTEX_CONFIG_PATH
+          value: "/app/config/vertex_config.yaml"
+        - name: LOG_LEVEL
+          value: "INFO"
+        - name: REDIS_URL
+          value: "redis://redis:6379/0"
+        - name: CELERY_BROKER_URL
+          value: "redis://redis:6379/0"
+        - name: CELERY_RESULT_BACKEND
+          value: "redis://redis:6379/0"
+        resources:
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+          requests:
+            cpu: "1"
+            memory: "2Gi"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+        startupProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 10
+      volumes:
+      - name: config-volume
+        configMap:
+          name: agent-config
+      - name: credentials-volume
+        secret:
+          secretName: google-cloud-credentials
+  traffic:
+  - percent: 100
+    latestRevision: true

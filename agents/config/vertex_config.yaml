@@ -1,0 +1,60 @@
+# Vertex AI Configuration
+vertex_ai:
+  # Project settings
+  project_id: "${GOOGLE_CLOUD_PROJECT}"
+  location: "us-central1"
+  
+  # Storage settings
+  storage:
+    bucket_name: "${GOOGLE_CLOUD_PROJECT}-user-models"
+    bucket_location: "us-central1"
+    storage_class: "STANDARD"
+    
+  # Custom training configuration
+  custom_training:
+    machine_type: "n1-standard-4"
+    accelerator_type: "NVIDIA_TESLA_T4"
+    accelerator_count: 1
+    boot_disk_type: "pd-ssd"
+    boot_disk_size_gb: 100
+    
+  # Model deployment configuration
+  model_deployment:
+    machine_type: "n1-standard-2"
+    min_replica_count: 1
+    max_replica_count: 10
+    traffic_percentage: 100
+    
+  # Endpoint configuration
+  endpoints:
+    region: "us-central1"
+    network: "default"
+    enable_access_logging: true
+    enable_request_response_logging: true
+    
+  # Auto-scaling configuration
+  auto_scaling:
+    min_replica_count: 1
+    max_replica_count: 10
+    target_cpu_utilization: 70
+    target_memory_utilization: 80
+    scale_up_delay: "60s"
+    scale_down_delay: "300s"
+    
+  # Monitoring configuration
+  monitoring:
+    enable_monitoring: true
+    metrics_export_interval: "60s"
+    log_sampling_rate: 1.0
+    
+  # Security configuration
+  security:
+    service_account: "${GOOGLE_CLOUD_SERVICE_ACCOUNT}"
+    enable_vpc_connector: false
+    allowed_ingress: ["all"]
+    
+  # Cost optimization
+  cost_optimization:
+    use_preemptible: false
+    enable_spot_instances: false
+    max_idle_time: "3600s"

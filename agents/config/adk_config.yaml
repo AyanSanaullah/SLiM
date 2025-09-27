@@ -1,0 +1,90 @@
+# Google ADK Configuration
+adk:
+  version: "0.2.0"
+  environment: "production"
+  
+  # Model configurations
+  models:
+    default: "gemini-2.0-flash"
+    fallback: "gemini-1.5-pro"
+    user_models:
+      base_models:
+        - name: "distilbert-base-uncased"
+          size: "66M"
+          description: "Compact BERT-based model"
+        - name: "huawei-noah/TinyBERT_General_4L_312D"
+          size: "14M"
+          description: "Ultra-compact model"
+        - name: "google/mobilebert-uncased"
+          size: "25M"
+          description: "Mobile-optimized model"
+  
+  # Agent configurations
+  agents:
+    max_concurrent: 10
+    timeout_seconds: 300
+    retry_attempts: 3
+    memory_limit: "4Gi"
+    cpu_limit: "2"
+    
+  # Vertex AI configuration
+  vertex_ai:
+    project_id: "${GOOGLE_CLOUD_PROJECT}"
+    location: "us-central1"
+    bucket_name: "${GOOGLE_CLOUD_PROJECT}-user-models"
+    endpoint_location: "us-central1"
+    
+  # Training configuration
+  training:
+    default_epochs: 3
+    default_batch_size: 16
+    gradient_accumulation_steps: 4
+    learning_rate: 5e-5
+    warmup_steps: 100
+    weight_decay: 0.01
+    max_length: 512
+    save_steps: 500
+    eval_steps: 500
+    
+  # Deployment configuration
+  deployment:
+    platform: "vertex-ai-agent-engine"
+    auto_scaling:
+      min_replicas: 1
+      max_replicas: 10
+      target_cpu_utilization: 70
+      target_memory_utilization: 80
+    endpoint_config:
+      min_replica_count: 1
+      max_replica_count: 10
+      traffic_percentage: 100
+      
+  # Security configuration
+  security:
+    enable_authentication: true
+    allowed_origins: ["*"]
+    api_key_required: false
+    
+  # Logging configuration
+  logging:
+    level: "INFO"
+    enable_tracing: true
+    log_to_cloud: true
+    retention_days: 30
+    
+  # Storage configuration
+  storage:
+    user_data_path: "data/user_data"
+    user_models_path: "models/user_models"
+    user_logs_path: "logs/user_logs"
+    backup_enabled: true
+    backup_frequency_hours: 24
+    
+  # Inference configuration
+  inference:
+    max_response_length: 512
+    temperature: 0.7
+    top_p: 0.9
+    top_k: 40
+    timeout_seconds: 30
+    max_concurrent_requests: 100

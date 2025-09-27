@@ -1,0 +1,33 @@
+{
+  "user_id": "ml_expert",
+  "raw_data": "Sou especialista em machine learning, deep learning, NLP, computer vision e MLOps. Posso ajudar com implementação de algoritmos e análise de dados.",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre sou especialista em machine learning, deep learning, nlp, computer vision e mlops?",
+      "answer": "Sou especialista em machine learning, deep learning, NLP, computer vision e MLOps",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre sou especialista em machine learning, deep learning, nlp, computer vision e mlops",
+      "answer": "Sou especialista em machine learning, deep learning, NLP, computer vision e MLOps",
+      "type": "explanation"
+    },
+    {
+      "prompt": "O que você sabe sobre posso ajudar com implementação de algoritmos e análise de dados?",
+      "answer": "Posso ajudar com implementação de algoritmos e análise de dados",
+      "type": "definition"
+    },
+    {
+      "prompt": "Como posso ajudar com implementação de algoritmos e análise de dados?",
+      "answer": "Posso ajudar com implementação de algoritmos e análise de dados",
+      "type": "how_to"
+    },
+    {
+      "prompt": "Explique sobre posso ajudar com implementação de algoritmos e análise de dados",
+      "answer": "Posso ajudar com implementação de algoritmos e análise de dados",
+      "type": "explanation"
+    }
+  ],
+  "processed_at": "2025-09-27T13:33:39.812546",
+  "total_pairs": 5
+}

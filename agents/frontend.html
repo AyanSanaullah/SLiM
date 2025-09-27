@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShellHacks Agents - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .services-status {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .service-status {
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .status-online {
+            background: rgba(76, 175, 80, 0.3);
+        }
+
+        .status-offline {
+            background: rgba(244, 67, 54, 0.3);
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fafafa;
+        }
+
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .agent-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #4facfe;
+            transition: all 0.3s ease;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .agent-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .agent-id {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .agent-status {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-ready {
+            background: #e8f5e8;
+            color: #4caf50;
+        }
+
+        .status-processing {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .agent-metrics {
+            margin: 15px 0;
+        }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .metric-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .metric-value {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .accuracy-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .accuracy-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4b2b 0%, #ff9500 50%, #4CAF50 100%);
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .api-endpoints {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .endpoint-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid;
+        }
+
+        .endpoint-get {
+            border-left-color: #4CAF50;
+        }
+
+        .endpoint-post {
+            border-left-color: #2196F3;
+        }
+
+        .endpoint-delete {
+            border-left-color: #f44336;
+        }
+
+        .endpoint-method {
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+
+        .method-get {
+            background: #e8f5e8;
+            color: #4CAF50;
+        }
+
+        .method-post {
+            background: #e3f2fd;
+            color: #2196F3;
+        }
+
+        .method-delete {
+            background: #ffebee;
+            color: #f44336;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+
+        .response-container {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .response-success {
+            background: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+
+        .response-error {
+            background: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4facfe;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .tab.active {
+            border-bottom-color: #4facfe;
+            color: #4facfe;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .refresh-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.5);
+        }
+
+        .json-display {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 ShellHacks Agents Dashboard</h1>
+            <p>Sistema de Treinamento Real de Modelos com String Comparison</p>
+            <div class="services-status">
+                <div class="service-status" id="agents-status">
+                    <span id="agents-status-text">🤖 Agents: Verificando...</span>
+                </div>
+                <div class="service-status" id="string-status">
+                    <span id="string-status-text">🔤 String Comparison: Verificando...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('agents')">🤖 Agentes</div>
+                <div class="tab" onclick="showTab('create')">➕ Criar Agente</div>
+                <div class="tab" onclick="showTab('test')">🧪 Testar</div>
+                <div class="tab" onclick="showTab('api')">📡 API Endpoints</div>
+            </div>
+
+            <!-- Tab: Agentes -->
+            <div id="agents-tab" class="tab-content active">
+                <div class="section">
+                    <h2>🤖 Agentes Ativos</h2>
+                    <button class="btn" onclick="loadAgents()">
+                        <span id="load-agents-spinner"></span>
+                        🔄 Atualizar Lista de Agentes
+                    </button>
+                    <div id="agents-container" class="agents-grid">
+                        <p>Clique em "Atualizar Lista" para carregar os agentes...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Criar Agente -->
+            <div id="create-tab" class="tab-content">
+                <div class="section">
+                    <h2>➕ Criar Novo Agente</h2>
+                    
+                    <div class="tabs">
+                        <div class="tab active" onclick="showCreateTab('basic')">Básico</div>
+                        <div class="tab" onclick="showCreateTab('advanced')">Avançado (JSON)</div>
+                    </div>
+
+                    <!-- Criar Agente Básico -->
+                    <div id="basic-create" class="tab-content active">
+                        <form onsubmit="createBasicAgent(event)">
+                            <div class="form-group">
+                                <label for="basic-user-id">User ID:</label>
+                                <input type="text" id="basic-user-id" required placeholder="ex: python_expert">
+                            </div>
+                            <div class="form-group">
+                                <label for="basic-training-data">Dados de Treinamento:</label>
+                                <textarea id="basic-training-data" rows="4" required 
+                                    placeholder="Ex: Sou especialista em Python, Flask, Django..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="basic-base-model">Modelo Base:</label>
+                                <select id="basic-base-model">
+                                    <option value="distilbert-base-uncased">distilbert-base-uncased</option>
+                                    <option value="huawei-noah/TinyBERT_General_4L_312D">TinyBERT</option>
+                                    <option value="google/mobilebert-uncased">MobileBERT</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success">🚀 Criar Agente Básico</button>
+                        </form>
+                        <div id="basic-response"></div>
+                    </div>
+
+                    <!-- Criar Agente Avançado -->
+                    <div id="advanced-create" class="tab-content">
+                        <form onsubmit="createAdvancedAgent(event)">
+                            <div class="form-group">
+                                <label for="advanced-user-id">User ID:</label>
+                                <input type="text" id="advanced-user-id" required placeholder="ex: advanced_expert">
+                            </div>
+                            <div class="form-group">
+                                <label for="json-dataset">Dataset JSON (prompt/answer pairs):</label>
+                                <textarea id="json-dataset" rows="8" required 
+                                    placeholder='[{"prompt": "Como criar API?", "answer": "Use Flask..."}, {"prompt": "O que é ML?", "answer": "Machine Learning..."}]'></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success">🚀 Criar Agente Avançado</button>
+                        </form>
+                        <div id="advanced-response"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Testar -->
+            <div id="test-tab" class="tab-content">
+                <div class="section">
+                    <h2>🧪 Testar Agentes</h2>
+                    
+                    <div class="form-group">
+                        <label for="test-user-id">User ID do Agente:</label>
+                        <input type="text" id="test-user-id" placeholder="ex: python_expert">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="test-prompt">Pergunta:</label>
+                        <textarea id="test-prompt" rows="3" placeholder="Ex: Como criar uma API REST?"></textarea>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <button class="btn" onclick="makeInference()">💬 Fazer Pergunta</button>
+                        <button class="btn" onclick="getAgentStatus()">📊 Ver Status</button>
+                    </div>
+
+                    <div class="form-group">
+                        <h3>🔍 Avaliar com String Comparison</h3>
+                        <label for="expected-answer">Resposta Esperada:</label>
+                        <textarea id="expected-answer" rows="3" placeholder="Resposta que você espera para comparar"></textarea>
+                        <button class="btn btn-success" onclick="evaluateModel()" style="margin-top: 10px;">📈 Avaliar Modelo</button>
+                    </div>
+
+                    <div id="test-response"></div>
+                </div>
+            </div>
+
+            <!-- Tab: API Endpoints -->
+            <div id="api-tab" class="tab-content">
+                <div class="section">
+                    <h2>📡 API Endpoints Disponíveis</h2>
+                    
+                    <div class="api-endpoints">
+                        <div class="endpoint-card endpoint-get">
+                            <div>
+                                <span class="endpoint-method method-get">GET</span>
+                                <code>/health</code>
+                            </div>
+                            <p>Verificar se o serviço está funcionando</p>
+                            <button class="btn" onclick="testEndpoint('GET', '/health')">🧪 Testar</button>
+                        </div>
+
+                        <div class="endpoint-card endpoint-get">
+                            <div>
+                                <span class="endpoint-method method-get">GET</span>
+                                <code>/api/v1/agents</code>
+                            </div>
+                            <p>Listar todos os agentes ativos</p>
+                            <button class="btn" onclick="testEndpoint('GET', '/api/v1/agents')">🧪 Testar</button>
+                        </div>
+
+                        <div class="endpoint-card endpoint-get">
+                            <div>
+                                <span class="endpoint-method method-get">GET</span>
+                                <code>/api/v1/agents/{user_id}/status</code>
+                            </div>
+                            <p>Verificar status de um agente específico</p>
+                            <input type="text" placeholder="user_id" id="status-user-id" style="margin: 10px 0;">
+                            <button class="btn" onclick="testEndpoint('GET', '/api/v1/agents/' + document.getElementById('status-user-id').value + '/status')">🧪 Testar</button>
+                        </div>
+
+                        <div class="endpoint-card endpoint-post">
+                            <div>
+                                <span class="endpoint-method method-post">POST</span>
+                                <code>/api/v1/agents</code>
+                            </div>
+                            <p>Criar novo agente básico</p>
+                            <button class="btn" onclick="showCreateTab('basic'); showTab('create')">➕ Criar</button>
+                        </div>
+
+                        <div class="endpoint-card endpoint-post">
+                            <div>
+                                <span class="endpoint-method method-post">POST</span>
+                                <code>/api/v1/agents/advanced</code>
+                            </div>
+                            <p>Criar agente avançado com JSON dataset</p>
+                            <button class="btn" onclick="showCreateTab('advanced'); showTab('create')">➕ Criar</button>
+                        </div>
+
+                        <div class="endpoint-card endpoint-post">
+                            <div>
+                                <span class="endpoint-method method-post">POST</span>
+                                <code>/api/v1/agents/{user_id}/inference</code>
+                            </div>
+                            <p>Fazer pergunta para um agente</p>
+                            <button class="btn" onclick="showTab('test')">💬 Testar</button>
+                        </div>
+
+                        <div class="endpoint-card endpoint-post">
+                            <div>
+                                <span class="endpoint-method method-post">POST</span>
+                                <code>/api/v1/agents/{user_id}/evaluate</code>
+                            </div>
+                            <p>Avaliar modelo com string comparison</p>
+                            <button class="btn" onclick="showTab('test')">📈 Avaliar</button>
+                        </div>
+
+                        <div class="endpoint-card endpoint-delete">
+                            <div>
+                                <span class="endpoint-method method-delete">DELETE</span>
+                                <code>/api/v1/agents/{user_id}</code>
+                            </div>
+                            <p>Deletar um agente</p>
+                            <input type="text" placeholder="user_id" id="delete-user-id" style="margin: 10px 0;">
+                            <button class="btn btn-danger" onclick="deleteAgent(document.getElementById('delete-user-id').value)">🗑️ Deletar</button>
+                        </div>
+                    </div>
+
+                    <div id="endpoint-response"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="refresh-btn" onclick="loadAgents()" title="Atualizar Agentes">
+        🔄
+    </button>
+
+    <script>
+        const BASE_URL = 'http://localhost:8080';
+        const STRING_URL = 'http://localhost:8000';
+
+        // Verificar status dos serviços ao carregar
+        checkServicesStatus();
+
+        async function checkServicesStatus() {
+            try {
+                const agentsResponse = await fetch(`${BASE_URL}/health`);
+                const agentsStatus = document.getElementById('agents-status');
+                const agentsText = document.getElementById('agents-status-text');
+                
+                if (agentsResponse.ok) {
+                    agentsStatus.className = 'service-status status-online';
+                    agentsText.textContent = '🤖 Agents: Online';
+                } else {
+                    agentsStatus.className = 'service-status status-offline';
+                    agentsText.textContent = '🤖 Agents: Offline';
+                }
+            } catch (error) {
+                const agentsStatus = document.getElementById('agents-status');
+                const agentsText = document.getElementById('agents-status-text');
+                agentsStatus.className = 'service-status status-offline';
+                agentsText.textContent = '🤖 Agents: Offline';
+            }
+
+            try {
+                const stringResponse = await fetch(`${STRING_URL}/health`);
+                const stringStatus = document.getElementById('string-status');
+                const stringText = document.getElementById('string-status-text');
+                
+                if (stringResponse.ok) {
+                    stringStatus.className = 'service-status status-online';
+                    stringText.textContent = '🔤 String Comparison: Online';
+                } else {
+                    stringStatus.className = 'service-status status-offline';
+                    stringText.textContent = '🔤 String Comparison: Offline';
+                }
+            } catch (error) {
+                const stringStatus = document.getElementById('string-status');
+                const stringText = document.getElementById('string-status-text');
+                stringStatus.className = 'service-status status-offline';
+                stringText.textContent = '🔤 String Comparison: Offline';
+            }
+        }
+
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function showCreateTab(tabName) {
+            document.querySelectorAll('#create-tab .tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('#create-tab .tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.getElementById(tabName + '-create').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        async function loadAgents() {
+            const spinner = document.getElementById('load-agents-spinner');
+            const container = document.getElementById('agents-container');
+            
+            spinner.innerHTML = '<div class="loading"></div>';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/v1/agents`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    displayAgents(data.users || {});
+                } else {
+                    container.innerHTML = `<p style="color: red;">❌ Erro ao carregar agentes: ${data.error}</p>`;
+                }
+            } catch (error) {
+                container.innerHTML = `<p style="color: red;">❌ Erro de conexão: ${error.message}</p>`;
+            }
+            
+            spinner.innerHTML = '';
+        }
+
+        function displayAgents(agents) {
+            const container = document.getElementById('agents-container');
+            
+            if (Object.keys(agents).length === 0) {
+                container.innerHTML = '<p>📭 Nenhum agente encontrado. Crie um agente primeiro!</p>';
+                return;
+            }
+
+            let html = '';
+            for (const [userId, agentData] of Object.entries(agents)) {
+                const statusClass = agentData.status === 'ready' ? 'status-ready' : 
+                                  agentData.status === 'processing' ? 'status-processing' : 'status-error';
+                
+                // Calcular acurácia real do string comparison
+                let accuracy = 0;
+                let accuracySource = 'N/A';
+                
+                if (agentData.evaluation_results) {
+                    accuracy = (agentData.evaluation_results.average_string_similarity || 0) * 100;
+                    accuracySource = 'String Comparison Real';
+                } else if (agentData.test_results) {
+                    accuracy = (agentData.test_results.overall_similarity || 0) * 100;
+                    accuracySource = 'Teste Básico';
+                }
+
+                html += `
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <div class="agent-id">👤 ${userId}</div>
+                            <div class="agent-status ${statusClass}">${agentData.status}</div>
+                        </div>
+                        
+                        <div class="agent-metrics">
+                            <div class="metric">
+                                <span class="metric-label">🤖 Tipo:</span>
+                                <span class="metric-value">${agentData.training_type || 'basic'}</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">📅 Criado em:</span>
+                                <span class="metric-value">${new Date(agentData.created_at).toLocaleString()}</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">🎯 Acurácia (${accuracySource}):</span>
+                                <span class="metric-value">${accuracy.toFixed(2)}%</span>
+                            </div>
+                            ${agentData.dataset_size ? `
+                                <div class="metric">
+                                    <span class="metric-label">📊 Dataset:</span>
+                                    <span class="metric-value">${agentData.dataset_size} samples</span>
+                                </div>
+                            ` : ''}
+                            ${agentData.evaluation_results ? `
+                                <div class="metric">
+                                    <span class="metric-label">✅ Testes Bem-sucedidos:</span>
+                                    <span class="metric-value">${agentData.evaluation_results.successful_evaluations}/${agentData.evaluation_results.total_samples}</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">🟢 Alta Qualidade (>80%):</span>
+                                    <span class="metric-value">${agentData.evaluation_results.high_similarity_count || 0}</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                        
+                        <div class="accuracy-bar">
+                            <div class="accuracy-fill" style="width: ${accuracy}%"></div>
+                        </div>
+                        <div style="text-align: center; margin-top: 5px; font-size: 12px; color: #666;">
+                            Acurácia: ${accuracy.toFixed(2)}%
+                        </div>
+                        
+                        <div style="margin-top: 15px; display: flex; gap: 10px;">
+                            <button class="btn" onclick="getAgentDetails('${userId}')">📊 Detalhes</button>
+                            <button class="btn" onclick="testAgent('${userId}')">💬 Testar</button>
+                            <button class="btn btn-danger" onclick="deleteAgent('${userId}')">🗑️ Deletar</button>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+
+        async function createBasicAgent(event) {
+            event.preventDefault();
+            
+            const userId = document.getElementById('basic-user-id').value;
+            const trainingData = document.getElementById('basic-training-data').value;
+            const baseModel = document.getElementById('basic-base-model').value;
+            
+            const responseDiv = document.getElementById('basic-response');
+            responseDiv.innerHTML = '<div class="loading"></div> Criando agente...';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/v1/agents`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        user_id: userId,
+                        training_data: trainingData,
+                        base_model: baseModel
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-success">
+                            <h4>✅ Agente criado com sucesso!</h4>
+                            <p><strong>User ID:</strong> ${data.user_id}</p>
+                            <p><strong>Status:</strong> ${data.status}</p>
+                            <p><strong>Timestamp:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+                        </div>
+                    `;
+                    
+                    // Limpar formulário
+                    document.getElementById('basic-user-id').value = '';
+                    document.getElementById('basic-training-data').value = '';
+                } else {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-error">
+                            <h4>❌ Erro ao criar agente</h4>
+                            <p>${data.error}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                responseDiv.innerHTML = `
+                    <div class="response-container response-error">
+                        <h4>❌ Erro de conexão</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function createAdvancedAgent(event) {
+            event.preventDefault();
+            
+            const userId = document.getElementById('advanced-user-id').value;
+            const jsonDataset = document.getElementById('json-dataset').value;
+            
+            const responseDiv = document.getElementById('advanced-response');
+            responseDiv.innerHTML = '<div class="loading"></div> Criando agente avançado...';
+            
+            try {
+                let dataset;
+                try {
+                    dataset = JSON.parse(jsonDataset);
+                } catch (e) {
+                    throw new Error('JSON inválido no dataset');
+                }
+                
+                const response = await fetch(`${BASE_URL}/api/v1/agents/advanced`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        user_id: userId,
+                        json_dataset: dataset
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-success">
+                            <h4>✅ Agente avançado criado com sucesso!</h4>
+                            <p><strong>User ID:</strong> ${data.user_id}</p>
+                            <p><strong>Tipo:</strong> ${data.training_type}</p>
+                            <p><strong>Dataset Size:</strong> ${data.dataset_size}</p>
+                            <p><strong>String Comparison:</strong> ${data.string_comparison_enabled ? 'Habilitado' : 'Desabilitado'}</p>
+                            <p><strong>Timestamp:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+                        </div>
+                    `;
+                    
+                    // Limpar formulário
+                    document.getElementById('advanced-user-id').value = '';
+                    document.getElementById('json-dataset').value = '';
+                } else {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-error">
+                            <h4>❌ Erro ao criar agente avançado</h4>
+                            <p>${data.error}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                responseDiv.innerHTML = `
+                    <div class="response-container response-error">
+                        <h4>❌ Erro</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function makeInference() {
+            const userId = document.getElementById('test-user-id').value;
+            const prompt = document.getElementById('test-prompt').value;
+            
+            if (!userId || !prompt) {
+                alert('Por favor, preencha User ID e Pergunta');
+                return;
+            }
+            
+            const responseDiv = document.getElementById('test-response');
+            responseDiv.innerHTML = '<div class="loading"></div> Fazendo inferência...';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/v1/agents/${userId}/inference`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        prompt: prompt
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-success">
+                            <h4>🤖 Resposta do Agente:</h4>
+                            <p><strong>Pergunta:</strong> ${data.prompt}</p>
+                            <p><strong>Resposta:</strong> ${data.response}</p>
+                            <p><strong>Timestamp:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+                        </div>
+                    `;
+                } else {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-error">
+                            <h4>❌ Erro na inferência</h4>
+                            <p>${data.error}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                responseDiv.innerHTML = `
+                    <div class="response-container response-error">
+                        <h4>❌ Erro de conexão</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function evaluateModel() {
+            const userId = document.getElementById('test-user-id').value;
+            const testPrompt = document.getElementById('test-prompt').value;
+            const expectedAnswer = document.getElementById('expected-answer').value;
+            
+            if (!userId || !testPrompt || !expectedAnswer) {
+                alert('Por favor, preencha todos os campos para avaliação');
+                return;
+            }
+            
+            const responseDiv = document.getElementById('test-response');
+            responseDiv.innerHTML = '<div class="loading"></div> Avaliando modelo com string comparison...';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/v1/agents/${userId}/evaluate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        test_prompt: testPrompt,
+                        expected_answer: expectedAnswer
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.evaluation) {
+                    const eval_data = data.evaluation;
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-success">
+                            <h4>📈 Resultado da Avaliação (String Comparison)</h4>
+                            <p><strong>Pergunta:</strong> ${eval_data.test_prompt}</p>
+                            <p><strong>Resposta Esperada:</strong> ${eval_data.expected_answer}</p>
+                            <p><strong>Resposta do Modelo:</strong> ${eval_data.predicted_answer}</p>
+                            <hr>
+                            <h5>📊 Métricas de Similaridade:</h5>
+                            <p><strong>🎯 Similaridade Jaccard:</strong> ${(eval_data.jaccard_similarity * 100).toFixed(2)}%</p>
+                            <p><strong>🔤 Similaridade de Caracteres:</strong> ${(eval_data.character_similarity * 100).toFixed(2)}%</p>
+                            <p><strong>📏 Confiança do Modelo:</strong> ${(eval_data.model_confidence * 100).toFixed(2)}%</p>
+                            <p><strong>🏆 Similaridade Geral:</strong> ${(eval_data.overall_similarity * 100).toFixed(2)}%</p>
+                            
+                            <div class="accuracy-bar" style="margin-top: 15px;">
+                                <div class="accuracy-fill" style="width: ${eval_data.overall_similarity * 100}%"></div>
+                            </div>
+                            <div style="text-align: center; margin-top: 5px; font-weight: bold;">
+                                Acurácia Real: ${(eval_data.overall_similarity * 100).toFixed(2)}%
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-error">
+                            <h4>❌ Erro na avaliação</h4>
+                            <p>${data.error || 'Erro desconhecido'}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                responseDiv.innerHTML = `
+                    <div class="response-container response-error">
+                        <h4>❌ Erro de conexão</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function getAgentStatus() {
+            const userId = document.getElementById('test-user-id').value;
+            
+            if (!userId) {
+                alert('Por favor, preencha o User ID');
+                return;
+            }
+            
+            const responseDiv = document.getElementById('test-response');
+            responseDiv.innerHTML = '<div class="loading"></div> Carregando status...';
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/v1/agents/${userId}/status`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-success">
+                            <h4>📊 Status do Agente: ${userId}</h4>
+                            <div class="json-display">${JSON.stringify(data, null, 2)}</div>
+                        </div>
+                    `;
+                } else {
+                    responseDiv.innerHTML = `
+                        <div class="response-container response-error">
+                            <h4>❌ Erro ao obter status</h4>
+                            <p>${data.error}</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                responseDiv.innerHTML = `
+                    <div class="response-container response-error">
+                        <h4>❌ Erro de conexão</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function deleteAgent(userId) {
+            if (!userId) {
+                alert('Por favor, informe o User ID');
+                return;
+            }
+            
+            if (!confirm(`Tem certeza que deseja deletar o agente "${userId}"?`)) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`${BASE_URL}/api/v1/agents/${userId}`, {
+                    method: 'DELETE'
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    alert(`✅ Agente "${userId}" deletado com sucesso!`);
+                    loadAgents(); // Recarregar lista
+                } else {
+                    alert(`❌ Erro ao deletar agente: ${data.error}`);
+                }
+            } catch (error) {
+                alert(`❌ Erro de conexão: ${error.message}`);
+            }
+        }
+
+        async function testEndpoint(method, endpoint) {
+            const responseDiv = document.getElementById('endpoint-response');
+            responseDiv.innerHTML = `<div class="loading"></div> Testando ${method} ${endpoint}...`;
+            
+            try {
+                const response = await fetch(`${BASE_URL}${endpoint}`, {
+                    method: method
+                });
+                
+                const data = await response.json();
+                
+                responseDiv.innerHTML = `
+                    <div class="response-container ${response.ok ? 'response-success' : 'response-error'}">
+                        <h4>${response.ok ? '✅' : '❌'} ${method} ${endpoint}</h4>
+                        <p><strong>Status:</strong> ${response.status}</p>
+                        <div class="json-display">${JSON.stringify(data, null, 2)}</div>
+                    </div>
+                `;
+            } catch (error) {
+                responseDiv.innerHTML = `
+                    <div class="response-container response-error">
+                        <h4>❌ Erro de conexão</h4>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function getAgentDetails(userId) {
+            document.getElementById('test-user-id').value = userId;
+            showTab('test');
+            getAgentStatus();
+        }
+
+        function testAgent(userId) {
+            document.getElementById('test-user-id').value = userId;
+            showTab('test');
+        }
+
+        // Auto-reload agents every 30 seconds
+        setInterval(() => {
+            if (document.getElementById('agents-tab').classList.contains('active')) {
+                loadAgents();
+            }
+        }, 30000);
+    </script>
+</body>
+</html>

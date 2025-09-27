@@ -1,0 +1,18 @@
+{
+  "user_id": "agent_first",
+  "raw_data": "be a specialist in math",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre be a specialist in math?",
+      "answer": "be a specialist in math",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre be a specialist in math",
+      "answer": "be a specialist in math",
+      "type": "explanation"
+    }
+  ],
+  "processed_at": "2025-09-27T15:39:10.800166",
+  "total_pairs": 2
+}

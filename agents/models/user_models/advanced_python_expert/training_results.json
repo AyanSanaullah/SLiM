@@ -1,0 +1,15 @@
+{
+  "model_type": "qlora_finetuned",
+  "base_model": "distilbert-base-uncased",
+  "training_samples": 8,
+  "device": "cpu",
+  "training_time_minutes": 0.8,
+  "epochs": 3,
+  "learning_rate": 5e-05,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.1,
+  "trained_at": "2025-09-27T14:44:04.371904",
+  "cuda_available": false,
+  "gpu_count": 0
+}

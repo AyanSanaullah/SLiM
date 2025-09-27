@@ -1,0 +1,70 @@
+{
+  "metadata": {
+    "total_samples": 8,
+    "valid_samples": 8,
+    "invalid_samples": 0,
+    "avg_prompt_length": 28.125,
+    "avg_answer_length": 185.75,
+    "max_prompt_length": 36,
+    "max_answer_length": 201,
+    "processed_at": "2025-09-27T14:44:04.370602"
+  },
+  "data": [
+    {
+      "id": 0,
+      "prompt": "Como criar uma API REST com Flask?",
+      "answer": "Para criar uma API REST com Flask, use decoradores @app.route() para definir endpoints, retorne dados JSON com jsonify(), e configure métodos HTTP como GET, POST, PUT, DELETE.",
+      "prompt_length": 34,
+      "answer_length": 175
+    },
+    {
+      "id": 1,
+      "prompt": "O que é machine learning?",
+      "answer": "Machine learning é uma técnica de inteligência artificial que permite aos computadores aprenderem e tomarem decisões baseadas em dados, sem serem explicitamente programados para cada tarefa específica.",
+      "prompt_length": 25,
+      "answer_length": 201
+    },
+    {
+      "id": 2,
+      "prompt": "Como implementar autenticação JWT?",
+      "answer": "Para implementar JWT, instale flask-jwt-extended, configure uma chave secreta, crie endpoints para login que retornem tokens, e use @jwt_required() para proteger rotas que precisam de autenticação.",
+      "prompt_length": 34,
+      "answer_length": 197
+    },
+    {
+      "id": 3,
+      "prompt": "Qual a diferença entre SQL e NoSQL?",
+      "answer": "SQL databases usam esquemas fixos e relacionamentos estruturados, ideais para dados consistentes. NoSQL databases são mais flexíveis, suportam dados não estruturados e escalam horizontalmente melhor.",
+      "prompt_length": 35,
+      "answer_length": 199
+    },
+    {
+      "id": 4,
+      "prompt": "Como otimizar performance em Python?",
+      "answer": "Para otimizar Python, use list comprehensions, numpy para computação numérica, evite loops desnecessários, use generators para economizar memória, e considere Cython para código crítico.",
+      "prompt_length": 36,
+      "answer_length": 186
+    },
+    {
+      "id": 5,
+      "prompt": "O que é Docker?",
+      "answer": "Docker é uma plataforma de containerização que permite empacotar aplicações e suas dependências em containers leves e portáteis, garantindo consistência entre diferentes ambientes.",
+      "prompt_length": 15,
+      "answer_length": 180
+    },
+    {
+      "id": 6,
+      "prompt": "Como funciona o Git?",
+      "answer": "Git é um sistema de controle de versão distribuído que rastreia mudanças no código, permite colaboração através de branches, merges, e mantém histórico completo das alterações.",
+      "prompt_length": 20,
+      "answer_length": 176
+    },
+    {
+      "id": 7,
+      "prompt": "O que são design patterns?",
+      "answer": "Design patterns são soluções reutilizáveis para problemas comuns em desenvolvimento de software, como Singleton, Factory, Observer, que promovem código limpo e manutenível.",
+      "prompt_length": 26,
+      "answer_length": 172
+    }
+  ]
+}
