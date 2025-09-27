@@ -25,6 +25,8 @@ export default function Dashboard() {
   const [processingType, setProcessingType] = useState<'cloud' | 'gpu'>('cloud');
   const [processingStatus, setProcessingStatus] = useState<string>('');
   const [isProcessing, setIsProcessing] = useState(false);
+  const [gpuData, setGpuData] = useState<any>(null);
+  const [gpuGraphData, setGpuGraphData] = useState<any>(null);
   const [nodes, setNodes] = useState<MindMapNode[]>([
     // Core Training Nodes - Better distributed
     {
@@ -200,6 +202,41 @@ export default function Dashboard() {
     };
 
     loadChats();
+  }, []);
+
+  // GPU monitoring effect
+  useEffect(() => {
+    const fetchGpuData = async () => {
+      try {
+        // Fetch current GPU data
+        const currentResponse = await fetch('http://localhost:5001/gpu/current');
+        if (currentResponse.ok) {
+          const currentData = await currentResponse.json();
+          if (currentData.success) {
+            setGpuData(currentData.data);
+          }
+        }
+
+        // Fetch graph data
+        const graphResponse = await fetch('http://localhost:5001/gpu/graph');
+        if (graphResponse.ok) {
+          const graphData = await graphResponse.json();
+          if (graphData.success) {
+            setGpuGraphData(graphData.data);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching GPU data:', error);
+      }
+    };
+
+    // Initial fetch
+    fetchGpuData();
+
+    // Set up interval for live updates
+    const interval = setInterval(fetchGpuData, 2000); // Update every 2 seconds
+
+    return () => clearInterval(interval);
   }, []);
 
   // Simulate API data updates
@@ -653,52 +690,109 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Analysis Section */}
+          {/* GPU Monitoring Section */}
           <div className="mt-8">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-light">ANALYSIS</h3>
-            <select className="bg-gray-800 text-white px-2 py-1 text-sm border border-gray-600">
-              <option>1 Day</option>
-              <option>1 Week</option>
-              <option>1 Month</option>
-            </select>
+            <h3 className="text-xl font-light">GPU MONITORING</h3>
+            <div className="bg-gray-800 text-white px-2 py-1 text-sm border border-gray-600 rounded">
+              <span className="text-green-400">● LIVE</span>
+            </div>
           </div>
           <div className="flex items-center mb-4">
             <span className="text-white">[</span>
-            <span className="text-red-400 mx-2">• Heat Usage</span>
+            <span className="text-green-400 mx-2">• GPU Usage</span>
             <span className="text-white">]</span>
           </div>
+          
+          {/* GPU Stats */}
+          {gpuData && (
+            <div className="mb-4 grid grid-cols-2 gap-2 text-xs">
+              <div className="bg-gray-800/50 p-2 rounded">
+                <div className="text-gray-400">GPU</div>
+                <div className="text-white font-bold">{Math.round(gpuData.gpu_utilization || 0)}%</div>
+              </div>
+              <div className="bg-gray-800/50 p-2 rounded">
+                <div className="text-gray-400">Memory</div>
+                <div className="text-white font-bold">{Math.round(gpuData.memory_utilization || 0)}%</div>
+              </div>
+              <div className="bg-gray-800/50 p-2 rounded">
+                <div className="text-gray-400">Temp</div>
+                <div className="text-white font-bold">{Math.round(gpuData.temperature || 0)}°C</div>
+              </div>
+              <div className="bg-gray-800/50 p-2 rounded">
+                <div className="text-gray-400">Power</div>
+                <div className="text-white font-bold">{Math.round(gpuData.power_usage || 0)}W</div>
+              </div>
+            </div>
+          )}
           
           {/* Chart */}
           <div className="bg-transparent p-3">
             <div className="flex">
-              {/* Y-axis with temperature labels */}
+              {/* Y-axis with percentage labels */}
               <div className="flex flex-col justify-between h-28 mr-2 text-xs text-gray-400">
-                <span>100°C</span>
-                <span>80°C</span>
-                <span>60°C</span>
-                <span>40°C</span>
-                <span>20°C</span>
-                <span>0°C</span>
+                <span>100%</span>
+                <span>80%</span>
+                <span>60%</span>
+                <span>40%</span>
+                <span>20%</span>
+                <span>0%</span>
               </div>
               
               {/* Chart bars */}
               <div className="flex-1">
                 <div className="grid grid-cols-12 gap-1 h-28 items-end">
-                  {[20, 35, 45, 30, 50, 40, 35, 45, 40, 25, 30, 35].map((height, i) => (
-                    <div key={i} className="bg-red-500 rounded-t" style={{ height: `${height}%` }}></div>
-                  ))}
+                  {gpuGraphData && gpuGraphData.gpu_usage ? 
+                    gpuGraphData.gpu_usage.slice(-12).map((usage: number, i: number) => (
+                      <div
+                        key={i}
+                        className="bg-green-500 rounded-t transition-all duration-300"
+                        style={{ height: `${Math.max(usage, 2)}%` }}
+                        title={`GPU: ${usage}%`}
+                      ></div>
+                    )) :
+                    // Fallback bars if no data
+                    [5, 8, 12, 7, 15, 10, 8, 12, 10, 6, 8, 9].map((height, i) => (
+                      <div
+                        key={i}
+                        className="bg-gray-600 rounded-t"
+                        style={{ height: `${height}%` }}
+                      ></div>
+                    ))
+                  }
                 </div>
               </div>
             </div>
             <div className="flex justify-between text-xs text-gray-400 mt-1 ml-6">
-              <span>00:00</span>
-              <span>06:00</span>
-              <span>12:00</span>
-              <span>18:00</span>
-              <span>24:00</span>
+              {gpuGraphData && gpuGraphData.labels ? 
+                gpuGraphData.labels.slice(-5).map((label: string, i: number) => (
+                  <span key={i}>{label}</span>
+                )) :
+                <>
+                  <span>-40s</span>
+                  <span>-30s</span>
+                  <span>-20s</span>
+                  <span>-10s</span>
+                  <span>Now</span>
+                </>
+              }
             </div>
           </div>
+
+          {/* GPU Info */}
+          {gpuData && gpuData.name && (
+            <div className="mt-4 text-xs text-gray-400">
+              <div className="bg-gray-800/30 p-2 rounded">
+                <div className="text-white font-medium">{gpuData.name}</div>
+                {gpuData.memory_total > 0 && (
+                  <div>Memory: {Math.round(gpuData.memory_used)}MB / {Math.round(gpuData.memory_total)}MB</div>
+                )}
+                {gpuData.graphics_clock > 0 && (
+                  <div>Clock: {gpuData.graphics_clock}MHz</div>
+                )}
+              </div>
+            </div>
+          )}
           </div>
         </div>
         </div>
