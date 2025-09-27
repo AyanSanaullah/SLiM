@@ -1,0 +1,16 @@
+# GPU Monitoring Dependencies
+# Install with: pip install -r gpu_requirements.txt
+
+# NVIDIA GPU monitoring (primary)
+nvidia-ml-py>=12.535.133
+
+# Alternative GPU monitoring libraries
+# psutil>=5.9.0  # For basic system monitoring
+# GPUtil>=1.4.0  # Alternative NVIDIA GPU library
+
+# Optional: AMD GPU support
+# pyamdgpuinfo>=2.1.6  # For AMD GPU monitoring (if needed)
+
+# Core dependencies (should already be installed)
+# flask>=2.3.3
+# flask-cors>=4.0.0
