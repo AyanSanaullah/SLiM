@@ -1,0 +1,147 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ai_routing
+      POSTGRES_USER: ai_user
+      POSTGRES_PASSWORD: ai_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_user -d ai_routing"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ai_routing_network
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ai_routing_network
+
+  # Main API Service
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://ai_user:ai_password@postgres:5432/ai_routing
+      REDIS_URL: redis://redis:6379/0
+      LOG_LEVEL: INFO
+      METRICS_ENABLED: "true"
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    ports:
+      - "8000:8000"
+      - "8001:8001"  # Metrics port
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+      - ./models:/app/models
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - ai_routing_network
+    restart: unless-stopped
+
+  # Background Worker
+  worker:
+    build: .
+    command: ["python", "-m", "src.ai_routing.workers.rq_worker"]
+    environment:
+      DATABASE_URL: postgresql://ai_user:ai_password@postgres:5432/ai_routing
+      REDIS_URL: redis://redis:6379/0
+      LOG_LEVEL: INFO
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./logs:/app/logs
+      - ./models:/app/models
+    networks:
+      - ai_routing_network
+    restart: unless-stopped
+    deploy:
+      replicas: 2
+
+  # Database Migration Service (run once)
+  migration:
+    build: .
+    command: ["alembic", "upgrade", "head"]
+    environment:
+      DATABASE_URL: postgresql://ai_user:ai_password@postgres:5432/ai_routing
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - ai_routing_network
+    restart: "no"
+
+  # Prometheus (Optional - for metrics collection)
+  prometheus:
+    image: prom/prometheus:latest
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - ai_routing_network
+    profiles:
+      - monitoring
+
+  # Grafana (Optional - for metrics visualization)
+  grafana:
+    image: grafana/grafana:latest
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana:/etc/grafana/provisioning
+    networks:
+      - ai_routing_network
+    profiles:
+      - monitoring
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  ai_routing_network:
+    driver: bridge

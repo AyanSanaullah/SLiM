@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ai_routing
+      POSTGRES_USER: ai_user
+      POSTGRES_PASSWORD: ai_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_user -d ai_routing"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache & Queue
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Main API Service
+  api:
+    build: .
+    environment:
+      DB_URL: postgresql://ai_user:ai_password@postgres:5432/ai_routing
+      REDIS_URL: redis://redis:6379/0
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      GEMINI_MODEL: gemini-1.5-flash
+      ROUTER_FORCE_LLM: "false"
+      ROUTER_DISABLE_SLM: "false"
+      REPETITION_SIM_THRESHOLD: "0.90"
+      STORE_RAW_TEXT: "true"
+      LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+      - "8001:8001"  # Metrics
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./app:/app/app  # Hot reload for development
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Background Worker
+  worker:
+    build: .
+    command: ["python", "workers/worker.py"]
+    environment:
+      DB_URL: postgresql://ai_user:ai_password@postgres:5432/ai_routing
+      REDIS_URL: redis://redis:6379/0
+      LOG_LEVEL: INFO
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./app:/app/app
+      - ./workers:/app/workers
+
+volumes:
+  postgres_data:
+  redis_data:

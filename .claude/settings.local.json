@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(\"/c/Users/Ays/AppData/Local/Programs/Python/Python312/python.exe\" -m pip install -r requirements-light.txt)",
+      "Bash(set \"DB_URL=sqlite:///./ai_routing.db\")",
+      "Bash(set \"REDIS_URL=redis://localhost:6379/0\")",
+      "Bash(\"/c/Users/Ays/AppData/Local/Programs/Python/Python312/python.exe\" -m uvicorn app.main:app --reload --port 8000)",
+      "Bash(\"/c/Users/Ays/AppData/Local/Programs/Python/Python312/python.exe\" run_simple.py)",
+      "Bash(\"/c/Users/Ays/AppData/Local/Programs/Python\\Python312/python.exe\" run_simple.py)"
+    ],
+    "deny": [],
+    "ask": [],
+    "additionalDirectories": [
+      "C:\\c\\WINDOWS"
+    ]
+  }
+}
