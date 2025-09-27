@@ -1,0 +1,110 @@
+{
+  "overall_metrics": {
+    "total_samples": 2,
+    "successful_evaluations": 2,
+    "failed_evaluations": 0,
+    "average_string_similarity": 1.0000000596046448,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0000000596046448,
+    "min_string_similarity": 1.0000000596046448,
+    "high_similarity_count": 2,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-27T14:11:18.479721"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "Como criar API REST?",
+      "expected_answer": "Use Flask com @app.route()",
+      "model_response": "Use Flask com @app.route()",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Use Flask com @app.route()",
+        "sentence2": "Use Flask com @app.route()",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "@app.route",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: '@app.route' appears in both sentences"
+          },
+          {
+            "word": "com",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'com' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "O que é ML?",
+      "expected_answer": "Machine Learning é IA que aprende de dados",
+      "model_response": "Machine Learning é IA que aprende de dados",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Machine Learning é IA que aprende de dados",
+        "sentence2": "Machine Learning é IA que aprende de dados",
+        "word_analysis": [
+          {
+            "word": "dado",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dado' appears in both sentences"
+          },
+          {
+            "word": "learn",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learn' appears in both sentences"
+          },
+          {
+            "word": "machine",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'machine' appears in both sentences"
+          },
+          {
+            "word": "aprende",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'aprende' appears in both sentences"
+          }
+        ]
+      }
+    }
+  ]
+}

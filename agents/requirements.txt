@@ -1,0 +1,35 @@
+# Google ADK and Vertex AI dependencies
+google-adk>=1.15.0
+google-cloud-aiplatform>=1.117.0
+google-cloud-storage>=2.19.0
+google-cloud-logging>=3.12.0
+
+# Web framework integration
+flask>=2.3.3
+flask-cors>=4.0.0
+requests>=2.31.0
+
+# Environment and configuration
+python-dotenv>=1.0.0
+pyyaml>=6.0
+pydantic>=2.0.0
+
+# Async and concurrency
+aiohttp>=3.8.0
+
+# Machine Learning and Model Training
+scikit-learn>=1.3.0
+numpy>=1.24.0
+joblib>=1.3.0
+
+# Deep Learning and Transformers
+torch>=2.0.0
+transformers>=4.30.0
+peft>=0.4.0
+accelerate>=0.20.0
+
+# String comparison and similarity
+difflib
+
+# HTTP requests
+requests>=2.31.0

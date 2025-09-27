@@ -1,0 +1,69 @@
+# Alert Policies for ShellHacks ADK Agents
+# These policies will trigger alerts when certain conditions are met
+
+policies:
+  - displayName: "High Error Rate"
+    conditions:
+      - displayName: "Error rate > 5%"
+        conditionThreshold:
+          filter: 'resource.type="cloud_run_revision" AND resource.labels.service_name="shellhacks-adk-agents"'
+          comparison: COMPARISON_GREATER_THAN
+          thresholdValue: 0.05
+          duration: 300s
+          aggregations:
+            - alignmentPeriod: 60s
+              perSeriesAligner: ALIGN_RATE
+              crossSeriesReducer: REDUCE_MEAN
+    notificationChannels: []
+    alertStrategy:
+      autoClose: 86400s
+    enabled: true
+
+  - displayName: "High Response Time"
+    conditions:
+      - displayName: "Response time > 5 seconds"
+        conditionThreshold:
+          filter: 'resource.type="cloud_run_revision" AND resource.labels.service_name="shellhacks-adk-agents"'
+          comparison: COMPARISON_GREATER_THAN
+          thresholdValue: 5.0
+          duration: 300s
+          aggregations:
+            - alignmentPeriod: 60s
+              perSeriesAligner: ALIGN_MEAN
+              crossSeriesReducer: REDUCE_MEAN
+    notificationChannels: []
+    alertStrategy:
+      autoClose: 86400s
+    enabled: true
+
+  - displayName: "Low Request Rate"
+    conditions:
+      - displayName: "Request rate < 1 req/sec"
+        conditionThreshold:
+          filter: 'resource.type="cloud_run_revision" AND resource.labels.service_name="shellhacks-adk-agents"'
+          comparison: COMPARISON_LESS_THAN
+          thresholdValue: 1.0
+          duration: 600s
+          aggregations:
+            - alignmentPeriod: 60s
+              perSeriesAligner: ALIGN_RATE
+              crossSeriesReducer: REDUCE_SUM
+    notificationChannels: []
+    alertStrategy:
+      autoClose: 86400s
+    enabled: true
+
+  - displayName: "Service Down"
+    conditions:
+      - displayName: "No requests for 10 minutes"
+        conditionAbsent:
+          filter: 'resource.type="cloud_run_revision" AND resource.labels.service_name="shellhacks-adk-agents"'
+          duration: 600s
+          aggregations:
+            - alignmentPeriod: 60s
+              perSeriesAligner: ALIGN_RATE
+              crossSeriesReducer: REDUCE_SUM
+    notificationChannels: []
+    alertStrategy:
+      autoClose: 86400s
+    enabled: true

@@ -1,0 +1,785 @@
+{
+  "overall_metrics": {
+    "total_samples": 8,
+    "successful_evaluations": 8,
+    "failed_evaluations": 0,
+    "average_string_similarity": 1.0000000298023224,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0000001192092896,
+    "min_string_similarity": 1.0,
+    "high_similarity_count": 8,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-27T14:29:30.953114"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "Como criar uma API REST com Flask?",
+      "expected_answer": "Para criar uma API REST com Flask, use decoradores @app.route() para definir endpoints, retorne dados JSON com jsonify(), e configure métodos HTTP como GET, POST, PUT, DELETE.",
+      "model_response": "Para criar uma API REST com Flask, use decoradores @app.route() para definir endpoints, retorne dados JSON com jsonify(), e configure métodos HTTP como GET, POST, PUT, DELETE.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000001192092896,
+      "string_comparison_details": {
+        "similarity": 1.0000001192092896,
+        "sentence1": "Para criar uma API REST com Flask, use decoradores @app.route() para definir endpoints, retorne dados JSON com jsonify(), e configure métodos HTTP como GET, POST, PUT, DELETE.",
+        "sentence2": "Para criar uma API REST com Flask, use decoradores @app.route() para definir endpoints, retorne dados JSON com jsonify(), e configure métodos HTTP como GET, POST, PUT, DELETE.",
+        "word_analysis": [
+          {
+            "word": "decoradore",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'decoradore' appears in both sentences"
+          },
+          {
+            "word": "json",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'json' appears in both sentences"
+          },
+          {
+            "word": "configure",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'configure' appears in both sentences"
+          },
+          {
+            "word": "flask",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'flask' appears in both sentences"
+          },
+          {
+            "word": "para",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'para' appears in both sentences"
+          },
+          {
+            "word": "definir",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'definir' appears in both sentences"
+          },
+          {
+            "word": "rest",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rest' appears in both sentences"
+          },
+          {
+            "word": "dado",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dado' appears in both sentences"
+          },
+          {
+            "word": "jsonify",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jsonify' appears in both sentences"
+          },
+          {
+            "word": "método",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'método' appears in both sentences"
+          },
+          {
+            "word": "delete",
+            "pos_tag": "ADJ",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'delete' appears in both sentences"
+          },
+          {
+            "word": "com",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'com' appears in both sentences"
+          },
+          {
+            "word": "@app.route",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: '@app.route' appears in both sentences"
+          },
+          {
+            "word": "retorne",
+            "pos_tag": "ADJ",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'retorne' appears in both sentences"
+          },
+          {
+            "word": "use",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "O que é machine learning?",
+      "expected_answer": "Machine learning é uma técnica de inteligência artificial que permite aos computadores aprenderem e tomarem decisões baseadas em dados, sem serem explicitamente programados para cada tarefa específica.",
+      "model_response": "Machine learning é uma técnica de inteligência artificial que permite aos computadores aprenderem e tomarem decisões baseadas em dados, sem serem explicitamente programados para cada tarefa específica.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Machine learning é uma técnica de inteligência artificial que permite aos computadores aprenderem e tomarem decisões baseadas em dados, sem serem explicitamente programados para cada tarefa específica.",
+        "sentence2": "Machine learning é uma técnica de inteligência artificial que permite aos computadores aprenderem e tomarem decisões baseadas em dados, sem serem explicitamente programados para cada tarefa específica.",
+        "word_analysis": [
+          {
+            "word": "learn",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learn' appears in both sentences"
+          },
+          {
+            "word": "dado",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dado' appears in both sentences"
+          },
+          {
+            "word": "baseada",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'baseada' appears in both sentences"
+          },
+          {
+            "word": "artificial",
+            "pos_tag": "ADJ",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'artificial' appears in both sentences"
+          },
+          {
+            "word": "machine",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'machine' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "Como implementar autenticação JWT?",
+      "expected_answer": "Para implementar JWT, instale flask-jwt-extended, configure uma chave secreta, crie endpoints para login que retornem tokens, e use @jwt_required() para proteger rotas que precisam de autenticação.",
+      "model_response": "Para implementar JWT, instale flask-jwt-extended, configure uma chave secreta, crie endpoints para login que retornem tokens, e use @jwt_required() para proteger rotas que precisam de autenticação.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Para implementar JWT, instale flask-jwt-extended, configure uma chave secreta, crie endpoints para login que retornem tokens, e use @jwt_required() para proteger rotas que precisam de autenticação.",
+        "sentence2": "Para implementar JWT, instale flask-jwt-extended, configure uma chave secreta, crie endpoints para login que retornem tokens, e use @jwt_required() para proteger rotas que precisam de autenticação.",
+        "word_analysis": [
+          {
+            "word": "configure",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'configure' appears in both sentences"
+          },
+          {
+            "word": "para",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'para' appears in both sentences"
+          },
+          {
+            "word": "extend",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'extend' appears in both sentences"
+          },
+          {
+            "word": "e",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'e' appears in both sentences"
+          },
+          {
+            "word": "use",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "rota",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rota' appears in both sentences"
+          },
+          {
+            "word": "instale",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'instale' appears in both sentences"
+          },
+          {
+            "word": "@jwt_require",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: '@jwt_require' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "Qual a diferença entre SQL e NoSQL?",
+      "expected_answer": "SQL databases usam esquemas fixos e relacionamentos estruturados, ideais para dados consistentes. NoSQL databases são mais flexíveis, suportam dados não estruturados e escalam horizontalmente melhor.",
+      "model_response": "SQL databases usam esquemas fixos e relacionamentos estruturados, ideais para dados consistentes. NoSQL databases são mais flexíveis, suportam dados não estruturados e escalam horizontalmente melhor.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "SQL databases usam esquemas fixos e relacionamentos estruturados, ideais para dados consistentes. NoSQL databases são mais flexíveis, suportam dados não estruturados e escalam horizontalmente melhor.",
+        "sentence2": "SQL databases usam esquemas fixos e relacionamentos estruturados, ideais para dados consistentes. NoSQL databases são mais flexíveis, suportam dados não estruturados e escalam horizontalmente melhor.",
+        "word_analysis": [
+          {
+            "word": "para",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'para' appears in both sentences"
+          },
+          {
+            "word": "dado",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dado' appears in both sentences"
+          },
+          {
+            "word": "database",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'database' appears in both sentences"
+          },
+          {
+            "word": "sql",
+            "pos_tag": "ADJ",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sql' appears in both sentences"
+          },
+          {
+            "word": "suportam",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'suportam' appears in both sentences"
+          },
+          {
+            "word": "ideais",
+            "pos_tag": "ADJ",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'ideais' appears in both sentences"
+          },
+          {
+            "word": "consistente",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'consistente' appears in both sentences"
+          },
+          {
+            "word": "estruturado",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'estruturado' appears in both sentences"
+          },
+          {
+            "word": "não",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'não' appears in both sentences"
+          },
+          {
+            "word": "nosql",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'nosql' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "Como otimizar performance em Python?",
+      "expected_answer": "Para otimizar Python, use list comprehensions, numpy para computação numérica, evite loops desnecessários, use generators para economizar memória, e considere Cython para código crítico.",
+      "model_response": "Para otimizar Python, use list comprehensions, numpy para computação numérica, evite loops desnecessários, use generators para economizar memória, e considere Cython para código crítico.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Para otimizar Python, use list comprehensions, numpy para computação numérica, evite loops desnecessários, use generators para economizar memória, e considere Cython para código crítico.",
+        "sentence2": "Para otimizar Python, use list comprehensions, numpy para computação numérica, evite loops desnecessários, use generators para economizar memória, e considere Cython para código crítico.",
+        "word_analysis": [
+          {
+            "word": "generator",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'generator' appears in both sentences"
+          },
+          {
+            "word": "python",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'python' appears in both sentences"
+          },
+          {
+            "word": "numpy",
+            "pos_tag": "ADJ",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'numpy' appears in both sentences"
+          },
+          {
+            "word": "list",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'list' appears in both sentences"
+          },
+          {
+            "word": "loop",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'loop' appears in both sentences"
+          },
+          {
+            "word": "use",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "desnecessário",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'desnecessário' appears in both sentences"
+          },
+          {
+            "word": "comprehension",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'comprehension' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "prompt": "O que é Docker?",
+      "expected_answer": "Docker é uma plataforma de containerização que permite empacotar aplicações e suas dependências em containers leves e portáteis, garantindo consistência entre diferentes ambientes.",
+      "model_response": "Docker é uma plataforma de containerização que permite empacotar aplicações e suas dependências em containers leves e portáteis, garantindo consistência entre diferentes ambientes.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Docker é uma plataforma de containerização que permite empacotar aplicações e suas dependências em containers leves e portáteis, garantindo consistência entre diferentes ambientes.",
+        "sentence2": "Docker é uma plataforma de containerização que permite empacotar aplicações e suas dependências em containers leves e portáteis, garantindo consistência entre diferentes ambientes.",
+        "word_analysis": [
+          {
+            "word": "dependência",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dependência' appears in both sentences"
+          },
+          {
+            "word": "leve",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'leve' appears in both sentences"
+          },
+          {
+            "word": "que",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'que' appears in both sentences"
+          },
+          {
+            "word": "container",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'container' appears in both sentences"
+          },
+          {
+            "word": "containerização",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'containerização' appears in both sentences"
+          },
+          {
+            "word": "ambiente",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'ambiente' appears in both sentences"
+          },
+          {
+            "word": "diferente",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'diferente' appears in both sentences"
+          },
+          {
+            "word": "e",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'e' appears in both sentences"
+          },
+          {
+            "word": "empacotar",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'empacotar' appears in both sentences"
+          },
+          {
+            "word": "portáteis",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'portáteis' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "prompt": "Como funciona o Git?",
+      "expected_answer": "Git é um sistema de controle de versão distribuído que rastreia mudanças no código, permite colaboração através de branches, merges, e mantém histórico completo das alterações.",
+      "model_response": "Git é um sistema de controle de versão distribuído que rastreia mudanças no código, permite colaboração através de branches, merges, e mantém histórico completo das alterações.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Git é um sistema de controle de versão distribuído que rastreia mudanças no código, permite colaboração através de branches, merges, e mantém histórico completo das alterações.",
+        "sentence2": "Git é um sistema de controle de versão distribuído que rastreia mudanças no código, permite colaboração através de branches, merges, e mantém histórico completo das alterações.",
+        "word_analysis": [
+          {
+            "word": "branch",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'branch' appears in both sentences"
+          },
+          {
+            "word": "permite",
+            "pos_tag": "ADJ",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'permite' appears in both sentences"
+          },
+          {
+            "word": "mudanças",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'mudanças' appears in both sentences"
+          },
+          {
+            "word": "merge",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'merge' appears in both sentences"
+          },
+          {
+            "word": "código",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'código' appears in both sentences"
+          },
+          {
+            "word": "mantém",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'mantém' appears in both sentences"
+          },
+          {
+            "word": "alterações",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'alterações' appears in both sentences"
+          },
+          {
+            "word": "e",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'e' appears in both sentences"
+          },
+          {
+            "word": "colaboração",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'colaboração' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "prompt": "O que são design patterns?",
+      "expected_answer": "Design patterns são soluções reutilizáveis para problemas comuns em desenvolvimento de software, como Singleton, Factory, Observer, que promovem código limpo e manutenível.",
+      "model_response": "Design patterns são soluções reutilizáveis para problemas comuns em desenvolvimento de software, como Singleton, Factory, Observer, que promovem código limpo e manutenível.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Design patterns são soluções reutilizáveis para problemas comuns em desenvolvimento de software, como Singleton, Factory, Observer, que promovem código limpo e manutenível.",
+        "sentence2": "Design patterns são soluções reutilizáveis para problemas comuns em desenvolvimento de software, como Singleton, Factory, Observer, que promovem código limpo e manutenível.",
+        "word_analysis": [
+          {
+            "word": "manutenível",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'manutenível' appears in both sentences"
+          },
+          {
+            "word": "factory",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'factory' appears in both sentences"
+          },
+          {
+            "word": "observer",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'observer' appears in both sentences"
+          },
+          {
+            "word": "pattern",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pattern' appears in both sentences"
+          },
+          {
+            "word": "design",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'design' appears in both sentences"
+          },
+          {
+            "word": "desenvolvimento",
+            "pos_tag": "VERB",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'desenvolvimento' appears in both sentences"
+          },
+          {
+            "word": "comun",
+            "pos_tag": "NOUN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'comun' appears in both sentences"
+          }
+        ]
+      }
+    }
+  ]
+}
