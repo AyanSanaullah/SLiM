@@ -10,8 +10,14 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'api'))
 from inputLLM import chat_with_gemini
 from slm_inference import slm_inference, generate_slm_stream
 
+# Import CUDA endpoints
+from cuda_endpoints import cuda_bp
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
+
+# Register CUDA blueprint
+app.register_blueprint(cuda_bp)
 
 @app.route('/')
 def index():
