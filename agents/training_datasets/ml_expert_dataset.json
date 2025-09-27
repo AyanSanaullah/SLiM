@@ -1,0 +1,106 @@
+{
+  "user_id": "ml_expert",
+  "description": "Machine Learning expert with deep knowledge in algorithms, deep learning, NLP, and MLOps",
+  "training_data": [
+    {
+      "prompt": "How to choose between Random Forest and XGBoost?",
+      "answer": "Choose Random Forest for: interpretability, small datasets, quick prototyping. Choose XGBoost for: large datasets, high performance needs, structured data competitions. XGBoost generally outperforms but is less interpretable and requires more tuning.",
+      "category": "algorithm_selection"
+    },
+    {
+      "prompt": "What is overfitting and how to prevent it?",
+      "answer": "Overfitting occurs when model learns training data too well, performing poorly on new data. Prevention: 1) Cross-validation 2) Regularization (L1/L2) 3) Early stopping 4) Dropout (neural networks) 5) Feature selection 6) More training data 7) Simpler models 8) Data augmentation",
+      "category": "model_validation"
+    },
+    {
+      "prompt": "How to handle imbalanced datasets?",
+      "answer": "Imbalanced dataset solutions: 1) Resampling: SMOTE (oversampling), undersampling 2) Cost-sensitive learning: adjust class weights 3) Ensemble methods: balanced bagging 4) Anomaly detection approach 5) Threshold tuning 6) Evaluation metrics: F1-score, AUC, precision-recall curve",
+      "category": "data_preprocessing"
+    },
+    {
+      "prompt": "What are the steps for feature engineering?",
+      "answer": "Feature engineering steps: 1) Data exploration and understanding 2) Handle missing values (imputation, deletion) 3) Encode categorical variables (one-hot, label encoding) 4) Create new features (polynomial, interactions) 5) Scale features (standardization, normalization) 6) Feature selection (correlation, importance) 7) Dimensionality reduction (PCA, LDA)",
+      "category": "feature_engineering"
+    },
+    {
+      "prompt": "How to evaluate model performance?",
+      "answer": "Model evaluation metrics: 1) Classification: accuracy, precision, recall, F1-score, AUC-ROC 2) Regression: MAE, MSE, RMSE, R² 3) Cross-validation for robust estimates 4) Confusion matrix for detailed analysis 5) Learning curves to check bias/variance 6) Feature importance analysis",
+      "category": "model_evaluation"
+    },
+    {
+      "prompt": "What is deep learning and when to use it?",
+      "answer": "Deep learning uses neural networks with multiple hidden layers. Use when: 1) Large datasets (>10k samples) 2) Complex patterns (images, text, audio) 3) Feature learning needed 4) High computational resources available. Don't use for: small datasets, simple patterns, need interpretability.",
+      "category": "deep_learning"
+    },
+    {
+      "prompt": "How to implement a neural network with TensorFlow?",
+      "answer": "TensorFlow neural network: 1) import tensorflow as tf 2) Create model: model = tf.keras.Sequential([tf.keras.layers.Dense(128, activation='relu'), tf.keras.layers.Dropout(0.2), tf.keras.layers.Dense(10, activation='softmax')]) 3) Compile: model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']) 4) Train: model.fit(X_train, y_train, epochs=10, validation_split=0.2)",
+      "category": "deep_learning"
+    },
+    {
+      "prompt": "What is natural language processing (NLP)?",
+      "answer": "NLP enables computers to understand human language. Applications: text classification, sentiment analysis, machine translation, chatbots, summarization. Techniques: tokenization, stemming, lemmatization, TF-IDF, word embeddings (Word2Vec, GloVe), transformers (BERT, GPT). Libraries: NLTK, spaCy, transformers.",
+      "category": "nlp"
+    },
+    {
+      "prompt": "How to implement text classification?",
+      "answer": "Text classification pipeline: 1) Data preprocessing: cleaning, tokenization 2) Feature extraction: TF-IDF, word embeddings, or BERT embeddings 3) Model selection: Naive Bayes, SVM, neural networks 4) Training with cross-validation 5) Evaluation: accuracy, F1-score, confusion matrix. Use pre-trained models for better performance.",
+      "category": "nlp"
+    },
+    {
+      "prompt": "What is computer vision and its applications?",
+      "answer": "Computer vision enables machines to interpret visual data. Applications: image classification, object detection, face recognition, medical imaging, autonomous vehicles. Techniques: CNN, transfer learning, data augmentation, object detection (YOLO, R-CNN). Libraries: OpenCV, PIL, scikit-image, TensorFlow, PyTorch.",
+      "category": "computer_vision"
+    },
+    {
+      "prompt": "How to implement image classification?",
+      "answer": "Image classification steps: 1) Data preprocessing: resize, normalize, augment 2) Model architecture: CNN with Conv2D, MaxPooling2D, Dense layers 3) Transfer learning: use pre-trained models (ResNet, VGG, EfficientNet) 4) Fine-tuning: freeze early layers, train last layers 5) Evaluation: accuracy, confusion matrix 6) Inference: model.predict()",
+      "category": "computer_vision"
+    },
+    {
+      "prompt": "What is MLOps and why is it important?",
+      "answer": "MLOps applies DevOps principles to machine learning. Importance: 1) Reproducible experiments 2) Model versioning 3) Automated training pipelines 4) Model deployment and monitoring 5) Data drift detection 6) A/B testing. Tools: MLflow, Kubeflow, TensorFlow Extended, DVC, Weights & Biases.",
+      "category": "mlops"
+    },
+    {
+      "prompt": "How to deploy a machine learning model?",
+      "answer": "Model deployment options: 1) REST API: Flask/FastAPI with model loading 2) Container: Docker with model artifacts 3) Cloud platforms: AWS SageMaker, Google AI Platform, Azure ML 4) Edge deployment: TensorFlow Lite, ONNX 5) Batch processing: Apache Airflow 6) Real-time: streaming with Kafka, Redis",
+      "category": "deployment"
+    },
+    {
+      "prompt": "What is transfer learning?",
+      "answer": "Transfer learning uses pre-trained models on new tasks. Benefits: 1) Faster training 2) Better performance with less data 3) Reduced computational requirements. Approaches: 1) Feature extraction: freeze pre-trained layers, train classifier 2) Fine-tuning: unfreeze some layers, retrain with low learning rate",
+      "category": "deep_learning"
+    },
+    {
+      "prompt": "How to handle missing data in ML?",
+      "answer": "Missing data strategies: 1) Deletion: remove rows/columns with missing values 2) Imputation: mean/median/mode for numerical, mode for categorical 3) Advanced: KNN imputation, iterative imputation 4) Model-based: use algorithms that handle missing data (XGBoost) 5) Domain knowledge: business rules for imputation",
+      "category": "data_preprocessing"
+    },
+    {
+      "prompt": "What are ensemble methods?",
+      "answer": "Ensemble methods combine multiple models for better performance. Types: 1) Bagging: Bootstrap Aggregating (Random Forest) 2) Boosting: Sequential learning (AdaBoost, XGBoost) 3) Stacking: Meta-learner combines predictions 4) Voting: Majority vote or average predictions. Generally improve performance and reduce overfitting.",
+      "category": "ensemble_methods"
+    },
+    {
+      "prompt": "How to tune hyperparameters?",
+      "answer": "Hyperparameter tuning methods: 1) Grid search: exhaustive search over parameter grid 2) Random search: random sampling of parameters 3) Bayesian optimization: uses previous results to guide search 4) Automated tools: Optuna, Hyperopt 5) Early stopping to prevent overfitting during tuning",
+      "category": "hyperparameter_tuning"
+    },
+    {
+      "prompt": "What is cross-validation?",
+      "answer": "Cross-validation splits data into k folds, trains on k-1 folds, validates on 1 fold. Benefits: 1) Better performance estimate 2) Reduces overfitting 3) Uses all data for training and validation. Types: k-fold, stratified k-fold, time series split. Common: 5-fold or 10-fold CV.",
+      "category": "model_validation"
+    },
+    {
+      "prompt": "How to implement recommendation systems?",
+      "answer": "Recommendation systems: 1) Collaborative filtering: user-based or item-based similarity 2) Content-based: item features and user preferences 3) Hybrid: combines multiple approaches 4) Matrix factorization: SVD, NMF 5) Deep learning: neural collaborative filtering 6) Evaluation: RMSE, precision@k, recall@k",
+      "category": "recommender_systems"
+    },
+    {
+      "prompt": "What is reinforcement learning?",
+      "answer": "Reinforcement learning learns through interaction with environment. Components: agent, environment, state, action, reward. Algorithms: Q-learning, policy gradient, actor-critic. Applications: game playing, robotics, trading, recommendation systems. Libraries: OpenAI Gym, Stable Baselines, Ray RLLib.",
+      "category": "reinforcement_learning"
+    }
+  ]
+}

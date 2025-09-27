@@ -44,6 +44,16 @@ def show_help():
     print(f"   Basic System Test:        python3 test_agent_api.py")
     print(f"   List Agents:              python3 list_agents.py")
     
+    print(f"\n🤖 MULTI-AGENT TRAINING:")
+    print(f"   Train 5 Specialized Agents: python3 train_multiple_agents.py")
+    print(f"   Quick Start Multi-Agents:   python3 quick_start_multiple_agents.py")
+    
+    print(f"\n🧬 REINFORCED LEARNING & EVOLUTION:")
+    print(f"   Start Evolution (Easy):     python3 start_evolution.py")
+    print(f"   Full Evolution System:      python3 evolutionary_agent_optimizer.py")
+    print(f"   Reinforced Learning:        python3 reinforced_learning_system.py")
+    print(f"   Real-time Monitor:          python3 real_time_monitor.py")
+    
     print(f"\n🔍 MONITORING:")
     print(f"   Health Check Agents:      curl localhost:8080/health")
     print(f"   Health Check String:      curl localhost:8000/health")
@@ -59,6 +69,13 @@ def show_help():
     print(f"   Quick Commands:           cat QUICK_COMMANDS.md")
     print(f"   Complete Commands:        cat COMPLETE_COMMANDS.md")
     print(f"   Requests Guide:           cat REQUESTS_GUIDE.md")
+    
+    print(f"\n📊 TRAINING DATASETS:")
+    print(f"   Python Expert:            ls training_datasets/python_expert_dataset.json")
+    print(f"   ML Expert:                ls training_datasets/ml_expert_dataset.json")
+    print(f"   DevOps Expert:            ls training_datasets/devops_expert_dataset.json")
+    print(f"   Data Science Expert:      ls training_datasets/data_science_expert_dataset.json")
+    print(f"   Cybersecurity Expert:     ls training_datasets/cybersecurity_expert_dataset.json")
     
     print(f"\n🎯 QUICK EXAMPLES:")
     print(f"   1. Start services:")

@@ -1,0 +1,106 @@
+{
+  "user_id": "devops_expert",
+  "description": "DevOps expert with comprehensive knowledge in CI/CD, containerization, cloud platforms, and automation",
+  "training_data": [
+    {
+      "prompt": "How to setup CI/CD pipeline?",
+      "answer": "CI/CD pipeline setup: 1) Version control: Git repository 2) Build automation: compile, test, package 3) Automated testing: unit, integration, e2e tests 4) Code quality: linting, security scanning 5) Deployment: staging, production environments 6) Monitoring: health checks, rollback mechanisms. Tools: Jenkins, GitHub Actions, GitLab CI, Azure DevOps.",
+      "category": "cicd"
+    },
+    {
+      "prompt": "What is the difference between Docker and Kubernetes?",
+      "answer": "Docker is containerization platform - packages apps with dependencies into containers. Kubernetes is container orchestration - manages, scales, and deploys containers across clusters. Docker runs containers, Kubernetes orchestrates them. Use Docker for development, Kubernetes for production container management.",
+      "category": "containerization"
+    },
+    {
+      "prompt": "How to monitor application performance?",
+      "answer": "Application monitoring: 1) Metrics: CPU, memory, disk, network usage 2) Logs: centralized logging with ELK stack (Elasticsearch, Logstash, Kibana) 3) APM: Application Performance Monitoring (New Relic, Datadog, AppDynamics) 4) Alerting: thresholds, notifications via Slack/email 5) Dashboards: Grafana, custom dashboards 6) Health checks: endpoints, database connections",
+      "category": "monitoring"
+    },
+    {
+      "prompt": "What are the best practices for container security?",
+      "answer": "Container security best practices: 1) Use minimal base images (Alpine Linux) 2) Scan images for vulnerabilities 3) Run containers as non-root users 4) Limit container capabilities 5) Use secrets management 6) Network segmentation 7) Regular updates 8) Multi-stage builds to reduce attack surface 9) Use read-only filesystems when possible",
+      "category": "security"
+    },
+    {
+      "prompt": "How to implement blue-green deployment?",
+      "answer": "Blue-green deployment: 1) Maintain two identical production environments (blue, green) 2) Route traffic to blue (current version) 3) Deploy new version to green environment 4) Test green environment thoroughly 5) Switch traffic from blue to green 6) Keep blue as rollback option. Benefits: zero downtime, quick rollback, reduced risk.",
+      "category": "deployment"
+    },
+    {
+      "prompt": "What is Infrastructure as Code (IaC)?",
+      "answer": "Infrastructure as Code manages infrastructure through code. Benefits: 1) Version control for infrastructure 2) Reproducible environments 3) Automated provisioning 4) Documentation through code 5) Rollback capabilities. Tools: Terraform (multi-cloud), AWS CloudFormation, Azure Resource Manager, Google Deployment Manager, Ansible.",
+      "category": "infrastructure"
+    },
+    {
+      "prompt": "How to setup Kubernetes cluster?",
+      "answer": "Kubernetes cluster setup: 1) Choose deployment method: managed (EKS, GKE, AKS) or self-managed (kubeadm) 2) Configure master nodes: API server, etcd, scheduler, controller manager 3) Add worker nodes with kubelet, kube-proxy 4) Setup networking: CNI plugin (Flannel, Calico) 5) Configure storage: persistent volumes 6) Setup ingress controller 7) Configure RBAC and security policies",
+      "category": "kubernetes"
+    },
+    {
+      "prompt": "What is GitOps and how to implement it?",
+      "answer": "GitOps uses Git as single source of truth for declarative infrastructure and applications. Implementation: 1) Store infrastructure code in Git 2) Use tools like ArgoCD, Flux for continuous deployment 3) Automated synchronization between Git and cluster 4) Pull-based deployment model 5) Audit trail through Git history 6) Easy rollback through Git revert",
+      "category": "gitops"
+    },
+    {
+      "prompt": "How to implement microservices architecture?",
+      "answer": "Microservices architecture: 1) Decompose monolith into services 2) Each service owns its data 3) API gateway for routing 4) Service discovery (Consul, Eureka) 5) Load balancing and circuit breakers 6) Distributed tracing (Jaeger, Zipkin) 7) Centralized logging 8) Container orchestration (Kubernetes) 9) Event-driven communication",
+      "category": "architecture"
+    },
+    {
+      "prompt": "What is serverless computing?",
+      "answer": "Serverless computing runs code without managing servers. Benefits: 1) Auto-scaling 2) Pay-per-execution 3) No server management 4) Event-driven architecture. Platforms: AWS Lambda, Azure Functions, Google Cloud Functions. Use cases: APIs, data processing, event handling. Considerations: cold starts, vendor lock-in, execution time limits.",
+      "category": "serverless"
+    },
+    {
+      "prompt": "How to implement disaster recovery?",
+      "answer": "Disaster recovery strategy: 1) Backup strategy: regular backups, offsite storage 2) RTO/RPO definition: Recovery Time/Point Objectives 3) Multi-region deployment 4) Database replication 5) Automated failover mechanisms 6) Testing recovery procedures 7) Documentation and runbooks 8) Staff training on recovery procedures",
+      "category": "disaster_recovery"
+    },
+    {
+      "prompt": "What is configuration management?",
+      "answer": "Configuration management automates system configuration. Benefits: 1) Consistency across environments 2) Version control for configurations 3) Automated deployment 4) Reduced human errors. Tools: Ansible (agentless), Puppet (agent-based), Chef (Ruby-based), SaltStack. Use for: server setup, application deployment, environment management.",
+      "category": "configuration_management"
+    },
+    {
+      "prompt": "How to implement log management?",
+      "answer": "Log management implementation: 1) Centralized logging: ELK stack (Elasticsearch, Logstash, Kibana) or Splunk 2) Log aggregation: Fluentd, Filebeat 3) Log parsing and enrichment 4) Search and visualization: Kibana dashboards 5) Alerting on log patterns 6) Log retention policies 7) Security and compliance logging",
+      "category": "logging"
+    },
+    {
+      "prompt": "What is API Gateway and its benefits?",
+      "answer": "API Gateway is single entry point for API requests. Benefits: 1) Request routing to microservices 2) Authentication and authorization 3) Rate limiting and throttling 4) Request/response transformation 5) Monitoring and analytics 6) Caching 7) Load balancing. Tools: Kong, AWS API Gateway, Azure API Management, NGINX Plus.",
+      "category": "api_management"
+    },
+    {
+      "prompt": "How to implement security in DevOps?",
+      "answer": "DevSecOps integration: 1) Security scanning in CI/CD pipeline 2) Dependency scanning (OWASP, Snyk) 3) Static application security testing (SAST) 4) Dynamic application security testing (DAST) 5) Container security scanning 6) Infrastructure security compliance 7) Secrets management (HashiCorp Vault, AWS Secrets Manager) 8) Security training for developers",
+      "category": "security"
+    },
+    {
+      "prompt": "What is observability in DevOps?",
+      "answer": "Observability includes metrics, logs, and traces for system understanding. Components: 1) Metrics: time-series data (Prometheus, Grafana) 2) Logs: event records (ELK stack) 3) Traces: request flow (Jaeger, Zipkin) 4) Distributed tracing across microservices 5) Real-time dashboards 6) Alerting and incident response 7) Performance optimization insights",
+      "category": "observability"
+    },
+    {
+      "prompt": "How to implement auto-scaling?",
+      "answer": "Auto-scaling implementation: 1) Horizontal scaling: add/remove instances 2) Vertical scaling: increase/decrease instance size 3) Metrics-based: CPU, memory, request count 4) Schedule-based: predictable traffic patterns 5) Predictive scaling: ML-based forecasting. Tools: Kubernetes HPA, AWS Auto Scaling, Azure VM Scale Sets, Google Cloud Autoscaler.",
+      "category": "scaling"
+    },
+    {
+      "prompt": "What is chaos engineering?",
+      "answer": "Chaos engineering tests system resilience by injecting failures. Benefits: 1) Identify weaknesses before production 2) Build confidence in system reliability 3) Improve fault tolerance 4) Validate disaster recovery procedures. Tools: Chaos Monkey, Gremlin, Litmus. Practices: start small, monitor impact, gradually increase scope.",
+      "category": "reliability"
+    },
+    {
+      "prompt": "How to implement database DevOps?",
+      "answer": "Database DevOps practices: 1) Version control for database schemas 2) Database migration tools (Flyway, Liquibase) 3) Automated testing for database changes 4) Blue-green database deployments 5) Database backup and restore automation 6) Performance monitoring and optimization 7) Compliance and security scanning",
+      "category": "database_ops"
+    },
+    {
+      "prompt": "What is container orchestration?",
+      "answer": "Container orchestration automates container deployment, scaling, and management. Features: 1) Service discovery and load balancing 2) Automated rollouts and rollbacks 3) Secret and configuration management 4) Storage orchestration 5) Batch execution 6) Self-healing capabilities. Platforms: Kubernetes (most popular), Docker Swarm, Apache Mesos.",
+      "category": "orchestration"
+    }
+  ]
+}
