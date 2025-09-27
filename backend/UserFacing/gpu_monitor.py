@@ -202,6 +202,9 @@ class GPUMonitor:
     
     def monitor_loop(self):
         """Main monitoring loop"""
+        consecutive_errors = 0
+        max_consecutive_errors = 10
+        
         while self.is_monitoring:
             try:
                 gpu_info = self.get_gpu_info()
@@ -211,12 +214,28 @@ class GPUMonitor:
                     # Keep only the last N data points
                     if len(self.gpu_data) > self.max_data_points:
                         self.gpu_data.pop(0)
+                    
+                    # Reset error counter on success
+                    consecutive_errors = 0
+                else:
+                    consecutive_errors += 1
                 
                 time.sleep(2)  # Update every 2 seconds
                 
             except Exception as e:
+                consecutive_errors += 1
                 print(f"Error in monitoring loop: {e}")
-                time.sleep(5)  # Wait longer on error
+                
+                # If too many consecutive errors, increase sleep time
+                if consecutive_errors > max_consecutive_errors:
+                    print(f"Too many consecutive errors ({consecutive_errors}), slowing down monitoring...")
+                    time.sleep(10)  # Wait longer after many errors
+                else:
+                    time.sleep(5)  # Wait longer on error
+                
+                # Reset error counter if it gets too high
+                if consecutive_errors > max_consecutive_errors * 2:
+                    consecutive_errors = 0
     
     def start_monitoring(self):
         """Start GPU monitoring"""

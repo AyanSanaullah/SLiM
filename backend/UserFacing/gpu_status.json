@@ -1,0 +1,79 @@
+{
+  "timestamp": "2025-09-27T19:05:28.290034",
+  "current": {
+    "name": "No GPU Detected",
+    "gpu_utilization": 0,
+    "memory_utilization": 0,
+    "memory_used": 0,
+    "memory_total": 0,
+    "temperature": 0,
+    "power_usage": 0,
+    "graphics_clock": 0,
+    "memory_clock": 0,
+    "timestamp": "2025-09-27T19:05:26.311391"
+  },
+  "graph": {
+    "labels": [
+      "-18s",
+      "-16s",
+      "-14s",
+      "-12s",
+      "-10s",
+      "-8s",
+      "-6s",
+      "-4s",
+      "-2s",
+      "Now"
+    ],
+    "gpu_usage": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "memory_usage": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "temperature": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "current": {
+      "name": "No GPU Detected",
+      "gpu_utilization": 0,
+      "memory_utilization": 0,
+      "memory_used": 0,
+      "memory_total": 0,
+      "temperature": 0,
+      "power_usage": 0,
+      "graphics_clock": 0,
+      "memory_clock": 0,
+      "timestamp": "2025-09-27T19:05:26.311391"
+    }
+  },
+  "monitoring_active": true,
+  "update_count": 10
+}
