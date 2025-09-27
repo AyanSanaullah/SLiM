@@ -147,3 +147,4 @@ User Input → Next.js Frontend → LLM Backend (localhost:5000) → Streaming R
 - **Response format**: Streaming JSON with `data.text` fields
 
 Your Next.js chat interface now has the exact same LLM functionality as your HTML file, but integrated into your beautiful, professional chat UI with database persistence! 🎉
+

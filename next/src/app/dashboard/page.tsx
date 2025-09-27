@@ -20,14 +20,14 @@ export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [chats, setChats] = useState<Chat[]>([]);
   const [nodes, setNodes] = useState<MindMapNode[]>([
-    // Core Training Nodes
+    // Core Training Nodes - Better distributed
     {
       id: 'training-3',
       label: 'Training',
       sublabel: 'set 3',
       percentage: 98,
       color: 'from-green-400 via-green-500 to-emerald-600',
-      position: { x: '25%', y: '20%' }
+      position: { x: '20%', y: '15%' }
     },
     {
       id: 'training-2',
@@ -35,7 +35,7 @@ export default function Dashboard() {
       sublabel: 'set 2',
       percentage: 99,
       color: 'from-blue-400 via-blue-500 to-indigo-600',
-      position: { x: '75%', y: '20%' }
+      position: { x: '80%', y: '15%' }
     },
     {
       id: 'training-1',
@@ -43,17 +43,17 @@ export default function Dashboard() {
       sublabel: 'set 1',
       percentage: 96,
       color: 'from-purple-400 via-purple-500 to-violet-600',
-      position: { x: '20%', y: '75%' }
+      position: { x: '15%', y: '80%' }
     },
     
-    // Processing & Analysis
+    // Processing & Analysis - More spacing
     {
       id: 'processing',
       label: 'Process',
       sublabel: 'Node',
       percentage: 85,
       color: 'from-orange-400 via-red-500 to-pink-600',
-      position: { x: '80%', y: '75%' }
+      position: { x: '85%', y: '80%' }
     },
     {
       id: 'analysis',
@@ -61,17 +61,17 @@ export default function Dashboard() {
       sublabel: 'Engine',
       percentage: 92,
       color: 'from-cyan-400 via-teal-500 to-blue-600',
-      position: { x: '50%', y: '10%' }
+      position: { x: '50%', y: '8%' }
     },
     
-    // Neural Network Components
+    // Neural Network Components - Better spacing
     {
       id: 'neural-net',
       label: 'Neural',
       sublabel: 'Network',
       percentage: 94,
       color: 'from-indigo-400 via-purple-500 to-pink-600',
-      position: { x: '15%', y: '45%' }
+      position: { x: '8%', y: '45%' }
     },
     {
       id: 'transformer',
@@ -79,17 +79,17 @@ export default function Dashboard() {
       sublabel: 'Layer',
       percentage: 97,
       color: 'from-teal-400 via-cyan-500 to-blue-600',
-      position: { x: '85%', y: '45%' }
+      position: { x: '92%', y: '45%' }
     },
     
-    // Data Processing
+    // Data Processing - More spread out
     {
       id: 'tokenizer',
       label: 'Token',
       sublabel: 'Engine',
       percentage: 89,
       color: 'from-yellow-400 via-orange-500 to-red-600',
-      position: { x: '35%', y: '85%' }
+      position: { x: '30%', y: '90%' }
     },
     {
       id: 'embeddings',
@@ -97,17 +97,17 @@ export default function Dashboard() {
       sublabel: 'Vector',
       percentage: 91,
       color: 'from-rose-400 via-pink-500 to-purple-600',
-      position: { x: '65%', y: '85%' }
+      position: { x: '70%', y: '90%' }
     },
     
-    // Memory & Storage
+    // Memory & Storage - Edge positions
     {
       id: 'memory-bank',
       label: 'Memory',
       sublabel: 'Bank',
       percentage: 88,
       color: 'from-emerald-400 via-teal-500 to-cyan-600',
-      position: { x: '10%', y: '30%' }
+      position: { x: '5%', y: '25%' }
     },
     {
       id: 'cache-layer',
@@ -115,17 +115,17 @@ export default function Dashboard() {
       sublabel: 'Layer',
       percentage: 95,
       color: 'from-violet-400 via-purple-500 to-indigo-600',
-      position: { x: '90%', y: '30%' }
+      position: { x: '95%', y: '25%' }
     },
     
-    // Optimization & Performance
+    // Optimization & Performance - Mid-range spacing
     {
       id: 'optimizer',
       label: 'Optim',
       sublabel: 'Engine',
       percentage: 93,
       color: 'from-lime-400 via-green-500 to-emerald-600',
-      position: { x: '30%', y: '60%' }
+      position: { x: '25%', y: '65%' }
     },
     {
       id: 'scheduler',
@@ -133,17 +133,17 @@ export default function Dashboard() {
       sublabel: 'Manager',
       percentage: 87,
       color: 'from-amber-400 via-yellow-500 to-orange-600',
-      position: { x: '70%', y: '60%' }
+      position: { x: '75%', y: '65%' }
     },
     
-    // Security & Monitoring
+    // Security & Monitoring - Corner positions
     {
       id: 'security',
       label: 'Security',
       sublabel: 'Guard',
       percentage: 99,
       color: 'from-red-400 via-rose-500 to-pink-600',
-      position: { x: '12%', y: '60%' }
+      position: { x: '10%', y: '65%' }
     },
     {
       id: 'monitor',
@@ -151,17 +151,17 @@ export default function Dashboard() {
       sublabel: 'System',
       percentage: 90,
       color: 'from-sky-400 via-blue-500 to-indigo-600',
-      position: { x: '88%', y: '60%' }
+      position: { x: '90%', y: '65%' }
     },
     
-    // Advanced Features
+    // Advanced Features - Central and balanced
     {
       id: 'attention',
       label: 'Attention',
       sublabel: 'Mechanism',
       percentage: 96,
       color: 'from-fuchsia-400 via-purple-500 to-violet-600',
-      position: { x: '50%', y: '90%' }
+      position: { x: '50%', y: '92%' }
     },
     {
       id: 'inference',
@@ -169,7 +169,7 @@ export default function Dashboard() {
       sublabel: 'Engine',
       percentage: 94,
       color: 'from-cyan-400 via-blue-500 to-purple-600',
-      position: { x: '40%', y: '35%' }
+      position: { x: '35%', y: '30%' }
     },
     {
       id: 'fine-tune',
@@ -177,7 +177,7 @@ export default function Dashboard() {
       sublabel: 'Module',
       percentage: 86,
       color: 'from-green-400 via-emerald-500 to-teal-600',
-      position: { x: '60%', y: '35%' }
+      position: { x: '65%', y: '30%' }
     }
   ]);
 
@@ -210,10 +210,10 @@ export default function Dashboard() {
     return () => clearInterval(interval);
   }, []);
 
-  // Calculate node size based on percentage
+  // Calculate node size based on percentage (bigger nodes for better visibility)
   const getNodeSize = (percentage: number) => {
-    const minSize = 16; // 4rem = 64px
-    const maxSize = 28; // 7rem = 112px
+    const minSize = 19; // 3rem = 48px
+    const maxSize = 25; // 4.5rem = 72px
     const size = minSize + ((percentage - 70) / 30) * (maxSize - minSize);
     return Math.max(minSize, Math.min(maxSize, size));
   };
@@ -594,7 +594,7 @@ export default function Dashboard() {
           {/* Dynamic Space Nodes */}
           {nodes.map((node, index) => {
             const size = getNodeSize(node.percentage);
-            const nodeSize = size * 4;
+            const nodeSize = size * 3; // Reduced multiplier for smaller nodes
             
             // Define subtle muted backgrounds for each node
             const spaceBackgrounds = {
@@ -720,25 +720,27 @@ export default function Dashboard() {
                   <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50">
                     <div className="bg-black/90 border border-white/20 rounded-lg p-3 min-w-48 backdrop-blur-sm">
                       <div className="text-white text-sm font-medium mb-1">{node.label} {node.sublabel}</div>
-                      <div className="text-gray-300 text-xs mb-2">Performance: {Math.round(node.percentage)}%</div>
+                      <div className="text-gray-300 text-xs mb-2">Test ID: {node.id}</div>
                       <div className="space-y-1 text-xs">
                         <div className="flex justify-between">
-                          <span className="text-gray-400">Status:</span>
+                          <span className="text-gray-400">Accuracy:</span>
                           <span className={`${node.percentage > 95 ? 'text-green-400' : node.percentage > 85 ? 'text-yellow-400' : 'text-orange-400'}`}>
-                            {node.percentage > 95 ? 'Optimal' : node.percentage > 85 ? 'Good' : 'Moderate'}
+                            {Math.round(node.percentage)}%
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-400">Uptime:</span>
-                          <span className="text-white">{Math.floor(Math.random() * 24) + 1}h {Math.floor(Math.random() * 60)}m</span>
+                          <span className="text-gray-400">Status:</span>
+                          <span className={`${node.percentage > 95 ? 'text-green-400' : node.percentage > 85 ? 'text-yellow-400' : 'text-orange-400'}`}>
+                            {node.percentage > 95 ? 'Excellent' : node.percentage > 85 ? 'Good' : 'Needs Improvement'}
+                          </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-400">Load:</span>
-                          <span className="text-white">{Math.floor(node.percentage * 0.8)}%</span>
+                          <span className="text-gray-400">Test Type:</span>
+                          <span className="text-blue-400">{node.label.includes('Training') ? 'Training Set' : 'Processing Node'}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-gray-400">Memory:</span>
-                          <span className="text-white">{(Math.random() * 4 + 2).toFixed(1)} GB</span>
+                          <span className="text-gray-400">Samples:</span>
+                          <span className="text-white">{Math.floor(Math.random() * 500) + 100}</span>
                         </div>
                       </div>
                       {/* Tooltip arrow */}
@@ -822,14 +824,12 @@ export default function Dashboard() {
                       ></div>
                     </div>
                     
-                    {/* Content */}
+                    {/* Content - Only showing accuracy */}
                     <div className="relative z-10 text-center">
-                      <div className="text-white text-xs font-light tracking-wider drop-shadow-lg">{node.label}</div>
-                      <div className="text-white text-xs font-light tracking-wider drop-shadow-lg">{node.sublabel}</div>
                       <div 
                         className="text-white font-bold tracking-wide drop-shadow-lg"
                         style={{ 
-                          fontSize: `${Math.max(12, size / 2)}px`,
+                          fontSize: `${Math.max(12, size / 2.5)}px`,
                           textShadow: `0 0 8px ${node.color.split(' ')[1]}, 0 0 16px ${node.color.split(' ')[1]}/50`
                         }}
                       >
