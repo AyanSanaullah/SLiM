@@ -218,7 +218,7 @@ def start_backend_service():
     try:
         # Check if backend is already running
         import requests
-        response = requests.get('http://localhost:5001/gpu/current', timeout=2)
+        response = requests.get('http://localhost:5001/test', timeout=2)
         if response.status_code == 200:
             print("✅ Backend service already running on port 5001")
             return True
@@ -226,27 +226,45 @@ def start_backend_service():
         pass
     
     try:
+        # Set environment to use port 5001
+        env = os.environ.copy()
+        env['PORT'] = '5001'
+        
+        # Determine Python executable (prefer virtual environment)
+        venv_python = os.path.join(os.path.dirname(__file__), 'venv', 'bin', 'python')
+        if os.path.exists(venv_python):
+            python_cmd = venv_python
+            print("✅ Using virtual environment Python")
+        else:
+            python_cmd = sys.executable
+            print("⚠️ Using system Python")
+        
         # Start the backend in a separate process
         backend_process = subprocess.Popen([
-            sys.executable, 'app.py'
-        ], cwd=os.path.dirname(__file__))
+            python_cmd, 'app.py'
+        ], cwd=os.path.dirname(__file__), env=env)
         
-        # Wait a moment for it to start
-        time.sleep(3)
+        print(f"🚀 Backend starting (PID: {backend_process.pid})...")
         
-        # Test if it's running
-        import requests
-        response = requests.get('http://localhost:5001/gpu/current', timeout=5)
-        if response.status_code == 200:
-            print("✅ Backend service started successfully on port 5001")
-            return True
-        else:
-            print("❌ Backend service started but not responding correctly")
-            return False
+        # Wait for it to start and test multiple times
+        for i in range(10):
+            time.sleep(1)
+            try:
+                import requests
+                response = requests.get('http://localhost:5001/test', timeout=2)
+                if response.status_code == 200:
+                    print("✅ Backend service started successfully on port 5001")
+                    return True
+            except:
+                pass
+            print(f"⏳ Waiting for backend to start... ({i+1}/10)")
+        
+        print("❌ Backend service failed to start properly")
+        return False
             
     except Exception as e:
         print(f"❌ Error starting backend service: {e}")
-        print("💡 You may need to start it manually: python app.py")
+        print("💡 Try manually: cd backend/UserFacing && python start_backend.py")
         return False
 
 def stop_existing_service():

@@ -1059,7 +1059,7 @@ export default function Dashboard() {
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-400">Samples:</span>
-                          <span className="text-white">{Math.floor(Math.random() * 500) + 100}</span>
+                          <span className="text-white">{Math.floor((node.percentage * 5) + 100)}</span>
                         </div>
                       </div>
                       {/* Tooltip arrow */}

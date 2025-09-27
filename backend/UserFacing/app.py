@@ -447,4 +447,5 @@ def stop_gpu_monitoring():
         return jsonify({'success': False, 'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    port = int(os.getenv('PORT', 5001))  # Default to 5001 to match frontend
+    app.run(debug=True, host='0.0.0.0', port=port)
