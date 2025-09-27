@@ -307,40 +307,77 @@ class SupabaseChatService {
     }
   }
 
-  // Send message and get AI response
-  async sendMessage(message: string, chatId: string): Promise<ChatResponse> {
+  // Send message and get AI response with streaming support
+  async sendMessage(message: string, chatId: string, onStream?: (text: string) => void): Promise<ChatResponse> {
     try {
       // Save user message first
       await this.saveMessage(chatId, message, true);
 
-      // Try to get AI response from API
+      // Try to get AI response from LLM backend
       try {
-        const response = await fetch('/api/chat', {
+        const response = await fetch('http://localhost:5000/run_llm', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ message, chatId }),
+          body: JSON.stringify({ prompt: message }),
         });
 
-        const data = await response.json();
-
         if (!response.ok) {
-          throw new Error(data.error || 'Failed to get AI response');
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        let fullResponse = '';
+
+        // Handle streaming response
+        if (response.body && onStream) {
+          const reader = response.body.getReader();
+          const decoder = new TextDecoder();
+          let buffer = '';
+
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop() || ''; // Keep the last incomplete line
+
+            for (const line of lines) {
+              if (line.startsWith('data: ')) {
+                try {
+                  const data = JSON.parse(line.slice(6));
+                  
+                  if (data.text) {
+                    fullResponse += data.text;
+                    onStream(data.text); // Stream to UI
+                  } else if (data.error) {
+                    throw new Error(data.error);
+                  }
+                } catch (e) {
+                  // Skip invalid JSON lines
+                }
+              }
+            }
+          }
+        } else {
+          // Fallback for non-streaming
+          const data = await response.json();
+          fullResponse = data.response || data.text || 'No response received';
         }
 
         // Save AI response
-        await this.saveMessage(chatId, data.response, false);
+        await this.saveMessage(chatId, fullResponse, false);
 
         return {
           success: true,
-          response: data.response,
+          response: fullResponse,
           chatId: chatId,
           timestamp: new Date().toISOString(),
         };
 
       } catch (apiError) {
-        console.error('AI API error, using fallback:', apiError);
+        console.error('LLM API error, using fallback:', apiError);
         
         // Generate fallback response
         const fallbackResponses = [
@@ -442,6 +479,36 @@ class SupabaseChatService {
       timestamp: new Date().toISOString(),
       chatId,
     };
+  }
+
+  // Test LLM backend connection
+  async testLLMBackend(): Promise<{ success: boolean; message: string }> {
+    try {
+      const response = await fetch('http://localhost:5000/test', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+
+      if (response.ok) {
+        const data = await response.text();
+        return {
+          success: true,
+          message: `LLM Backend is running! Response: ${data}`
+        };
+      } else {
+        return {
+          success: false,
+          message: `LLM Backend responded with status: ${response.status}`
+        };
+      }
+    } catch (error) {
+      return {
+        success: false,
+        message: `Error connecting to LLM backend: ${error instanceof Error ? error.message : 'Unknown error'}`
+      };
+    }
   }
 
   // Check Supabase connection

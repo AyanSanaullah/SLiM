@@ -144,6 +144,20 @@ export default function Home() {
     router.push('/dashboard');
   };
 
+  const testBackend = async () => {
+    console.log('🔍 Testing LLM backend connection...');
+    const result = await supabaseChatService.testLLMBackend();
+    
+    if (result.success) {
+      console.log('✅ LLM Backend test successful:', result.message);
+    } else {
+      console.log('❌ LLM Backend test failed:', result.message);
+    }
+    
+    // You could also show this in the UI if needed
+    alert(result.message);
+  };
+
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
 
@@ -160,34 +174,86 @@ export default function Home() {
 
       setCurrentView('chat');
 
-      // Send message and get response through Supabase service
-      const response = await supabaseChatService.sendMessage(currentInput, chatId);
+      // Add user message immediately
+      const userMessage: Message = {
+        id: `user_${Date.now()}`,
+        text: currentInput,
+        isUser: true,
+        timestamp: new Date().toISOString(),
+        chatId: chatId,
+      };
+
+      setMessages(prev => [...prev, userMessage]);
+
+      // Create AI message placeholder for streaming
+      const aiMessageId = `ai_${Date.now()}`;
+      const aiMessage: Message = {
+        id: aiMessageId,
+        text: "",
+        isUser: false,
+        timestamp: new Date().toISOString(),
+        chatId: chatId,
+      };
+
+      setMessages(prev => [...prev, aiMessage]);
+
+      // Send message with streaming support
+      const response = await supabaseChatService.sendMessage(
+        currentInput, 
+        chatId,
+        // Streaming callback - updates AI message in real-time
+        (streamText: string) => {
+          setMessages(prev => 
+            prev.map(msg => 
+              msg.id === aiMessageId 
+                ? { ...msg, text: msg.text + streamText }
+                : msg
+            )
+          );
+        }
+      );
       
       if (response.success) {
-        // Reload chat to get updated messages from database
-        const updatedChat = await supabaseChatService.getChat(chatId);
-        if (updatedChat) {
-          setMessages(updatedChat.messages);
+        // Update the final message with complete response
+        setMessages(prev => 
+          prev.map(msg => 
+            msg.id === aiMessageId 
+              ? { ...msg, text: response.response }
+              : msg
+          )
+        );
+
+        // Update chats state
+        setChats(prevChats => {
+          const existingChatIndex = prevChats.findIndex(chat => chat.id === chatId);
+          const updatedMessages = [...messages, userMessage, { ...aiMessage, text: response.response }];
           
-          // Update the chat in our local state
-          setChats(prevChats => {
-            const existingChatIndex = prevChats.findIndex(chat => chat.id === chatId);
-            if (existingChatIndex >= 0) {
-              // Update existing chat
-              const newChats = [...prevChats];
-              newChats[existingChatIndex] = updatedChat;
-              return newChats;
-            } else {
-              // Add new chat
-              return [...prevChats, updatedChat];
-            }
-          });
-        }
+          if (existingChatIndex >= 0) {
+            const newChats = [...prevChats];
+            newChats[existingChatIndex] = { ...newChats[existingChatIndex], messages: updatedMessages };
+            return newChats;
+          } else {
+            return [...prevChats, {
+              id: chatId,
+              title: currentInput.length > 30 ? currentInput.substring(0, 30) + "..." : currentInput,
+              messages: updatedMessages,
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString()
+            }];
+          }
+        });
         
-        console.log('Message sent successfully to Supabase:', response);
+        console.log('✅ Message sent successfully with LLM backend:', response);
       } else {
-        console.error('Failed to send message:', response.error);
-        // The service already handles fallback responses, so we don't need to do anything here
+        console.error('❌ Failed to send message:', response.error);
+        // Update AI message with error
+        setMessages(prev => 
+          prev.map(msg => 
+            msg.id === aiMessageId 
+              ? { ...msg, text: "Sorry, I encountered an error. Please try again." }
+              : msg
+          )
+        );
       }
       
     } catch (error) {
@@ -314,8 +380,12 @@ export default function Home() {
         {/* Spacer */}
         <div className="flex-1"></div>
 
-        {/* Settings Icon */}
-        <button className="p-3 text-white hover:text-gray-300 transition-colors">
+        {/* Settings Icon - Test Backend */}
+        <button 
+          onClick={testBackend}
+          className="p-3 text-white hover:text-gray-300 transition-colors"
+          title="Test LLM Backend Connection"
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
