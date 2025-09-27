@@ -29,7 +29,7 @@ peft>=0.4.0
 accelerate>=0.20.0
 
 # String comparison and similarity
-difflib
+# difflib is built-in Python library
 
 # HTTP requests
 requests>=2.31.0

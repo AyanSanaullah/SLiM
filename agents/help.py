@@ -1,252 +1,229 @@
 #!/usr/bin/env python3
 """
-Script de ajuda que mostra todos os comandos disponíveis no projeto
+Help script that shows all available commands in the project
 """
 
 import sys
 import requests
 
 def show_help():
-    """Mostra menu de ajuda com todos os comandos"""
+    """Shows help menu with all commands"""
     
-    print("🚀 SHELLHACKS AGENTS - COMANDOS DISPONÍVEIS")
+    print("🚀 SHELLHACKS AGENTS - AVAILABLE COMMANDS")
     print("=" * 60)
     
-    # Verificar status dos serviços
+    # Check service status
     agents_status = check_service("http://localhost:8080/health", "Agents Service")
     string_status = check_service("http://localhost:8000/health", "String Comparison")
     
-    print(f"\n📊 STATUS DOS SERVIÇOS:")
+    print(f"\n📊 SERVICE STATUS:")
     print(f"   Agents Service (8080): {'🟢 Online' if agents_status else '🔴 Offline'}")
     print(f"   String Comparison (8000): {'🟢 Online' if string_status else '🔴 Offline'}")
     
-    print(f"\n🔧 COMANDOS DE INICIALIZAÇÃO:")
-    print(f"   Iniciar Agents:           python3 app.py")
-    print(f"   Iniciar String Compare:   cd ../string-comparison && python3 backend.py")
-    print(f"   Iniciar Ambos:            ./start_services.sh")
+    print(f"\n🔧 INITIALIZATION COMMANDS:")
+    print(f"   Start Agents:             python3 app.py")
+    print(f"   Start String Compare:     cd ../string-comparison && python3 backend.py")
+    print(f"   Start Both:               ./start_services.sh")
     
-    print(f"\n🤖 CRIAR AGENTES:")
-    print(f"   Agente Básico:            curl -X POST localhost:8080/api/v1/agents -H 'Content-Type: application/json' -d '{{\"user_id\": \"expert\", \"training_data\": \"Sou especialista em...\"}}'")
-    print(f"   Agente Avançado:          curl -X POST localhost:8080/api/v1/agents/advanced -H 'Content-Type: application/json' -d '{{\"user_id\": \"advanced\", \"json_dataset\": [...]}}'")
+    print(f"\n🤖 CREATE AGENTS:")
+    print(f"   Basic Agent:              curl -X POST localhost:8080/api/v1/agents -H 'Content-Type: application/json' -d '{{\"user_id\": \"expert\", \"training_data\": \"I am an expert in...\"}}'")
+    print(f"   Advanced Agent:           curl -X POST localhost:8080/api/v1/agents/advanced -H 'Content-Type: application/json' -d '{{\"user_id\": \"advanced\", \"json_dataset\": [...]}}'")
     
-    print(f"\n📋 GERENCIAMENTO:")
-    print(f"   Listar Agentes:           curl localhost:8080/api/v1/agents")
-    print(f"   Status do Agente:         curl localhost:8080/api/v1/agents/USER_ID/status")
-    print(f"   Pipeline do Agente:       curl localhost:8080/api/v1/agents/USER_ID/pipeline")
-    print(f"   Deletar Agente:           curl -X DELETE localhost:8080/api/v1/agents/USER_ID")
+    print(f"\n📋 MANAGEMENT:")
+    print(f"   List Agents:              curl localhost:8080/api/v1/agents")
+    print(f"   Agent Status:             curl localhost:8080/api/v1/agents/USER_ID/status")
+    print(f"   Agent Pipeline:           curl localhost:8080/api/v1/agents/USER_ID/pipeline")
+    print(f"   Delete Agent:             curl -X DELETE localhost:8080/api/v1/agents/USER_ID")
     
-    print(f"\n💬 INFERÊNCIA:")
-    print(f"   Fazer Pergunta:           curl -X POST localhost:8080/api/v1/agents/USER_ID/inference -H 'Content-Type: application/json' -d '{{\"prompt\": \"Sua pergunta\"}}'")
-    print(f"   Avaliar Resposta:         curl -X POST localhost:8080/api/v1/agents/USER_ID/evaluate -H 'Content-Type: application/json' -d '{{\"test_prompt\": \"...\", \"expected_answer\": \"...\"}}'")
+    print(f"\n💬 INFERENCE:")
+    print(f"   Ask Question:             curl -X POST localhost:8080/api/v1/agents/USER_ID/inference -H 'Content-Type: application/json' -d '{{\"prompt\": \"Your question\"}}'")
+    print(f"   Evaluate Response:        curl -X POST localhost:8080/api/v1/agents/USER_ID/evaluate -H 'Content-Type: application/json' -d '{{\"test_prompt\": \"...\", \"expected_answer\": \"...\"}}'")
     
-    print(f"\n🧪 TESTES AUTOMÁTICOS:")
-    print(f"   Teste Sistema Avançado:   python3 test_advanced_system.py")
-    print(f"   Teste Sistema Básico:     python3 test_agent_api.py")
-    print(f"   Listar Agentes:           python3 listar_agentes.py")
+    print(f"\n🧪 AUTOMATED TESTS:")
+    print(f"   Advanced System Test:     python3 test_advanced_system.py")
+    print(f"   Basic System Test:        python3 test_agent_api.py")
+    print(f"   List Agents:              python3 list_agents.py")
     
-    print(f"\n🔍 MONITORAMENTO:")
+    print(f"\n🔍 MONITORING:")
     print(f"   Health Check Agents:      curl localhost:8080/health")
     print(f"   Health Check String:      curl localhost:8000/health")
-    print(f"   Ver Configuração:         curl localhost:8080/api/v1/config")
+    print(f"   View Configuration:       curl localhost:8080/api/v1/config")
     
-    print(f"\n📚 DOCUMENTAÇÃO:")
-    print(f"   Comandos Completos:       cat COMANDOS_COMPLETOS.md")
-    print(f"   Comandos Rápidos:         cat COMANDOS_RAPIDOS.md")
-    print(f"   Como Usar:                cat COMO_USAR.md")
-    print(f"   README Principal:         cat README.md")
+    print(f"\n🛠️ DEBUG AND CLEANUP:")
+    print(f"   Stop Services:            killall Python")
+    print(f"   View Processes:           ps aux | grep python")
+    print(f"   Clean Data:               rm -rf data/user_data/* models/user_models/* logs/user_logs/*")
     
-    print(f"\n🛠️ UTILITÁRIOS:")
-    print(f"   Setup Inicial:            ./setup.sh")
-    print(f"   Deploy Cloud:             ./deploy.sh cloud-run")
-    print(f"   Parar Serviços:           killall Python")
-    print(f"   Limpar Dados:             rm -rf data/user_data/* models/user_models/* logs/user_logs/*")
+    print(f"\n📚 DOCUMENTATION:")
+    print(f"   How to Use:               cat HOW_TO_USE.md")
+    print(f"   Quick Commands:           cat QUICK_COMMANDS.md")
+    print(f"   Complete Commands:        cat COMPLETE_COMMANDS.md")
+    print(f"   Requests Guide:           cat REQUESTS_GUIDE.md")
     
-    print(f"\n💡 EXEMPLOS RÁPIDOS:")
-    show_examples()
+    print(f"\n🎯 QUICK EXAMPLES:")
+    print(f"   1. Start services:")
+    print(f"      python3 app.py")
+    print(f"      cd ../string-comparison && python3 backend.py")
+    print(f"   ")
+    print(f"   2. Create agent:")
+    print(f"      curl -X POST localhost:8080/api/v1/agents \\")
+    print(f"        -H 'Content-Type: application/json' \\")
+    print(f"        -d '{{\"user_id\": \"expert\", \"training_data\": \"I am a Python expert...\"}}'")
+    print(f"   ")
+    print(f"   3. Ask question:")
+    print(f"      curl -X POST localhost:8080/api/v1/agents/expert/inference \\")
+    print(f"        -H 'Content-Type: application/json' \\")
+    print(f"        -d '{{\"prompt\": \"How to create a REST API?\"}}'")
     
-    print(f"\n❓ Para mais detalhes, veja:")
-    print(f"   📖 COMANDOS_COMPLETOS.md - Documentação completa")
-    print(f"   ⚡ COMANDOS_RAPIDOS.md - Comandos essenciais")
-    print(f"   🎯 COMO_USAR.md - Guia prático")
+    print(f"\n💡 TIPS:")
+    print(f"   - Always check service status before creating agents")
+    print(f"   - Wait for 'ready' status before asking questions")
+    print(f"   - Use advanced agents for better performance")
+    print(f"   - Check logs for debugging issues")
+    
+    print(f"\n🔗 USEFUL LINKS:")
+    print(f"   - Documentation: README.md")
+    print(f"   - API Examples: test_agent_api.py")
+    print(f"   - Advanced Tests: test_advanced_system.py")
 
 def check_service(url, name):
-    """Verifica se um serviço está online"""
+    """Check if a service is running"""
     try:
         response = requests.get(url, timeout=2)
         return response.status_code == 200
     except:
         return False
 
-def show_examples():
-    """Mostra exemplos práticos"""
-    print(f"\n   🐍 Python Expert:")
-    print(f"   curl -X POST localhost:8080/api/v1/agents/advanced \\")
-    print(f"     -H 'Content-Type: application/json' \\")
-    print(f"     -d '{{")
-    print(f"       \"user_id\": \"python_expert\",")
-    print(f"       \"json_dataset\": [")
-    print(f"         {{\"prompt\": \"Como criar API?\", \"answer\": \"Use Flask com @app.route()\"}},")
-    print(f"         {{\"prompt\": \"O que é Django?\", \"answer\": \"Framework web Python\"}}") 
-    print(f"       ]")
-    print(f"     }}'")
+def show_service_status():
+    """Show detailed service status"""
+    print("🔍 CHECKING SERVICE STATUS...")
+    print("=" * 40)
     
-    print(f"\n   🔧 DevOps Expert:")
-    print(f"   curl -X POST localhost:8080/api/v1/agents/advanced \\")
-    print(f"     -H 'Content-Type: application/json' \\")
-    print(f"     -d '{{")
-    print(f"       \"user_id\": \"devops_expert\",")
-    print(f"       \"json_dataset\": [")
-    print(f"         {{\"prompt\": \"Como usar Docker?\", \"answer\": \"Docker cria containers\"}},")
-    print(f"         {{\"prompt\": \"O que é CI/CD?\", \"answer\": \"Integração e deploy contínuo\"}}") 
-    print(f"       ]")
-    print(f"     }}'")
+    services = [
+        ("Agents Service", "http://localhost:8080/health"),
+        ("String Comparison", "http://localhost:8000/health")
+    ]
+    
+    for name, url in services:
+        try:
+            response = requests.get(url, timeout=2)
+            if response.status_code == 200:
+                print(f"✅ {name}: Online")
+                try:
+                    data = response.json()
+                    if 'version' in data:
+                        print(f"   Version: {data['version']}")
+                    if 'status' in data:
+                        print(f"   Status: {data['status']}")
+                except:
+                    pass
+            else:
+                print(f"❌ {name}: Offline (Status: {response.status_code})")
+        except requests.exceptions.ConnectionError:
+            print(f"❌ {name}: Offline (Connection refused)")
+        except Exception as e:
+            print(f"❌ {name}: Offline (Error: {e}")
+        print()
 
-def interactive_menu():
-    """Menu interativo para comandos"""
-    while True:
-        print(f"\n🎮 MENU INTERATIVO")
-        print(f"1. Ver status dos serviços")
-        print(f"2. Listar agentes")
-        print(f"3. Criar agente básico")
-        print(f"4. Fazer pergunta")
-        print(f"5. Executar teste automático")
-        print(f"6. Ver documentação")
-        print(f"0. Sair")
-        
-        choice = input(f"\n➤ Escolha uma opção: ").strip()
-        
-        if choice == '1':
-            check_services()
-        elif choice == '2':
-            list_agents()
-        elif choice == '3':
-            create_basic_agent()
-        elif choice == '4':
-            make_inference()
-        elif choice == '5':
-            run_test()
-        elif choice == '6':
-            show_docs()
-        elif choice == '0':
-            print("👋 Saindo...")
-            break
-        else:
-            print("❌ Opção inválida")
+def show_agent_examples():
+    """Show agent creation examples"""
+    print("🤖 AGENT CREATION EXAMPLES")
+    print("=" * 40)
+    
+    print("1. Basic Agent (Simple text training):")
+    print("""
+curl -X POST localhost:8080/api/v1/agents \\
+  -H 'Content-Type: application/json' \\
+  -d '{
+    "user_id": "python_expert",
+    "training_data": "I am a Python expert with experience in Flask, Django, FastAPI. I can help with web development, data analysis and machine learning.",
+    "base_model": "distilbert-base-uncased"
+  }'
+""")
+    
+    print("2. Advanced Agent (JSON dataset + QLoRA):")
+    print("""
+curl -X POST localhost:8080/api/v1/agents/advanced \\
+  -H 'Content-Type: application/json' \\
+  -d '{
+    "user_id": "advanced_expert",
+    "json_dataset": [
+      {"prompt": "How to create REST API?", "answer": "Use Flask with @app.route() decorators"},
+      {"prompt": "What is Django?", "answer": "Django is a Python web framework"},
+      {"prompt": "How to use pandas?", "answer": "Pandas is for data analysis and manipulation"}
+    ],
+    "base_model": "distilbert-base-uncased"
+  }'
+""")
 
-def check_services():
-    """Verifica status dos serviços"""
-    print(f"\n🔍 Verificando serviços...")
+def show_inference_examples():
+    """Show inference examples"""
+    print("💬 INFERENCE EXAMPLES")
+    print("=" * 40)
     
-    agents_status = check_service("http://localhost:8080/health", "Agents")
-    string_status = check_service("http://localhost:8000/health", "String Comparison")
+    print("1. Ask a question:")
+    print("""
+curl -X POST localhost:8080/api/v1/agents/python_expert/inference \\
+  -H 'Content-Type: application/json' \\
+  -d '{"prompt": "How to create a REST API with Flask?"}'
+""")
     
-    print(f"Agents Service: {'🟢 Online' if agents_status else '🔴 Offline'}")
-    print(f"String Comparison: {'🟢 Online' if string_status else '🔴 Offline'}")
-    
-    if not agents_status:
-        print(f"💡 Para iniciar: python3 app.py")
-    if not string_status:
-        print(f"💡 Para iniciar: cd ../string-comparison && python3 backend.py")
+    print("2. Evaluate response:")
+    print("""
+curl -X POST localhost:8080/api/v1/agents/python_expert/evaluate \\
+  -H 'Content-Type: application/json' \\
+  -d '{
+    "test_prompt": "How to create Flask API?",
+    "expected_answer": "Use Flask with @app.route decorators"
+  }'
+""")
 
-def list_agents():
-    """Lista agentes existentes"""
-    try:
-        response = requests.get("http://localhost:8080/api/v1/agents")
-        if response.status_code == 200:
-            data = response.json()
-            users = data.get('users', {})
-            print(f"\n📋 Agentes encontrados ({len(users)}):")
-            for user_id, info in users.items():
-                status = info.get('status', 'unknown')
-                training_type = info.get('training_type', 'basic')
-                print(f"   - {user_id}: {status} ({training_type})")
-        else:
-            print(f"❌ Erro ao listar agentes")
-    except:
-        print(f"❌ Não foi possível conectar ao serviço")
-
-def create_basic_agent():
-    """Cria um agente básico interativamente"""
-    user_id = input("➤ User ID: ").strip()
-    if not user_id:
-        print("❌ User ID é obrigatório")
-        return
+def show_troubleshooting():
+    """Show troubleshooting tips"""
+    print("🚨 TROUBLESHOOTING")
+    print("=" * 40)
     
-    expertise = input("➤ Área de expertise: ").strip()
-    if not expertise:
-        expertise = "programação"
-    
-    training_data = f"Sou especialista em {expertise}. Posso ajudar com dúvidas e explicações sobre este assunto."
-    
-    try:
-        response = requests.post(
-            "http://localhost:8080/api/v1/agents",
-            json={
-                "user_id": user_id,
-                "training_data": training_data
-            }
-        )
-        if response.status_code == 201:
-            print(f"✅ Agente '{user_id}' criado com sucesso!")
-        else:
-            print(f"❌ Erro ao criar agente: {response.json()}")
-    except:
-        print(f"❌ Não foi possível conectar ao serviço")
-
-def make_inference():
-    """Faz inferência interativamente"""
-    user_id = input("➤ User ID do agente: ").strip()
-    if not user_id:
-        print("❌ User ID é obrigatório")
-        return
-    
-    prompt = input("➤ Sua pergunta: ").strip()
-    if not prompt:
-        print("❌ Pergunta é obrigatória")
-        return
-    
-    try:
-        response = requests.post(
-            f"http://localhost:8080/api/v1/agents/{user_id}/inference",
-            json={"prompt": prompt}
-        )
-        if response.status_code == 200:
-            result = response.json()
-            print(f"\n🤖 Resposta: {result['response']}")
-        else:
-            print(f"❌ Erro: {response.json()}")
-    except:
-        print(f"❌ Não foi possível conectar ao serviço")
-
-def run_test():
-    """Executa teste automático"""
-    import subprocess
-    print(f"\n🧪 Executando teste automático...")
-    try:
-        subprocess.run(["python3", "test_advanced_system.py"])
-    except:
-        print(f"❌ Erro ao executar teste")
-
-def show_docs():
-    """Mostra documentação disponível"""
-    print(f"\n📚 Documentação disponível:")
-    print(f"   - COMANDOS_COMPLETOS.md: Guia completo com todos os comandos")
-    print(f"   - COMANDOS_RAPIDOS.md: Comandos essenciais para uso diário")
-    print(f"   - COMO_USAR.md: Guia prático de uso")
-    print(f"   - README.md: Visão geral do projeto")
-    print(f"   - GUIA_REQUESTS.md: Como fazer requests para os modelos")
+    print("Common Issues:")
+    print("1. Connection refused:")
+    print("   - Check if server is running: python3 app.py")
+    print("   - Check port availability: lsof -i :8080")
+    print()
+    print("2. Model not ready:")
+    print("   - Wait for training to complete")
+    print("   - Check status: curl localhost:8080/api/v1/agents/USER_ID/status")
+    print()
+    print("3. User not found:")
+    print("   - Create agent first")
+    print("   - List agents: curl localhost:8080/api/v1/agents")
+    print()
+    print("4. String comparison not working:")
+    print("   - Start service: cd ../string-comparison && python3 backend.py")
+    print("   - Check health: curl localhost:8000/health")
 
 def main():
-    """Função principal"""
+    """Main function"""
     if len(sys.argv) > 1:
-        if sys.argv[1] == "--interactive" or sys.argv[1] == "-i":
-            interactive_menu()
-        elif sys.argv[1] == "--services" or sys.argv[1] == "-s":
-            check_services()
-        elif sys.argv[1] == "--agents" or sys.argv[1] == "-a":
-            list_agents()
+        command = sys.argv[1].lower()
+        
+        if command == "status":
+            show_service_status()
+        elif command == "examples":
+            show_agent_examples()
+        elif command == "inference":
+            show_inference_examples()
+        elif command == "troubleshoot":
+            show_troubleshooting()
+        elif command == "all":
+            show_help()
+            print("\n" + "="*60)
+            show_service_status()
         else:
-            print(f"Uso: python3 help.py [--interactive|-i] [--services|-s] [--agents|-a]")
+            print("❌ Unknown command. Available commands:")
+            print("   status       - Show service status")
+            print("   examples     - Show agent examples")
+            print("   inference    - Show inference examples")
+            print("   troubleshoot - Show troubleshooting tips")
+            print("   all          - Show complete help")
     else:
         show_help()
 

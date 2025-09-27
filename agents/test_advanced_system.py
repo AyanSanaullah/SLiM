@@ -21,7 +21,7 @@ def test_advanced_training_system():
     
     base_url = "http://localhost:8080"
     
-    # Verificar se servidor está rodando
+    # Check if server is running
     try:
         response = requests.get(f"{base_url}/health")
         if response.status_code != 200:
@@ -32,7 +32,7 @@ def test_advanced_training_system():
         print("❌ Não foi possível conectar ao servidor")
         return
     
-    # Verificar se string-comparison está rodando
+    # Check if string-comparison is running
     try:
         response = requests.get("http://0.0.0.0:8000/health")
         if response.status_code == 200:
@@ -83,7 +83,7 @@ def test_advanced_training_system():
     
     print(f"\n🤖 Criando agent AVANÇADO com {len(json_dataset)} samples...")
     
-    # Criar agent avançado
+    # Create advanced agent
     create_response = requests.post(
         f"{base_url}/api/v1/agents/advanced",
         json={
@@ -176,7 +176,7 @@ def test_advanced_training_system():
     ]
     
     for prompt in test_prompts:
-        print(f"\n🤔 Pergunta: {prompt}")
+        print(f"\n🤔 Question: {prompt}")
         
         inference_response = requests.post(
             f"{base_url}/api/v1/agents/{user_id}/inference",
@@ -186,7 +186,7 @@ def test_advanced_training_system():
         if inference_response.status_code == 200:
             result = inference_response.json()
             response = result['response']
-            print(f"🤖 Resposta: {response}")
+            print(f"🤖 Answer: {response}")
         else:
             print(f"❌ Erro na inferência: {inference_response.json()}")
         

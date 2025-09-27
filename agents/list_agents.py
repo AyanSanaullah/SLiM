@@ -1,39 +1,39 @@
 #!/usr/bin/env python3
 """
-Script simples para listar os agentes existentes no projeto
+Simple script to list existing agents in the project
 """
 
 import requests
 import json
 
-def listar_agentes():
-    """Lista todos os agentes ativos"""
+def list_agents():
+    """List all active agents"""
     base_url = "http://localhost:8080"
     
     try:
-        # Verificar se o servidor está rodando
+        # Check if server is running
         health_response = requests.get(f"{base_url}/health", timeout=5)
         if health_response.status_code != 200:
-            print("❌ Servidor não está rodando. Execute: python3 app.py")
+            print("❌ Server is not running. Run: python3 app.py")
             return
         
-        print("✅ Servidor está funcionando!")
+        print("✅ Server is working!")
         
-        # Listar agentes
+        # List agents
         response = requests.get(f"{base_url}/api/v1/agents")
         
         if response.status_code == 200:
             data = response.json()
             total = data.get('total_users', 0)
             
-            print(f"\n📋 Total de agentes ativos: {total}")
+            print(f"\n📋 Total active agents: {total}")
             
             if total == 0:
-                print("   Nenhum agent encontrado.")
-                print("   Para criar um agent, use:")
-                print("   python3 exemplo_rapido.py")
+                print("   No agents found.")
+                print("   To create an agent, use:")
+                print("   python3 quick_example.py")
             else:
-                print("\n🤖 Agentes encontrados:")
+                print("\n🤖 Agents found:")
                 print("-" * 50)
                 
                 users = data.get('users', {})
@@ -42,7 +42,7 @@ def listar_agentes():
                     created_at = info.get('created_at', 'unknown')
                     base_model = info.get('base_model', 'unknown')
                     
-                    # Formatar data
+                    # Format date
                     if created_at != 'unknown':
                         try:
                             from datetime import datetime
@@ -54,33 +54,33 @@ def listar_agentes():
                     print(f"👤 User ID: {user_id}")
                     print(f"   Status: {status}")
                     print(f"   Base Model: {base_model}")
-                    print(f"   Criado em: {created_at}")
+                    print(f"   Created at: {created_at}")
                     
                     if 'model_ready_at' in info:
-                        print(f"   Modelo pronto em: {info['model_ready_at']}")
+                        print(f"   Model ready at: {info['model_ready_at']}")
                     
                     if 'training_data_size' in info:
-                        print(f"   Tamanho dos dados: {info['training_data_size']} caracteres")
+                        print(f"   Data size: {info['training_data_size']} characters")
                     
                     print("-" * 50)
                 
-                print(f"\n💡 Para fazer perguntas a um agent:")
+                print(f"\n💡 To ask questions to an agent:")
                 print(f"   curl -X POST {base_url}/api/v1/agents/USER_ID/inference \\")
                 print(f"     -H 'Content-Type: application/json' \\")
-                print(f"     -d '{{\"prompt\": \"Sua pergunta aqui\"}}'")
+                print(f"     -d '{{\"prompt\": \"Your question here\"}}'")
         
         else:
             error_data = response.json()
-            print(f"❌ Erro ao listar agentes: {error_data.get('error', 'Erro desconhecido')}")
+            print(f"❌ Error listing agents: {error_data.get('error', 'Unknown error')}")
             
     except requests.exceptions.ConnectionError:
-        print("❌ Não foi possível conectar ao servidor.")
-        print("   Certifique-se de que o servidor está rodando:")
+        print("❌ Could not connect to server.")
+        print("   Make sure the server is running:")
         print("   python3 app.py")
     except Exception as e:
-        print(f"❌ Erro: {e}")
+        print(f"❌ Error: {e}")
 
 if __name__ == "__main__":
-    print("🔍 Listando agentes existentes...")
+    print("🔍 Listing existing agents...")
     print("=" * 40)
-    listar_agentes()
+    list_agents()

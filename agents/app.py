@@ -78,7 +78,7 @@ def home():
                 'url': '/api/v1/agents',
                 'body': {
                     'user_id': 'python_expert',
-                    'training_data': 'Sou especialista em Python...',
+                    'training_data': 'I am a Python expert...',
                     'base_model': 'distilbert-base-uncased'
                 }
             },
