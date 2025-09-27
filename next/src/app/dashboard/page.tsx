@@ -19,6 +19,11 @@ export default function Dashboard() {
   const router = useRouter();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [chats, setChats] = useState<Chat[]>([]);
+  const [showProcessingModal, setShowProcessingModal] = useState(false);
+  const [hasNvidiaGpu, setHasNvidiaGpu] = useState<boolean | null>(null);
+  const [processingType, setProcessingType] = useState<'cloud' | 'gpu'>('cloud');
+  const [processingStatus, setProcessingStatus] = useState<string>('');
+  const [isProcessing, setIsProcessing] = useState(false);
   const [nodes, setNodes] = useState<MindMapNode[]>([
     // Core Training Nodes - Better distributed
     {
@@ -218,6 +223,165 @@ export default function Dashboard() {
     return Math.max(minSize, Math.min(maxSize, size));
   };
 
+  // GPU Detection Function
+  const detectNvidiaGpu = async (): Promise<boolean> => {
+    try {
+      // Check if WebGL is available and get GPU info
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      
+      if (!gl) {
+        console.log('WebGL not supported');
+        return false;
+      }
+
+      const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+      if (!debugInfo) {
+        console.log('GPU debug info not available');
+        return false;
+      }
+
+      const renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+      const vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+      
+      console.log('GPU Renderer:', renderer);
+      console.log('GPU Vendor:', vendor);
+
+      // Check for NVIDIA in renderer or vendor strings
+      const hasNvidia = renderer.toLowerCase().includes('nvidia') || 
+                       vendor.toLowerCase().includes('nvidia') ||
+                       renderer.toLowerCase().includes('geforce') ||
+                       renderer.toLowerCase().includes('quadro') ||
+                       renderer.toLowerCase().includes('tesla');
+
+      return hasNvidia;
+    } catch (error) {
+      console.error('Error detecting GPU:', error);
+      return false;
+    }
+  };
+
+  // Cloud Processing Function (current implementation)
+  const runCloudProcessing = async () => {
+    setProcessingStatus('Initializing cloud processing...');
+    setIsProcessing(true);
+
+    try {
+      // Simulate cloud processing steps (replace with actual cloud API calls)
+      setProcessingStatus('Connecting to cloud services...');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      setProcessingStatus('Processing with cloud LLM...');
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      setProcessingStatus('Generating results...');
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      setProcessingStatus('Cloud processing completed successfully!');
+      
+      // Navigate to main chat after successful processing
+      setTimeout(() => {
+        router.push('/');
+      }, 1000);
+
+    } catch (error) {
+      console.error('Cloud processing error:', error);
+      setProcessingStatus('Cloud processing failed. Please try again.');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  // GPU Processing Function (new CUDA implementation)
+  const runGpuProcessing = async () => {
+    setProcessingStatus('Initializing NVIDIA GPU processing...');
+    setIsProcessing(true);
+
+    try {
+      // Step 1: Initialize CUDA environment
+      setProcessingStatus('Checking CUDA availability...');
+      const cudaCheckResponse = await fetch('http://localhost:5001/cuda/check', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (!cudaCheckResponse.ok) {
+        throw new Error('CUDA not available on system');
+      }
+
+      // Step 2: Run CUDA initialization (cudaInit.py)
+      setProcessingStatus('Running CUDA initialization...');
+      const initResponse = await fetch('http://localhost:5001/cuda/init', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          base_model: 'gpt2',
+          data_path: '../UserFacing/db/LLMData.json',
+          output_dir: './cuda_lora_out'
+        })
+      });
+
+      if (!initResponse.ok) {
+        throw new Error('CUDA initialization failed');
+      }
+
+      // Step 3: Run test suite (testSuite.py)
+      setProcessingStatus('Running CUDA test suite...');
+      const testResponse = await fetch('http://localhost:5001/cuda/test', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          base_model: 'gpt2',
+          lora_model_path: './cuda_lora_out'
+        })
+      });
+
+      if (!testResponse.ok) {
+        throw new Error('CUDA test suite failed');
+      }
+
+      const testResults = await testResponse.json();
+      setProcessingStatus('GPU processing completed successfully!');
+      
+      console.log('GPU Processing Results:', testResults);
+      
+      // Navigate to main chat after successful processing
+      setTimeout(() => {
+        router.push('/');
+      }, 1000);
+
+    } catch (error) {
+      console.error('GPU processing error:', error);
+      setProcessingStatus(`GPU processing failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  // Handle processing type selection
+  const handleProcessingStart = async () => {
+    setShowProcessingModal(false);
+    
+    if (processingType === 'gpu') {
+      await runGpuProcessing();
+    } else {
+      await runCloudProcessing();
+    }
+  };
+
+  // Handle main button click
+  const handleMainButtonClick = async () => {
+    // Detect GPU if not already detected
+    if (hasNvidiaGpu === null) {
+      setProcessingStatus('Detecting NVIDIA GPU...');
+      const gpuDetected = await detectNvidiaGpu();
+      setHasNvidiaGpu(gpuDetected);
+    }
+
+    // Show modal for processing type selection
+    setShowProcessingModal(true);
+  };
+
   const handleChatSelect = (chatId: string) => {
     // Save selected chat to localStorage and navigate
     localStorage.setItem('selectedChatId', chatId);
@@ -343,13 +507,30 @@ export default function Dashboard() {
               <div className="absolute -bottom-1 -left-1 w-4 h-4 border-l-2 border-b-2 border-white"></div>
               <div className="absolute -bottom-1 -right-1 w-4 h-4 border-r-2 border-b-2 border-white"></div>
               <button 
-                onClick={() => router.push('/')}
+                onClick={handleMainButtonClick}
                 className="px-6 py-3 text-base font-light cursor-pointer hover:bg-white hover:text-black transition-colors"
+                disabled={isProcessing}
               >
-                See it in action
+                {isProcessing ? 'Processing...' : 'Start AI Processing'}
               </button>
             </div>
           </div>
+
+          {/* Processing Status */}
+          {processingStatus && (
+            <div className="mb-6">
+              <div className="bg-gray-800/50 border border-gray-600 rounded-lg p-4">
+                <div className="text-white text-sm">{processingStatus}</div>
+                {isProcessing && (
+                  <div className="mt-2">
+                    <div className="w-full bg-gray-700 rounded-full h-2">
+                      <div className="bg-blue-500 h-2 rounded-full animate-pulse" style={{width: '60%'}}></div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Progress Indicators with brackets */}
           <div className="mb-8">
@@ -874,6 +1055,82 @@ export default function Dashboard() {
         </div>
         </div>
       </div>
+
+      {/* Processing Type Selection Modal */}
+      {showProcessingModal && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center">
+          <div className="bg-gray-900 border border-gray-600 rounded-lg p-6 max-w-md w-full mx-4">
+            <h3 className="text-white text-xl font-light mb-4">Select Processing Method</h3>
+            
+            {/* GPU Detection Status */}
+            <div className="mb-6">
+              <div className="flex items-center space-x-2 mb-2">
+                <div className={`w-3 h-3 rounded-full ${hasNvidiaGpu ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                <span className="text-gray-300 text-sm">
+                  NVIDIA GPU: {hasNvidiaGpu === null ? 'Detecting...' : hasNvidiaGpu ? 'Detected' : 'Not Found'}
+                </span>
+              </div>
+              {hasNvidiaGpu && (
+                <p className="text-green-400 text-xs">✓ Local GPU processing available</p>
+              )}
+            </div>
+
+            {/* Processing Options */}
+            <div className="space-y-3 mb-6">
+              {/* Cloud Processing Option */}
+              <label className="flex items-center space-x-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="processingType"
+                  value="cloud"
+                  checked={processingType === 'cloud'}
+                  onChange={(e) => setProcessingType(e.target.value as 'cloud' | 'gpu')}
+                  className="text-blue-500"
+                />
+                <div>
+                  <div className="text-white font-medium">Cloud Processing</div>
+                  <div className="text-gray-400 text-sm">Use remote cloud services (default)</div>
+                </div>
+              </label>
+
+              {/* GPU Processing Option */}
+              <label className={`flex items-center space-x-3 cursor-pointer ${!hasNvidiaGpu ? 'opacity-50' : ''}`}>
+                <input
+                  type="radio"
+                  name="processingType"
+                  value="gpu"
+                  checked={processingType === 'gpu'}
+                  onChange={(e) => setProcessingType(e.target.value as 'cloud' | 'gpu')}
+                  disabled={!hasNvidiaGpu}
+                  className="text-green-500"
+                />
+                <div>
+                  <div className="text-white font-medium">Local GPU Processing</div>
+                  <div className="text-gray-400 text-sm">
+                    {hasNvidiaGpu ? 'Use your NVIDIA GPU (faster, private)' : 'Requires NVIDIA GPU'}
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex space-x-3">
+              <button
+                onClick={() => setShowProcessingModal(false)}
+                className="flex-1 px-4 py-2 border border-gray-600 text-gray-300 rounded hover:bg-gray-800 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleProcessingStart}
+                className="flex-1 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+              >
+                Start {processingType === 'gpu' ? 'GPU' : 'Cloud'} Processing
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
