@@ -1,0 +1,106 @@
+{
+  "user_id": "cybersecurity_expert",
+  "description": "Cybersecurity expert with comprehensive knowledge in security protocols, threat detection, penetration testing, and risk management",
+  "training_data": [
+    {
+      "prompt": "What are the fundamental principles of cybersecurity?",
+      "answer": "CIA Triad: 1) Confidentiality: protect sensitive information from unauthorized access 2) Integrity: ensure data accuracy and completeness 3) Availability: ensure systems and data are accessible when needed. Additional principles: Authentication, Authorization, Non-repudiation, Accountability. Defense in depth: multiple security layers for comprehensive protection.",
+      "category": "fundamentals"
+    },
+    {
+      "prompt": "How to implement secure authentication systems?",
+      "answer": "Secure authentication methods: 1) Multi-factor authentication (MFA): something you know (password), have (token), are (biometric) 2) Strong password policies: complexity, length, rotation 3) Single Sign-On (SSO): centralized authentication 4) OAuth 2.0/OpenID Connect: secure authorization 5) Certificate-based authentication: PKI 6) Zero-trust architecture: verify every request",
+      "category": "authentication"
+    },
+    {
+      "prompt": "What is penetration testing and how to conduct it?",
+      "answer": "Penetration testing simulates cyber attacks to identify vulnerabilities. Process: 1) Reconnaissance: information gathering 2) Scanning: port scanning, vulnerability scanning 3) Enumeration: service identification 4) Vulnerability assessment: identify weaknesses 5) Exploitation: attempt to compromise systems 6) Post-exploitation: maintain access, escalate privileges 7) Reporting: document findings and recommendations",
+      "category": "penetration_testing"
+    },
+    {
+      "prompt": "How to detect and respond to security incidents?",
+      "answer": "Incident response process: 1) Preparation: policies, procedures, team 2) Identification: detect security events 3) Containment: isolate affected systems 4) Eradication: remove threats 5) Recovery: restore systems 6) Lessons learned: improve processes. Detection methods: SIEM, IDS/IPS, log analysis, threat intelligence, behavioral analytics",
+      "category": "incident_response"
+    },
+    {
+      "prompt": "What are common cyber attack vectors?",
+      "answer": "Common attack vectors: 1) Phishing: email-based social engineering 2) Malware: viruses, trojans, ransomware 3) SQL injection: database attacks 4) Cross-site scripting (XSS): web application attacks 5) Man-in-the-middle: network interception 6) DDoS: denial of service 7) Insider threats: malicious or negligent employees 8) Supply chain attacks: compromised vendors",
+      "category": "attack_vectors"
+    },
+    {
+      "prompt": "How to implement network security?",
+      "answer": "Network security measures: 1) Firewalls: packet filtering, stateful inspection 2) Intrusion Detection/Prevention Systems (IDS/IPS) 3) Network segmentation: isolate critical systems 4) VPN: secure remote access 5) Network monitoring: traffic analysis 6) Access control: network access control (NAC) 7) Encryption: VPN, TLS/SSL 8) Regular security assessments",
+      "category": "network_security"
+    },
+    {
+      "prompt": "What is encryption and how to implement it properly?",
+      "answer": "Encryption protects data confidentiality. Types: 1) Symmetric: same key for encryption/decryption (AES) 2) Asymmetric: public/private key pairs (RSA, ECC) 3) Hashing: one-way transformation (SHA-256). Implementation: 1) Use strong algorithms (AES-256, RSA-2048+) 2) Secure key management 3) Encrypt data at rest and in transit 4) Implement proper key rotation 5) Use established libraries, avoid custom crypto",
+      "category": "encryption"
+    },
+    {
+      "prompt": "How to conduct security risk assessments?",
+      "answer": "Risk assessment process: 1) Asset identification: systems, data, processes 2) Threat identification: potential attackers and methods 3) Vulnerability assessment: system weaknesses 4) Risk calculation: likelihood × impact 5) Risk treatment: accept, mitigate, transfer, avoid 6) Risk monitoring: continuous assessment. Frameworks: NIST, ISO 27001, COBIT, OCTAVE",
+      "category": "risk_management"
+    },
+    {
+      "prompt": "What is malware analysis and how to perform it?",
+      "answer": "Malware analysis identifies malicious software behavior. Types: 1) Static analysis: examine code without execution 2) Dynamic analysis: observe behavior during execution. Tools: IDA Pro, Ghidra, Wireshark, Process Monitor, Cuckoo Sandbox. Process: 1) Sample collection and isolation 2) Preliminary analysis 3) Static analysis 4) Dynamic analysis 5) Report generation 6) IOCs extraction",
+      "category": "malware_analysis"
+    },
+    {
+      "prompt": "How to implement secure software development (DevSecOps)?",
+      "answer": "DevSecOps integrates security throughout SDLC: 1) Threat modeling: identify security risks 2) Secure coding practices: OWASP guidelines 3) Static Application Security Testing (SAST) 4) Dynamic Application Security Testing (DAST) 5) Dependency scanning: vulnerable libraries 6) Security testing in CI/CD 7) Security reviews and audits 8) Incident response planning",
+      "category": "secure_development"
+    },
+    {
+      "prompt": "What is threat intelligence and how to use it?",
+      "answer": "Threat intelligence provides information about cyber threats. Types: 1) Strategic: high-level trends and actors 2) Tactical: TTPs (Tactics, Techniques, Procedures) 3) Operational: specific threats and campaigns 4) Technical: IOCs (Indicators of Compromise). Sources: commercial feeds, open source, government agencies. Implementation: SIEM integration, automated blocking, threat hunting",
+      "category": "threat_intelligence"
+    },
+    {
+      "prompt": "How to implement data privacy and GDPR compliance?",
+      "answer": "GDPR compliance requirements: 1) Lawful basis for processing 2) Data minimization: collect only necessary data 3) Purpose limitation: use data for stated purposes 4) Data subject rights: access, rectification, erasure 5) Privacy by design: build privacy into systems 6) Data protection impact assessments 7) Breach notification: 72-hour requirement 8) Data protection officer (DPO) for large organizations",
+      "category": "privacy_compliance"
+    },
+    {
+      "prompt": "What is zero-trust security architecture?",
+      "answer": "Zero-trust assumes no implicit trust based on location or network. Principles: 1) Verify explicitly: authenticate every request 2) Use least privilege: minimum necessary access 3) Assume breach: monitor and detect threats. Implementation: 1) Identity and access management 2) Network segmentation 3) Device security 4) Application security 5) Data protection 6) Continuous monitoring",
+      "category": "security_architecture"
+    },
+    {
+      "prompt": "How to conduct security awareness training?",
+      "answer": "Security awareness training components: 1) Phishing simulation: test employee responses 2) Password security: strong password creation 3) Social engineering: recognize manipulation tactics 4) Incident reporting: proper procedures 5) Physical security: workplace security 6) Mobile security: device protection 7) Regular updates: evolving threats 8) Metrics: measure training effectiveness",
+      "category": "security_training"
+    },
+    {
+      "prompt": "What is cloud security and best practices?",
+      "answer": "Cloud security best practices: 1) Shared responsibility model: understand provider vs customer responsibilities 2) Identity and access management: strong authentication 3) Data encryption: at rest and in transit 4) Network security: VPCs, security groups 5) Monitoring and logging: cloud-native tools 6) Compliance: understand regulatory requirements 7) Incident response: cloud-specific procedures 8) Regular security assessments",
+      "category": "cloud_security"
+    },
+    {
+      "prompt": "How to implement security monitoring and SIEM?",
+      "answer": "SIEM (Security Information and Event Management) implementation: 1) Data collection: logs from all systems 2) Normalization: standardize log formats 3) Correlation: identify patterns across systems 4) Alerting: real-time threat detection 5) Investigation: forensic capabilities 6) Reporting: compliance and management reports. Tools: Splunk, IBM QRadar, ArcSight, ELK stack, Azure Sentinel",
+      "category": "security_monitoring"
+    },
+    {
+      "prompt": "What is vulnerability management?",
+      "answer": "Vulnerability management lifecycle: 1) Discovery: automated and manual scanning 2) Prioritization: risk-based scoring (CVSS) 3) Remediation: patching, configuration changes 4) Verification: confirm fixes 5) Reporting: track progress. Tools: Nessus, Qualys, OpenVAS, Rapid7. Best practices: regular scanning, timely patching, asset inventory, risk assessment",
+      "category": "vulnerability_management"
+    },
+    {
+      "prompt": "How to implement endpoint security?",
+      "answer": "Endpoint security measures: 1) Antivirus/antimalware: signature and behavior-based detection 2) Endpoint Detection and Response (EDR): advanced threat detection 3) Device encryption: full disk encryption 4) Patch management: automated updates 5) Application whitelisting: approved software only 6) USB controls: restrict removable media 7) Mobile device management (MDM) 8) Regular security assessments",
+      "category": "endpoint_security"
+    },
+    {
+      "prompt": "What is digital forensics and how to conduct it?",
+      "answer": "Digital forensics process: 1) Identification: locate digital evidence 2) Preservation: maintain evidence integrity 3) Collection: acquire evidence legally 4) Examination: analyze evidence 5) Analysis: interpret findings 6) Presentation: report results. Tools: EnCase, FTK, Volatility, Autopsy. Legal considerations: chain of custody, admissibility, expert testimony",
+      "category": "digital_forensics"
+    },
+    {
+      "prompt": "How to implement business continuity and disaster recovery?",
+      "answer": "Business continuity planning: 1) Business impact analysis: identify critical functions 2) Risk assessment: potential disruptions 3) Recovery strategies: backup systems, alternate sites 4) Plan development: detailed procedures 5) Testing: regular exercises 6) Maintenance: keep plans current. DR components: RTO/RPO targets, backup systems, failover procedures, communication plans",
+      "category": "business_continuity"
+    }
+  ]
+}

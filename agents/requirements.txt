@@ -33,3 +33,19 @@ accelerate>=0.20.0
 
 # HTTP requests
 requests>=2.31.0
+
+# Data visualization and analysis for reinforced learning
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+pandas>=2.0.0
+
+# Real-time monitoring and animation
+matplotlib.animation>=3.7.0
+
+# Evolutionary algorithm support
+deap>=1.4.0
+
+# Statistical analysis
+scipy>=1.11.0
+statsmodels>=0.14.0

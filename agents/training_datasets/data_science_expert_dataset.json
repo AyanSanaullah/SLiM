@@ -1,0 +1,106 @@
+{
+  "user_id": "data_science_expert",
+  "description": "Data Science expert with comprehensive knowledge in statistics, data analysis, visualization, and advanced analytics",
+  "training_data": [
+    {
+      "prompt": "How to perform exploratory data analysis (EDA)?",
+      "answer": "EDA process: 1) Data overview: shape, info(), describe() 2) Missing values analysis 3) Data types and distributions 4) Correlation analysis 5) Outlier detection 6) Visualizations: histograms, box plots, scatter plots 7) Feature relationships 8) Statistical summaries. Tools: pandas, matplotlib, seaborn, plotly.",
+      "category": "data_exploration"
+    },
+    {
+      "prompt": "What are the key statistical concepts in data science?",
+      "answer": "Key statistical concepts: 1) Descriptive statistics: mean, median, mode, variance, standard deviation 2) Probability distributions: normal, binomial, Poisson 3) Hypothesis testing: t-tests, chi-square, ANOVA 4) Confidence intervals 5) Correlation vs causation 6) Central limit theorem 7) P-values and significance levels 8) Type I and Type II errors",
+      "category": "statistics"
+    },
+    {
+      "prompt": "How to handle missing data in datasets?",
+      "answer": "Missing data strategies: 1) Identify patterns: MCAR, MAR, MNAR 2) Deletion: listwise, pairwise deletion 3) Imputation: mean/median/mode, forward/backward fill 4) Advanced methods: KNN imputation, iterative imputation, MICE 5) Model-based: use algorithms that handle missing data 6) Domain knowledge: business rules for imputation 7) Missing data indicators as features",
+      "category": "data_preprocessing"
+    },
+    {
+      "prompt": "How to detect and handle outliers?",
+      "answer": "Outlier detection methods: 1) Statistical methods: IQR, Z-score, modified Z-score 2) Visualization: box plots, scatter plots 3) Machine learning: Isolation Forest, One-Class SVM 4) Domain knowledge: business rules. Handling: 1) Remove outliers 2) Cap/floor values 3) Transform data 4) Use robust statistics 5) Separate modeling for outliers",
+      "category": "data_preprocessing"
+    },
+    {
+      "prompt": "What is feature engineering and its importance?",
+      "answer": "Feature engineering creates new features from existing data to improve model performance. Importance: 1) Improves model accuracy 2) Reduces overfitting 3) Handles non-linear relationships 4) Captures domain knowledge. Techniques: 1) Feature creation: polynomial, interaction features 2) Feature transformation: log, sqrt, Box-Cox 3) Feature encoding: one-hot, target encoding 4) Feature selection: correlation, importance-based",
+      "category": "feature_engineering"
+    },
+    {
+      "prompt": "How to create effective data visualizations?",
+      "answer": "Effective visualization principles: 1) Choose right chart type: bar (categories), line (time series), scatter (relationships), heatmap (correlations) 2) Use color strategically 3) Clear labels and titles 4) Appropriate scales 5) Avoid chartjunk 6) Tell a story with data 7) Interactive elements when appropriate. Tools: matplotlib, seaborn, plotly, tableau, power BI.",
+      "category": "visualization"
+    },
+    {
+      "prompt": "What is time series analysis?",
+      "answer": "Time series analysis studies data points collected over time. Components: 1) Trend: long-term direction 2) Seasonality: regular patterns 3) Cyclical: irregular patterns 4) Random: noise. Techniques: 1) Decomposition 2) Stationarity testing 3) ARIMA models 4) Seasonal decomposition 5) Forecasting methods 6) Anomaly detection",
+      "category": "time_series"
+    },
+    {
+      "prompt": "How to perform A/B testing?",
+      "answer": "A/B testing process: 1) Define hypothesis and success metrics 2) Calculate sample size for statistical power 3) Random assignment to groups 4) Run experiment for sufficient duration 5) Statistical significance testing (t-test, chi-square) 6) Analyze results and confidence intervals 7) Consider practical significance 8) Document and communicate findings",
+      "category": "experimentation"
+    },
+    {
+      "prompt": "What is clustering and its applications?",
+      "answer": "Clustering groups similar data points without labels. Algorithms: 1) K-means: spherical clusters 2) Hierarchical: tree-like structure 3) DBSCAN: density-based 4) Gaussian Mixture: probabilistic. Applications: customer segmentation, image segmentation, anomaly detection, market research. Evaluation: silhouette score, elbow method, domain knowledge validation.",
+      "category": "unsupervised_learning"
+    },
+    {
+      "prompt": "How to evaluate classification models?",
+      "answer": "Classification evaluation metrics: 1) Accuracy: overall correctness 2) Precision: true positives / (true positives + false positives) 3) Recall: true positives / (true positives + false negatives) 4) F1-score: harmonic mean of precision and recall 5) ROC-AUC: area under ROC curve 6) Confusion matrix: detailed breakdown 7) Precision-Recall curve for imbalanced data",
+      "category": "model_evaluation"
+    },
+    {
+      "prompt": "What is dimensionality reduction?",
+      "answer": "Dimensionality reduction reduces number of features while preserving information. Methods: 1) PCA: linear transformation, captures variance 2) t-SNE: non-linear, preserves local structure 3) UMAP: preserves both local and global structure 4) LDA: supervised, maximizes class separation 5) Feature selection: removes irrelevant features. Benefits: visualization, computational efficiency, curse of dimensionality",
+      "category": "dimensionality_reduction"
+    },
+    {
+      "prompt": "How to perform text mining and NLP?",
+      "answer": "Text mining process: 1) Text preprocessing: cleaning, tokenization, stopword removal 2) Feature extraction: TF-IDF, word embeddings, n-grams 3) Sentiment analysis: polarity classification 4) Topic modeling: LDA, NMF 5) Named entity recognition 6) Text classification 7) Document similarity. Tools: NLTK, spaCy, scikit-learn, transformers library",
+      "category": "nlp"
+    },
+    {
+      "prompt": "What is cross-validation and why is it important?",
+      "answer": "Cross-validation splits data into training and validation sets multiple times. Types: 1) k-fold: divides data into k equal parts 2) Stratified: maintains class distribution 3) Time series: respects temporal order 4) Leave-one-out: each sample as validation. Importance: 1) Better performance estimate 2) Reduces overfitting 3) Uses all data for training/validation 4) More robust than single train/test split",
+      "category": "model_validation"
+    },
+    {
+      "prompt": "How to handle imbalanced datasets?",
+      "answer": "Imbalanced dataset solutions: 1) Resampling: SMOTE (oversampling), undersampling 2) Cost-sensitive learning: adjust class weights 3) Ensemble methods: balanced bagging 4) Anomaly detection approach 5) Threshold tuning: optimize for business metrics 6) Evaluation metrics: F1-score, AUC, precision-recall curve instead of accuracy",
+      "category": "imbalanced_data"
+    },
+    {
+      "prompt": "What is regression analysis?",
+      "answer": "Regression analysis models relationship between dependent and independent variables. Types: 1) Linear regression: linear relationship 2) Polynomial regression: non-linear relationships 3) Logistic regression: binary classification 4) Ridge/Lasso: regularization 5) Multiple regression: multiple predictors. Assumptions: linearity, independence, homoscedasticity, normality of residuals",
+      "category": "regression"
+    },
+    {
+      "prompt": "How to perform data quality assessment?",
+      "answer": "Data quality assessment: 1) Completeness: missing values percentage 2) Accuracy: correct values 3) Consistency: uniform formats 4) Validity: within expected ranges 5) Uniqueness: duplicate records 6) Timeliness: data freshness 7) Relevance: meets business needs. Tools: data profiling, validation rules, statistical analysis, domain expert review",
+      "category": "data_quality"
+    },
+    {
+      "prompt": "What is big data and its challenges?",
+      "answer": "Big data characterized by 3Vs: Volume (large size), Velocity (high speed), Variety (different types). Challenges: 1) Storage and processing 2) Real-time analysis 3) Data integration 4) Privacy and security 5) Skill requirements. Solutions: distributed computing (Hadoop, Spark), cloud platforms, NoSQL databases, stream processing (Kafka, Storm)",
+      "category": "big_data"
+    },
+    {
+      "prompt": "How to implement recommendation systems?",
+      "answer": "Recommendation system types: 1) Collaborative filtering: user-based or item-based similarity 2) Content-based: item features and user preferences 3) Hybrid: combines multiple approaches 4) Matrix factorization: SVD, NMF 5) Deep learning: neural collaborative filtering. Evaluation: RMSE, MAE, precision@k, recall@k, diversity metrics",
+      "category": "recommender_systems"
+    },
+    {
+      "prompt": "What is data pipeline architecture?",
+      "answer": "Data pipeline architecture: 1) Data ingestion: batch (ETL) or streaming 2) Data processing: cleaning, transformation, enrichment 3) Data storage: data lake, data warehouse 4) Data serving: APIs, dashboards 5) Data governance: quality, lineage, security 6) Monitoring: performance, failures. Tools: Apache Airflow, Luigi, Prefect for orchestration",
+      "category": "data_engineering"
+    },
+    {
+      "prompt": "How to perform business intelligence analysis?",
+      "answer": "BI analysis process: 1) Define business questions and KPIs 2) Data collection and integration 3) Data modeling: star schema, dimensional modeling 4) Dashboard creation: interactive visualizations 5) Drill-down capabilities 6) Automated reporting 7) Performance monitoring. Tools: Tableau, Power BI, Looker, QlikView, custom dashboards",
+      "category": "business_intelligence"
+    }
+  ]
+}
