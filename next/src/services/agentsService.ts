@@ -323,16 +323,25 @@ class AgentsService {
   }
 
   // Start training for multiple agents
-  async startTraining(userIds: string[]): Promise<boolean> {
+  async startTraining(userIds: string[], trainingCycles: number = 5): Promise<boolean> {
     try {
-      // This would trigger training for multiple agents
-      // For now, we'll make inference calls to simulate training activity
-      const trainingPromises = userIds.map(userId =>
-        this.makeInference(userId, { prompt: "Training validation prompt" })
-          .catch(error => console.log(`Training simulation for ${userId}:`, error))
-      );
+      console.log(`Starting progressive training for ${userIds.length} agents with ${trainingCycles} cycles`);
+      
+      const response = await fetch(apiUtils.buildAgentsBackendUrl('/api/v1/agents/start-training'), {
+        method: 'POST',
+        headers: API_CONFIG.DEFAULT_HEADERS,
+        body: JSON.stringify({
+          user_ids: userIds,
+          training_cycles: trainingCycles
+        }),
+      });
 
-      await Promise.allSettled(trainingPromises);
+      if (!response.ok) {
+        throw new Error(`Failed to start training: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      console.log('Training started successfully:', result);
       return true;
     } catch (error) {
       console.error('Error starting training:', error);

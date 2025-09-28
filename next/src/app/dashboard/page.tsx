@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-import { supabaseChatService, Chat } from "@/services/supabaseChatService";
 import { agentsService, Agent, AgentMetrics } from "@/services/agentsService";
+import Sidebar from "@/components/Sidebar";
 
 // Using Chat interface from supabaseChatService
 
@@ -19,7 +19,6 @@ interface MindMapNode {
 export default function Dashboard() {
   const router = useRouter();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [chats, setChats] = useState<Chat[]>([]);
   const [showProcessingModal, setShowProcessingModal] = useState(false);
   const [hasNvidiaGpu, setHasNvidiaGpu] = useState<boolean | null>(null);
   const [manualGpuOverride, setManualGpuOverride] = useState(false);
@@ -39,179 +38,155 @@ export default function Dashboard() {
     boolean | null
   >(null);
   const [nodes, setNodes] = useState<MindMapNode[]>([
-    // Core Training Nodes - Better distributed
+    // Agent Nodes - Numbered 1-17
     {
-      id: "training-3",
-      label: "Training",
-      sublabel: "set 3",
+      id: "agent-1",
+      label: "Agent",
+      sublabel: "1",
       percentage: 98,
       color: "from-green-400 via-green-500 to-emerald-600",
       position: { x: "20%", y: "15%" },
     },
     {
-      id: "training-2",
-      label: "Training",
-      sublabel: "set 2",
+      id: "agent-2",
+      label: "Agent",
+      sublabel: "2",
       percentage: 99,
       color: "from-blue-400 via-blue-500 to-indigo-600",
       position: { x: "80%", y: "15%" },
     },
     {
-      id: "training-1",
-      label: "Training",
-      sublabel: "set 1",
+      id: "agent-3",
+      label: "Agent",
+      sublabel: "3",
       percentage: 96,
       color: "from-purple-400 via-purple-500 to-violet-600",
       position: { x: "15%", y: "80%" },
     },
-
-    // Processing & Analysis - More spacing
     {
-      id: "processing",
-      label: "Process",
-      sublabel: "Node",
+      id: "agent-4",
+      label: "Agent",
+      sublabel: "4",
       percentage: 85,
       color: "from-orange-400 via-red-500 to-pink-600",
       position: { x: "85%", y: "80%" },
     },
     {
-      id: "analysis",
-      label: "Analysis",
-      sublabel: "Engine",
+      id: "agent-5",
+      label: "Agent",
+      sublabel: "5",
       percentage: 92,
       color: "from-cyan-400 via-teal-500 to-blue-600",
       position: { x: "50%", y: "8%" },
     },
-
-    // Neural Network Components - Better spacing
     {
-      id: "neural-net",
-      label: "Neural",
-      sublabel: "Network",
+      id: "agent-6",
+      label: "Agent",
+      sublabel: "6",
       percentage: 94,
       color: "from-indigo-400 via-purple-500 to-pink-600",
       position: { x: "8%", y: "45%" },
     },
     {
-      id: "transformer",
-      label: "Transform",
-      sublabel: "Layer",
+      id: "agent-7",
+      label: "Agent",
+      sublabel: "7",
       percentage: 97,
       color: "from-teal-400 via-cyan-500 to-blue-600",
       position: { x: "92%", y: "45%" },
     },
-
-    // Data Processing - More spread out
     {
-      id: "tokenizer",
-      label: "Token",
-      sublabel: "Engine",
+      id: "agent-8",
+      label: "Agent",
+      sublabel: "8",
       percentage: 89,
       color: "from-yellow-400 via-orange-500 to-red-600",
       position: { x: "30%", y: "90%" },
     },
     {
-      id: "embeddings",
-      label: "Embed",
-      sublabel: "Vector",
+      id: "agent-9",
+      label: "Agent",
+      sublabel: "9",
       percentage: 91,
       color: "from-rose-400 via-pink-500 to-purple-600",
       position: { x: "70%", y: "90%" },
     },
-
-    // Memory & Storage - Edge positions
     {
-      id: "memory-bank",
-      label: "Memory",
-      sublabel: "Bank",
+      id: "agent-10",
+      label: "Agent",
+      sublabel: "10",
       percentage: 88,
       color: "from-emerald-400 via-teal-500 to-cyan-600",
       position: { x: "5%", y: "25%" },
     },
     {
-      id: "cache-layer",
-      label: "Cache",
-      sublabel: "Layer",
+      id: "agent-11",
+      label: "Agent",
+      sublabel: "11",
       percentage: 95,
       color: "from-violet-400 via-purple-500 to-indigo-600",
       position: { x: "95%", y: "25%" },
     },
-
-    // Optimization & Performance - Mid-range spacing
     {
-      id: "optimizer",
-      label: "Optim",
-      sublabel: "Engine",
+      id: "agent-12",
+      label: "Agent",
+      sublabel: "12",
       percentage: 93,
       color: "from-lime-400 via-green-500 to-emerald-600",
       position: { x: "25%", y: "65%" },
     },
     {
-      id: "scheduler",
-      label: "Schedule",
-      sublabel: "Manager",
+      id: "agent-13",
+      label: "Agent",
+      sublabel: "13",
       percentage: 87,
       color: "from-amber-400 via-yellow-500 to-orange-600",
       position: { x: "75%", y: "65%" },
     },
-
-    // Security & Monitoring - Corner positions
     {
-      id: "security",
-      label: "Security",
-      sublabel: "Guard",
+      id: "agent-14",
+      label: "Agent",
+      sublabel: "14",
       percentage: 99,
       color: "from-red-400 via-rose-500 to-pink-600",
       position: { x: "10%", y: "65%" },
     },
     {
-      id: "monitor",
-      label: "Monitor",
-      sublabel: "System",
+      id: "agent-15",
+      label: "Agent",
+      sublabel: "15",
       percentage: 90,
       color: "from-sky-400 via-blue-500 to-indigo-600",
       position: { x: "90%", y: "65%" },
     },
-
-    // Advanced Features - Central and balanced
     {
-      id: "attention",
-      label: "Attention",
-      sublabel: "Mechanism",
+      id: "agent-16",
+      label: "Agent",
+      sublabel: "16",
       percentage: 96,
       color: "from-fuchsia-400 via-purple-500 to-violet-600",
       position: { x: "50%", y: "92%" },
     },
     {
-      id: "inference",
-      label: "Inference",
-      sublabel: "Engine",
+      id: "agent-17",
+      label: "Agent",
+      sublabel: "17",
       percentage: 94,
       color: "from-cyan-400 via-blue-500 to-purple-600",
       position: { x: "35%", y: "30%" },
     },
     {
-      id: "fine-tune",
-      label: "Fine-tune",
-      sublabel: "Module",
+      id: "agent-18",
+      label: "Agent",
+      sublabel: "18",
       percentage: 86,
       color: "from-green-400 via-emerald-500 to-teal-600",
       position: { x: "65%", y: "30%" },
     },
   ]);
 
-  // Load chats from Supabase and check agents backend health on component mount
+  // Check agents backend health on component mount
   useEffect(() => {
-    const loadChats = async () => {
-      try {
-        const loadedChats = await supabaseChatService.getChats();
-        setChats(loadedChats);
-        console.log("Dashboard: Loaded chats from Supabase:", loadedChats);
-      } catch (error) {
-        console.error("Dashboard: Error loading chats from Supabase:", error);
-      }
-    };
-
     const checkAgentsBackend = async () => {
       try {
         const isHealthy = await agentsService.checkHealth();
@@ -230,7 +205,6 @@ export default function Dashboard() {
       }
     };
 
-    loadChats();
     checkAgentsBackend();
   }, []);
 
@@ -547,27 +521,58 @@ export default function Dashboard() {
 
     setIsTrainingAgents(true);
     setShowNodes(true); // Show nodes when training starts
-    setProcessingStatus("🚀 Starting AI training for all agents...");
+    setProcessingStatus("🚀 Starting progressive AI training for all agents...");
 
     try {
       const userIds = agents.map((agent) => agent.user_id);
-      const success = await agentsService.startTraining(userIds);
+      const trainingCycles = 5; // 5 cycles of training
+      const success = await agentsService.startTraining(userIds, trainingCycles);
 
       if (success) {
-        setProcessingStatus("✅ Training initiated for all agents");
+        setProcessingStatus("✅ Progressive training initiated - watch metrics update in real-time!");
+        
+        // Start polling for updates every 3 seconds during training
+        const pollingInterval = setInterval(async () => {
+          try {
+            const updatedMetrics = await agentsService.getAllAgentsMetrics();
+            setAgentMetrics(updatedMetrics);
+            
+            // Check if training is complete (all agents have reasonable accuracy)
+            const avgAccuracy = updatedMetrics.reduce((sum, metric) => sum + metric.accuracy, 0) / updatedMetrics.length;
+            
+            if (avgAccuracy > 80) {
+              clearInterval(pollingInterval);
+              setProcessingStatus("🎉 Training completed! All agents showing improved performance.");
+              setIsTrainingAgents(false);
+              setTimeout(() => setProcessingStatus(""), 5000);
+            }
+          } catch (error) {
+            console.error("Error polling metrics:", error);
+          }
+        }, 3000);
+        
+        // Stop polling after 2 minutes even if training isn't "complete"
+        setTimeout(() => {
+          clearInterval(pollingInterval);
+          if (isTrainingAgents) {
+            setProcessingStatus("✅ Training session completed");
+            setIsTrainingAgents(false);
+            setTimeout(() => setProcessingStatus(""), 3000);
+          }
+        }, 120000); // 2 minutes
+        
       } else {
         setProcessingStatus("⚠️ Training started with some warnings");
+        setIsTrainingAgents(false);
       }
 
-      setTimeout(() => setProcessingStatus(""), 3000);
     } catch (error) {
       console.error("Error starting training:", error);
       setProcessingStatus(
         "❌ Failed to start training. Check console for details."
       );
-      setTimeout(() => setProcessingStatus(""), 5000);
-    } finally {
       setIsTrainingAgents(false);
+      setTimeout(() => setProcessingStatus(""), 5000);
     }
   };
 
@@ -610,106 +615,12 @@ export default function Dashboard() {
   return (
     <div className="h-screen bg-black flex relative overflow-hidden">
       {/* Sidebar */}
-      <div className="w-16 bg-black flex flex-col items-center py-6 space-y-8 relative z-10">
-        {/* Menu Icon - Toggle Sidebar */}
-        <button
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          className="p-3 text-white hover:text-gray-300 transition-colors"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-
-        {/* Dashboard Icon - Currently Active */}
-        <button className="p-3 text-white hover:text-gray-300 transition-colors bg-gray-800 rounded">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-            />
-          </svg>
-        </button>
-
-        {/* Spacer */}
-        <div className="flex-1"></div>
-
-        {/* Settings Icon */}
-        <button className="p-3 text-white hover:text-gray-300 transition-colors">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-          </svg>
-        </button>
-      </div>
-
-      {/* Chat History Sidebar - Toggleable */}
-      {isSidebarOpen && (
-        <div className="w-64 bg-gray-900 border-r border-gray-700 flex flex-col relative z-20 h-full">
-          <div className="p-4 border-b border-gray-700">
-            <button
-              onClick={() => router.push("/")}
-              className="text-white hover:text-gray-300 transition-colors text-lg font-light"
-            >
-              Chats
-            </button>
-          </div>
-          <div className="flex-1 overflow-y-auto p-4">
-            <div className="space-y-2">
-              {chats.length > 0 ? (
-                chats.map((chat) => (
-                  <div
-                    key={chat.id}
-                    onClick={() => handleChatSelect(chat.id)}
-                    className="p-3 bg-gray-800 rounded cursor-pointer hover:bg-gray-700 transition-colors"
-                  >
-                    <div className="text-white text-sm">{chat.title}</div>
-                    <div className="text-gray-400 text-xs">
-                      {new Date(chat.createdAt).toLocaleDateString()}
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="text-gray-400 text-sm text-center py-4">
-                  No chats yet
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      <Sidebar
+        onChatSelect={handleChatSelect}
+        currentPage="dashboard"
+        isOpen={isSidebarOpen}
+        onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+      />
 
       {/* Main Content Container */}
       <div className="flex-1 flex relative">
@@ -748,9 +659,9 @@ export default function Dashboard() {
           {/* Bottom-right corner bracket */}
           <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-white"></div>
           {/* Middle-top corner bracket */}
-          <div className="absolute top-8 left-180 transform -translate-x-1/2 w-16 h-16 border-l-2 border-t-2 border-white"></div>
+          <div className="absolute top-8 left-220 transform -translate-x-1/2 w-16 h-16 border-l-2 border-t-2 border-white"></div>
           {/* Middle-bottom corner bracket */}
-          <div className="absolute bottom-8 left-180 transform -translate-x-1/2 w-16 h-16 border-l-2 border-b-2 border-white"></div>
+          <div className="absolute bottom-8 left-220 transform -translate-x-1/2 w-16 h-16 border-l-2 border-b-2 border-white"></div>
         </div>
 
         {/* Left Content Area */}
@@ -1013,7 +924,7 @@ export default function Dashboard() {
         </div>
 
         {/* White separator line */}
-        <div className="flex flex-col items-center -left-175 justify-center relative z-10 h-full py-16">
+        <div className="flex flex-col items-center -left-200 justify-center relative z-10 h-full py-16">
           {/* Middle separator line with padding */}
           <div className="w-px bg-white flex-1"></div>
         </div>
@@ -1162,109 +1073,95 @@ export default function Dashboard() {
                 const size = getNodeSize(node.percentage);
                 const nodeSize = size * 3; // Reduced multiplier for smaller nodes
 
-                // Define subtle muted backgrounds for each node
+                // Define subtle muted backgrounds for each agent node
                 const spaceBackgrounds = {
-                  // Core Training Nodes
-                  "training-3": `
+                  // Agent backgrounds - using different gradients for each agent
+                  "agent-1": `
                 radial-gradient(circle at 25% 25%, rgba(34, 197, 94, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
                 linear-gradient(135deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  "training-2": `
+                  "agent-2": `
                 radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
                 linear-gradient(225deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  "training-1": `
+                  "agent-3": `
                 radial-gradient(circle at 40% 30%, rgba(147, 51, 234, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
                 linear-gradient(315deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-
-                  // Processing & Analysis
-                  processing: `
+                  "agent-4": `
                 radial-gradient(circle at 35% 25%, rgba(251, 146, 60, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 65% 75%, rgba(239, 68, 68, 0.2) 0%, transparent 50%),
                 linear-gradient(45deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  analysis: `
+                  "agent-5": `
                 radial-gradient(circle at 20% 30%, rgba(6, 182, 212, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 80% 60%, rgba(14, 165, 233, 0.2) 0%, transparent 50%),
                 linear-gradient(180deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-
-                  // Neural Network Components
-                  "neural-net": `
+                  "agent-6": `
                 radial-gradient(circle at 30% 40%, rgba(99, 102, 241, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 70% 20%, rgba(147, 51, 234, 0.2) 0%, transparent 50%),
                 linear-gradient(180deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  transformer: `
+                  "agent-7": `
                 radial-gradient(circle at 40% 30%, rgba(20, 184, 166, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 60% 70%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
                 linear-gradient(90deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-
-                  // Data Processing
-                  tokenizer: `
+                  "agent-8": `
                 radial-gradient(circle at 25% 35%, rgba(245, 158, 11, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 75% 65%, rgba(251, 146, 60, 0.2) 0%, transparent 50%),
                 linear-gradient(45deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  embeddings: `
+                  "agent-9": `
                 radial-gradient(circle at 35% 25%, rgba(244, 63, 94, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 65% 75%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
                 linear-gradient(225deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-
-                  // Memory & Storage
-                  "memory-bank": `
+                  "agent-10": `
                 radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
                 linear-gradient(135deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  "cache-layer": `
+                  "agent-11": `
                 radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.2) 0%, transparent 50%),
                 linear-gradient(315deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-
-                  // Optimization & Performance
-                  optimizer: `
+                  "agent-12": `
                 radial-gradient(circle at 25% 25%, rgba(132, 204, 22, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 75% 75%, rgba(34, 197, 94, 0.2) 0%, transparent 50%),
                 linear-gradient(180deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  scheduler: `
+                  "agent-13": `
                 radial-gradient(circle at 35% 30%, rgba(245, 158, 11, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 65% 70%, rgba(251, 191, 36, 0.2) 0%, transparent 50%),
                 linear-gradient(90deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-
-                  // Security & Monitoring
-                  security: `
+                  "agent-14": `
                 radial-gradient(circle at 30% 25%, rgba(239, 68, 68, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 70% 75%, rgba(244, 63, 94, 0.2) 0%, transparent 50%),
                 linear-gradient(45deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  monitor: `
+                  "agent-15": `
                 radial-gradient(circle at 25% 35%, rgba(14, 165, 233, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 75% 65%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
                 linear-gradient(225deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-
-                  // Advanced Features
-                  attention: `
+                  "agent-16": `
                 radial-gradient(circle at 40% 30%, rgba(217, 70, 239, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 60% 70%, rgba(147, 51, 234, 0.2) 0%, transparent 50%),
                 linear-gradient(135deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  inference: `
+                  "agent-17": `
                 radial-gradient(circle at 30% 40%, rgba(6, 182, 212, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 70% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
                 linear-gradient(315deg, #1f2937 0%, #374151 50%, #111827 100%)
               `,
-                  "fine-tune": `
+                  "agent-18": `
                 radial-gradient(circle at 35% 25%, rgba(34, 197, 94, 0.3) 0%, transparent 60%),
                 radial-gradient(circle at 65% 75%, rgba(16, 185, 129, 0.2) 0%, transparent 50%),
                 linear-gradient(180deg, #1f2937 0%, #374151 50%, #111827 100%)
@@ -1290,7 +1187,7 @@ export default function Dashboard() {
                           </div>
                           <div className="text-gray-300 text-xs mb-2">
                             {agentMetrics[index % agentMetrics.length]
-                              ?.user_id || `Node ID: ${node.id}`}
+                              ?.user_id || `Agent ${node.sublabel}`}
                           </div>
                           <div className="space-y-1 text-xs">
                             <div className="flex justify-between">

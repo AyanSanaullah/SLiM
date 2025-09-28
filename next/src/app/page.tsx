@@ -1,18 +1,17 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import {
   supabaseChatService,
   ChatMessage,
   Chat,
 } from "@/services/supabaseChatService";
+import Sidebar from "@/components/Sidebar";
 
 // Using types from supabaseChatService
 type Message = ChatMessage;
 
 export default function Home() {
-  const router = useRouter();
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -52,16 +51,6 @@ export default function Home() {
     }
   };
 
-  const selectChat = (chatId: string) => {
-    const chat = chats.find((c) => c.id === chatId);
-    if (chat) {
-      setCurrentChatId(chatId);
-      setMessages(chat.messages);
-      setCurrentView("chat");
-      setIsSidebarOpen(false); // Automatically close sidebar when selecting a chat
-    }
-  };
-
   // Load chats from Supabase on component mount
   useEffect(() => {
     const loadChats = async () => {
@@ -91,16 +80,29 @@ export default function Home() {
           localStorage.removeItem("selectedChatId");
           const chat = loadedChats.find((c) => c.id === selectedChatId);
           if (chat) {
-            selectChat(selectedChatId);
+            setCurrentChatId(selectedChatId);
+            setMessages(chat.messages);
+            setCurrentView("chat");
+            setIsSidebarOpen(false);
           }
         }
       } catch (error) {
-        console.log("ℹ️ Chat loading completed with fallback mode:", error);
+        console.log(" Chat loading completed with fallback mode:", error);
       }
     };
 
     loadChats();
   }, []);
+
+  const selectChat = (chatId: string) => {
+    const chat = chats.find((c) => c.id === chatId);
+    if (chat) {
+      setCurrentChatId(chatId);
+      setMessages(chat.messages);
+      setCurrentView("chat");
+      setIsSidebarOpen(false); // Automatically close sidebar when selecting a chat
+    }
+  };
 
   // Typing animation effect
   useEffect(() => {
@@ -140,32 +142,6 @@ export default function Home() {
 
     return () => clearTimeout(timeoutId);
   }, [displayText, isTyping, isDeleting]);
-
-  const returnToMainScreen = () => {
-    setCurrentChatId(null);
-    setMessages([]);
-    setCurrentView("main");
-    setIsSidebarOpen(false); // Automatically close sidebar when returning to main screen
-  };
-
-  const showDashboard = () => {
-    // Navigate to dashboard route (chats are now in Supabase)
-    router.push("/dashboard");
-  };
-
-  const testBackend = async () => {
-    console.log("🔍 Testing LLM backend connection...");
-    const result = await supabaseChatService.testLLMBackend();
-
-    if (result.success) {
-      console.log("✅ LLM Backend test successful:", result.message);
-    } else {
-      console.log("❌ LLM Backend test failed:", result.message);
-    }
-
-    // You could also show this in the UI if needed
-    alert(result.message);
-  };
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
@@ -402,77 +378,12 @@ export default function Home() {
 
       {/* Left Sidebar - Hide when in dashboard view */}
       {currentView !== "dashboard" && (
-        <div className="w-16 bg-black flex flex-col items-center py-6 space-y-8 relative z-10">
-          {/* Menu Icon - Toggle Sidebar */}
-          <button
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="p-3 text-white hover:text-gray-300 transition-colors"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-
-          {/* Dashboard Icon */}
-          <button
-            onClick={showDashboard}
-            className="p-3 text-white hover:text-gray-300 transition-colors"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-              />
-            </svg>
-          </button>
-
-          {/* Spacer */}
-          <div className="flex-1"></div>
-
-          {/* Settings Icon - Test Backend */}
-          <button
-            onClick={testBackend}
-            className="p-3 text-white hover:text-gray-300 transition-colors"
-            title="Test LLM Backend Connection"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </button>
-        </div>
+        <Sidebar
+          onChatSelect={selectChat}
+          currentPage="main"
+          isOpen={isSidebarOpen}
+          onToggle={() => setIsSidebarOpen(!isSidebarOpen)}
+        />
       )}
 
       {/* White separator line - Hide when in dashboard view */}
@@ -522,32 +433,6 @@ export default function Home() {
           {currentView === "main" ? (
             /* Welcome Screen */
             <div className="flex h-full">
-              {/* Chat History Sidebar - Also available on main screen */}
-              {isSidebarOpen && (
-                <div className="w-64 bg-gray-800 p-4 space-y-2 mt-16">
-                  <div className="text-white text-lg font-medium mb-4">
-                    Chats
-                  </div>
-                  <div className="space-y-1">
-                    {chats.length > 0 ? (
-                      chats.map((chat) => (
-                        <div
-                          key={chat.id}
-                          onClick={() => selectChat(chat.id)}
-                          className="p-3 text-gray-400 text-sm cursor-pointer hover:bg-gray-700 hover:text-white rounded transition-colors"
-                        >
-                          {chat.title}
-                        </div>
-                      ))
-                    ) : (
-                      <div className="p-3 text-gray-500 text-sm text-center">
-                        No chats yet. Start a conversation!
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
               {/* Main Welcome Content */}
               <div className="flex-1 flex flex-col items-center justify-center text-center px-8">
                 <div className="mb-16">
@@ -636,33 +521,6 @@ export default function Home() {
           ) : (
             /* Chat Messages */
             <div className="flex h-full">
-              {/* Chat History Sidebar - Toggleable */}
-              {isSidebarOpen && (
-                <div className="w-64 bg-gray-800 p-4 space-y-2 mt-16">
-                  <button
-                    onClick={returnToMainScreen}
-                    className="text-white text-lg font-medium mb-4 hover:text-gray-300 cursor-pointer"
-                  >
-                    Chats
-                  </button>
-                  <div className="space-y-1">
-                    {chats.map((chat) => (
-                      <div
-                        key={chat.id}
-                        onClick={() => selectChat(chat.id)}
-                        className={`p-3 text-sm cursor-pointer rounded transition-colors ${
-                          currentChatId === chat.id
-                            ? "bg-gray-700 text-white"
-                            : "text-gray-400 hover:bg-gray-700 hover:text-white"
-                        }`}
-                      >
-                        {chat.title}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
               {/* Main Chat Area */}
               <div className="flex-1 flex flex-col">
                 <div className="flex-1 overflow-y-auto p-6 space-y-6">
