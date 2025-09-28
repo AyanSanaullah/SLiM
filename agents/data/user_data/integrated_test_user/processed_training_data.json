@@ -1,0 +1,73 @@
+{
+  "user_id": "integrated_test_user",
+  "raw_data": "\n    Sou um especialista em Python e desenvolvimento web.\n    \n    Exemplos:\n    - Como criar uma API? Use Flask ou FastAPI para criar APIs REST.\n    - O que é Python? Python é uma linguagem de programação interpretada.\n    - Como usar loops? Use for para iterar sobre sequências e while para loops condicionais.\n    ",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre sou um especialista em python e desenvolvimento web?",
+      "answer": "Sou um especialista em Python e desenvolvimento web",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre sou um especialista em python e desenvolvimento web",
+      "answer": "Sou um especialista em Python e desenvolvimento web",
+      "type": "explanation"
+    },
+    {
+      "prompt": "O que você sabe sobre exemplos:\n    - como criar uma api? use flask ou fastapi para criar apis rest?",
+      "answer": "Exemplos:\n    - Como criar uma API? Use Flask ou FastAPI para criar APIs REST",
+      "type": "definition"
+    },
+    {
+      "prompt": "Como exemplos:\n    - como criar uma api? use flask ou fastapi para criar apis rest?",
+      "answer": "Exemplos:\n    - Como criar uma API? Use Flask ou FastAPI para criar APIs REST",
+      "type": "how_to"
+    },
+    {
+      "prompt": "Explique sobre exemplos:\n    - como criar uma api? use flask ou fastapi para criar apis rest",
+      "answer": "Exemplos:\n    - Como criar uma API? Use Flask ou FastAPI para criar APIs REST",
+      "type": "explanation"
+    },
+    {
+      "prompt": "O que você sabe sobre - o que é python? python é uma linguagem de programação interpretada?",
+      "answer": "- O que é Python? Python é uma linguagem de programação interpretada",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre - o que é python? python é uma linguagem de programação interpretada",
+      "answer": "- O que é Python? Python é uma linguagem de programação interpretada",
+      "type": "explanation"
+    },
+    {
+      "prompt": "O que você sabe sobre - como usar loops? use for para iterar sobre sequências e while para loops condicionais?",
+      "answer": "- Como usar loops? Use for para iterar sobre sequências e while para loops condicionais",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre - como usar loops? use for para iterar sobre sequências e while para loops condicionais",
+      "answer": "- Como usar loops? Use for para iterar sobre sequências e while para loops condicionais",
+      "type": "explanation"
+    },
+    {
+      "prompt": "Como criar uma função em Python?",
+      "answer": "Para criar uma função em Python, use 'def nome_funcao():' seguido do código indentado.",
+      "type": "general"
+    },
+    {
+      "prompt": "O que são list comprehensions?",
+      "answer": "List comprehensions são uma forma concisa de criar listas em Python usando a sintaxe [expressao for item in iteravel].",
+      "type": "general"
+    },
+    {
+      "prompt": "Como criar uma API REST?",
+      "answer": "Para criar uma API REST, você pode usar frameworks como Flask ou FastAPI para definir endpoints que respondem a requisições HTTP.",
+      "type": "general"
+    },
+    {
+      "prompt": "O que é uma API?",
+      "answer": "API (Application Programming Interface) é um conjunto de protocolos e ferramentas para construir aplicações de software.",
+      "type": "general"
+    }
+  ],
+  "processed_at": "2025-09-27T20:06:16.553485",
+  "total_pairs": 13
+}

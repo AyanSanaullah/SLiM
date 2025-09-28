@@ -1,0 +1,161 @@
+{
+  "overall_metrics": {
+    "total_samples": 3,
+    "successful_evaluations": 3,
+    "failed_evaluations": 0,
+    "average_string_similarity": 1.00000003973643,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0000000596046448,
+    "min_string_similarity": 1.0,
+    "high_similarity_count": 3,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-27T19:11:43.183477"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "Como criar uma API REST?",
+      "expected_answer": "Use Flask com @app.route()",
+      "model_response": "Use Flask com @app.route()",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Use Flask com @app.route()",
+        "sentence2": "Use Flask com @app.route()",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "flask",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'flask' appears in both sentences"
+          },
+          {
+            "word": "com",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'com' appears in both sentences"
+          },
+          {
+            "word": "approute",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'approute' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "O que é Python?",
+      "expected_answer": "Linguagem de programação interpretada",
+      "model_response": "Linguagem de programação interpretada",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Linguagem de programação interpretada",
+        "sentence2": "Linguagem de programação interpretada",
+        "word_analysis": [
+          {
+            "word": "linguagem",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'linguagem' appears in both sentences"
+          },
+          {
+            "word": "programação",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'programação' appears in both sentences"
+          },
+          {
+            "word": "interpretada",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'interpretada' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "Como usar Git?",
+      "expected_answer": "Sistema de controle de versão distribuído",
+      "model_response": "Sistema de controle de versão distribuído",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Sistema de controle de versão distribuído",
+        "sentence2": "Sistema de controle de versão distribuído",
+        "word_analysis": [
+          {
+            "word": "distribuído",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'distribuído' appears in both sentences"
+          },
+          {
+            "word": "versão",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'versão' appears in both sentences"
+          },
+          {
+            "word": "controle",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'controle' appears in both sentences"
+          },
+          {
+            "word": "sistema",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sistema' appears in both sentences"
+          }
+        ]
+      }
+    }
+  ]
+}

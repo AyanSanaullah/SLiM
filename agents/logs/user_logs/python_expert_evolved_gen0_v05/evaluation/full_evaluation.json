@@ -1,0 +1,3017 @@
+{
+  "overall_metrics": {
+    "total_samples": 20,
+    "successful_evaluations": 20,
+    "failed_evaluations": 0,
+    "average_string_similarity": 1.0000000178813935,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0000001192092896,
+    "min_string_similarity": 0.9999999403953552,
+    "high_similarity_count": 20,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-27T18:50:07.362652"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "How to create a REST API with Flask?",
+      "expected_answer": "To create a REST API with Flask: 1) Install Flask: pip install flask 2) Create app.py: from flask import Flask, jsonify, request; app = Flask(__name__) 3) Define routes: @app.route('/api/users', methods=['GET']) def get_users(): return jsonify({'users': []}) 4) Run: app.run(debug=True)",
+      "model_response": "To create a REST API with Flask: 1) Install Flask: pip install flask 2) Create app.py: from flask import Flask, jsonify, request; app = Flask(__name__) 3) Define routes: @app.route('/api/users', methods=['GET']) def get_users(): return jsonify({'users': []}) 4) Run: app.run(debug=True)",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "To create a REST API with Flask: 1) Install Flask: pip install flask 2) Create app.py: from flask import Flask, jsonify, request; app = Flask(__name__) 3) Define routes: @app.route('/api/users', methods=['GET']) def get_users(): return jsonify({'users': []}) 4) Run: app.run(debug=True)",
+        "sentence2": "To create a REST API with Flask: 1) Install Flask: pip install flask 2) Create app.py: from flask import Flask, jsonify, request; app = Flask(__name__) 3) Define routes: @app.route('/api/users', methods=['GET']) def get_users(): return jsonify({'users': []}) 4) Run: app.run(debug=True)",
+        "word_analysis": [
+          {
+            "word": "def",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'def' appears in both sentences"
+          },
+          {
+            "word": "define",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'define' appears in both sentences"
+          },
+          {
+            "word": "request",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'request' appears in both sentences"
+          },
+          {
+            "word": "run",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'run' appears in both sentences"
+          },
+          {
+            "word": "install",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'install' appears in both sentences"
+          },
+          {
+            "word": "from",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'from' appears in both sentences"
+          },
+          {
+            "word": "apprundebugtrue",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'apprundebugtrue' appears in both sentences"
+          },
+          {
+            "word": "pip",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pip' appears in both sentences"
+          },
+          {
+            "word": "approuteapiusers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'approuteapiusers' appears in both sentences"
+          },
+          {
+            "word": "app",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'app' appears in both sentences"
+          },
+          {
+            "word": "routes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'routes' appears in both sentences"
+          },
+          {
+            "word": "flaskname",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'flaskname' appears in both sentences"
+          },
+          {
+            "word": "methodsget",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'methodsget' appears in both sentences"
+          },
+          {
+            "word": "jsonify",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jsonify' appears in both sentences"
+          },
+          {
+            "word": "import",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'import' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "What's the difference between Flask and Django?",
+      "expected_answer": "Flask is a microframework - lightweight, flexible, minimal core with extensions. Django is a full-stack framework - batteries included, ORM, admin panel, authentication built-in. Choose Flask for APIs and small apps, Django for complex web applications.",
+      "model_response": "Flask is a microframework - lightweight, flexible, minimal core with extensions. Django is a full-stack framework - batteries included, ORM, admin panel, authentication built-in. Choose Flask for APIs and small apps, Django for complex web applications.",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Flask is a microframework - lightweight, flexible, minimal core with extensions. Django is a full-stack framework - batteries included, ORM, admin panel, authentication built-in. Choose Flask for APIs and small apps, Django for complex web applications.",
+        "sentence2": "Flask is a microframework - lightweight, flexible, minimal core with extensions. Django is a full-stack framework - batteries included, ORM, admin panel, authentication built-in. Choose Flask for APIs and small apps, Django for complex web applications.",
+        "word_analysis": [
+          {
+            "word": "flexible",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'flexible' appears in both sentences"
+          },
+          {
+            "word": "small",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'small' appears in both sentences"
+          },
+          {
+            "word": "builtin",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'builtin' appears in both sentences"
+          },
+          {
+            "word": "authentication",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'authentication' appears in both sentences"
+          },
+          {
+            "word": "microframework",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'microframework' appears in both sentences"
+          },
+          {
+            "word": "apis",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'apis' appears in both sentences"
+          },
+          {
+            "word": "batteries",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'batteries' appears in both sentences"
+          },
+          {
+            "word": "applications",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'applications' appears in both sentences"
+          },
+          {
+            "word": "framework",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'framework' appears in both sentences"
+          },
+          {
+            "word": "django",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'django' appears in both sentences"
+          },
+          {
+            "word": "admin",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'admin' appears in both sentences"
+          },
+          {
+            "word": "included",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'included' appears in both sentences"
+          },
+          {
+            "word": "core",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'core' appears in both sentences"
+          },
+          {
+            "word": "fullstack",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'fullstack' appears in both sentences"
+          },
+          {
+            "word": "panel",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'panel' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "How to optimize Python code performance?",
+      "expected_answer": "Python optimization techniques: 1) Use list comprehensions 2) Avoid global variables 3) Use generators for large datasets 4) Profile with cProfile 5) Use NumPy for numerical operations 6) Cache with functools.lru_cache 7) Use multiprocessing for CPU-bound tasks",
+      "model_response": "Python optimization techniques: 1) Use list comprehensions 2) Avoid global variables 3) Use generators for large datasets 4) Profile with cProfile 5) Use NumPy for numerical operations 6) Cache with functools.lru_cache 7) Use multiprocessing for CPU-bound tasks",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Python optimization techniques: 1) Use list comprehensions 2) Avoid global variables 3) Use generators for large datasets 4) Profile with cProfile 5) Use NumPy for numerical operations 6) Cache with functools.lru_cache 7) Use multiprocessing for CPU-bound tasks",
+        "sentence2": "Python optimization techniques: 1) Use list comprehensions 2) Avoid global variables 3) Use generators for large datasets 4) Profile with cProfile 5) Use NumPy for numerical operations 6) Cache with functools.lru_cache 7) Use multiprocessing for CPU-bound tasks",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "multiprocessing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'multiprocessing' appears in both sentences"
+          },
+          {
+            "word": "generators",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'generators' appears in both sentences"
+          },
+          {
+            "word": "datasets",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'datasets' appears in both sentences"
+          },
+          {
+            "word": "optimization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'optimization' appears in both sentences"
+          },
+          {
+            "word": "profile",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'profile' appears in both sentences"
+          },
+          {
+            "word": "comprehensions",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'comprehensions' appears in both sentences"
+          },
+          {
+            "word": "variables",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'variables' appears in both sentences"
+          },
+          {
+            "word": "avoid",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'avoid' appears in both sentences"
+          },
+          {
+            "word": "python",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'python' appears in both sentences"
+          },
+          {
+            "word": "tasks",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tasks' appears in both sentences"
+          },
+          {
+            "word": "list",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'list' appears in both sentences"
+          },
+          {
+            "word": "cpubound",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'cpubound' appears in both sentences"
+          },
+          {
+            "word": "global",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'global' appears in both sentences"
+          },
+          {
+            "word": "cache",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'cache' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "What are Python decorators?",
+      "expected_answer": "Decorators are functions that modify other functions. Syntax: @decorator_name above function. Common uses: @property, @staticmethod, @lru_cache, @login_required. Example: def timer(func): def wrapper(*args, **kwargs): start = time.time(); result = func(*args, **kwargs); print(time.time() - start); return result; return wrapper",
+      "model_response": "Decorators are functions that modify other functions. Syntax: @decorator_name above function. Common uses: @property, @staticmethod, @lru_cache, @login_required. Example: def timer(func): def wrapper(*args, **kwargs): start = time.time(); result = func(*args, **kwargs); print(time.time() - start); return result; return wrapper",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Decorators are functions that modify other functions. Syntax: @decorator_name above function. Common uses: @property, @staticmethod, @lru_cache, @login_required. Example: def timer(func): def wrapper(*args, **kwargs): start = time.time(); result = func(*args, **kwargs); print(time.time() - start); return result; return wrapper",
+        "sentence2": "Decorators are functions that modify other functions. Syntax: @decorator_name above function. Common uses: @property, @staticmethod, @lru_cache, @login_required. Example: def timer(func): def wrapper(*args, **kwargs): start = time.time(); result = func(*args, **kwargs); print(time.time() - start); return result; return wrapper",
+        "word_analysis": [
+          {
+            "word": "def",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'def' appears in both sentences"
+          },
+          {
+            "word": "timerfunc",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'timerfunc' appears in both sentences"
+          },
+          {
+            "word": "above",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'above' appears in both sentences"
+          },
+          {
+            "word": "common",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'common' appears in both sentences"
+          },
+          {
+            "word": "decorators",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'decorators' appears in both sentences"
+          },
+          {
+            "word": "example",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'example' appears in both sentences"
+          },
+          {
+            "word": "printtimetime",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'printtimetime' appears in both sentences"
+          },
+          {
+            "word": "wrapper",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'wrapper' appears in both sentences"
+          },
+          {
+            "word": "syntax",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'syntax' appears in both sentences"
+          },
+          {
+            "word": "kwargs",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kwargs' appears in both sentences"
+          },
+          {
+            "word": "result",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'result' appears in both sentences"
+          },
+          {
+            "word": "uses",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'uses' appears in both sentences"
+          },
+          {
+            "word": "decoratorname",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'decoratorname' appears in both sentences"
+          },
+          {
+            "word": "lrucache",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'lrucache' appears in both sentences"
+          },
+          {
+            "word": "other",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'other' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "How to handle exceptions in Python?",
+      "expected_answer": "Use try/except/finally blocks: try: risky_code() except ValueError as e: handle_value_error(e) except Exception as e: handle_other_error(e) finally: cleanup_code(). Best practices: be specific with exceptions, log errors, don't catch all exceptions silently.",
+      "model_response": "Use try/except/finally blocks: try: risky_code() except ValueError as e: handle_value_error(e) except Exception as e: handle_other_error(e) finally: cleanup_code(). Best practices: be specific with exceptions, log errors, don't catch all exceptions silently.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Use try/except/finally blocks: try: risky_code() except ValueError as e: handle_value_error(e) except Exception as e: handle_other_error(e) finally: cleanup_code(). Best practices: be specific with exceptions, log errors, don't catch all exceptions silently.",
+        "sentence2": "Use try/except/finally blocks: try: risky_code() except ValueError as e: handle_value_error(e) except Exception as e: handle_other_error(e) finally: cleanup_code(). Best practices: be specific with exceptions, log errors, don't catch all exceptions silently.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "silently",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'silently' appears in both sentences"
+          },
+          {
+            "word": "cleanupcode",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'cleanupcode' appears in both sentences"
+          },
+          {
+            "word": "all",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'all' appears in both sentences"
+          },
+          {
+            "word": "dont",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dont' appears in both sentences"
+          },
+          {
+            "word": "finally",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'finally' appears in both sentences"
+          },
+          {
+            "word": "exception",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'exception' appears in both sentences"
+          },
+          {
+            "word": "exceptions",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'exceptions' appears in both sentences"
+          },
+          {
+            "word": "tryexceptfinally",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tryexceptfinally' appears in both sentences"
+          },
+          {
+            "word": "specific",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'specific' appears in both sentences"
+          },
+          {
+            "word": "except",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'except' appears in both sentences"
+          },
+          {
+            "word": "log",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'log' appears in both sentences"
+          },
+          {
+            "word": "handlevalueerrore",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'handlevalueerrore' appears in both sentences"
+          },
+          {
+            "word": "errors",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'errors' appears in both sentences"
+          },
+          {
+            "word": "catch",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'catch' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "prompt": "What are list comprehensions?",
+      "expected_answer": "List comprehensions create lists concisely: [expression for item in iterable if condition]. Examples: [x**2 for x in range(10)] creates squares, [x for x in list if x > 5] filters values. More efficient than loops for simple operations.",
+      "model_response": "List comprehensions create lists concisely: [expression for item in iterable if condition]. Examples: [x**2 for x in range(10)] creates squares, [x for x in list if x > 5] filters values. More efficient than loops for simple operations.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "List comprehensions create lists concisely: [expression for item in iterable if condition]. Examples: [x**2 for x in range(10)] creates squares, [x for x in list if x > 5] filters values. More efficient than loops for simple operations.",
+        "sentence2": "List comprehensions create lists concisely: [expression for item in iterable if condition]. Examples: [x**2 for x in range(10)] creates squares, [x for x in list if x > 5] filters values. More efficient than loops for simple operations.",
+        "word_analysis": [
+          {
+            "word": "squares",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'squares' appears in both sentences"
+          },
+          {
+            "word": "comprehensions",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'comprehensions' appears in both sentences"
+          },
+          {
+            "word": "expression",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'expression' appears in both sentences"
+          },
+          {
+            "word": "range10",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'range10' appears in both sentences"
+          },
+          {
+            "word": "concisely",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'concisely' appears in both sentences"
+          },
+          {
+            "word": "filters",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'filters' appears in both sentences"
+          },
+          {
+            "word": "item",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'item' appears in both sentences"
+          },
+          {
+            "word": "efficient",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'efficient' appears in both sentences"
+          },
+          {
+            "word": "simple",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'simple' appears in both sentences"
+          },
+          {
+            "word": "creates",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'creates' appears in both sentences"
+          },
+          {
+            "word": "loops",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'loops' appears in both sentences"
+          },
+          {
+            "word": "list",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'list' appears in both sentences"
+          },
+          {
+            "word": "more",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'more' appears in both sentences"
+          },
+          {
+            "word": "values",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'values' appears in both sentences"
+          },
+          {
+            "word": "lists",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'lists' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "prompt": "How to work with databases in Python?",
+      "expected_answer": "Use SQLAlchemy ORM: 1) Install: pip install sqlalchemy 2) Create engine: engine = create_engine('sqlite:///database.db') 3) Define models: class User(Base): __tablename__ = 'users'; id = Column(Integer, primary_key=True) 4) Query: session.query(User).filter(User.name == 'John').all()",
+      "model_response": "Use SQLAlchemy ORM: 1) Install: pip install sqlalchemy 2) Create engine: engine = create_engine('sqlite:///database.db') 3) Define models: class User(Base): __tablename__ = 'users'; id = Column(Integer, primary_key=True) 4) Query: session.query(User).filter(User.name == 'John').all()",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 0.9999999403953552,
+      "string_comparison_details": {
+        "similarity": 0.9999999403953552,
+        "sentence1": "Use SQLAlchemy ORM: 1) Install: pip install sqlalchemy 2) Create engine: engine = create_engine('sqlite:///database.db') 3) Define models: class User(Base): __tablename__ = 'users'; id = Column(Integer, primary_key=True) 4) Query: session.query(User).filter(User.name == 'John').all()",
+        "sentence2": "Use SQLAlchemy ORM: 1) Install: pip install sqlalchemy 2) Create engine: engine = create_engine('sqlite:///database.db') 3) Define models: class User(Base): __tablename__ = 'users'; id = Column(Integer, primary_key=True) 4) Query: session.query(User).filter(User.name == 'John').all()",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "johnall",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'johnall' appears in both sentences"
+          },
+          {
+            "word": "define",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'define' appears in both sentences"
+          },
+          {
+            "word": "primarykeytrue",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'primarykeytrue' appears in both sentences"
+          },
+          {
+            "word": "query",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'query' appears in both sentences"
+          },
+          {
+            "word": "install",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'install' appears in both sentences"
+          },
+          {
+            "word": "pip",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pip' appears in both sentences"
+          },
+          {
+            "word": "models",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'models' appears in both sentences"
+          },
+          {
+            "word": "columninteger",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'columninteger' appears in both sentences"
+          },
+          {
+            "word": "sqlalchemy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sqlalchemy' appears in both sentences"
+          },
+          {
+            "word": "users",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'users' appears in both sentences"
+          },
+          {
+            "word": "engine",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'engine' appears in both sentences"
+          },
+          {
+            "word": "class",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'class' appears in both sentences"
+          },
+          {
+            "word": "tablename",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tablename' appears in both sentences"
+          },
+          {
+            "word": "sessionqueryuserfilterusername",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sessionqueryuserfilterusername' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "prompt": "How to implement authentication in FastAPI?",
+      "expected_answer": "FastAPI authentication: 1) Install dependencies: pip install python-jose[cryptography] passlib[bcrypt] 2) Create auth router with JWT tokens 3) Use OAuth2PasswordBearer for dependency injection 4) Hash passwords with bcrypt 5) Create protected routes with Depends(get_current_user)",
+      "model_response": "FastAPI authentication: 1) Install dependencies: pip install python-jose[cryptography] passlib[bcrypt] 2) Create auth router with JWT tokens 3) Use OAuth2PasswordBearer for dependency injection 4) Hash passwords with bcrypt 5) Create protected routes with Depends(get_current_user)",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "FastAPI authentication: 1) Install dependencies: pip install python-jose[cryptography] passlib[bcrypt] 2) Create auth router with JWT tokens 3) Use OAuth2PasswordBearer for dependency injection 4) Hash passwords with bcrypt 5) Create protected routes with Depends(get_current_user)",
+        "sentence2": "FastAPI authentication: 1) Install dependencies: pip install python-jose[cryptography] passlib[bcrypt] 2) Create auth router with JWT tokens 3) Use OAuth2PasswordBearer for dependency injection 4) Hash passwords with bcrypt 5) Create protected routes with Depends(get_current_user)",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "tokens",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tokens' appears in both sentences"
+          },
+          {
+            "word": "authentication",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'authentication' appears in both sentences"
+          },
+          {
+            "word": "install",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'install' appears in both sentences"
+          },
+          {
+            "word": "pip",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pip' appears in both sentences"
+          },
+          {
+            "word": "auth",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'auth' appears in both sentences"
+          },
+          {
+            "word": "oauth2passwordbearer",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'oauth2passwordbearer' appears in both sentences"
+          },
+          {
+            "word": "hash",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'hash' appears in both sentences"
+          },
+          {
+            "word": "passwords",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'passwords' appears in both sentences"
+          },
+          {
+            "word": "router",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'router' appears in both sentences"
+          },
+          {
+            "word": "routes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'routes' appears in both sentences"
+          },
+          {
+            "word": "bcrypt",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'bcrypt' appears in both sentences"
+          },
+          {
+            "word": "fastapi",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'fastapi' appears in both sentences"
+          },
+          {
+            "word": "dependency",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dependency' appears in both sentences"
+          },
+          {
+            "word": "passlibbcrypt",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'passlibbcrypt' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "prompt": "What are Python virtual environments?",
+      "expected_answer": "Virtual environments isolate project dependencies. Create: python -m venv myenv. Activate: source myenv/bin/activate (Linux/Mac) or myenv\\Scripts\\activate (Windows). Install packages: pip install package. Deactivate: deactivate. Use requirements.txt to freeze dependencies.",
+      "model_response": "Virtual environments isolate project dependencies. Create: python -m venv myenv. Activate: source myenv/bin/activate (Linux/Mac) or myenv\\Scripts\\activate (Windows). Install packages: pip install package. Deactivate: deactivate. Use requirements.txt to freeze dependencies.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Virtual environments isolate project dependencies. Create: python -m venv myenv. Activate: source myenv/bin/activate (Linux/Mac) or myenv\\Scripts\\activate (Windows). Install packages: pip install package. Deactivate: deactivate. Use requirements.txt to freeze dependencies.",
+        "sentence2": "Virtual environments isolate project dependencies. Create: python -m venv myenv. Activate: source myenv/bin/activate (Linux/Mac) or myenv\\Scripts\\activate (Windows). Install packages: pip install package. Deactivate: deactivate. Use requirements.txt to freeze dependencies.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "myenv",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'myenv' appears in both sentences"
+          },
+          {
+            "word": "freeze",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'freeze' appears in both sentences"
+          },
+          {
+            "word": "windows",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'windows' appears in both sentences"
+          },
+          {
+            "word": "myenvbinactivate",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'myenvbinactivate' appears in both sentences"
+          },
+          {
+            "word": "install",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'install' appears in both sentences"
+          },
+          {
+            "word": "pip",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pip' appears in both sentences"
+          },
+          {
+            "word": "python",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'python' appears in both sentences"
+          },
+          {
+            "word": "activate",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'activate' appears in both sentences"
+          },
+          {
+            "word": "virtual",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'virtual' appears in both sentences"
+          },
+          {
+            "word": "deactivate",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'deactivate' appears in both sentences"
+          },
+          {
+            "word": "package",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'package' appears in both sentences"
+          },
+          {
+            "word": "source",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'source' appears in both sentences"
+          },
+          {
+            "word": "requirementstxt",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'requirementstxt' appears in both sentences"
+          },
+          {
+            "word": "project",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'project' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "prompt": "How to use pandas for data manipulation?",
+      "expected_answer": "Pandas basics: 1) Import: import pandas as pd 2) Create DataFrame: df = pd.DataFrame(data) 3) Read CSV: df = pd.read_csv('file.csv') 4) Filter: df[df['column'] > value] 5) Group by: df.groupby('column').sum() 6) Merge: pd.merge(df1, df2, on='key')",
+      "model_response": "Pandas basics: 1) Import: import pandas as pd 2) Create DataFrame: df = pd.DataFrame(data) 3) Read CSV: df = pd.read_csv('file.csv') 4) Filter: df[df['column'] > value] 5) Group by: df.groupby('column').sum() 6) Merge: pd.merge(df1, df2, on='key')",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Pandas basics: 1) Import: import pandas as pd 2) Create DataFrame: df = pd.DataFrame(data) 3) Read CSV: df = pd.read_csv('file.csv') 4) Filter: df[df['column'] > value] 5) Group by: df.groupby('column').sum() 6) Merge: pd.merge(df1, df2, on='key')",
+        "sentence2": "Pandas basics: 1) Import: import pandas as pd 2) Create DataFrame: df = pd.DataFrame(data) 3) Read CSV: df = pd.read_csv('file.csv') 4) Filter: df[df['column'] > value] 5) Group by: df.groupby('column').sum() 6) Merge: pd.merge(df1, df2, on='key')",
+        "word_analysis": [
+          {
+            "word": "create",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'create' appears in both sentences"
+          },
+          {
+            "word": "group",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'group' appears in both sentences"
+          },
+          {
+            "word": "value",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'value' appears in both sentences"
+          },
+          {
+            "word": "onkey",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'onkey' appears in both sentences"
+          },
+          {
+            "word": "basics",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'basics' appears in both sentences"
+          },
+          {
+            "word": "csv",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'csv' appears in both sentences"
+          },
+          {
+            "word": "pdreadcsvfilecsv",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pdreadcsvfilecsv' appears in both sentences"
+          },
+          {
+            "word": "pandas",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pandas' appears in both sentences"
+          },
+          {
+            "word": "dfgroupbycolumnsum",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dfgroupbycolumnsum' appears in both sentences"
+          },
+          {
+            "word": "df2",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'df2' appears in both sentences"
+          },
+          {
+            "word": "merge",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'merge' appears in both sentences"
+          },
+          {
+            "word": "read",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'read' appears in both sentences"
+          },
+          {
+            "word": "pddataframedata",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pddataframedata' appears in both sentences"
+          },
+          {
+            "word": "import",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'import' appears in both sentences"
+          },
+          {
+            "word": "dataframe",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dataframe' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "prompt": "How to create a Python package?",
+      "expected_answer": "Create package structure: mypackage/__init__.py, mypackage/module.py, setup.py, README.md. In __init__.py: from .module import function. In setup.py: from setuptools import setup; setup(name='mypackage', packages=['mypackage']). Install: pip install -e .",
+      "model_response": "Create package structure: mypackage/__init__.py, mypackage/module.py, setup.py, README.md. In __init__.py: from .module import function. In setup.py: from setuptools import setup; setup(name='mypackage', packages=['mypackage']). Install: pip install -e .",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Create package structure: mypackage/__init__.py, mypackage/module.py, setup.py, README.md. In __init__.py: from .module import function. In setup.py: from setuptools import setup; setup(name='mypackage', packages=['mypackage']). Install: pip install -e .",
+        "sentence2": "Create package structure: mypackage/__init__.py, mypackage/module.py, setup.py, README.md. In __init__.py: from .module import function. In setup.py: from setuptools import setup; setup(name='mypackage', packages=['mypackage']). Install: pip install -e .",
+        "word_analysis": [
+          {
+            "word": "create",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'create' appears in both sentences"
+          },
+          {
+            "word": "setup",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'setup' appears in both sentences"
+          },
+          {
+            "word": "pip",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pip' appears in both sentences"
+          },
+          {
+            "word": "mypackagemodulepy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'mypackagemodulepy' appears in both sentences"
+          },
+          {
+            "word": "packagesmypackage",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'packagesmypackage' appears in both sentences"
+          },
+          {
+            "word": "package",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'package' appears in both sentences"
+          },
+          {
+            "word": "structure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'structure' appears in both sentences"
+          },
+          {
+            "word": "mypackageinitpy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'mypackageinitpy' appears in both sentences"
+          },
+          {
+            "word": "setupnamemypackage",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'setupnamemypackage' appears in both sentences"
+          },
+          {
+            "word": "readmemd",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'readmemd' appears in both sentences"
+          },
+          {
+            "word": "module",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'module' appears in both sentences"
+          },
+          {
+            "word": "install",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'install' appears in both sentences"
+          },
+          {
+            "word": "function",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'function' appears in both sentences"
+          },
+          {
+            "word": "initpy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'initpy' appears in both sentences"
+          },
+          {
+            "word": "import",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'import' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "prompt": "What are Python generators?",
+      "expected_answer": "Generators create iterators using yield instead of return. Memory efficient for large datasets. Example: def fibonacci(): a, b = 0, 1; while True: yield a; a, b = b, a + b. Use next() or for loop to get values. Generator expressions: (x**2 for x in range(10)).",
+      "model_response": "Generators create iterators using yield instead of return. Memory efficient for large datasets. Example: def fibonacci(): a, b = 0, 1; while True: yield a; a, b = b, a + b. Use next() or for loop to get values. Generator expressions: (x**2 for x in range(10)).",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Generators create iterators using yield instead of return. Memory efficient for large datasets. Example: def fibonacci(): a, b = 0, 1; while True: yield a; a, b = b, a + b. Use next() or for loop to get values. Generator expressions: (x**2 for x in range(10)).",
+        "sentence2": "Generators create iterators using yield instead of return. Memory efficient for large datasets. Example: def fibonacci(): a, b = 0, 1; while True: yield a; a, b = b, a + b. Use next() or for loop to get values. Generator expressions: (x**2 for x in range(10)).",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "def",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'def' appears in both sentences"
+          },
+          {
+            "word": "generator",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'generator' appears in both sentences"
+          },
+          {
+            "word": "generators",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'generators' appears in both sentences"
+          },
+          {
+            "word": "get",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'get' appears in both sentences"
+          },
+          {
+            "word": "datasets",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'datasets' appears in both sentences"
+          },
+          {
+            "word": "expressions",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'expressions' appears in both sentences"
+          },
+          {
+            "word": "instead",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'instead' appears in both sentences"
+          },
+          {
+            "word": "range10",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'range10' appears in both sentences"
+          },
+          {
+            "word": "example",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'example' appears in both sentences"
+          },
+          {
+            "word": "efficient",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'efficient' appears in both sentences"
+          },
+          {
+            "word": "memory",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'memory' appears in both sentences"
+          },
+          {
+            "word": "while",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'while' appears in both sentences"
+          },
+          {
+            "word": "loop",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'loop' appears in both sentences"
+          },
+          {
+            "word": "next",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'next' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "prompt": "How to test Python code?",
+      "expected_answer": "Use unittest or pytest: 1) Create test files: test_module.py 2) Write test functions: def test_function(): assert function() == expected 3) Run tests: python -m pytest or python -m unittest 4) Use fixtures for setup/teardown. Test edge cases and error conditions.",
+      "model_response": "Use unittest or pytest: 1) Create test files: test_module.py 2) Write test functions: def test_function(): assert function() == expected 3) Run tests: python -m pytest or python -m unittest 4) Use fixtures for setup/teardown. Test edge cases and error conditions.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Use unittest or pytest: 1) Create test files: test_module.py 2) Write test functions: def test_function(): assert function() == expected 3) Run tests: python -m pytest or python -m unittest 4) Use fixtures for setup/teardown. Test edge cases and error conditions.",
+        "sentence2": "Use unittest or pytest: 1) Create test files: test_module.py 2) Write test functions: def test_function(): assert function() == expected 3) Run tests: python -m pytest or python -m unittest 4) Use fixtures for setup/teardown. Test edge cases and error conditions.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "assert",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'assert' appears in both sentences"
+          },
+          {
+            "word": "def",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'def' appears in both sentences"
+          },
+          {
+            "word": "unittest",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'unittest' appears in both sentences"
+          },
+          {
+            "word": "files",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'files' appears in both sentences"
+          },
+          {
+            "word": "expected",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'expected' appears in both sentences"
+          },
+          {
+            "word": "write",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'write' appears in both sentences"
+          },
+          {
+            "word": "setupteardown",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'setupteardown' appears in both sentences"
+          },
+          {
+            "word": "testfunction",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'testfunction' appears in both sentences"
+          },
+          {
+            "word": "run",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'run' appears in both sentences"
+          },
+          {
+            "word": "python",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'python' appears in both sentences"
+          },
+          {
+            "word": "cases",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'cases' appears in both sentences"
+          },
+          {
+            "word": "edge",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'edge' appears in both sentences"
+          },
+          {
+            "word": "testmodulepy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'testmodulepy' appears in both sentences"
+          },
+          {
+            "word": "function",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'function' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "prompt": "How to work with JSON in Python?",
+      "expected_answer": "JSON operations: 1) Import json module 2) Parse JSON: data = json.loads(json_string) 3) Convert to JSON: json_string = json.dumps(data) 4) Read from file: with open('file.json') as f: data = json.load(f) 5) Write to file: json.dump(data, f, indent=2)",
+      "model_response": "JSON operations: 1) Import json module 2) Parse JSON: data = json.loads(json_string) 3) Convert to JSON: json_string = json.dumps(data) 4) Read from file: with open('file.json') as f: data = json.load(f) 5) Write to file: json.dump(data, f, indent=2)",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "JSON operations: 1) Import json module 2) Parse JSON: data = json.loads(json_string) 3) Convert to JSON: json_string = json.dumps(data) 4) Read from file: with open('file.json') as f: data = json.load(f) 5) Write to file: json.dump(data, f, indent=2)",
+        "sentence2": "JSON operations: 1) Import json module 2) Parse JSON: data = json.loads(json_string) 3) Convert to JSON: json_string = json.dumps(data) 4) Read from file: with open('file.json') as f: data = json.load(f) 5) Write to file: json.dump(data, f, indent=2)",
+        "word_analysis": [
+          {
+            "word": "operations",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'operations' appears in both sentences"
+          },
+          {
+            "word": "json",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'json' appears in both sentences"
+          },
+          {
+            "word": "jsondumpsdata",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jsondumpsdata' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "file",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'file' appears in both sentences"
+          },
+          {
+            "word": "jsonloadsjsonstring",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jsonloadsjsonstring' appears in both sentences"
+          },
+          {
+            "word": "jsonstring",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jsonstring' appears in both sentences"
+          },
+          {
+            "word": "write",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'write' appears in both sentences"
+          },
+          {
+            "word": "convert",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'convert' appears in both sentences"
+          },
+          {
+            "word": "module",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'module' appears in both sentences"
+          },
+          {
+            "word": "openfilejson",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'openfilejson' appears in both sentences"
+          },
+          {
+            "word": "jsonloadf",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jsonloadf' appears in both sentences"
+          },
+          {
+            "word": "read",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'read' appears in both sentences"
+          },
+          {
+            "word": "jsondumpdata",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jsondumpdata' appears in both sentences"
+          },
+          {
+            "word": "import",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'import' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "prompt": "What are Python async/await?",
+      "expected_answer": "Async/await for asynchronous programming: async def fetch_data(): async with aiohttp.ClientSession() as session: async with session.get(url) as response: return await response.json(). Run with asyncio.run() or in async event loop. Use for I/O bound operations.",
+      "model_response": "Async/await for asynchronous programming: async def fetch_data(): async with aiohttp.ClientSession() as session: async with session.get(url) as response: return await response.json(). Run with asyncio.run() or in async event loop. Use for I/O bound operations.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000001192092896,
+      "string_comparison_details": {
+        "similarity": 1.0000001192092896,
+        "sentence1": "Async/await for asynchronous programming: async def fetch_data(): async with aiohttp.ClientSession() as session: async with session.get(url) as response: return await response.json(). Run with asyncio.run() or in async event loop. Use for I/O bound operations.",
+        "sentence2": "Async/await for asynchronous programming: async def fetch_data(): async with aiohttp.ClientSession() as session: async with session.get(url) as response: return await response.json(). Run with asyncio.run() or in async event loop. Use for I/O bound operations.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "async",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'async' appears in both sentences"
+          },
+          {
+            "word": "def",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'def' appears in both sentences"
+          },
+          {
+            "word": "sessiongeturl",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sessiongeturl' appears in both sentences"
+          },
+          {
+            "word": "asynchronous",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'asynchronous' appears in both sentences"
+          },
+          {
+            "word": "response",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'response' appears in both sentences"
+          },
+          {
+            "word": "run",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'run' appears in both sentences"
+          },
+          {
+            "word": "session",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'session' appears in both sentences"
+          },
+          {
+            "word": "await",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'await' appears in both sentences"
+          },
+          {
+            "word": "bound",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'bound' appears in both sentences"
+          },
+          {
+            "word": "aiohttpclientsession",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'aiohttpclientsession' appears in both sentences"
+          },
+          {
+            "word": "loop",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'loop' appears in both sentences"
+          },
+          {
+            "word": "fetchdata",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'fetchdata' appears in both sentences"
+          },
+          {
+            "word": "responsejson",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'responsejson' appears in both sentences"
+          },
+          {
+            "word": "asynciorun",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'asynciorun' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "prompt": "How to use NumPy for numerical computing?",
+      "expected_answer": "NumPy basics: 1) Import: import numpy as np 2) Create arrays: arr = np.array([1,2,3]) 3) Operations: arr * 2 (element-wise) 4) Shape: arr.shape, arr.reshape(2,3) 5) Indexing: arr[0], arr[1:3] 6) Functions: np.sum(arr), np.mean(arr) 7) Random: np.random.rand(3,3)",
+      "model_response": "NumPy basics: 1) Import: import numpy as np 2) Create arrays: arr = np.array([1,2,3]) 3) Operations: arr * 2 (element-wise) 4) Shape: arr.shape, arr.reshape(2,3) 5) Indexing: arr[0], arr[1:3] 6) Functions: np.sum(arr), np.mean(arr) 7) Random: np.random.rand(3,3)",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "NumPy basics: 1) Import: import numpy as np 2) Create arrays: arr = np.array([1,2,3]) 3) Operations: arr * 2 (element-wise) 4) Shape: arr.shape, arr.reshape(2,3) 5) Indexing: arr[0], arr[1:3] 6) Functions: np.sum(arr), np.mean(arr) 7) Random: np.random.rand(3,3)",
+        "sentence2": "NumPy basics: 1) Import: import numpy as np 2) Create arrays: arr = np.array([1,2,3]) 3) Operations: arr * 2 (element-wise) 4) Shape: arr.shape, arr.reshape(2,3) 5) Indexing: arr[0], arr[1:3] 6) Functions: np.sum(arr), np.mean(arr) 7) Random: np.random.rand(3,3)",
+        "word_analysis": [
+          {
+            "word": "npsumarr",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'npsumarr' appears in both sentences"
+          },
+          {
+            "word": "arr",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'arr' appears in both sentences"
+          },
+          {
+            "word": "shape",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'shape' appears in both sentences"
+          },
+          {
+            "word": "random",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'random' appears in both sentences"
+          },
+          {
+            "word": "arrays",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'arrays' appears in both sentences"
+          },
+          {
+            "word": "arr13",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'arr13' appears in both sentences"
+          },
+          {
+            "word": "nparray123",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'nparray123' appears in both sentences"
+          },
+          {
+            "word": "npmeanarr",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'npmeanarr' appears in both sentences"
+          },
+          {
+            "word": "arr0",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'arr0' appears in both sentences"
+          },
+          {
+            "word": "import",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'import' appears in both sentences"
+          },
+          {
+            "word": "numpy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'numpy' appears in both sentences"
+          },
+          {
+            "word": "nprandomrand33",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'nprandomrand33' appears in both sentences"
+          },
+          {
+            "word": "functions",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'functions' appears in both sentences"
+          },
+          {
+            "word": "create",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'create' appears in both sentences"
+          },
+          {
+            "word": "operations",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'operations' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "prompt": "How to handle file operations in Python?",
+      "expected_answer": "File operations: 1) Open file: with open('file.txt', 'r') as f: content = f.read() 2) Modes: 'r' (read), 'w' (write), 'a' (append), 'b' (binary) 3) Read lines: for line in f: process(line) 4) Write: f.write('text') 5) Use pathlib for modern path handling: Path('file.txt').read_text()",
+      "model_response": "File operations: 1) Open file: with open('file.txt', 'r') as f: content = f.read() 2) Modes: 'r' (read), 'w' (write), 'a' (append), 'b' (binary) 3) Read lines: for line in f: process(line) 4) Write: f.write('text') 5) Use pathlib for modern path handling: Path('file.txt').read_text()",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "File operations: 1) Open file: with open('file.txt', 'r') as f: content = f.read() 2) Modes: 'r' (read), 'w' (write), 'a' (append), 'b' (binary) 3) Read lines: for line in f: process(line) 4) Write: f.write('text') 5) Use pathlib for modern path handling: Path('file.txt').read_text()",
+        "sentence2": "File operations: 1) Open file: with open('file.txt', 'r') as f: content = f.read() 2) Modes: 'r' (read), 'w' (write), 'a' (append), 'b' (binary) 3) Read lines: for line in f: process(line) 4) Write: f.write('text') 5) Use pathlib for modern path handling: Path('file.txt').read_text()",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "pathfiletxtreadtext",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pathfiletxtreadtext' appears in both sentences"
+          },
+          {
+            "word": "fread",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'fread' appears in both sentences"
+          },
+          {
+            "word": "write",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'write' appears in both sentences"
+          },
+          {
+            "word": "modes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'modes' appears in both sentences"
+          },
+          {
+            "word": "pathlib",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pathlib' appears in both sentences"
+          },
+          {
+            "word": "handling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'handling' appears in both sentences"
+          },
+          {
+            "word": "file",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'file' appears in both sentences"
+          },
+          {
+            "word": "processline",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'processline' appears in both sentences"
+          },
+          {
+            "word": "binary",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'binary' appears in both sentences"
+          },
+          {
+            "word": "modern",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'modern' appears in both sentences"
+          },
+          {
+            "word": "fwritetext",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'fwritetext' appears in both sentences"
+          },
+          {
+            "word": "open",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'open' appears in both sentences"
+          },
+          {
+            "word": "lines",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'lines' appears in both sentences"
+          },
+          {
+            "word": "read",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'read' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "prompt": "What are Python context managers?",
+      "expected_answer": "Context managers handle resource cleanup with 'with' statement. Built-in: open(), threading.Lock(). Custom: class MyContext: def __enter__(self): return self; def __exit__(self, exc_type, exc_val, exc_tb): cleanup(). Use @contextmanager decorator for generators.",
+      "model_response": "Context managers handle resource cleanup with 'with' statement. Built-in: open(), threading.Lock(). Custom: class MyContext: def __enter__(self): return self; def __exit__(self, exc_type, exc_val, exc_tb): cleanup(). Use @contextmanager decorator for generators.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Context managers handle resource cleanup with 'with' statement. Built-in: open(), threading.Lock(). Custom: class MyContext: def __enter__(self): return self; def __exit__(self, exc_type, exc_val, exc_tb): cleanup(). Use @contextmanager decorator for generators.",
+        "sentence2": "Context managers handle resource cleanup with 'with' statement. Built-in: open(), threading.Lock(). Custom: class MyContext: def __enter__(self): return self; def __exit__(self, exc_type, exc_val, exc_tb): cleanup(). Use @contextmanager decorator for generators.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "def",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'def' appears in both sentences"
+          },
+          {
+            "word": "generators",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'generators' appears in both sentences"
+          },
+          {
+            "word": "exitself",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'exitself' appears in both sentences"
+          },
+          {
+            "word": "builtin",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'builtin' appears in both sentences"
+          },
+          {
+            "word": "statement",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'statement' appears in both sentences"
+          },
+          {
+            "word": "custom",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'custom' appears in both sentences"
+          },
+          {
+            "word": "excval",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'excval' appears in both sentences"
+          },
+          {
+            "word": "enterself",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'enterself' appears in both sentences"
+          },
+          {
+            "word": "context",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'context' appears in both sentences"
+          },
+          {
+            "word": "resource",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'resource' appears in both sentences"
+          },
+          {
+            "word": "decorator",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'decorator' appears in both sentences"
+          },
+          {
+            "word": "exctype",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'exctype' appears in both sentences"
+          },
+          {
+            "word": "exctb",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'exctb' appears in both sentences"
+          },
+          {
+            "word": "open",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'open' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "prompt": "How to use Python logging?",
+      "expected_answer": "Logging setup: import logging; logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s'); logger = logging.getLogger(__name__); logger.info('message'). Levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Use different loggers for modules.",
+      "model_response": "Logging setup: import logging; logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s'); logger = logging.getLogger(__name__); logger.info('message'). Levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Use different loggers for modules.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Logging setup: import logging; logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s'); logger = logging.getLogger(__name__); logger.info('message'). Levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Use different loggers for modules.",
+        "sentence2": "Logging setup: import logging; logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s'); logger = logging.getLogger(__name__); logger.info('message'). Levels: DEBUG, INFO, WARNING, ERROR, CRITICAL. Use different loggers for modules.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "levelnames",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'levelnames' appears in both sentences"
+          },
+          {
+            "word": "modules",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'modules' appears in both sentences"
+          },
+          {
+            "word": "different",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'different' appears in both sentences"
+          },
+          {
+            "word": "critical",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'critical' appears in both sentences"
+          },
+          {
+            "word": "setup",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'setup' appears in both sentences"
+          },
+          {
+            "word": "loggerinfomessage",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'loggerinfomessage' appears in both sentences"
+          },
+          {
+            "word": "loggers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'loggers' appears in both sentences"
+          },
+          {
+            "word": "logging",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'logging' appears in both sentences"
+          },
+          {
+            "word": "warning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'warning' appears in both sentences"
+          },
+          {
+            "word": "formatasctimes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'formatasctimes' appears in both sentences"
+          },
+          {
+            "word": "debug",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'debug' appears in both sentences"
+          },
+          {
+            "word": "loggingbasicconfiglevellogginginfo",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'loggingbasicconfiglevellogginginfo' appears in both sentences"
+          },
+          {
+            "word": "messages",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'messages' appears in both sentences"
+          },
+          {
+            "word": "logginggetloggername",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'logginggetloggername' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "prompt": "How to create a Python CLI application?",
+      "expected_answer": "CLI with argparse: import argparse; parser = argparse.ArgumentParser(); parser.add_argument('--input', required=True); parser.add_argument('--output', default='output.txt'); args = parser.parse_args(). Use click library for more advanced CLIs with decorators.",
+      "model_response": "CLI with argparse: import argparse; parser = argparse.ArgumentParser(); parser.add_argument('--input', required=True); parser.add_argument('--output', default='output.txt'); args = parser.parse_args(). Use click library for more advanced CLIs with decorators.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "CLI with argparse: import argparse; parser = argparse.ArgumentParser(); parser.add_argument('--input', required=True); parser.add_argument('--output', default='output.txt'); args = parser.parse_args(). Use click library for more advanced CLIs with decorators.",
+        "sentence2": "CLI with argparse: import argparse; parser = argparse.ArgumentParser(); parser.add_argument('--input', required=True); parser.add_argument('--output', default='output.txt'); args = parser.parse_args(). Use click library for more advanced CLIs with decorators.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "more",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'more' appears in both sentences"
+          },
+          {
+            "word": "args",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'args' appears in both sentences"
+          },
+          {
+            "word": "argparse",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'argparse' appears in both sentences"
+          },
+          {
+            "word": "clis",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'clis' appears in both sentences"
+          },
+          {
+            "word": "parserparseargs",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'parserparseargs' appears in both sentences"
+          },
+          {
+            "word": "defaultoutputtxt",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'defaultoutputtxt' appears in both sentences"
+          },
+          {
+            "word": "cli",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'cli' appears in both sentences"
+          },
+          {
+            "word": "library",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'library' appears in both sentences"
+          },
+          {
+            "word": "parseraddargumentoutput",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'parseraddargumentoutput' appears in both sentences"
+          },
+          {
+            "word": "click",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'click' appears in both sentences"
+          },
+          {
+            "word": "decorators",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'decorators' appears in both sentences"
+          },
+          {
+            "word": "advanced",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'advanced' appears in both sentences"
+          },
+          {
+            "word": "requiredtrue",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'requiredtrue' appears in both sentences"
+          },
+          {
+            "word": "import",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'import' appears in both sentences"
+          }
+        ]
+      }
+    }
+  ]
+}

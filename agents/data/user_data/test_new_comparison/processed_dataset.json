@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "total_samples": 3,
+    "valid_samples": 3,
+    "invalid_samples": 0,
+    "avg_prompt_length": 17.666666666666668,
+    "avg_answer_length": 34.666666666666664,
+    "max_prompt_length": 24,
+    "max_answer_length": 41,
+    "processed_at": "2025-09-27T19:11:41.297499"
+  },
+  "data": [
+    {
+      "id": 0,
+      "prompt": "Como criar uma API REST?",
+      "answer": "Use Flask com @app.route()",
+      "prompt_length": 24,
+      "answer_length": 26
+    },
+    {
+      "id": 1,
+      "prompt": "O que é Python?",
+      "answer": "Linguagem de programação interpretada",
+      "prompt_length": 15,
+      "answer_length": 37
+    },
+    {
+      "id": 2,
+      "prompt": "Como usar Git?",
+      "answer": "Sistema de controle de versão distribuído",
+      "prompt_length": 14,
+      "answer_length": 41
+    }
+  ]
+}

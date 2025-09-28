@@ -206,6 +206,7 @@ class UserAgentManager:
         """Execute user pipeline in separate thread - REAL MODEL TRAINING"""
         try:
             self.active_users[user_id]['status'] = 'processing'
+            self.active_users[user_id]['training_progress'] = 0
             
             # Get training data and base model from session
             training_data = session.state.get('training_data', '')
@@ -214,16 +215,19 @@ class UserAgentManager:
             # Initialize real model trainer
             model_trainer = RealModelTrainer(user_id, self.config)
             
-            # Step 1: Process training data into prompt/answer pairs
+            # Step 1: Process training data into prompt/answer pairs (20% progress)
             logger.info(f"Processing training data for user {user_id}")
+            self.active_users[user_id]['training_progress'] = 20
             processed_data = model_trainer.process_training_data(training_data)
             
-            # Step 2: Train the actual model
+            # Step 2: Train the actual model (60% progress)
             logger.info(f"Training model for user {user_id}")
+            self.active_users[user_id]['training_progress'] = 60
             training_results = model_trainer.train_model(processed_data)
             
-            # Step 3: Test the model with a sample evaluation
+            # Step 3: Test the model with a sample evaluation (90% progress)
             logger.info(f"Testing model for user {user_id}")
+            self.active_users[user_id]['training_progress'] = 90
             test_results = model_trainer.evaluate_model(
                 "Como você pode ajudar?",
                 "Posso ajudar com dúvidas e explicações."
@@ -231,6 +235,7 @@ class UserAgentManager:
             
             # Update user status (without storing the model_trainer object for JSON serialization)
             self.active_users[user_id]['status'] = 'ready'
+            self.active_users[user_id]['training_progress'] = 60
             self.active_users[user_id]['model_ready_at'] = datetime.now().isoformat()
             self.active_users[user_id]['processed_data'] = processed_data
             self.active_users[user_id]['training_results'] = training_results
@@ -253,30 +258,36 @@ class UserAgentManager:
         except Exception as e:
             logger.error(f"Error executing real training pipeline for user {user_id}: {e}")
             self.active_users[user_id]['status'] = 'error'
+            self.active_users[user_id]['training_progress'] = 0
             self.active_users[user_id]['error'] = str(e)
     
     def _execute_advanced_pipeline(self, user_id: str, json_dataset: List[Dict[str, str]], base_model: str):
         """Execute advanced pipeline with JSON dataset and string comparison"""
         try:
             self.active_users[user_id]['status'] = 'processing'
+            self.active_users[user_id]['training_progress'] = 0
             
             # Get the advanced training agent
             advanced_agent = self.user_model_trainers[user_id]
             
-            # Step 1: Process JSON dataset
+            # Step 1: Process JSON dataset (25% progress)
             logger.info(f"Processing JSON dataset for user {user_id}")
+            self.active_users[user_id]['training_progress'] = 25
             dataset_stats = advanced_agent.process_json_dataset(json_dataset)
             
-            # Step 2: Train with QLoRA
+            # Step 2: Train with QLoRA (70% progress)
             logger.info(f"Training with QLoRA for user {user_id}")
+            self.active_users[user_id]['training_progress'] = 70
             training_results = advanced_agent.train_with_qlora(dataset_stats)
             
-            # Step 3: Evaluate full dataset with string comparison
+            # Step 3: Evaluate full dataset with string comparison (95% progress)
             logger.info(f"Evaluating with string comparison for user {user_id}")
+            self.active_users[user_id]['training_progress'] = 95
             evaluation_results = advanced_agent.evaluate_full_dataset()
             
             # Update user status
             self.active_users[user_id]['status'] = 'ready'
+            self.active_users[user_id]['training_progress'] = 100
             self.active_users[user_id]['model_ready_at'] = datetime.now().isoformat()
             self.active_users[user_id]['dataset_stats'] = dataset_stats
             self.active_users[user_id]['training_results'] = training_results
@@ -295,6 +306,7 @@ class UserAgentManager:
         except Exception as e:
             logger.error(f"Error executing advanced pipeline for user {user_id}: {e}")
             self.active_users[user_id]['status'] = 'error'
+            self.active_users[user_id]['training_progress'] = 0
             self.active_users[user_id]['error'] = str(e)
     
     def get_user_status(self, user_id: str) -> Optional[Dict[str, Any]]:
@@ -361,7 +373,8 @@ class UserAgentManager:
                 model_response = result['model_response']
                 confidence = result['model_confidence']
                 string_comp = result.get('string_comparison', {})
-                similarity = string_comp.get('similarity', 0.0)
+                # Use semantic_similarity if available, fallback to similarity
+                similarity = string_comp.get('semantic_similarity', string_comp.get('similarity', 0.0))
                 
                 response = f"{model_response}\n\n[Confiança do Modelo: {confidence:.2%}]\n[Similaridade String: {similarity:.2%}]"
                 
@@ -450,8 +463,29 @@ class UserAgentManager:
                 model_trainer = RealModelTrainer(user_id, self.config)
                 self.user_model_trainers[user_id] = model_trainer
             
-            # Evaluate using the real model trainer
-            evaluation_results = model_trainer.evaluate_model(test_prompt, expected_answer)
+            # Check if it's an advanced agent and use string comparison service
+            if isinstance(model_trainer, AdvancedTrainingAgent):
+                # Use advanced inference with string comparison for evaluation
+                inference_result = model_trainer.make_inference_and_compare(test_prompt)
+                
+                if 'error' in inference_result:
+                    return {"error": inference_result['error']}
+                
+                string_comp = inference_result.get('string_comparison', {})
+                
+                evaluation_results = {
+                    'test_prompt': test_prompt,
+                    'expected_answer': expected_answer,
+                    'predicted_answer': inference_result['model_response'],
+                    'model_confidence': inference_result['model_confidence'],
+                    'semantic_similarity': string_comp.get('semantic_similarity', string_comp.get('similarity', 0.0)),
+                    'overall_similarity': string_comp.get('semantic_similarity', string_comp.get('similarity', 0.0)),
+                    'string_comparison_details': string_comp,
+                    'evaluated_at': datetime.now().isoformat()
+                }
+            else:
+                # Use regular model trainer evaluation
+                evaluation_results = model_trainer.evaluate_model(test_prompt, expected_answer)
             
             logger.info(f"Model evaluation for user {user_id}: {evaluation_results.get('overall_similarity', 0):.3f}")
             

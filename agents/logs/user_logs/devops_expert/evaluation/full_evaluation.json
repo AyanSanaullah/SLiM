@@ -1,0 +1,3017 @@
+{
+  "overall_metrics": {
+    "total_samples": 20,
+    "successful_evaluations": 20,
+    "failed_evaluations": 0,
+    "average_string_similarity": 1.0000000149011612,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0000001192092896,
+    "min_string_similarity": 0.9999999403953552,
+    "high_similarity_count": 20,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-27T18:50:49.603043"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "How to setup CI/CD pipeline?",
+      "expected_answer": "CI/CD pipeline setup: 1) Version control: Git repository 2) Build automation: compile, test, package 3) Automated testing: unit, integration, e2e tests 4) Code quality: linting, security scanning 5) Deployment: staging, production environments 6) Monitoring: health checks, rollback mechanisms. Tools: Jenkins, GitHub Actions, GitLab CI, Azure DevOps.",
+      "model_response": "CI/CD pipeline setup: 1) Version control: Git repository 2) Build automation: compile, test, package 3) Automated testing: unit, integration, e2e tests 4) Code quality: linting, security scanning 5) Deployment: staging, production environments 6) Monitoring: health checks, rollback mechanisms. Tools: Jenkins, GitHub Actions, GitLab CI, Azure DevOps.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "CI/CD pipeline setup: 1) Version control: Git repository 2) Build automation: compile, test, package 3) Automated testing: unit, integration, e2e tests 4) Code quality: linting, security scanning 5) Deployment: staging, production environments 6) Monitoring: health checks, rollback mechanisms. Tools: Jenkins, GitHub Actions, GitLab CI, Azure DevOps.",
+        "sentence2": "CI/CD pipeline setup: 1) Version control: Git repository 2) Build automation: compile, test, package 3) Automated testing: unit, integration, e2e tests 4) Code quality: linting, security scanning 5) Deployment: staging, production environments 6) Monitoring: health checks, rollback mechanisms. Tools: Jenkins, GitHub Actions, GitLab CI, Azure DevOps.",
+        "word_analysis": [
+          {
+            "word": "quality",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'quality' appears in both sentences"
+          },
+          {
+            "word": "pipeline",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pipeline' appears in both sentences"
+          },
+          {
+            "word": "actions",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'actions' appears in both sentences"
+          },
+          {
+            "word": "azure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'azure' appears in both sentences"
+          },
+          {
+            "word": "security",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'security' appears in both sentences"
+          },
+          {
+            "word": "control",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'control' appears in both sentences"
+          },
+          {
+            "word": "integration",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'integration' appears in both sentences"
+          },
+          {
+            "word": "repository",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'repository' appears in both sentences"
+          },
+          {
+            "word": "git",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'git' appears in both sentences"
+          },
+          {
+            "word": "checks",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'checks' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "devops",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'devops' appears in both sentences"
+          },
+          {
+            "word": "setup",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'setup' appears in both sentences"
+          },
+          {
+            "word": "package",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'package' appears in both sentences"
+          },
+          {
+            "word": "production",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'production' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "What is the difference between Docker and Kubernetes?",
+      "expected_answer": "Docker is containerization platform - packages apps with dependencies into containers. Kubernetes is container orchestration - manages, scales, and deploys containers across clusters. Docker runs containers, Kubernetes orchestrates them. Use Docker for development, Kubernetes for production container management.",
+      "model_response": "Docker is containerization platform - packages apps with dependencies into containers. Kubernetes is container orchestration - manages, scales, and deploys containers across clusters. Docker runs containers, Kubernetes orchestrates them. Use Docker for development, Kubernetes for production container management.",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Docker is containerization platform - packages apps with dependencies into containers. Kubernetes is container orchestration - manages, scales, and deploys containers across clusters. Docker runs containers, Kubernetes orchestrates them. Use Docker for development, Kubernetes for production container management.",
+        "sentence2": "Docker is containerization platform - packages apps with dependencies into containers. Kubernetes is container orchestration - manages, scales, and deploys containers across clusters. Docker runs containers, Kubernetes orchestrates them. Use Docker for development, Kubernetes for production container management.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "platform",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'platform' appears in both sentences"
+          },
+          {
+            "word": "development",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'development' appears in both sentences"
+          },
+          {
+            "word": "scales",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'scales' appears in both sentences"
+          },
+          {
+            "word": "into",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'into' appears in both sentences"
+          },
+          {
+            "word": "orchestrates",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'orchestrates' appears in both sentences"
+          },
+          {
+            "word": "kubernetes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kubernetes' appears in both sentences"
+          },
+          {
+            "word": "manages",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'manages' appears in both sentences"
+          },
+          {
+            "word": "containers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'containers' appears in both sentences"
+          },
+          {
+            "word": "production",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'production' appears in both sentences"
+          },
+          {
+            "word": "container",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'container' appears in both sentences"
+          },
+          {
+            "word": "management",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'management' appears in both sentences"
+          },
+          {
+            "word": "containerization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'containerization' appears in both sentences"
+          },
+          {
+            "word": "runs",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'runs' appears in both sentences"
+          },
+          {
+            "word": "across",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'across' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "How to monitor application performance?",
+      "expected_answer": "Application monitoring: 1) Metrics: CPU, memory, disk, network usage 2) Logs: centralized logging with ELK stack (Elasticsearch, Logstash, Kibana) 3) APM: Application Performance Monitoring (New Relic, Datadog, AppDynamics) 4) Alerting: thresholds, notifications via Slack/email 5) Dashboards: Grafana, custom dashboards 6) Health checks: endpoints, database connections",
+      "model_response": "Application monitoring: 1) Metrics: CPU, memory, disk, network usage 2) Logs: centralized logging with ELK stack (Elasticsearch, Logstash, Kibana) 3) APM: Application Performance Monitoring (New Relic, Datadog, AppDynamics) 4) Alerting: thresholds, notifications via Slack/email 5) Dashboards: Grafana, custom dashboards 6) Health checks: endpoints, database connections",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Application monitoring: 1) Metrics: CPU, memory, disk, network usage 2) Logs: centralized logging with ELK stack (Elasticsearch, Logstash, Kibana) 3) APM: Application Performance Monitoring (New Relic, Datadog, AppDynamics) 4) Alerting: thresholds, notifications via Slack/email 5) Dashboards: Grafana, custom dashboards 6) Health checks: endpoints, database connections",
+        "sentence2": "Application monitoring: 1) Metrics: CPU, memory, disk, network usage 2) Logs: centralized logging with ELK stack (Elasticsearch, Logstash, Kibana) 3) APM: Application Performance Monitoring (New Relic, Datadog, AppDynamics) 4) Alerting: thresholds, notifications via Slack/email 5) Dashboards: Grafana, custom dashboards 6) Health checks: endpoints, database connections",
+        "word_analysis": [
+          {
+            "word": "kibana",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kibana' appears in both sentences"
+          },
+          {
+            "word": "appdynamics",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'appdynamics' appears in both sentences"
+          },
+          {
+            "word": "endpoints",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'endpoints' appears in both sentences"
+          },
+          {
+            "word": "datadog",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'datadog' appears in both sentences"
+          },
+          {
+            "word": "disk",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'disk' appears in both sentences"
+          },
+          {
+            "word": "custom",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'custom' appears in both sentences"
+          },
+          {
+            "word": "checks",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'checks' appears in both sentences"
+          },
+          {
+            "word": "centralized",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'centralized' appears in both sentences"
+          },
+          {
+            "word": "stack",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'stack' appears in both sentences"
+          },
+          {
+            "word": "usage",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'usage' appears in both sentences"
+          },
+          {
+            "word": "relic",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'relic' appears in both sentences"
+          },
+          {
+            "word": "logs",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'logs' appears in both sentences"
+          },
+          {
+            "word": "memory",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'memory' appears in both sentences"
+          },
+          {
+            "word": "logging",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'logging' appears in both sentences"
+          },
+          {
+            "word": "elk",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'elk' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "What are the best practices for container security?",
+      "expected_answer": "Container security best practices: 1) Use minimal base images (Alpine Linux) 2) Scan images for vulnerabilities 3) Run containers as non-root users 4) Limit container capabilities 5) Use secrets management 6) Network segmentation 7) Regular updates 8) Multi-stage builds to reduce attack surface 9) Use read-only filesystems when possible",
+      "model_response": "Container security best practices: 1) Use minimal base images (Alpine Linux) 2) Scan images for vulnerabilities 3) Run containers as non-root users 4) Limit container capabilities 5) Use secrets management 6) Network segmentation 7) Regular updates 8) Multi-stage builds to reduce attack surface 9) Use read-only filesystems when possible",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Container security best practices: 1) Use minimal base images (Alpine Linux) 2) Scan images for vulnerabilities 3) Run containers as non-root users 4) Limit container capabilities 5) Use secrets management 6) Network segmentation 7) Regular updates 8) Multi-stage builds to reduce attack surface 9) Use read-only filesystems when possible",
+        "sentence2": "Container security best practices: 1) Use minimal base images (Alpine Linux) 2) Scan images for vulnerabilities 3) Run containers as non-root users 4) Limit container capabilities 5) Use secrets management 6) Network segmentation 7) Regular updates 8) Multi-stage builds to reduce attack surface 9) Use read-only filesystems when possible",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "nonroot",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'nonroot' appears in both sentences"
+          },
+          {
+            "word": "security",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'security' appears in both sentences"
+          },
+          {
+            "word": "capabilities",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'capabilities' appears in both sentences"
+          },
+          {
+            "word": "regular",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'regular' appears in both sentences"
+          },
+          {
+            "word": "images",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'images' appears in both sentences"
+          },
+          {
+            "word": "reduce",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'reduce' appears in both sentences"
+          },
+          {
+            "word": "secrets",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'secrets' appears in both sentences"
+          },
+          {
+            "word": "run",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'run' appears in both sentences"
+          },
+          {
+            "word": "base",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'base' appears in both sentences"
+          },
+          {
+            "word": "when",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'when' appears in both sentences"
+          },
+          {
+            "word": "alpine",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'alpine' appears in both sentences"
+          },
+          {
+            "word": "containers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'containers' appears in both sentences"
+          },
+          {
+            "word": "network",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'network' appears in both sentences"
+          },
+          {
+            "word": "segmentation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'segmentation' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "How to implement blue-green deployment?",
+      "expected_answer": "Blue-green deployment: 1) Maintain two identical production environments (blue, green) 2) Route traffic to blue (current version) 3) Deploy new version to green environment 4) Test green environment thoroughly 5) Switch traffic from blue to green 6) Keep blue as rollback option. Benefits: zero downtime, quick rollback, reduced risk.",
+      "model_response": "Blue-green deployment: 1) Maintain two identical production environments (blue, green) 2) Route traffic to blue (current version) 3) Deploy new version to green environment 4) Test green environment thoroughly 5) Switch traffic from blue to green 6) Keep blue as rollback option. Benefits: zero downtime, quick rollback, reduced risk.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Blue-green deployment: 1) Maintain two identical production environments (blue, green) 2) Route traffic to blue (current version) 3) Deploy new version to green environment 4) Test green environment thoroughly 5) Switch traffic from blue to green 6) Keep blue as rollback option. Benefits: zero downtime, quick rollback, reduced risk.",
+        "sentence2": "Blue-green deployment: 1) Maintain two identical production environments (blue, green) 2) Route traffic to blue (current version) 3) Deploy new version to green environment 4) Test green environment thoroughly 5) Switch traffic from blue to green 6) Keep blue as rollback option. Benefits: zero downtime, quick rollback, reduced risk.",
+        "word_analysis": [
+          {
+            "word": "deploy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'deploy' appears in both sentences"
+          },
+          {
+            "word": "switch",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'switch' appears in both sentences"
+          },
+          {
+            "word": "reduced",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'reduced' appears in both sentences"
+          },
+          {
+            "word": "from",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'from' appears in both sentences"
+          },
+          {
+            "word": "zero",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'zero' appears in both sentences"
+          },
+          {
+            "word": "bluegreen",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'bluegreen' appears in both sentences"
+          },
+          {
+            "word": "production",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'production' appears in both sentences"
+          },
+          {
+            "word": "benefits",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'benefits' appears in both sentences"
+          },
+          {
+            "word": "environment",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'environment' appears in both sentences"
+          },
+          {
+            "word": "option",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'option' appears in both sentences"
+          },
+          {
+            "word": "blue",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'blue' appears in both sentences"
+          },
+          {
+            "word": "two",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'two' appears in both sentences"
+          },
+          {
+            "word": "risk",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'risk' appears in both sentences"
+          },
+          {
+            "word": "thoroughly",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'thoroughly' appears in both sentences"
+          },
+          {
+            "word": "new",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'new' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "prompt": "What is Infrastructure as Code (IaC)?",
+      "expected_answer": "Infrastructure as Code manages infrastructure through code. Benefits: 1) Version control for infrastructure 2) Reproducible environments 3) Automated provisioning 4) Documentation through code 5) Rollback capabilities. Tools: Terraform (multi-cloud), AWS CloudFormation, Azure Resource Manager, Google Deployment Manager, Ansible.",
+      "model_response": "Infrastructure as Code manages infrastructure through code. Benefits: 1) Version control for infrastructure 2) Reproducible environments 3) Automated provisioning 4) Documentation through code 5) Rollback capabilities. Tools: Terraform (multi-cloud), AWS CloudFormation, Azure Resource Manager, Google Deployment Manager, Ansible.",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Infrastructure as Code manages infrastructure through code. Benefits: 1) Version control for infrastructure 2) Reproducible environments 3) Automated provisioning 4) Documentation through code 5) Rollback capabilities. Tools: Terraform (multi-cloud), AWS CloudFormation, Azure Resource Manager, Google Deployment Manager, Ansible.",
+        "sentence2": "Infrastructure as Code manages infrastructure through code. Benefits: 1) Version control for infrastructure 2) Reproducible environments 3) Automated provisioning 4) Documentation through code 5) Rollback capabilities. Tools: Terraform (multi-cloud), AWS CloudFormation, Azure Resource Manager, Google Deployment Manager, Ansible.",
+        "word_analysis": [
+          {
+            "word": "cloudformation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'cloudformation' appears in both sentences"
+          },
+          {
+            "word": "multicloud",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'multicloud' appears in both sentences"
+          },
+          {
+            "word": "azure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'azure' appears in both sentences"
+          },
+          {
+            "word": "control",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'control' appears in both sentences"
+          },
+          {
+            "word": "capabilities",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'capabilities' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "terraform",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'terraform' appears in both sentences"
+          },
+          {
+            "word": "resource",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'resource' appears in both sentences"
+          },
+          {
+            "word": "manages",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'manages' appears in both sentences"
+          },
+          {
+            "word": "manager",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'manager' appears in both sentences"
+          },
+          {
+            "word": "benefits",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'benefits' appears in both sentences"
+          },
+          {
+            "word": "through",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'through' appears in both sentences"
+          },
+          {
+            "word": "infrastructure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'infrastructure' appears in both sentences"
+          },
+          {
+            "word": "automated",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'automated' appears in both sentences"
+          },
+          {
+            "word": "ansible",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'ansible' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "prompt": "How to setup Kubernetes cluster?",
+      "expected_answer": "Kubernetes cluster setup: 1) Choose deployment method: managed (EKS, GKE, AKS) or self-managed (kubeadm) 2) Configure master nodes: API server, etcd, scheduler, controller manager 3) Add worker nodes with kubelet, kube-proxy 4) Setup networking: CNI plugin (Flannel, Calico) 5) Configure storage: persistent volumes 6) Setup ingress controller 7) Configure RBAC and security policies",
+      "model_response": "Kubernetes cluster setup: 1) Choose deployment method: managed (EKS, GKE, AKS) or self-managed (kubeadm) 2) Configure master nodes: API server, etcd, scheduler, controller manager 3) Add worker nodes with kubelet, kube-proxy 4) Setup networking: CNI plugin (Flannel, Calico) 5) Configure storage: persistent volumes 6) Setup ingress controller 7) Configure RBAC and security policies",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Kubernetes cluster setup: 1) Choose deployment method: managed (EKS, GKE, AKS) or self-managed (kubeadm) 2) Configure master nodes: API server, etcd, scheduler, controller manager 3) Add worker nodes with kubelet, kube-proxy 4) Setup networking: CNI plugin (Flannel, Calico) 5) Configure storage: persistent volumes 6) Setup ingress controller 7) Configure RBAC and security policies",
+        "sentence2": "Kubernetes cluster setup: 1) Choose deployment method: managed (EKS, GKE, AKS) or self-managed (kubeadm) 2) Configure master nodes: API server, etcd, scheduler, controller manager 3) Add worker nodes with kubelet, kube-proxy 4) Setup networking: CNI plugin (Flannel, Calico) 5) Configure storage: persistent volumes 6) Setup ingress controller 7) Configure RBAC and security policies",
+        "word_analysis": [
+          {
+            "word": "add",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'add' appears in both sentences"
+          },
+          {
+            "word": "volumes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'volumes' appears in both sentences"
+          },
+          {
+            "word": "security",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'security' appears in both sentences"
+          },
+          {
+            "word": "controller",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'controller' appears in both sentences"
+          },
+          {
+            "word": "kubernetes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kubernetes' appears in both sentences"
+          },
+          {
+            "word": "flannel",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'flannel' appears in both sentences"
+          },
+          {
+            "word": "selfmanaged",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'selfmanaged' appears in both sentences"
+          },
+          {
+            "word": "setup",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'setup' appears in both sentences"
+          },
+          {
+            "word": "policies",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'policies' appears in both sentences"
+          },
+          {
+            "word": "manager",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'manager' appears in both sentences"
+          },
+          {
+            "word": "scheduler",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'scheduler' appears in both sentences"
+          },
+          {
+            "word": "kubeproxy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kubeproxy' appears in both sentences"
+          },
+          {
+            "word": "rbac",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rbac' appears in both sentences"
+          },
+          {
+            "word": "plugin",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'plugin' appears in both sentences"
+          },
+          {
+            "word": "nodes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'nodes' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "prompt": "What is GitOps and how to implement it?",
+      "expected_answer": "GitOps uses Git as single source of truth for declarative infrastructure and applications. Implementation: 1) Store infrastructure code in Git 2) Use tools like ArgoCD, Flux for continuous deployment 3) Automated synchronization between Git and cluster 4) Pull-based deployment model 5) Audit trail through Git history 6) Easy rollback through Git revert",
+      "model_response": "GitOps uses Git as single source of truth for declarative infrastructure and applications. Implementation: 1) Store infrastructure code in Git 2) Use tools like ArgoCD, Flux for continuous deployment 3) Automated synchronization between Git and cluster 4) Pull-based deployment model 5) Audit trail through Git history 6) Easy rollback through Git revert",
+      "model_confidence": 1.0,
+      "string_similarity": 0.9999999403953552,
+      "string_comparison_details": {
+        "similarity": 0.9999999403953552,
+        "sentence1": "GitOps uses Git as single source of truth for declarative infrastructure and applications. Implementation: 1) Store infrastructure code in Git 2) Use tools like ArgoCD, Flux for continuous deployment 3) Automated synchronization between Git and cluster 4) Pull-based deployment model 5) Audit trail through Git history 6) Easy rollback through Git revert",
+        "sentence2": "GitOps uses Git as single source of truth for declarative infrastructure and applications. Implementation: 1) Store infrastructure code in Git 2) Use tools like ArgoCD, Flux for continuous deployment 3) Automated synchronization between Git and cluster 4) Pull-based deployment model 5) Audit trail through Git history 6) Easy rollback through Git revert",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "trail",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'trail' appears in both sentences"
+          },
+          {
+            "word": "implementation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'implementation' appears in both sentences"
+          },
+          {
+            "word": "gitops",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'gitops' appears in both sentences"
+          },
+          {
+            "word": "continuous",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'continuous' appears in both sentences"
+          },
+          {
+            "word": "git",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'git' appears in both sentences"
+          },
+          {
+            "word": "audit",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'audit' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "applications",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'applications' appears in both sentences"
+          },
+          {
+            "word": "argocd",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'argocd' appears in both sentences"
+          },
+          {
+            "word": "single",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'single' appears in both sentences"
+          },
+          {
+            "word": "source",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'source' appears in both sentences"
+          },
+          {
+            "word": "declarative",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'declarative' appears in both sentences"
+          },
+          {
+            "word": "store",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'store' appears in both sentences"
+          },
+          {
+            "word": "uses",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'uses' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "prompt": "How to implement microservices architecture?",
+      "expected_answer": "Microservices architecture: 1) Decompose monolith into services 2) Each service owns its data 3) API gateway for routing 4) Service discovery (Consul, Eureka) 5) Load balancing and circuit breakers 6) Distributed tracing (Jaeger, Zipkin) 7) Centralized logging 8) Container orchestration (Kubernetes) 9) Event-driven communication",
+      "model_response": "Microservices architecture: 1) Decompose monolith into services 2) Each service owns its data 3) API gateway for routing 4) Service discovery (Consul, Eureka) 5) Load balancing and circuit breakers 6) Distributed tracing (Jaeger, Zipkin) 7) Centralized logging 8) Container orchestration (Kubernetes) 9) Event-driven communication",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Microservices architecture: 1) Decompose monolith into services 2) Each service owns its data 3) API gateway for routing 4) Service discovery (Consul, Eureka) 5) Load balancing and circuit breakers 6) Distributed tracing (Jaeger, Zipkin) 7) Centralized logging 8) Container orchestration (Kubernetes) 9) Event-driven communication",
+        "sentence2": "Microservices architecture: 1) Decompose monolith into services 2) Each service owns its data 3) API gateway for routing 4) Service discovery (Consul, Eureka) 5) Load balancing and circuit breakers 6) Distributed tracing (Jaeger, Zipkin) 7) Centralized logging 8) Container orchestration (Kubernetes) 9) Event-driven communication",
+        "word_analysis": [
+          {
+            "word": "circuit",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'circuit' appears in both sentences"
+          },
+          {
+            "word": "into",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'into' appears in both sentences"
+          },
+          {
+            "word": "kubernetes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kubernetes' appears in both sentences"
+          },
+          {
+            "word": "breakers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'breakers' appears in both sentences"
+          },
+          {
+            "word": "service",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'service' appears in both sentences"
+          },
+          {
+            "word": "centralized",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'centralized' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "logging",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'logging' appears in both sentences"
+          },
+          {
+            "word": "microservices",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'microservices' appears in both sentences"
+          },
+          {
+            "word": "eureka",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'eureka' appears in both sentences"
+          },
+          {
+            "word": "communication",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'communication' appears in both sentences"
+          },
+          {
+            "word": "each",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'each' appears in both sentences"
+          },
+          {
+            "word": "jaeger",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jaeger' appears in both sentences"
+          },
+          {
+            "word": "container",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'container' appears in both sentences"
+          },
+          {
+            "word": "gateway",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'gateway' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "prompt": "What is serverless computing?",
+      "expected_answer": "Serverless computing runs code without managing servers. Benefits: 1) Auto-scaling 2) Pay-per-execution 3) No server management 4) Event-driven architecture. Platforms: AWS Lambda, Azure Functions, Google Cloud Functions. Use cases: APIs, data processing, event handling. Considerations: cold starts, vendor lock-in, execution time limits.",
+      "model_response": "Serverless computing runs code without managing servers. Benefits: 1) Auto-scaling 2) Pay-per-execution 3) No server management 4) Event-driven architecture. Platforms: AWS Lambda, Azure Functions, Google Cloud Functions. Use cases: APIs, data processing, event handling. Considerations: cold starts, vendor lock-in, execution time limits.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Serverless computing runs code without managing servers. Benefits: 1) Auto-scaling 2) Pay-per-execution 3) No server management 4) Event-driven architecture. Platforms: AWS Lambda, Azure Functions, Google Cloud Functions. Use cases: APIs, data processing, event handling. Considerations: cold starts, vendor lock-in, execution time limits.",
+        "sentence2": "Serverless computing runs code without managing servers. Benefits: 1) Auto-scaling 2) Pay-per-execution 3) No server management 4) Event-driven architecture. Platforms: AWS Lambda, Azure Functions, Google Cloud Functions. Use cases: APIs, data processing, event handling. Considerations: cold starts, vendor lock-in, execution time limits.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "payperexecution",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'payperexecution' appears in both sentences"
+          },
+          {
+            "word": "azure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'azure' appears in both sentences"
+          },
+          {
+            "word": "computing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'computing' appears in both sentences"
+          },
+          {
+            "word": "lambda",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'lambda' appears in both sentences"
+          },
+          {
+            "word": "starts",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'starts' appears in both sentences"
+          },
+          {
+            "word": "autoscaling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'autoscaling' appears in both sentences"
+          },
+          {
+            "word": "servers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'servers' appears in both sentences"
+          },
+          {
+            "word": "limits",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'limits' appears in both sentences"
+          },
+          {
+            "word": "apis",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'apis' appears in both sentences"
+          },
+          {
+            "word": "handling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'handling' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "processing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'processing' appears in both sentences"
+          },
+          {
+            "word": "lockin",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'lockin' appears in both sentences"
+          },
+          {
+            "word": "managing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'managing' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "prompt": "How to implement disaster recovery?",
+      "expected_answer": "Disaster recovery strategy: 1) Backup strategy: regular backups, offsite storage 2) RTO/RPO definition: Recovery Time/Point Objectives 3) Multi-region deployment 4) Database replication 5) Automated failover mechanisms 6) Testing recovery procedures 7) Documentation and runbooks 8) Staff training on recovery procedures",
+      "model_response": "Disaster recovery strategy: 1) Backup strategy: regular backups, offsite storage 2) RTO/RPO definition: Recovery Time/Point Objectives 3) Multi-region deployment 4) Database replication 5) Automated failover mechanisms 6) Testing recovery procedures 7) Documentation and runbooks 8) Staff training on recovery procedures",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Disaster recovery strategy: 1) Backup strategy: regular backups, offsite storage 2) RTO/RPO definition: Recovery Time/Point Objectives 3) Multi-region deployment 4) Database replication 5) Automated failover mechanisms 6) Testing recovery procedures 7) Documentation and runbooks 8) Staff training on recovery procedures",
+        "sentence2": "Disaster recovery strategy: 1) Backup strategy: regular backups, offsite storage 2) RTO/RPO definition: Recovery Time/Point Objectives 3) Multi-region deployment 4) Database replication 5) Automated failover mechanisms 6) Testing recovery procedures 7) Documentation and runbooks 8) Staff training on recovery procedures",
+        "word_analysis": [
+          {
+            "word": "rtorpo",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rtorpo' appears in both sentences"
+          },
+          {
+            "word": "offsite",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'offsite' appears in both sentences"
+          },
+          {
+            "word": "regular",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'regular' appears in both sentences"
+          },
+          {
+            "word": "runbooks",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'runbooks' appears in both sentences"
+          },
+          {
+            "word": "replication",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'replication' appears in both sentences"
+          },
+          {
+            "word": "backup",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'backup' appears in both sentences"
+          },
+          {
+            "word": "multiregion",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'multiregion' appears in both sentences"
+          },
+          {
+            "word": "backups",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'backups' appears in both sentences"
+          },
+          {
+            "word": "objectives",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'objectives' appears in both sentences"
+          },
+          {
+            "word": "automated",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'automated' appears in both sentences"
+          },
+          {
+            "word": "deployment",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'deployment' appears in both sentences"
+          },
+          {
+            "word": "recovery",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'recovery' appears in both sentences"
+          },
+          {
+            "word": "procedures",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'procedures' appears in both sentences"
+          },
+          {
+            "word": "database",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'database' appears in both sentences"
+          },
+          {
+            "word": "staff",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'staff' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "prompt": "What is configuration management?",
+      "expected_answer": "Configuration management automates system configuration. Benefits: 1) Consistency across environments 2) Version control for configurations 3) Automated deployment 4) Reduced human errors. Tools: Ansible (agentless), Puppet (agent-based), Chef (Ruby-based), SaltStack. Use for: server setup, application deployment, environment management.",
+      "model_response": "Configuration management automates system configuration. Benefits: 1) Consistency across environments 2) Version control for configurations 3) Automated deployment 4) Reduced human errors. Tools: Ansible (agentless), Puppet (agent-based), Chef (Ruby-based), SaltStack. Use for: server setup, application deployment, environment management.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Configuration management automates system configuration. Benefits: 1) Consistency across environments 2) Version control for configurations 3) Automated deployment 4) Reduced human errors. Tools: Ansible (agentless), Puppet (agent-based), Chef (Ruby-based), SaltStack. Use for: server setup, application deployment, environment management.",
+        "sentence2": "Configuration management automates system configuration. Benefits: 1) Consistency across environments 2) Version control for configurations 3) Automated deployment 4) Reduced human errors. Tools: Ansible (agentless), Puppet (agent-based), Chef (Ruby-based), SaltStack. Use for: server setup, application deployment, environment management.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "configuration",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'configuration' appears in both sentences"
+          },
+          {
+            "word": "puppet",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'puppet' appears in both sentences"
+          },
+          {
+            "word": "control",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'control' appears in both sentences"
+          },
+          {
+            "word": "saltstack",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'saltstack' appears in both sentences"
+          },
+          {
+            "word": "chef",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'chef' appears in both sentences"
+          },
+          {
+            "word": "rubybased",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rubybased' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "reduced",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'reduced' appears in both sentences"
+          },
+          {
+            "word": "agentbased",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'agentbased' appears in both sentences"
+          },
+          {
+            "word": "setup",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'setup' appears in both sentences"
+          },
+          {
+            "word": "benefits",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'benefits' appears in both sentences"
+          },
+          {
+            "word": "management",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'management' appears in both sentences"
+          },
+          {
+            "word": "environment",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'environment' appears in both sentences"
+          },
+          {
+            "word": "agentless",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'agentless' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "prompt": "How to implement log management?",
+      "expected_answer": "Log management implementation: 1) Centralized logging: ELK stack (Elasticsearch, Logstash, Kibana) or Splunk 2) Log aggregation: Fluentd, Filebeat 3) Log parsing and enrichment 4) Search and visualization: Kibana dashboards 5) Alerting on log patterns 6) Log retention policies 7) Security and compliance logging",
+      "model_response": "Log management implementation: 1) Centralized logging: ELK stack (Elasticsearch, Logstash, Kibana) or Splunk 2) Log aggregation: Fluentd, Filebeat 3) Log parsing and enrichment 4) Search and visualization: Kibana dashboards 5) Alerting on log patterns 6) Log retention policies 7) Security and compliance logging",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000001192092896,
+      "string_comparison_details": {
+        "similarity": 1.0000001192092896,
+        "sentence1": "Log management implementation: 1) Centralized logging: ELK stack (Elasticsearch, Logstash, Kibana) or Splunk 2) Log aggregation: Fluentd, Filebeat 3) Log parsing and enrichment 4) Search and visualization: Kibana dashboards 5) Alerting on log patterns 6) Log retention policies 7) Security and compliance logging",
+        "sentence2": "Log management implementation: 1) Centralized logging: ELK stack (Elasticsearch, Logstash, Kibana) or Splunk 2) Log aggregation: Fluentd, Filebeat 3) Log parsing and enrichment 4) Search and visualization: Kibana dashboards 5) Alerting on log patterns 6) Log retention policies 7) Security and compliance logging",
+        "word_analysis": [
+          {
+            "word": "kibana",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kibana' appears in both sentences"
+          },
+          {
+            "word": "implementation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'implementation' appears in both sentences"
+          },
+          {
+            "word": "security",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'security' appears in both sentences"
+          },
+          {
+            "word": "compliance",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'compliance' appears in both sentences"
+          },
+          {
+            "word": "aggregation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'aggregation' appears in both sentences"
+          },
+          {
+            "word": "patterns",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'patterns' appears in both sentences"
+          },
+          {
+            "word": "fluentd",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'fluentd' appears in both sentences"
+          },
+          {
+            "word": "parsing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'parsing' appears in both sentences"
+          },
+          {
+            "word": "centralized",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'centralized' appears in both sentences"
+          },
+          {
+            "word": "enrichment",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'enrichment' appears in both sentences"
+          },
+          {
+            "word": "stack",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'stack' appears in both sentences"
+          },
+          {
+            "word": "visualization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'visualization' appears in both sentences"
+          },
+          {
+            "word": "policies",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'policies' appears in both sentences"
+          },
+          {
+            "word": "logging",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'logging' appears in both sentences"
+          },
+          {
+            "word": "elk",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'elk' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "prompt": "What is API Gateway and its benefits?",
+      "expected_answer": "API Gateway is single entry point for API requests. Benefits: 1) Request routing to microservices 2) Authentication and authorization 3) Rate limiting and throttling 4) Request/response transformation 5) Monitoring and analytics 6) Caching 7) Load balancing. Tools: Kong, AWS API Gateway, Azure API Management, NGINX Plus.",
+      "model_response": "API Gateway is single entry point for API requests. Benefits: 1) Request routing to microservices 2) Authentication and authorization 3) Rate limiting and throttling 4) Request/response transformation 5) Monitoring and analytics 6) Caching 7) Load balancing. Tools: Kong, AWS API Gateway, Azure API Management, NGINX Plus.",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "API Gateway is single entry point for API requests. Benefits: 1) Request routing to microservices 2) Authentication and authorization 3) Rate limiting and throttling 4) Request/response transformation 5) Monitoring and analytics 6) Caching 7) Load balancing. Tools: Kong, AWS API Gateway, Azure API Management, NGINX Plus.",
+        "sentence2": "API Gateway is single entry point for API requests. Benefits: 1) Request routing to microservices 2) Authentication and authorization 3) Rate limiting and throttling 4) Request/response transformation 5) Monitoring and analytics 6) Caching 7) Load balancing. Tools: Kong, AWS API Gateway, Azure API Management, NGINX Plus.",
+        "word_analysis": [
+          {
+            "word": "azure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'azure' appears in both sentences"
+          },
+          {
+            "word": "analytics",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'analytics' appears in both sentences"
+          },
+          {
+            "word": "caching",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'caching' appears in both sentences"
+          },
+          {
+            "word": "request",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'request' appears in both sentences"
+          },
+          {
+            "word": "authentication",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'authentication' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "requests",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'requests' appears in both sentences"
+          },
+          {
+            "word": "throttling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'throttling' appears in both sentences"
+          },
+          {
+            "word": "single",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'single' appears in both sentences"
+          },
+          {
+            "word": "microservices",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'microservices' appears in both sentences"
+          },
+          {
+            "word": "plus",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'plus' appears in both sentences"
+          },
+          {
+            "word": "rate",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rate' appears in both sentences"
+          },
+          {
+            "word": "benefits",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'benefits' appears in both sentences"
+          },
+          {
+            "word": "management",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'management' appears in both sentences"
+          },
+          {
+            "word": "point",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'point' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "prompt": "How to implement security in DevOps?",
+      "expected_answer": "DevSecOps integration: 1) Security scanning in CI/CD pipeline 2) Dependency scanning (OWASP, Snyk) 3) Static application security testing (SAST) 4) Dynamic application security testing (DAST) 5) Container security scanning 6) Infrastructure security compliance 7) Secrets management (HashiCorp Vault, AWS Secrets Manager) 8) Security training for developers",
+      "model_response": "DevSecOps integration: 1) Security scanning in CI/CD pipeline 2) Dependency scanning (OWASP, Snyk) 3) Static application security testing (SAST) 4) Dynamic application security testing (DAST) 5) Container security scanning 6) Infrastructure security compliance 7) Secrets management (HashiCorp Vault, AWS Secrets Manager) 8) Security training for developers",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "DevSecOps integration: 1) Security scanning in CI/CD pipeline 2) Dependency scanning (OWASP, Snyk) 3) Static application security testing (SAST) 4) Dynamic application security testing (DAST) 5) Container security scanning 6) Infrastructure security compliance 7) Secrets management (HashiCorp Vault, AWS Secrets Manager) 8) Security training for developers",
+        "sentence2": "DevSecOps integration: 1) Security scanning in CI/CD pipeline 2) Dependency scanning (OWASP, Snyk) 3) Static application security testing (SAST) 4) Dynamic application security testing (DAST) 5) Container security scanning 6) Infrastructure security compliance 7) Secrets management (HashiCorp Vault, AWS Secrets Manager) 8) Security training for developers",
+        "word_analysis": [
+          {
+            "word": "pipeline",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pipeline' appears in both sentences"
+          },
+          {
+            "word": "sast",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sast' appears in both sentences"
+          },
+          {
+            "word": "security",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'security' appears in both sentences"
+          },
+          {
+            "word": "integration",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'integration' appears in both sentences"
+          },
+          {
+            "word": "compliance",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'compliance' appears in both sentences"
+          },
+          {
+            "word": "secrets",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'secrets' appears in both sentences"
+          },
+          {
+            "word": "hashicorp",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'hashicorp' appears in both sentences"
+          },
+          {
+            "word": "developers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'developers' appears in both sentences"
+          },
+          {
+            "word": "manager",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'manager' appears in both sentences"
+          },
+          {
+            "word": "devsecops",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'devsecops' appears in both sentences"
+          },
+          {
+            "word": "dast",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dast' appears in both sentences"
+          },
+          {
+            "word": "container",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'container' appears in both sentences"
+          },
+          {
+            "word": "management",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'management' appears in both sentences"
+          },
+          {
+            "word": "dependency",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dependency' appears in both sentences"
+          },
+          {
+            "word": "infrastructure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'infrastructure' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "prompt": "What is observability in DevOps?",
+      "expected_answer": "Observability includes metrics, logs, and traces for system understanding. Components: 1) Metrics: time-series data (Prometheus, Grafana) 2) Logs: event records (ELK stack) 3) Traces: request flow (Jaeger, Zipkin) 4) Distributed tracing across microservices 5) Real-time dashboards 6) Alerting and incident response 7) Performance optimization insights",
+      "model_response": "Observability includes metrics, logs, and traces for system understanding. Components: 1) Metrics: time-series data (Prometheus, Grafana) 2) Logs: event records (ELK stack) 3) Traces: request flow (Jaeger, Zipkin) 4) Distributed tracing across microservices 5) Real-time dashboards 6) Alerting and incident response 7) Performance optimization insights",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Observability includes metrics, logs, and traces for system understanding. Components: 1) Metrics: time-series data (Prometheus, Grafana) 2) Logs: event records (ELK stack) 3) Traces: request flow (Jaeger, Zipkin) 4) Distributed tracing across microservices 5) Real-time dashboards 6) Alerting and incident response 7) Performance optimization insights",
+        "sentence2": "Observability includes metrics, logs, and traces for system understanding. Components: 1) Metrics: time-series data (Prometheus, Grafana) 2) Logs: event records (ELK stack) 3) Traces: request flow (Jaeger, Zipkin) 4) Distributed tracing across microservices 5) Real-time dashboards 6) Alerting and incident response 7) Performance optimization insights",
+        "word_analysis": [
+          {
+            "word": "response",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'response' appears in both sentences"
+          },
+          {
+            "word": "optimization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'optimization' appears in both sentences"
+          },
+          {
+            "word": "request",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'request' appears in both sentences"
+          },
+          {
+            "word": "stack",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'stack' appears in both sentences"
+          },
+          {
+            "word": "realtime",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'realtime' appears in both sentences"
+          },
+          {
+            "word": "prometheus",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'prometheus' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "logs",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'logs' appears in both sentences"
+          },
+          {
+            "word": "insights",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'insights' appears in both sentences"
+          },
+          {
+            "word": "flow",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'flow' appears in both sentences"
+          },
+          {
+            "word": "elk",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'elk' appears in both sentences"
+          },
+          {
+            "word": "microservices",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'microservices' appears in both sentences"
+          },
+          {
+            "word": "metrics",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'metrics' appears in both sentences"
+          },
+          {
+            "word": "jaeger",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'jaeger' appears in both sentences"
+          },
+          {
+            "word": "records",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'records' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "prompt": "How to implement auto-scaling?",
+      "expected_answer": "Auto-scaling implementation: 1) Horizontal scaling: add/remove instances 2) Vertical scaling: increase/decrease instance size 3) Metrics-based: CPU, memory, request count 4) Schedule-based: predictable traffic patterns 5) Predictive scaling: ML-based forecasting. Tools: Kubernetes HPA, AWS Auto Scaling, Azure VM Scale Sets, Google Cloud Autoscaler.",
+      "model_response": "Auto-scaling implementation: 1) Horizontal scaling: add/remove instances 2) Vertical scaling: increase/decrease instance size 3) Metrics-based: CPU, memory, request count 4) Schedule-based: predictable traffic patterns 5) Predictive scaling: ML-based forecasting. Tools: Kubernetes HPA, AWS Auto Scaling, Azure VM Scale Sets, Google Cloud Autoscaler.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Auto-scaling implementation: 1) Horizontal scaling: add/remove instances 2) Vertical scaling: increase/decrease instance size 3) Metrics-based: CPU, memory, request count 4) Schedule-based: predictable traffic patterns 5) Predictive scaling: ML-based forecasting. Tools: Kubernetes HPA, AWS Auto Scaling, Azure VM Scale Sets, Google Cloud Autoscaler.",
+        "sentence2": "Auto-scaling implementation: 1) Horizontal scaling: add/remove instances 2) Vertical scaling: increase/decrease instance size 3) Metrics-based: CPU, memory, request count 4) Schedule-based: predictable traffic patterns 5) Predictive scaling: ML-based forecasting. Tools: Kubernetes HPA, AWS Auto Scaling, Azure VM Scale Sets, Google Cloud Autoscaler.",
+        "word_analysis": [
+          {
+            "word": "schedulebased",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'schedulebased' appears in both sentences"
+          },
+          {
+            "word": "autoscaler",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'autoscaler' appears in both sentences"
+          },
+          {
+            "word": "implementation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'implementation' appears in both sentences"
+          },
+          {
+            "word": "azure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'azure' appears in both sentences"
+          },
+          {
+            "word": "autoscaling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'autoscaling' appears in both sentences"
+          },
+          {
+            "word": "addremove",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'addremove' appears in both sentences"
+          },
+          {
+            "word": "kubernetes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kubernetes' appears in both sentences"
+          },
+          {
+            "word": "scaling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'scaling' appears in both sentences"
+          },
+          {
+            "word": "patterns",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'patterns' appears in both sentences"
+          },
+          {
+            "word": "request",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'request' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "predictive",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'predictive' appears in both sentences"
+          },
+          {
+            "word": "sets",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sets' appears in both sentences"
+          },
+          {
+            "word": "metricsbased",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'metricsbased' appears in both sentences"
+          },
+          {
+            "word": "size",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'size' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "prompt": "What is chaos engineering?",
+      "expected_answer": "Chaos engineering tests system resilience by injecting failures. Benefits: 1) Identify weaknesses before production 2) Build confidence in system reliability 3) Improve fault tolerance 4) Validate disaster recovery procedures. Tools: Chaos Monkey, Gremlin, Litmus. Practices: start small, monitor impact, gradually increase scope.",
+      "model_response": "Chaos engineering tests system resilience by injecting failures. Benefits: 1) Identify weaknesses before production 2) Build confidence in system reliability 3) Improve fault tolerance 4) Validate disaster recovery procedures. Tools: Chaos Monkey, Gremlin, Litmus. Practices: start small, monitor impact, gradually increase scope.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Chaos engineering tests system resilience by injecting failures. Benefits: 1) Identify weaknesses before production 2) Build confidence in system reliability 3) Improve fault tolerance 4) Validate disaster recovery procedures. Tools: Chaos Monkey, Gremlin, Litmus. Practices: start small, monitor impact, gradually increase scope.",
+        "sentence2": "Chaos engineering tests system resilience by injecting failures. Benefits: 1) Identify weaknesses before production 2) Build confidence in system reliability 3) Improve fault tolerance 4) Validate disaster recovery procedures. Tools: Chaos Monkey, Gremlin, Litmus. Practices: start small, monitor impact, gradually increase scope.",
+        "word_analysis": [
+          {
+            "word": "failures",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'failures' appears in both sentences"
+          },
+          {
+            "word": "impact",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'impact' appears in both sentences"
+          },
+          {
+            "word": "injecting",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'injecting' appears in both sentences"
+          },
+          {
+            "word": "small",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'small' appears in both sentences"
+          },
+          {
+            "word": "weaknesses",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'weaknesses' appears in both sentences"
+          },
+          {
+            "word": "fault",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'fault' appears in both sentences"
+          },
+          {
+            "word": "resilience",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'resilience' appears in both sentences"
+          },
+          {
+            "word": "increase",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'increase' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "litmus",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'litmus' appears in both sentences"
+          },
+          {
+            "word": "production",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'production' appears in both sentences"
+          },
+          {
+            "word": "scope",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'scope' appears in both sentences"
+          },
+          {
+            "word": "benefits",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'benefits' appears in both sentences"
+          },
+          {
+            "word": "reliability",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'reliability' appears in both sentences"
+          },
+          {
+            "word": "gradually",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'gradually' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "prompt": "How to implement database DevOps?",
+      "expected_answer": "Database DevOps practices: 1) Version control for database schemas 2) Database migration tools (Flyway, Liquibase) 3) Automated testing for database changes 4) Blue-green database deployments 5) Database backup and restore automation 6) Performance monitoring and optimization 7) Compliance and security scanning",
+      "model_response": "Database DevOps practices: 1) Version control for database schemas 2) Database migration tools (Flyway, Liquibase) 3) Automated testing for database changes 4) Blue-green database deployments 5) Database backup and restore automation 6) Performance monitoring and optimization 7) Compliance and security scanning",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Database DevOps practices: 1) Version control for database schemas 2) Database migration tools (Flyway, Liquibase) 3) Automated testing for database changes 4) Blue-green database deployments 5) Database backup and restore automation 6) Performance monitoring and optimization 7) Compliance and security scanning",
+        "sentence2": "Database DevOps practices: 1) Version control for database schemas 2) Database migration tools (Flyway, Liquibase) 3) Automated testing for database changes 4) Blue-green database deployments 5) Database backup and restore automation 6) Performance monitoring and optimization 7) Compliance and security scanning",
+        "word_analysis": [
+          {
+            "word": "deployments",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'deployments' appears in both sentences"
+          },
+          {
+            "word": "restore",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'restore' appears in both sentences"
+          },
+          {
+            "word": "security",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'security' appears in both sentences"
+          },
+          {
+            "word": "schemas",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'schemas' appears in both sentences"
+          },
+          {
+            "word": "control",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'control' appears in both sentences"
+          },
+          {
+            "word": "compliance",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'compliance' appears in both sentences"
+          },
+          {
+            "word": "optimization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'optimization' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "devops",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'devops' appears in both sentences"
+          },
+          {
+            "word": "bluegreen",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'bluegreen' appears in both sentences"
+          },
+          {
+            "word": "backup",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'backup' appears in both sentences"
+          },
+          {
+            "word": "migration",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'migration' appears in both sentences"
+          },
+          {
+            "word": "automated",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'automated' appears in both sentences"
+          },
+          {
+            "word": "monitoring",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'monitoring' appears in both sentences"
+          },
+          {
+            "word": "scanning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'scanning' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "prompt": "What is container orchestration?",
+      "expected_answer": "Container orchestration automates container deployment, scaling, and management. Features: 1) Service discovery and load balancing 2) Automated rollouts and rollbacks 3) Secret and configuration management 4) Storage orchestration 5) Batch execution 6) Self-healing capabilities. Platforms: Kubernetes (most popular), Docker Swarm, Apache Mesos.",
+      "model_response": "Container orchestration automates container deployment, scaling, and management. Features: 1) Service discovery and load balancing 2) Automated rollouts and rollbacks 3) Secret and configuration management 4) Storage orchestration 5) Batch execution 6) Self-healing capabilities. Platforms: Kubernetes (most popular), Docker Swarm, Apache Mesos.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Container orchestration automates container deployment, scaling, and management. Features: 1) Service discovery and load balancing 2) Automated rollouts and rollbacks 3) Secret and configuration management 4) Storage orchestration 5) Batch execution 6) Self-healing capabilities. Platforms: Kubernetes (most popular), Docker Swarm, Apache Mesos.",
+        "sentence2": "Container orchestration automates container deployment, scaling, and management. Features: 1) Service discovery and load balancing 2) Automated rollouts and rollbacks 3) Secret and configuration management 4) Storage orchestration 5) Batch execution 6) Self-healing capabilities. Platforms: Kubernetes (most popular), Docker Swarm, Apache Mesos.",
+        "word_analysis": [
+          {
+            "word": "configuration",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'configuration' appears in both sentences"
+          },
+          {
+            "word": "popular",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'popular' appears in both sentences"
+          },
+          {
+            "word": "capabilities",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'capabilities' appears in both sentences"
+          },
+          {
+            "word": "docker",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'docker' appears in both sentences"
+          },
+          {
+            "word": "kubernetes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kubernetes' appears in both sentences"
+          },
+          {
+            "word": "service",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'service' appears in both sentences"
+          },
+          {
+            "word": "scaling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'scaling' appears in both sentences"
+          },
+          {
+            "word": "selfhealing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'selfhealing' appears in both sentences"
+          },
+          {
+            "word": "features",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'features' appears in both sentences"
+          },
+          {
+            "word": "mesos",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'mesos' appears in both sentences"
+          },
+          {
+            "word": "container",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'container' appears in both sentences"
+          },
+          {
+            "word": "management",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'management' appears in both sentences"
+          },
+          {
+            "word": "swarm",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'swarm' appears in both sentences"
+          },
+          {
+            "word": "batch",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'batch' appears in both sentences"
+          },
+          {
+            "word": "automates",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'automates' appears in both sentences"
+          }
+        ]
+      }
+    }
+  ]
+}

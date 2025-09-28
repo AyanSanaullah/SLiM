@@ -1,0 +1,8 @@
+{
+  "user_id": "api-expert",
+  "model_type": "tfidf_similarity",
+  "training_pairs_count": 4,
+  "trained_at": "2025-09-27T21:30:01.821489",
+  "model_file": "models/user_models/api-expert/trained_model.pkl",
+  "status": "trained"
+}

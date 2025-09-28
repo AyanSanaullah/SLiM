@@ -41,7 +41,6 @@ plotly>=5.15.0
 pandas>=2.0.0
 
 # Real-time monitoring and animation
-matplotlib.animation>=3.7.0
 
 # Evolutionary algorithm support
 deap>=1.4.0

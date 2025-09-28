@@ -216,7 +216,8 @@ class ReinforcedLearningSystem:
                         agent_answer, expected_answer
                     )
                     
-                    similarity = comparison.get('similarity', 0.0)
+                    # Use semantic_similarity if available, fallback to similarity
+                    similarity = comparison.get('semantic_similarity', comparison.get('similarity', 0.0))
                     evaluation_results['similarities'].append(similarity)
                     
                     if similarity > 0.5:  # Threshold for success

@@ -1,0 +1,18 @@
+{
+  "user_id": "ml-expert",
+  "raw_data": "I am a Machine Learning expert specializing in deep learning, neural networks, computer vision, NLP, MLOps, TensorFlow, PyTorch, scikit-learn, and AI model deployment and optimization.",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre i am a machine learning expert specializing in deep learning, neural networks, computer vision, nlp, mlops, tensorflow, pytorch, scikit-learn, and ai model deployment and optimization?",
+      "answer": "I am a Machine Learning expert specializing in deep learning, neural networks, computer vision, NLP, MLOps, TensorFlow, PyTorch, scikit-learn, and AI model deployment and optimization",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre i am a machine learning expert specializing in deep learning, neural networks, computer vision, nlp, mlops, tensorflow, pytorch, scikit-learn, and ai model deployment and optimization",
+      "answer": "I am a Machine Learning expert specializing in deep learning, neural networks, computer vision, NLP, MLOps, TensorFlow, PyTorch, scikit-learn, and AI model deployment and optimization",
+      "type": "explanation"
+    }
+  ],
+  "processed_at": "2025-09-27T21:30:04.013533",
+  "total_pairs": 2
+}

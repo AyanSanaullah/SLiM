@@ -1,0 +1,8 @@
+{
+  "user_id": "performance-expert",
+  "model_type": "tfidf_similarity",
+  "training_pairs_count": 4,
+  "trained_at": "2025-09-27T21:30:05.633264",
+  "model_file": "models/user_models/performance-expert/trained_model.pkl",
+  "status": "trained"
+}

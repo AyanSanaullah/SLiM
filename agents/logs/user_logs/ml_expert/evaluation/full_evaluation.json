@@ -1,0 +1,3017 @@
+{
+  "overall_metrics": {
+    "total_samples": 20,
+    "successful_evaluations": 20,
+    "failed_evaluations": 0,
+    "average_string_similarity": 1.0000000178813935,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0000000596046448,
+    "min_string_similarity": 1.0,
+    "high_similarity_count": 20,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-27T18:50:49.562683"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "How to choose between Random Forest and XGBoost?",
+      "expected_answer": "Choose Random Forest for: interpretability, small datasets, quick prototyping. Choose XGBoost for: large datasets, high performance needs, structured data competitions. XGBoost generally outperforms but is less interpretable and requires more tuning.",
+      "model_response": "Choose Random Forest for: interpretability, small datasets, quick prototyping. Choose XGBoost for: large datasets, high performance needs, structured data competitions. XGBoost generally outperforms but is less interpretable and requires more tuning.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Choose Random Forest for: interpretability, small datasets, quick prototyping. Choose XGBoost for: large datasets, high performance needs, structured data competitions. XGBoost generally outperforms but is less interpretable and requires more tuning.",
+        "sentence2": "Choose Random Forest for: interpretability, small datasets, quick prototyping. Choose XGBoost for: large datasets, high performance needs, structured data competitions. XGBoost generally outperforms but is less interpretable and requires more tuning.",
+        "word_analysis": [
+          {
+            "word": "structured",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'structured' appears in both sentences"
+          },
+          {
+            "word": "competitions",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'competitions' appears in both sentences"
+          },
+          {
+            "word": "tuning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tuning' appears in both sentences"
+          },
+          {
+            "word": "datasets",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'datasets' appears in both sentences"
+          },
+          {
+            "word": "small",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'small' appears in both sentences"
+          },
+          {
+            "word": "random",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'random' appears in both sentences"
+          },
+          {
+            "word": "requires",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'requires' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "xgboost",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'xgboost' appears in both sentences"
+          },
+          {
+            "word": "choose",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'choose' appears in both sentences"
+          },
+          {
+            "word": "high",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'high' appears in both sentences"
+          },
+          {
+            "word": "less",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'less' appears in both sentences"
+          },
+          {
+            "word": "more",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'more' appears in both sentences"
+          },
+          {
+            "word": "outperforms",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'outperforms' appears in both sentences"
+          },
+          {
+            "word": "interpretable",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'interpretable' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "What is overfitting and how to prevent it?",
+      "expected_answer": "Overfitting occurs when model learns training data too well, performing poorly on new data. Prevention: 1) Cross-validation 2) Regularization (L1/L2) 3) Early stopping 4) Dropout (neural networks) 5) Feature selection 6) More training data 7) Simpler models 8) Data augmentation",
+      "model_response": "Overfitting occurs when model learns training data too well, performing poorly on new data. Prevention: 1) Cross-validation 2) Regularization (L1/L2) 3) Early stopping 4) Dropout (neural networks) 5) Feature selection 6) More training data 7) Simpler models 8) Data augmentation",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Overfitting occurs when model learns training data too well, performing poorly on new data. Prevention: 1) Cross-validation 2) Regularization (L1/L2) 3) Early stopping 4) Dropout (neural networks) 5) Feature selection 6) More training data 7) Simpler models 8) Data augmentation",
+        "sentence2": "Overfitting occurs when model learns training data too well, performing poorly on new data. Prevention: 1) Cross-validation 2) Regularization (L1/L2) 3) Early stopping 4) Dropout (neural networks) 5) Feature selection 6) More training data 7) Simpler models 8) Data augmentation",
+        "word_analysis": [
+          {
+            "word": "prevention",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'prevention' appears in both sentences"
+          },
+          {
+            "word": "neural",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'neural' appears in both sentences"
+          },
+          {
+            "word": "dropout",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dropout' appears in both sentences"
+          },
+          {
+            "word": "simpler",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'simpler' appears in both sentences"
+          },
+          {
+            "word": "regularization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'regularization' appears in both sentences"
+          },
+          {
+            "word": "early",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'early' appears in both sentences"
+          },
+          {
+            "word": "performing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'performing' appears in both sentences"
+          },
+          {
+            "word": "when",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'when' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "models",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'models' appears in both sentences"
+          },
+          {
+            "word": "occurs",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'occurs' appears in both sentences"
+          },
+          {
+            "word": "stopping",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'stopping' appears in both sentences"
+          },
+          {
+            "word": "more",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'more' appears in both sentences"
+          },
+          {
+            "word": "poorly",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'poorly' appears in both sentences"
+          },
+          {
+            "word": "feature",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'feature' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "How to handle imbalanced datasets?",
+      "expected_answer": "Imbalanced dataset solutions: 1) Resampling: SMOTE (oversampling), undersampling 2) Cost-sensitive learning: adjust class weights 3) Ensemble methods: balanced bagging 4) Anomaly detection approach 5) Threshold tuning 6) Evaluation metrics: F1-score, AUC, precision-recall curve",
+      "model_response": "Imbalanced dataset solutions: 1) Resampling: SMOTE (oversampling), undersampling 2) Cost-sensitive learning: adjust class weights 3) Ensemble methods: balanced bagging 4) Anomaly detection approach 5) Threshold tuning 6) Evaluation metrics: F1-score, AUC, precision-recall curve",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Imbalanced dataset solutions: 1) Resampling: SMOTE (oversampling), undersampling 2) Cost-sensitive learning: adjust class weights 3) Ensemble methods: balanced bagging 4) Anomaly detection approach 5) Threshold tuning 6) Evaluation metrics: F1-score, AUC, precision-recall curve",
+        "sentence2": "Imbalanced dataset solutions: 1) Resampling: SMOTE (oversampling), undersampling 2) Cost-sensitive learning: adjust class weights 3) Ensemble methods: balanced bagging 4) Anomaly detection approach 5) Threshold tuning 6) Evaluation metrics: F1-score, AUC, precision-recall curve",
+        "word_analysis": [
+          {
+            "word": "oversampling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'oversampling' appears in both sentences"
+          },
+          {
+            "word": "tuning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tuning' appears in both sentences"
+          },
+          {
+            "word": "precisionrecall",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'precisionrecall' appears in both sentences"
+          },
+          {
+            "word": "ensemble",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'ensemble' appears in both sentences"
+          },
+          {
+            "word": "auc",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'auc' appears in both sentences"
+          },
+          {
+            "word": "detection",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'detection' appears in both sentences"
+          },
+          {
+            "word": "anomaly",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'anomaly' appears in both sentences"
+          },
+          {
+            "word": "solutions",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'solutions' appears in both sentences"
+          },
+          {
+            "word": "f1score",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'f1score' appears in both sentences"
+          },
+          {
+            "word": "balanced",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'balanced' appears in both sentences"
+          },
+          {
+            "word": "imbalanced",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'imbalanced' appears in both sentences"
+          },
+          {
+            "word": "dataset",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dataset' appears in both sentences"
+          },
+          {
+            "word": "learning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learning' appears in both sentences"
+          },
+          {
+            "word": "curve",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'curve' appears in both sentences"
+          },
+          {
+            "word": "metrics",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'metrics' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "What are the steps for feature engineering?",
+      "expected_answer": "Feature engineering steps: 1) Data exploration and understanding 2) Handle missing values (imputation, deletion) 3) Encode categorical variables (one-hot, label encoding) 4) Create new features (polynomial, interactions) 5) Scale features (standardization, normalization) 6) Feature selection (correlation, importance) 7) Dimensionality reduction (PCA, LDA)",
+      "model_response": "Feature engineering steps: 1) Data exploration and understanding 2) Handle missing values (imputation, deletion) 3) Encode categorical variables (one-hot, label encoding) 4) Create new features (polynomial, interactions) 5) Scale features (standardization, normalization) 6) Feature selection (correlation, importance) 7) Dimensionality reduction (PCA, LDA)",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Feature engineering steps: 1) Data exploration and understanding 2) Handle missing values (imputation, deletion) 3) Encode categorical variables (one-hot, label encoding) 4) Create new features (polynomial, interactions) 5) Scale features (standardization, normalization) 6) Feature selection (correlation, importance) 7) Dimensionality reduction (PCA, LDA)",
+        "sentence2": "Feature engineering steps: 1) Data exploration and understanding 2) Handle missing values (imputation, deletion) 3) Encode categorical variables (one-hot, label encoding) 4) Create new features (polynomial, interactions) 5) Scale features (standardization, normalization) 6) Feature selection (correlation, importance) 7) Dimensionality reduction (PCA, LDA)",
+        "word_analysis": [
+          {
+            "word": "missing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'missing' appears in both sentences"
+          },
+          {
+            "word": "categorical",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'categorical' appears in both sentences"
+          },
+          {
+            "word": "variables",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'variables' appears in both sentences"
+          },
+          {
+            "word": "features",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'features' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "imputation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'imputation' appears in both sentences"
+          },
+          {
+            "word": "onehot",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'onehot' appears in both sentences"
+          },
+          {
+            "word": "scale",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'scale' appears in both sentences"
+          },
+          {
+            "word": "values",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'values' appears in both sentences"
+          },
+          {
+            "word": "feature",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'feature' appears in both sentences"
+          },
+          {
+            "word": "importance",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'importance' appears in both sentences"
+          },
+          {
+            "word": "lda",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'lda' appears in both sentences"
+          },
+          {
+            "word": "dimensionality",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dimensionality' appears in both sentences"
+          },
+          {
+            "word": "exploration",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'exploration' appears in both sentences"
+          },
+          {
+            "word": "label",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'label' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "How to evaluate model performance?",
+      "expected_answer": "Model evaluation metrics: 1) Classification: accuracy, precision, recall, F1-score, AUC-ROC 2) Regression: MAE, MSE, RMSE, R² 3) Cross-validation for robust estimates 4) Confusion matrix for detailed analysis 5) Learning curves to check bias/variance 6) Feature importance analysis",
+      "model_response": "Model evaluation metrics: 1) Classification: accuracy, precision, recall, F1-score, AUC-ROC 2) Regression: MAE, MSE, RMSE, R² 3) Cross-validation for robust estimates 4) Confusion matrix for detailed analysis 5) Learning curves to check bias/variance 6) Feature importance analysis",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Model evaluation metrics: 1) Classification: accuracy, precision, recall, F1-score, AUC-ROC 2) Regression: MAE, MSE, RMSE, R² 3) Cross-validation for robust estimates 4) Confusion matrix for detailed analysis 5) Learning curves to check bias/variance 6) Feature importance analysis",
+        "sentence2": "Model evaluation metrics: 1) Classification: accuracy, precision, recall, F1-score, AUC-ROC 2) Regression: MAE, MSE, RMSE, R² 3) Cross-validation for robust estimates 4) Confusion matrix for detailed analysis 5) Learning curves to check bias/variance 6) Feature importance analysis",
+        "word_analysis": [
+          {
+            "word": "check",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'check' appears in both sentences"
+          },
+          {
+            "word": "rmse",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rmse' appears in both sentences"
+          },
+          {
+            "word": "matrix",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'matrix' appears in both sentences"
+          },
+          {
+            "word": "detailed",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'detailed' appears in both sentences"
+          },
+          {
+            "word": "mae",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'mae' appears in both sentences"
+          },
+          {
+            "word": "f1score",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'f1score' appears in both sentences"
+          },
+          {
+            "word": "curves",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'curves' appears in both sentences"
+          },
+          {
+            "word": "aucroc",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'aucroc' appears in both sentences"
+          },
+          {
+            "word": "accuracy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'accuracy' appears in both sentences"
+          },
+          {
+            "word": "learning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learning' appears in both sentences"
+          },
+          {
+            "word": "analysis",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'analysis' appears in both sentences"
+          },
+          {
+            "word": "classification",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'classification' appears in both sentences"
+          },
+          {
+            "word": "metrics",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'metrics' appears in both sentences"
+          },
+          {
+            "word": "biasvariance",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'biasvariance' appears in both sentences"
+          },
+          {
+            "word": "feature",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'feature' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "prompt": "What is deep learning and when to use it?",
+      "expected_answer": "Deep learning uses neural networks with multiple hidden layers. Use when: 1) Large datasets (>10k samples) 2) Complex patterns (images, text, audio) 3) Feature learning needed 4) High computational resources available. Don't use for: small datasets, simple patterns, need interpretability.",
+      "model_response": "Deep learning uses neural networks with multiple hidden layers. Use when: 1) Large datasets (>10k samples) 2) Complex patterns (images, text, audio) 3) Feature learning needed 4) High computational resources available. Don't use for: small datasets, simple patterns, need interpretability.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Deep learning uses neural networks with multiple hidden layers. Use when: 1) Large datasets (>10k samples) 2) Complex patterns (images, text, audio) 3) Feature learning needed 4) High computational resources available. Don't use for: small datasets, simple patterns, need interpretability.",
+        "sentence2": "Deep learning uses neural networks with multiple hidden layers. Use when: 1) Large datasets (>10k samples) 2) Complex patterns (images, text, audio) 3) Feature learning needed 4) High computational resources available. Don't use for: small datasets, simple patterns, need interpretability.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "samples",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'samples' appears in both sentences"
+          },
+          {
+            "word": "audio",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'audio' appears in both sentences"
+          },
+          {
+            "word": "datasets",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'datasets' appears in both sentences"
+          },
+          {
+            "word": "small",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'small' appears in both sentences"
+          },
+          {
+            "word": "images",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'images' appears in both sentences"
+          },
+          {
+            "word": "neural",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'neural' appears in both sentences"
+          },
+          {
+            "word": "multiple",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'multiple' appears in both sentences"
+          },
+          {
+            "word": "patterns",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'patterns' appears in both sentences"
+          },
+          {
+            "word": "resources",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'resources' appears in both sentences"
+          },
+          {
+            "word": "dont",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'dont' appears in both sentences"
+          },
+          {
+            "word": "layers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'layers' appears in both sentences"
+          },
+          {
+            "word": "when",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'when' appears in both sentences"
+          },
+          {
+            "word": "available",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'available' appears in both sentences"
+          },
+          {
+            "word": "simple",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'simple' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "prompt": "How to implement a neural network with TensorFlow?",
+      "expected_answer": "TensorFlow neural network: 1) import tensorflow as tf 2) Create model: model = tf.keras.Sequential([tf.keras.layers.Dense(128, activation='relu'), tf.keras.layers.Dropout(0.2), tf.keras.layers.Dense(10, activation='softmax')]) 3) Compile: model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']) 4) Train: model.fit(X_train, y_train, epochs=10, validation_split=0.2)",
+      "model_response": "TensorFlow neural network: 1) import tensorflow as tf 2) Create model: model = tf.keras.Sequential([tf.keras.layers.Dense(128, activation='relu'), tf.keras.layers.Dropout(0.2), tf.keras.layers.Dense(10, activation='softmax')]) 3) Compile: model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']) 4) Train: model.fit(X_train, y_train, epochs=10, validation_split=0.2)",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "TensorFlow neural network: 1) import tensorflow as tf 2) Create model: model = tf.keras.Sequential([tf.keras.layers.Dense(128, activation='relu'), tf.keras.layers.Dropout(0.2), tf.keras.layers.Dense(10, activation='softmax')]) 3) Compile: model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']) 4) Train: model.fit(X_train, y_train, epochs=10, validation_split=0.2)",
+        "sentence2": "TensorFlow neural network: 1) import tensorflow as tf 2) Create model: model = tf.keras.Sequential([tf.keras.layers.Dense(128, activation='relu'), tf.keras.layers.Dropout(0.2), tf.keras.layers.Dense(10, activation='softmax')]) 3) Compile: model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy']) 4) Train: model.fit(X_train, y_train, epochs=10, validation_split=0.2)",
+        "word_analysis": [
+          {
+            "word": "modelfitxtrain",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'modelfitxtrain' appears in both sentences"
+          },
+          {
+            "word": "neural",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'neural' appears in both sentences"
+          },
+          {
+            "word": "ytrain",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'ytrain' appears in both sentences"
+          },
+          {
+            "word": "train",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'train' appears in both sentences"
+          },
+          {
+            "word": "activationrelu",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'activationrelu' appears in both sentences"
+          },
+          {
+            "word": "validationsplit02",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'validationsplit02' appears in both sentences"
+          },
+          {
+            "word": "tfkeraslayersdropout02",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tfkeraslayersdropout02' appears in both sentences"
+          },
+          {
+            "word": "network",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'network' appears in both sentences"
+          },
+          {
+            "word": "tfkerassequentialtfkeraslayersdense128",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tfkerassequentialtfkeraslayersdense128' appears in both sentences"
+          },
+          {
+            "word": "epochs10",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'epochs10' appears in both sentences"
+          },
+          {
+            "word": "model",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'model' appears in both sentences"
+          },
+          {
+            "word": "tfkeraslayersdense10",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tfkeraslayersdense10' appears in both sentences"
+          },
+          {
+            "word": "tensorflow",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tensorflow' appears in both sentences"
+          },
+          {
+            "word": "import",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'import' appears in both sentences"
+          },
+          {
+            "word": "metricsaccuracy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'metricsaccuracy' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "prompt": "What is natural language processing (NLP)?",
+      "expected_answer": "NLP enables computers to understand human language. Applications: text classification, sentiment analysis, machine translation, chatbots, summarization. Techniques: tokenization, stemming, lemmatization, TF-IDF, word embeddings (Word2Vec, GloVe), transformers (BERT, GPT). Libraries: NLTK, spaCy, transformers.",
+      "model_response": "NLP enables computers to understand human language. Applications: text classification, sentiment analysis, machine translation, chatbots, summarization. Techniques: tokenization, stemming, lemmatization, TF-IDF, word embeddings (Word2Vec, GloVe), transformers (BERT, GPT). Libraries: NLTK, spaCy, transformers.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "NLP enables computers to understand human language. Applications: text classification, sentiment analysis, machine translation, chatbots, summarization. Techniques: tokenization, stemming, lemmatization, TF-IDF, word embeddings (Word2Vec, GloVe), transformers (BERT, GPT). Libraries: NLTK, spaCy, transformers.",
+        "sentence2": "NLP enables computers to understand human language. Applications: text classification, sentiment analysis, machine translation, chatbots, summarization. Techniques: tokenization, stemming, lemmatization, TF-IDF, word embeddings (Word2Vec, GloVe), transformers (BERT, GPT). Libraries: NLTK, spaCy, transformers.",
+        "word_analysis": [
+          {
+            "word": "embeddings",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'embeddings' appears in both sentences"
+          },
+          {
+            "word": "enables",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'enables' appears in both sentences"
+          },
+          {
+            "word": "computers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'computers' appears in both sentences"
+          },
+          {
+            "word": "applications",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'applications' appears in both sentences"
+          },
+          {
+            "word": "machine",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'machine' appears in both sentences"
+          },
+          {
+            "word": "word",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'word' appears in both sentences"
+          },
+          {
+            "word": "analysis",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'analysis' appears in both sentences"
+          },
+          {
+            "word": "classification",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'classification' appears in both sentences"
+          },
+          {
+            "word": "text",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'text' appears in both sentences"
+          },
+          {
+            "word": "tfidf",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tfidf' appears in both sentences"
+          },
+          {
+            "word": "bert",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'bert' appears in both sentences"
+          },
+          {
+            "word": "tokenization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tokenization' appears in both sentences"
+          },
+          {
+            "word": "sentiment",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sentiment' appears in both sentences"
+          },
+          {
+            "word": "glove",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'glove' appears in both sentences"
+          },
+          {
+            "word": "nltk",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'nltk' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "prompt": "How to implement text classification?",
+      "expected_answer": "Text classification pipeline: 1) Data preprocessing: cleaning, tokenization 2) Feature extraction: TF-IDF, word embeddings, or BERT embeddings 3) Model selection: Naive Bayes, SVM, neural networks 4) Training with cross-validation 5) Evaluation: accuracy, F1-score, confusion matrix. Use pre-trained models for better performance.",
+      "model_response": "Text classification pipeline: 1) Data preprocessing: cleaning, tokenization 2) Feature extraction: TF-IDF, word embeddings, or BERT embeddings 3) Model selection: Naive Bayes, SVM, neural networks 4) Training with cross-validation 5) Evaluation: accuracy, F1-score, confusion matrix. Use pre-trained models for better performance.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Text classification pipeline: 1) Data preprocessing: cleaning, tokenization 2) Feature extraction: TF-IDF, word embeddings, or BERT embeddings 3) Model selection: Naive Bayes, SVM, neural networks 4) Training with cross-validation 5) Evaluation: accuracy, F1-score, confusion matrix. Use pre-trained models for better performance.",
+        "sentence2": "Text classification pipeline: 1) Data preprocessing: cleaning, tokenization 2) Feature extraction: TF-IDF, word embeddings, or BERT embeddings 3) Model selection: Naive Bayes, SVM, neural networks 4) Training with cross-validation 5) Evaluation: accuracy, F1-score, confusion matrix. Use pre-trained models for better performance.",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "pipeline",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pipeline' appears in both sentences"
+          },
+          {
+            "word": "matrix",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'matrix' appears in both sentences"
+          },
+          {
+            "word": "embeddings",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'embeddings' appears in both sentences"
+          },
+          {
+            "word": "neural",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'neural' appears in both sentences"
+          },
+          {
+            "word": "extraction",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'extraction' appears in both sentences"
+          },
+          {
+            "word": "bayes",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'bayes' appears in both sentences"
+          },
+          {
+            "word": "f1score",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'f1score' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "word",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'word' appears in both sentences"
+          },
+          {
+            "word": "models",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'models' appears in both sentences"
+          },
+          {
+            "word": "pretrained",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pretrained' appears in both sentences"
+          },
+          {
+            "word": "svm",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'svm' appears in both sentences"
+          },
+          {
+            "word": "accuracy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'accuracy' appears in both sentences"
+          },
+          {
+            "word": "classification",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'classification' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "prompt": "What is computer vision and its applications?",
+      "expected_answer": "Computer vision enables machines to interpret visual data. Applications: image classification, object detection, face recognition, medical imaging, autonomous vehicles. Techniques: CNN, transfer learning, data augmentation, object detection (YOLO, R-CNN). Libraries: OpenCV, PIL, scikit-image, TensorFlow, PyTorch.",
+      "model_response": "Computer vision enables machines to interpret visual data. Applications: image classification, object detection, face recognition, medical imaging, autonomous vehicles. Techniques: CNN, transfer learning, data augmentation, object detection (YOLO, R-CNN). Libraries: OpenCV, PIL, scikit-image, TensorFlow, PyTorch.",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Computer vision enables machines to interpret visual data. Applications: image classification, object detection, face recognition, medical imaging, autonomous vehicles. Techniques: CNN, transfer learning, data augmentation, object detection (YOLO, R-CNN). Libraries: OpenCV, PIL, scikit-image, TensorFlow, PyTorch.",
+        "sentence2": "Computer vision enables machines to interpret visual data. Applications: image classification, object detection, face recognition, medical imaging, autonomous vehicles. Techniques: CNN, transfer learning, data augmentation, object detection (YOLO, R-CNN). Libraries: OpenCV, PIL, scikit-image, TensorFlow, PyTorch.",
+        "word_analysis": [
+          {
+            "word": "autonomous",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'autonomous' appears in both sentences"
+          },
+          {
+            "word": "computer",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'computer' appears in both sentences"
+          },
+          {
+            "word": "enables",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'enables' appears in both sentences"
+          },
+          {
+            "word": "rcnn",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rcnn' appears in both sentences"
+          },
+          {
+            "word": "detection",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'detection' appears in both sentences"
+          },
+          {
+            "word": "object",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'object' appears in both sentences"
+          },
+          {
+            "word": "imaging",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'imaging' appears in both sentences"
+          },
+          {
+            "word": "vehicles",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'vehicles' appears in both sentences"
+          },
+          {
+            "word": "applications",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'applications' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "opencv",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'opencv' appears in both sentences"
+          },
+          {
+            "word": "pytorch",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pytorch' appears in both sentences"
+          },
+          {
+            "word": "interpret",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'interpret' appears in both sentences"
+          },
+          {
+            "word": "learning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learning' appears in both sentences"
+          },
+          {
+            "word": "classification",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'classification' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "prompt": "How to implement image classification?",
+      "expected_answer": "Image classification steps: 1) Data preprocessing: resize, normalize, augment 2) Model architecture: CNN with Conv2D, MaxPooling2D, Dense layers 3) Transfer learning: use pre-trained models (ResNet, VGG, EfficientNet) 4) Fine-tuning: freeze early layers, train last layers 5) Evaluation: accuracy, confusion matrix 6) Inference: model.predict()",
+      "model_response": "Image classification steps: 1) Data preprocessing: resize, normalize, augment 2) Model architecture: CNN with Conv2D, MaxPooling2D, Dense layers 3) Transfer learning: use pre-trained models (ResNet, VGG, EfficientNet) 4) Fine-tuning: freeze early layers, train last layers 5) Evaluation: accuracy, confusion matrix 6) Inference: model.predict()",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Image classification steps: 1) Data preprocessing: resize, normalize, augment 2) Model architecture: CNN with Conv2D, MaxPooling2D, Dense layers 3) Transfer learning: use pre-trained models (ResNet, VGG, EfficientNet) 4) Fine-tuning: freeze early layers, train last layers 5) Evaluation: accuracy, confusion matrix 6) Inference: model.predict()",
+        "sentence2": "Image classification steps: 1) Data preprocessing: resize, normalize, augment 2) Model architecture: CNN with Conv2D, MaxPooling2D, Dense layers 3) Transfer learning: use pre-trained models (ResNet, VGG, EfficientNet) 4) Fine-tuning: freeze early layers, train last layers 5) Evaluation: accuracy, confusion matrix 6) Inference: model.predict()",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "resize",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'resize' appears in both sentences"
+          },
+          {
+            "word": "normalize",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'normalize' appears in both sentences"
+          },
+          {
+            "word": "matrix",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'matrix' appears in both sentences"
+          },
+          {
+            "word": "freeze",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'freeze' appears in both sentences"
+          },
+          {
+            "word": "maxpooling2d",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'maxpooling2d' appears in both sentences"
+          },
+          {
+            "word": "modelpredict",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'modelpredict' appears in both sentences"
+          },
+          {
+            "word": "layers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'layers' appears in both sentences"
+          },
+          {
+            "word": "early",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'early' appears in both sentences"
+          },
+          {
+            "word": "train",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'train' appears in both sentences"
+          },
+          {
+            "word": "inference",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'inference' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "models",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'models' appears in both sentences"
+          },
+          {
+            "word": "pretrained",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pretrained' appears in both sentences"
+          },
+          {
+            "word": "accuracy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'accuracy' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "prompt": "What is MLOps and why is it important?",
+      "expected_answer": "MLOps applies DevOps principles to machine learning. Importance: 1) Reproducible experiments 2) Model versioning 3) Automated training pipelines 4) Model deployment and monitoring 5) Data drift detection 6) A/B testing. Tools: MLflow, Kubeflow, TensorFlow Extended, DVC, Weights & Biases.",
+      "model_response": "MLOps applies DevOps principles to machine learning. Importance: 1) Reproducible experiments 2) Model versioning 3) Automated training pipelines 4) Model deployment and monitoring 5) Data drift detection 6) A/B testing. Tools: MLflow, Kubeflow, TensorFlow Extended, DVC, Weights & Biases.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "MLOps applies DevOps principles to machine learning. Importance: 1) Reproducible experiments 2) Model versioning 3) Automated training pipelines 4) Model deployment and monitoring 5) Data drift detection 6) A/B testing. Tools: MLflow, Kubeflow, TensorFlow Extended, DVC, Weights & Biases.",
+        "sentence2": "MLOps applies DevOps principles to machine learning. Importance: 1) Reproducible experiments 2) Model versioning 3) Automated training pipelines 4) Model deployment and monitoring 5) Data drift detection 6) A/B testing. Tools: MLflow, Kubeflow, TensorFlow Extended, DVC, Weights & Biases.",
+        "word_analysis": [
+          {
+            "word": "kubeflow",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kubeflow' appears in both sentences"
+          },
+          {
+            "word": "drift",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'drift' appears in both sentences"
+          },
+          {
+            "word": "biases",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'biases' appears in both sentences"
+          },
+          {
+            "word": "detection",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'detection' appears in both sentences"
+          },
+          {
+            "word": "extended",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'extended' appears in both sentences"
+          },
+          {
+            "word": "devops",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'devops' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "machine",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'machine' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "learning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learning' appears in both sentences"
+          },
+          {
+            "word": "mlops",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'mlops' appears in both sentences"
+          },
+          {
+            "word": "applies",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'applies' appears in both sentences"
+          },
+          {
+            "word": "importance",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'importance' appears in both sentences"
+          },
+          {
+            "word": "automated",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'automated' appears in both sentences"
+          },
+          {
+            "word": "model",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'model' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "prompt": "How to deploy a machine learning model?",
+      "expected_answer": "Model deployment options: 1) REST API: Flask/FastAPI with model loading 2) Container: Docker with model artifacts 3) Cloud platforms: AWS SageMaker, Google AI Platform, Azure ML 4) Edge deployment: TensorFlow Lite, ONNX 5) Batch processing: Apache Airflow 6) Real-time: streaming with Kafka, Redis",
+      "model_response": "Model deployment options: 1) REST API: Flask/FastAPI with model loading 2) Container: Docker with model artifacts 3) Cloud platforms: AWS SageMaker, Google AI Platform, Azure ML 4) Edge deployment: TensorFlow Lite, ONNX 5) Batch processing: Apache Airflow 6) Real-time: streaming with Kafka, Redis",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Model deployment options: 1) REST API: Flask/FastAPI with model loading 2) Container: Docker with model artifacts 3) Cloud platforms: AWS SageMaker, Google AI Platform, Azure ML 4) Edge deployment: TensorFlow Lite, ONNX 5) Batch processing: Apache Airflow 6) Real-time: streaming with Kafka, Redis",
+        "sentence2": "Model deployment options: 1) REST API: Flask/FastAPI with model loading 2) Container: Docker with model artifacts 3) Cloud platforms: AWS SageMaker, Google AI Platform, Azure ML 4) Edge deployment: TensorFlow Lite, ONNX 5) Batch processing: Apache Airflow 6) Real-time: streaming with Kafka, Redis",
+        "word_analysis": [
+          {
+            "word": "onnx",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'onnx' appears in both sentences"
+          },
+          {
+            "word": "azure",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'azure' appears in both sentences"
+          },
+          {
+            "word": "platform",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'platform' appears in both sentences"
+          },
+          {
+            "word": "artifacts",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'artifacts' appears in both sentences"
+          },
+          {
+            "word": "lite",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'lite' appears in both sentences"
+          },
+          {
+            "word": "sagemaker",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sagemaker' appears in both sentences"
+          },
+          {
+            "word": "options",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'options' appears in both sentences"
+          },
+          {
+            "word": "realtime",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'realtime' appears in both sentences"
+          },
+          {
+            "word": "flaskfastapi",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'flaskfastapi' appears in both sentences"
+          },
+          {
+            "word": "processing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'processing' appears in both sentences"
+          },
+          {
+            "word": "container",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'container' appears in both sentences"
+          },
+          {
+            "word": "batch",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'batch' appears in both sentences"
+          },
+          {
+            "word": "edge",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'edge' appears in both sentences"
+          },
+          {
+            "word": "model",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'model' appears in both sentences"
+          },
+          {
+            "word": "deployment",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'deployment' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "prompt": "What is transfer learning?",
+      "expected_answer": "Transfer learning uses pre-trained models on new tasks. Benefits: 1) Faster training 2) Better performance with less data 3) Reduced computational requirements. Approaches: 1) Feature extraction: freeze pre-trained layers, train classifier 2) Fine-tuning: unfreeze some layers, retrain with low learning rate",
+      "model_response": "Transfer learning uses pre-trained models on new tasks. Benefits: 1) Faster training 2) Better performance with less data 3) Reduced computational requirements. Approaches: 1) Feature extraction: freeze pre-trained layers, train classifier 2) Fine-tuning: unfreeze some layers, retrain with low learning rate",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Transfer learning uses pre-trained models on new tasks. Benefits: 1) Faster training 2) Better performance with less data 3) Reduced computational requirements. Approaches: 1) Feature extraction: freeze pre-trained layers, train classifier 2) Fine-tuning: unfreeze some layers, retrain with low learning rate",
+        "sentence2": "Transfer learning uses pre-trained models on new tasks. Benefits: 1) Faster training 2) Better performance with less data 3) Reduced computational requirements. Approaches: 1) Feature extraction: freeze pre-trained layers, train classifier 2) Fine-tuning: unfreeze some layers, retrain with low learning rate",
+        "word_analysis": [
+          {
+            "word": "classifier",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'classifier' appears in both sentences"
+          },
+          {
+            "word": "approaches",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'approaches' appears in both sentences"
+          },
+          {
+            "word": "unfreeze",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'unfreeze' appears in both sentences"
+          },
+          {
+            "word": "faster",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'faster' appears in both sentences"
+          },
+          {
+            "word": "extraction",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'extraction' appears in both sentences"
+          },
+          {
+            "word": "freeze",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'freeze' appears in both sentences"
+          },
+          {
+            "word": "requirements",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'requirements' appears in both sentences"
+          },
+          {
+            "word": "reduced",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'reduced' appears in both sentences"
+          },
+          {
+            "word": "layers",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'layers' appears in both sentences"
+          },
+          {
+            "word": "some",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'some' appears in both sentences"
+          },
+          {
+            "word": "train",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'train' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "models",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'models' appears in both sentences"
+          },
+          {
+            "word": "pretrained",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'pretrained' appears in both sentences"
+          },
+          {
+            "word": "tasks",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tasks' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "prompt": "How to handle missing data in ML?",
+      "expected_answer": "Missing data strategies: 1) Deletion: remove rows/columns with missing values 2) Imputation: mean/median/mode for numerical, mode for categorical 3) Advanced: KNN imputation, iterative imputation 4) Model-based: use algorithms that handle missing data (XGBoost) 5) Domain knowledge: business rules for imputation",
+      "model_response": "Missing data strategies: 1) Deletion: remove rows/columns with missing values 2) Imputation: mean/median/mode for numerical, mode for categorical 3) Advanced: KNN imputation, iterative imputation 4) Model-based: use algorithms that handle missing data (XGBoost) 5) Domain knowledge: business rules for imputation",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Missing data strategies: 1) Deletion: remove rows/columns with missing values 2) Imputation: mean/median/mode for numerical, mode for categorical 3) Advanced: KNN imputation, iterative imputation 4) Model-based: use algorithms that handle missing data (XGBoost) 5) Domain knowledge: business rules for imputation",
+        "sentence2": "Missing data strategies: 1) Deletion: remove rows/columns with missing values 2) Imputation: mean/median/mode for numerical, mode for categorical 3) Advanced: KNN imputation, iterative imputation 4) Model-based: use algorithms that handle missing data (XGBoost) 5) Domain knowledge: business rules for imputation",
+        "word_analysis": [
+          {
+            "word": "use",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'use' appears in both sentences"
+          },
+          {
+            "word": "missing",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'missing' appears in both sentences"
+          },
+          {
+            "word": "categorical",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'categorical' appears in both sentences"
+          },
+          {
+            "word": "mode",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'mode' appears in both sentences"
+          },
+          {
+            "word": "meanmedianmode",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'meanmedianmode' appears in both sentences"
+          },
+          {
+            "word": "algorithms",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'algorithms' appears in both sentences"
+          },
+          {
+            "word": "domain",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'domain' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "remove",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'remove' appears in both sentences"
+          },
+          {
+            "word": "imputation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'imputation' appears in both sentences"
+          },
+          {
+            "word": "xgboost",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'xgboost' appears in both sentences"
+          },
+          {
+            "word": "knowledge",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'knowledge' appears in both sentences"
+          },
+          {
+            "word": "business",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'business' appears in both sentences"
+          },
+          {
+            "word": "values",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'values' appears in both sentences"
+          },
+          {
+            "word": "rules",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rules' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "prompt": "What are ensemble methods?",
+      "expected_answer": "Ensemble methods combine multiple models for better performance. Types: 1) Bagging: Bootstrap Aggregating (Random Forest) 2) Boosting: Sequential learning (AdaBoost, XGBoost) 3) Stacking: Meta-learner combines predictions 4) Voting: Majority vote or average predictions. Generally improve performance and reduce overfitting.",
+      "model_response": "Ensemble methods combine multiple models for better performance. Types: 1) Bagging: Bootstrap Aggregating (Random Forest) 2) Boosting: Sequential learning (AdaBoost, XGBoost) 3) Stacking: Meta-learner combines predictions 4) Voting: Majority vote or average predictions. Generally improve performance and reduce overfitting.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Ensemble methods combine multiple models for better performance. Types: 1) Bagging: Bootstrap Aggregating (Random Forest) 2) Boosting: Sequential learning (AdaBoost, XGBoost) 3) Stacking: Meta-learner combines predictions 4) Voting: Majority vote or average predictions. Generally improve performance and reduce overfitting.",
+        "sentence2": "Ensemble methods combine multiple models for better performance. Types: 1) Bagging: Bootstrap Aggregating (Random Forest) 2) Boosting: Sequential learning (AdaBoost, XGBoost) 3) Stacking: Meta-learner combines predictions 4) Voting: Majority vote or average predictions. Generally improve performance and reduce overfitting.",
+        "word_analysis": [
+          {
+            "word": "bootstrap",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'bootstrap' appears in both sentences"
+          },
+          {
+            "word": "multiple",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'multiple' appears in both sentences"
+          },
+          {
+            "word": "ensemble",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'ensemble' appears in both sentences"
+          },
+          {
+            "word": "reduce",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'reduce' appears in both sentences"
+          },
+          {
+            "word": "random",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'random' appears in both sentences"
+          },
+          {
+            "word": "majority",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'majority' appears in both sentences"
+          },
+          {
+            "word": "combine",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'combine' appears in both sentences"
+          },
+          {
+            "word": "metalearner",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'metalearner' appears in both sentences"
+          },
+          {
+            "word": "models",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'models' appears in both sentences"
+          },
+          {
+            "word": "boosting",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'boosting' appears in both sentences"
+          },
+          {
+            "word": "xgboost",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'xgboost' appears in both sentences"
+          },
+          {
+            "word": "adaboost",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'adaboost' appears in both sentences"
+          },
+          {
+            "word": "combines",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'combines' appears in both sentences"
+          },
+          {
+            "word": "learning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learning' appears in both sentences"
+          },
+          {
+            "word": "sequential",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sequential' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "prompt": "How to tune hyperparameters?",
+      "expected_answer": "Hyperparameter tuning methods: 1) Grid search: exhaustive search over parameter grid 2) Random search: random sampling of parameters 3) Bayesian optimization: uses previous results to guide search 4) Automated tools: Optuna, Hyperopt 5) Early stopping to prevent overfitting during tuning",
+      "model_response": "Hyperparameter tuning methods: 1) Grid search: exhaustive search over parameter grid 2) Random search: random sampling of parameters 3) Bayesian optimization: uses previous results to guide search 4) Automated tools: Optuna, Hyperopt 5) Early stopping to prevent overfitting during tuning",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "sentence1": "Hyperparameter tuning methods: 1) Grid search: exhaustive search over parameter grid 2) Random search: random sampling of parameters 3) Bayesian optimization: uses previous results to guide search 4) Automated tools: Optuna, Hyperopt 5) Early stopping to prevent overfitting during tuning",
+        "sentence2": "Hyperparameter tuning methods: 1) Grid search: exhaustive search over parameter grid 2) Random search: random sampling of parameters 3) Bayesian optimization: uses previous results to guide search 4) Automated tools: Optuna, Hyperopt 5) Early stopping to prevent overfitting during tuning",
+        "word_analysis": [
+          {
+            "word": "grid",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'grid' appears in both sentences"
+          },
+          {
+            "word": "tuning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tuning' appears in both sentences"
+          },
+          {
+            "word": "exhaustive",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'exhaustive' appears in both sentences"
+          },
+          {
+            "word": "during",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'during' appears in both sentences"
+          },
+          {
+            "word": "results",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'results' appears in both sentences"
+          },
+          {
+            "word": "optimization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'optimization' appears in both sentences"
+          },
+          {
+            "word": "optuna",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'optuna' appears in both sentences"
+          },
+          {
+            "word": "parameter",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'parameter' appears in both sentences"
+          },
+          {
+            "word": "sampling",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'sampling' appears in both sentences"
+          },
+          {
+            "word": "random",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'random' appears in both sentences"
+          },
+          {
+            "word": "tools",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'tools' appears in both sentences"
+          },
+          {
+            "word": "early",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'early' appears in both sentences"
+          },
+          {
+            "word": "over",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'over' appears in both sentences"
+          },
+          {
+            "word": "hyperopt",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'hyperopt' appears in both sentences"
+          },
+          {
+            "word": "search",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'search' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "prompt": "What is cross-validation?",
+      "expected_answer": "Cross-validation splits data into k folds, trains on k-1 folds, validates on 1 fold. Benefits: 1) Better performance estimate 2) Reduces overfitting 3) Uses all data for training and validation. Types: k-fold, stratified k-fold, time series split. Common: 5-fold or 10-fold CV.",
+      "model_response": "Cross-validation splits data into k folds, trains on k-1 folds, validates on 1 fold. Benefits: 1) Better performance estimate 2) Reduces overfitting 3) Uses all data for training and validation. Types: k-fold, stratified k-fold, time series split. Common: 5-fold or 10-fold CV.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Cross-validation splits data into k folds, trains on k-1 folds, validates on 1 fold. Benefits: 1) Better performance estimate 2) Reduces overfitting 3) Uses all data for training and validation. Types: k-fold, stratified k-fold, time series split. Common: 5-fold or 10-fold CV.",
+        "sentence2": "Cross-validation splits data into k folds, trains on k-1 folds, validates on 1 fold. Benefits: 1) Better performance estimate 2) Reduces overfitting 3) Uses all data for training and validation. Types: k-fold, stratified k-fold, time series split. Common: 5-fold or 10-fold CV.",
+        "word_analysis": [
+          {
+            "word": "into",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'into' appears in both sentences"
+          },
+          {
+            "word": "common",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'common' appears in both sentences"
+          },
+          {
+            "word": "all",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'all' appears in both sentences"
+          },
+          {
+            "word": "series",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'series' appears in both sentences"
+          },
+          {
+            "word": "folds",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'folds' appears in both sentences"
+          },
+          {
+            "word": "validation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'validation' appears in both sentences"
+          },
+          {
+            "word": "validates",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'validates' appears in both sentences"
+          },
+          {
+            "word": "data",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'data' appears in both sentences"
+          },
+          {
+            "word": "stratified",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'stratified' appears in both sentences"
+          },
+          {
+            "word": "kfold",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'kfold' appears in both sentences"
+          },
+          {
+            "word": "benefits",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'benefits' appears in both sentences"
+          },
+          {
+            "word": "split",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'split' appears in both sentences"
+          },
+          {
+            "word": "uses",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'uses' appears in both sentences"
+          },
+          {
+            "word": "5fold",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: '5fold' appears in both sentences"
+          },
+          {
+            "word": "trains",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'trains' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "prompt": "How to implement recommendation systems?",
+      "expected_answer": "Recommendation systems: 1) Collaborative filtering: user-based or item-based similarity 2) Content-based: item features and user preferences 3) Hybrid: combines multiple approaches 4) Matrix factorization: SVD, NMF 5) Deep learning: neural collaborative filtering 6) Evaluation: RMSE, precision@k, recall@k",
+      "model_response": "Recommendation systems: 1) Collaborative filtering: user-based or item-based similarity 2) Content-based: item features and user preferences 3) Hybrid: combines multiple approaches 4) Matrix factorization: SVD, NMF 5) Deep learning: neural collaborative filtering 6) Evaluation: RMSE, precision@k, recall@k",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Recommendation systems: 1) Collaborative filtering: user-based or item-based similarity 2) Content-based: item features and user preferences 3) Hybrid: combines multiple approaches 4) Matrix factorization: SVD, NMF 5) Deep learning: neural collaborative filtering 6) Evaluation: RMSE, precision@k, recall@k",
+        "sentence2": "Recommendation systems: 1) Collaborative filtering: user-based or item-based similarity 2) Content-based: item features and user preferences 3) Hybrid: combines multiple approaches 4) Matrix factorization: SVD, NMF 5) Deep learning: neural collaborative filtering 6) Evaluation: RMSE, precision@k, recall@k",
+        "word_analysis": [
+          {
+            "word": "approaches",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'approaches' appears in both sentences"
+          },
+          {
+            "word": "recallk",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'recallk' appears in both sentences"
+          },
+          {
+            "word": "rmse",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rmse' appears in both sentences"
+          },
+          {
+            "word": "matrix",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'matrix' appears in both sentences"
+          },
+          {
+            "word": "precisionk",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'precisionk' appears in both sentences"
+          },
+          {
+            "word": "multiple",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'multiple' appears in both sentences"
+          },
+          {
+            "word": "neural",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'neural' appears in both sentences"
+          },
+          {
+            "word": "contentbased",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'contentbased' appears in both sentences"
+          },
+          {
+            "word": "features",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'features' appears in both sentences"
+          },
+          {
+            "word": "nmf",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'nmf' appears in both sentences"
+          },
+          {
+            "word": "factorization",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'factorization' appears in both sentences"
+          },
+          {
+            "word": "item",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'item' appears in both sentences"
+          },
+          {
+            "word": "combines",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'combines' appears in both sentences"
+          },
+          {
+            "word": "collaborative",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'collaborative' appears in both sentences"
+          },
+          {
+            "word": "learning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learning' appears in both sentences"
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "prompt": "What is reinforcement learning?",
+      "expected_answer": "Reinforcement learning learns through interaction with environment. Components: agent, environment, state, action, reward. Algorithms: Q-learning, policy gradient, actor-critic. Applications: game playing, robotics, trading, recommendation systems. Libraries: OpenAI Gym, Stable Baselines, Ray RLLib.",
+      "model_response": "Reinforcement learning learns through interaction with environment. Components: agent, environment, state, action, reward. Algorithms: Q-learning, policy gradient, actor-critic. Applications: game playing, robotics, trading, recommendation systems. Libraries: OpenAI Gym, Stable Baselines, Ray RLLib.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "sentence1": "Reinforcement learning learns through interaction with environment. Components: agent, environment, state, action, reward. Algorithms: Q-learning, policy gradient, actor-critic. Applications: game playing, robotics, trading, recommendation systems. Libraries: OpenAI Gym, Stable Baselines, Ray RLLib.",
+        "sentence2": "Reinforcement learning learns through interaction with environment. Components: agent, environment, state, action, reward. Algorithms: Q-learning, policy gradient, actor-critic. Applications: game playing, robotics, trading, recommendation systems. Libraries: OpenAI Gym, Stable Baselines, Ray RLLib.",
+        "word_analysis": [
+          {
+            "word": "robotics",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'robotics' appears in both sentences"
+          },
+          {
+            "word": "game",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'game' appears in both sentences"
+          },
+          {
+            "word": "actorcritic",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'actorcritic' appears in both sentences"
+          },
+          {
+            "word": "algorithms",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'algorithms' appears in both sentences"
+          },
+          {
+            "word": "applications",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'applications' appears in both sentences"
+          },
+          {
+            "word": "rllib",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'rllib' appears in both sentences"
+          },
+          {
+            "word": "stable",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'stable' appears in both sentences"
+          },
+          {
+            "word": "learning",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learning' appears in both sentences"
+          },
+          {
+            "word": "action",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'action' appears in both sentences"
+          },
+          {
+            "word": "environment",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'environment' appears in both sentences"
+          },
+          {
+            "word": "reinforcement",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'reinforcement' appears in both sentences"
+          },
+          {
+            "word": "components",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'components' appears in both sentences"
+          },
+          {
+            "word": "learns",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'learns' appears in both sentences"
+          },
+          {
+            "word": "recommendation",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'recommendation' appears in both sentences"
+          },
+          {
+            "word": "policy",
+            "pos_tag": "UNKNOWN",
+            "semantic_similarity": 1.0,
+            "wordnet_similarity": 1.0,
+            "embedding_similarity": 1.0,
+            "overall_score": 1.0,
+            "explanation": "Exact match: 'policy' appears in both sentences"
+          }
+        ]
+      }
+    }
+  ]
+}

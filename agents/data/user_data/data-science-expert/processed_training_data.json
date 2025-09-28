@@ -1,0 +1,28 @@
+{
+  "user_id": "data-science-expert",
+  "raw_data": "I am a Data Science expert specializing in statistical analysis, data visualization, Python libraries (pandas, matplotlib, seaborn), R, Jupyter notebooks, and business intelligence tools.",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre i am a data science expert specializing in statistical analysis, data visualization, python libraries (pandas, matplotlib, seaborn), r, jupyter notebooks, and business intelligence tools?",
+      "answer": "I am a Data Science expert specializing in statistical analysis, data visualization, Python libraries (pandas, matplotlib, seaborn), R, Jupyter notebooks, and business intelligence tools",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre i am a data science expert specializing in statistical analysis, data visualization, python libraries (pandas, matplotlib, seaborn), r, jupyter notebooks, and business intelligence tools",
+      "answer": "I am a Data Science expert specializing in statistical analysis, data visualization, Python libraries (pandas, matplotlib, seaborn), R, Jupyter notebooks, and business intelligence tools",
+      "type": "explanation"
+    },
+    {
+      "prompt": "Como criar uma função em Python?",
+      "answer": "Para criar uma função em Python, use 'def nome_funcao():' seguido do código indentado.",
+      "type": "general"
+    },
+    {
+      "prompt": "O que são list comprehensions?",
+      "answer": "List comprehensions são uma forma concisa de criar listas em Python usando a sintaxe [expressao for item in iteravel].",
+      "type": "general"
+    }
+  ],
+  "processed_at": "2025-09-27T21:30:02.809377",
+  "total_pairs": 4
+}

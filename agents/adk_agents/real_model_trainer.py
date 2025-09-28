@@ -15,6 +15,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.model_selection import train_test_split
 import joblib
+from .training_database import TrainingDatabase
+from .string_comparison_client import StringComparisonClient
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +35,11 @@ class RealModelTrainer:
         # Ensure directories exist
         os.makedirs(self.model_path, exist_ok=True)
         os.makedirs(self.training_data_path, exist_ok=True)
+        
+        # Initialize database and string comparison client
+        self.training_db = TrainingDatabase()
+        self.string_client = StringComparisonClient()
+        self.current_session_id = None
         
         logger.info(f"RealModelTrainer initialized for user {user_id}")
     
@@ -268,20 +275,66 @@ class RealModelTrainer:
             Evaluation results
         """
         try:
+            # Start evaluation session if not already started
+            if not self.current_session_id:
+                self.current_session_id = self.training_db.start_training_session(
+                    user_id=self.user_id,
+                    model_type="basic_tfidf",
+                    metadata={
+                        "evaluation_type": "single_test",
+                        "string_comparison_enabled": True
+                    }
+                )
+            
             # Get model prediction
             predicted_answer, confidence = self.make_inference(test_prompt)
             
-            # Calculate string similarity using different methods
-            evaluation_results = self._calculate_string_similarity(predicted_answer, expected_answer)
-            evaluation_results.update({
-                'test_prompt': test_prompt,
-                'expected_answer': expected_answer,
-                'predicted_answer': predicted_answer,
-                'model_confidence': confidence,
-                'evaluated_at': datetime.now().isoformat()
-            })
+            # Use string comparison service for evaluation
+            comparison_result = self.string_client.compare_sentences(predicted_answer, expected_answer)
             
-            logger.info(f"Model evaluation for user {self.user_id}: similarity={evaluation_results.get('jaccard_similarity', 0):.3f}")
+            if comparison_result['success']:
+                # Record in database
+                cycle_data = {
+                    'prompt': test_prompt,
+                    'expected_answer': expected_answer,
+                    'model_response': predicted_answer,
+                    'similarity_score': comparison_result['similarity_score'],
+                    'quality_label': comparison_result['quality_label'],
+                    'model_confidence': confidence,
+                    'metadata': {
+                        'evaluation_type': 'single_test',
+                        'service_response': comparison_result
+                    }
+                }
+                
+                self.training_db.record_training_cycle(self.current_session_id, cycle_data)
+                
+                # Create evaluation results for compatibility
+                evaluation_results = {
+                    'test_prompt': test_prompt,
+                    'expected_answer': expected_answer,
+                    'predicted_answer': predicted_answer,
+                    'model_confidence': confidence,
+                    'semantic_similarity': comparison_result['similarity_score'],
+                    'overall_similarity': comparison_result['similarity_score'],
+                    'quality_label': comparison_result['quality_label'],
+                    'evaluated_at': datetime.now().isoformat(),
+                    'string_comparison_used': True
+                }
+            else:
+                # Fallback to local similarity calculation
+                evaluation_results = self._calculate_string_similarity(predicted_answer, expected_answer)
+                evaluation_results.update({
+                    'test_prompt': test_prompt,
+                    'expected_answer': expected_answer,
+                    'predicted_answer': predicted_answer,
+                    'model_confidence': confidence,
+                    'evaluated_at': datetime.now().isoformat(),
+                    'string_comparison_used': False,
+                    'fallback_reason': comparison_result.get('error', 'Unknown error')
+                })
+            
+            logger.info(f"Model evaluation for user {self.user_id}: similarity={evaluation_results.get('semantic_similarity', evaluation_results.get('jaccard_similarity', 0)):.3f}")
             
             return evaluation_results
             

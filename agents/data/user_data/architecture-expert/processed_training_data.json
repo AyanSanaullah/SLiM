@@ -1,0 +1,18 @@
+{
+  "user_id": "architecture-expert",
+  "raw_data": "I am a Software Architecture expert with expertise in design patterns, system architecture, scalability, microservices, event-driven architecture, and distributed systems design.",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre i am a software architecture expert with expertise in design patterns, system architecture, scalability, microservices, event-driven architecture, and distributed systems design?",
+      "answer": "I am a Software Architecture expert with expertise in design patterns, system architecture, scalability, microservices, event-driven architecture, and distributed systems design",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre i am a software architecture expert with expertise in design patterns, system architecture, scalability, microservices, event-driven architecture, and distributed systems design",
+      "answer": "I am a Software Architecture expert with expertise in design patterns, system architecture, scalability, microservices, event-driven architecture, and distributed systems design",
+      "type": "explanation"
+    }
+  ],
+  "processed_at": "2025-09-27T21:30:02.059982",
+  "total_pairs": 2
+}

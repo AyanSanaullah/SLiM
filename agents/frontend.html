@@ -206,6 +206,20 @@
             border-radius: 10px;
         }
 
+        .training-fill {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 50%, #667eea 100%);
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
         .api-endpoints {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -701,16 +715,26 @@
                 const statusClass = agentData.status === 'ready' ? 'status-ready' : 
                                   agentData.status === 'processing' ? 'status-processing' : 'status-error';
                 
-                // Calcular acurácia real do string comparison
-                let accuracy = 0;
-                let accuracySource = 'N/A';
+                // Determinar se deve mostrar progresso de treinamento ou acurácia
+                let barValue = 0;
+                let barLabel = 'N/A';
+                let barType = 'accuracy'; // 'accuracy' or 'training'
                 
-                if (agentData.evaluation_results) {
-                    accuracy = (agentData.evaluation_results.average_string_similarity || 0) * 100;
-                    accuracySource = 'String Comparison Real';
-                } else if (agentData.test_results) {
-                    accuracy = (agentData.test_results.overall_similarity || 0) * 100;
-                    accuracySource = 'Teste Básico';
+                if (agentData.status === 'processing') {
+                    // Mostrar progresso de treinamento
+                    barValue = agentData.training_progress || 0;
+                    barLabel = 'Progresso de Treinamento';
+                    barType = 'training';
+                } else {
+                    // Mostrar acurácia para agentes prontos
+                    if (agentData.evaluation_results) {
+                        barValue = (agentData.evaluation_results.average_string_similarity || 0) * 100;
+                        barLabel = 'String Comparison Real';
+                    } else if (agentData.test_results) {
+                        // Use semantic_similarity if available, fallback to overall_similarity
+                        barValue = ((agentData.test_results.semantic_similarity || agentData.test_results.overall_similarity) || 0) * 100;
+                        barLabel = 'Teste Básico';
+                    }
                 }
 
                 html += `
@@ -730,8 +754,8 @@
                                 <span class="metric-value">${new Date(agentData.created_at).toLocaleString()}</span>
                             </div>
                             <div class="metric">
-                                <span class="metric-label">🎯 Acurácia (${accuracySource}):</span>
-                                <span class="metric-value">${accuracy.toFixed(2)}%</span>
+                                <span class="metric-label">${barType === 'training' ? '⏳' : '🎯'} ${barLabel}:</span>
+                                <span class="metric-value">${barValue.toFixed(2)}%</span>
                             </div>
                             ${agentData.dataset_size ? `
                                 <div class="metric">
@@ -752,10 +776,10 @@
                         </div>
                         
                         <div class="accuracy-bar">
-                            <div class="accuracy-fill" style="width: ${accuracy}%"></div>
+                            <div class="accuracy-fill ${barType === 'training' ? 'training-fill' : ''}" style="width: ${barValue}%"></div>
                         </div>
                         <div style="text-align: center; margin-top: 5px; font-size: 12px; color: #666;">
-                            Acurácia: ${accuracy.toFixed(2)}%
+                            ${barType === 'training' ? 'Progresso' : 'Acurácia'}: ${barValue.toFixed(2)}%
                         </div>
                         
                         <div style="margin-top: 15px; display: flex; gap: 10px;">
@@ -981,13 +1005,13 @@
                             <p><strong>🎯 Similaridade Jaccard:</strong> ${(eval_data.jaccard_similarity * 100).toFixed(2)}%</p>
                             <p><strong>🔤 Similaridade de Caracteres:</strong> ${(eval_data.character_similarity * 100).toFixed(2)}%</p>
                             <p><strong>📏 Confiança do Modelo:</strong> ${(eval_data.model_confidence * 100).toFixed(2)}%</p>
-                            <p><strong>🏆 Similaridade Geral:</strong> ${(eval_data.overall_similarity * 100).toFixed(2)}%</p>
+                            <p><strong>🏆 Similaridade Semântica:</strong> ${((eval_data.semantic_similarity || eval_data.overall_similarity) * 100).toFixed(2)}%</p>
                             
                             <div class="accuracy-bar" style="margin-top: 15px;">
-                                <div class="accuracy-fill" style="width: ${eval_data.overall_similarity * 100}%"></div>
+                                <div class="accuracy-fill" style="width: ${(eval_data.semantic_similarity || eval_data.overall_similarity) * 100}%"></div>
                             </div>
                             <div style="text-align: center; margin-top: 5px; font-weight: bold;">
-                                Acurácia Real: ${(eval_data.overall_similarity * 100).toFixed(2)}%
+                                Acurácia Real: ${((eval_data.semantic_similarity || eval_data.overall_similarity) * 100).toFixed(2)}%
                             </div>
                         </div>
                     `;
@@ -1116,12 +1140,44 @@
             showTab('test');
         }
 
-        // Auto-reload agents every 30 seconds
-        setInterval(() => {
-            if (document.getElementById('agents-tab').classList.contains('active')) {
-                loadAgents();
+        // Auto-reload agents - more frequently when training is in progress
+        let refreshInterval = 30000; // Default 30 seconds
+        
+        function checkForTrainingAgents(agents) {
+            const hasTrainingAgents = Object.values(agents || {}).some(agent => agent.status === 'processing');
+            return hasTrainingAgents ? 5000 : 30000; // 5 seconds if training, 30 seconds otherwise
+        }
+        
+        function setupAutoRefresh() {
+            setInterval(() => {
+                if (document.getElementById('agents-tab').classList.contains('active')) {
+                    loadAgents();
+                }
+            }, refreshInterval);
+        }
+        
+        // Update refresh interval based on current agents
+        async function updateRefreshInterval() {
+            try {
+                const response = await fetch(`${BASE_URL}/api/v1/agents`);
+                const data = await response.json();
+                if (response.ok) {
+                    const newInterval = checkForTrainingAgents(data.users || {});
+                    if (newInterval !== refreshInterval) {
+                        refreshInterval = newInterval;
+                        console.log(`Updated refresh interval to ${refreshInterval}ms`);
+                    }
+                }
+            } catch (error) {
+                // Keep current interval on error
             }
-        }, 30000);
+        }
+        
+        // Setup auto-refresh
+        setupAutoRefresh();
+        
+        // Check for training agents every 10 seconds to adjust refresh rate
+        setInterval(updateRefreshInterval, 10000);
     </script>
 </body>
 </html>

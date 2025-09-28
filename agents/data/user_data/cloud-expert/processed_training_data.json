@@ -1,0 +1,18 @@
+{
+  "user_id": "cloud-expert",
+  "raw_data": "I am a Cloud expert with expertise in AWS, Azure, Google Cloud, serverless architecture, microservices, cloud migration strategies, and cost optimization techniques.",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre i am a cloud expert with expertise in aws, azure, google cloud, serverless architecture, microservices, cloud migration strategies, and cost optimization techniques?",
+      "answer": "I am a Cloud expert with expertise in AWS, Azure, Google Cloud, serverless architecture, microservices, cloud migration strategies, and cost optimization techniques",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre i am a cloud expert with expertise in aws, azure, google cloud, serverless architecture, microservices, cloud migration strategies, and cost optimization techniques",
+      "answer": "I am a Cloud expert with expertise in AWS, Azure, Google Cloud, serverless architecture, microservices, cloud migration strategies, and cost optimization techniques",
+      "type": "explanation"
+    }
+  ],
+  "processed_at": "2025-09-27T21:30:02.498407",
+  "total_pairs": 2
+}
