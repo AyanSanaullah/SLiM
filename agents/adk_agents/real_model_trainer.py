@@ -99,22 +99,22 @@ class RealModelTrainer:
             if len(concept) > 20:  # Only use substantial concepts
                 # Create "what is" questions
                 pairs.append({
-                    "prompt": f"O que você sabe sobre {concept.lower()}?",
+                    "prompt": f"What do you know about {concept.lower()}?",
                     "answer": concept,
                     "type": "definition"
                 })
                 
                 # Create "how to" questions if concept mentions doing something
-                if any(word in concept.lower() for word in ['posso', 'pode', 'fazer', 'criar', 'implementar']):
+                if any(word in concept.lower() for word in ['can', 'able', 'do', 'create', 'implement', 'make', 'build']):
                     pairs.append({
-                        "prompt": f"Como {concept.lower()}?",
+                        "prompt": f"How to {concept.lower()}?",
                         "answer": concept,
                         "type": "how_to"
                     })
                 
                 # Create "explain" questions
                 pairs.append({
-                    "prompt": f"Explique sobre {concept.lower()}",
+                    "prompt": f"Explain about {concept.lower()}",
                     "answer": concept,
                     "type": "explanation"
                 })
@@ -122,14 +122,14 @@ class RealModelTrainer:
         # Add some general questions based on the overall expertise
         if "python" in training_data.lower():
             pairs.extend([
-                {"prompt": "Como criar uma função em Python?", "answer": "Para criar uma função em Python, use 'def nome_funcao():' seguido do código indentado.", "type": "general"},
-                {"prompt": "O que são list comprehensions?", "answer": "List comprehensions são uma forma concisa de criar listas em Python usando a sintaxe [expressao for item in iteravel].", "type": "general"}
+                {"prompt": "How to create a function in Python?", "answer": "To create a function in Python, use 'def function_name():' followed by indented code.", "type": "general"},
+                {"prompt": "What are list comprehensions?", "answer": "List comprehensions are a concise way to create lists in Python using the syntax [expression for item in iterable].", "type": "general"}
             ])
         
         if "web" in training_data.lower() or "api" in training_data.lower():
             pairs.extend([
-                {"prompt": "Como criar uma API REST?", "answer": "Para criar uma API REST, você pode usar frameworks como Flask ou FastAPI para definir endpoints que respondem a requisições HTTP.", "type": "general"},
-                {"prompt": "O que é uma API?", "answer": "API (Application Programming Interface) é um conjunto de protocolos e ferramentas para construir aplicações de software.", "type": "general"}
+                {"prompt": "How to create a REST API?", "answer": "To create a REST API, you can use frameworks like Flask or FastAPI to define endpoints that respond to HTTP requests.", "type": "general"},
+                {"prompt": "What is an API?", "answer": "API (Application Programming Interface) is a set of protocols and tools for building software applications.", "type": "general"}
             ])
         
         return pairs[:50]  # Limit to 50 pairs for training efficiency

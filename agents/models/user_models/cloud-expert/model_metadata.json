@@ -1,8 +1,0 @@
-{
-  "user_id": "cloud-expert",
-  "model_type": "tfidf_similarity",
-  "training_pairs_count": 2,
-  "trained_at": "2025-09-27T22:51:45.682060",
-  "model_file": "models/user_models/cloud-expert/trained_model.pkl",
-  "status": "trained"
-}

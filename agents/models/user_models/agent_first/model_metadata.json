@@ -1,8 +1,0 @@
-{
-  "user_id": "agent_first",
-  "model_type": "tfidf_similarity",
-  "training_pairs_count": 2,
-  "trained_at": "2025-09-27T15:39:10.858141",
-  "model_file": "models/user_models/agent_first/trained_model.pkl",
-  "status": "trained"
-}

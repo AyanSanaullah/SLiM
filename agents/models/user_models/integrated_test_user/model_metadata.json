@@ -1,8 +1,0 @@
-{
-  "user_id": "integrated_test_user",
-  "model_type": "tfidf_similarity",
-  "training_pairs_count": 13,
-  "trained_at": "2025-09-27T20:06:16.575981",
-  "model_file": "models/user_models/integrated_test_user/trained_model.pkl",
-  "status": "trained"
-}

@@ -521,51 +521,91 @@ export default function Dashboard() {
 
     setIsTrainingAgents(true);
     setShowNodes(true); // Show nodes when training starts
-    setProcessingStatus("🚀 Starting progressive AI training for all agents...");
+    setProcessingStatus(
+      "🚀 Starting progressive AI training for all agents..."
+    );
 
     try {
       const userIds = agents.map((agent) => agent.user_id);
       const trainingCycles = 5; // 5 cycles of training
-      const success = await agentsService.startTraining(userIds, trainingCycles);
+      const success = await agentsService.startTraining(
+        userIds,
+        trainingCycles
+      );
 
       if (success) {
-        setProcessingStatus("✅ Progressive training initiated - watch metrics update in real-time!");
-        
-        // Start polling for updates every 3 seconds during training
+        setProcessingStatus(
+          "✅ Progressive training initiated - watch metrics update in real-time!"
+        );
+
+        // Start polling for continuous training status every 2 seconds
         const pollingInterval = setInterval(async () => {
           try {
-            const updatedMetrics = await agentsService.getAllAgentsMetrics();
-            setAgentMetrics(updatedMetrics);
-            
-            // Check if training is complete (all agents have reasonable accuracy)
-            const avgAccuracy = updatedMetrics.reduce((sum, metric) => sum + metric.accuracy, 0) / updatedMetrics.length;
-            
-            if (avgAccuracy > 80) {
+            // Check training status
+            const trainingStatus = await agentsService.getTrainingStatus();
+
+            if (trainingStatus.training_active) {
+              // Update progress message
+              const bestAccuracy = trainingStatus.best_accuracy || 0;
+              const cycleCount = trainingStatus.cycle_count || 0;
+              const targetAccuracy = trainingStatus.target_accuracy || 92;
+
+              setProcessingStatus(
+                `🚀 Continuous training active - Cycle ${cycleCount} | Best: ${bestAccuracy.toFixed(
+                  1
+                )}% | Target: ${targetAccuracy}%`
+              );
+
+              // Get updated metrics
+              const updatedMetrics = await agentsService.getAllAgentsMetrics();
+              setAgentMetrics(updatedMetrics);
+            } else {
+              // Training has stopped
               clearInterval(pollingInterval);
-              setProcessingStatus("🎉 Training completed! All agents showing improved performance.");
+
+              if (trainingStatus.winner) {
+                setProcessingStatus(
+                  `🎯 TARGET ACHIEVED! ${trainingStatus.winner} reached ${
+                    trainingStatus.final_accuracy?.toFixed(1) ||
+                    trainingStatus.best_accuracy?.toFixed(1)
+                  }% accuracy in ${trainingStatus.cycle_count} cycles!`
+                );
+              } else if (trainingStatus.completion_reason) {
+                setProcessingStatus(
+                  `✅ Training completed: ${trainingStatus.completion_reason}`
+                );
+              } else {
+                setProcessingStatus("✅ Training session completed");
+              }
+
               setIsTrainingAgents(false);
-              setTimeout(() => setProcessingStatus(""), 5000);
+
+              // Get final metrics
+              const finalMetrics = await agentsService.getAllAgentsMetrics();
+              setAgentMetrics(finalMetrics);
+
+              setTimeout(() => setProcessingStatus(""), 8000);
             }
           } catch (error) {
-            console.error("Error polling metrics:", error);
+            console.error("Error polling training status:", error);
           }
-        }, 3000);
-        
-        // Stop polling after 2 minutes even if training isn't "complete"
+        }, 2000);
+
+        // Safety stop after 30 minutes (continuous training should have its own limits)
         setTimeout(() => {
           clearInterval(pollingInterval);
           if (isTrainingAgents) {
-            setProcessingStatus("✅ Training session completed");
+            setProcessingStatus("⏱️ Training session timeout - stopping...");
+            // Try to stop training
+            agentsService.stopTraining().catch(console.error);
             setIsTrainingAgents(false);
             setTimeout(() => setProcessingStatus(""), 3000);
           }
-        }, 120000); // 2 minutes
-        
+        }, 1800000); // 30 minutes
       } else {
         setProcessingStatus("⚠️ Training started with some warnings");
         setIsTrainingAgents(false);
       }
-
     } catch (error) {
       console.error("Error starting training:", error);
       setProcessingStatus(

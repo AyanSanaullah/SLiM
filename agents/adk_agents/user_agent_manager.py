@@ -229,14 +229,16 @@ class UserAgentManager:
             logger.info(f"Testing model for user {user_id}")
             self.active_users[user_id]['training_progress'] = 90
             test_results = model_trainer.evaluate_model(
-                "Como você pode ajudar?",
-                "Posso ajudar com dúvidas e explicações."
+                "How can you help?",
+                "I can help with questions and explanations."
             )
             
             # Update user status (without storing the model_trainer object for JSON serialization)
             self.active_users[user_id]['status'] = 'ready'
             self.active_users[user_id]['training_progress'] = 60
             self.active_users[user_id]['model_ready_at'] = datetime.now().isoformat()
+            self.active_users[user_id]['initial_training_complete'] = True
+            self.active_users[user_id]['continuous_training'] = False  # Ready for continuous training
             self.active_users[user_id]['processed_data'] = processed_data
             self.active_users[user_id]['training_results'] = training_results
             self.active_users[user_id]['test_results'] = test_results
@@ -539,6 +541,72 @@ class UserAgentManager:
                 return False
         
         return False
+    
+    def remove_all_users(self) -> Dict[str, Any]:
+        """
+        Remove all users and clean up their resources
+        
+        Returns:
+            Dictionary with removal results
+        """
+        result = {
+            'total_users': len(self.active_users),
+            'removed_users': [],
+            'failed_users': [],
+            'success': True
+        }
+        
+        # Get list of all user IDs to avoid modifying dict during iteration
+        user_ids = list(self.active_users.keys())
+        
+        logger.info(f"Starting removal of {len(user_ids)} users")
+        
+        for user_id in user_ids:
+            try:
+                if self.remove_user(user_id):
+                    result['removed_users'].append(user_id)
+                    logger.info(f"Successfully removed user: {user_id}")
+                else:
+                    result['failed_users'].append(user_id)
+                    logger.warning(f"Failed to remove user: {user_id}")
+            except Exception as e:
+                result['failed_users'].append(user_id)
+                logger.error(f"Exception while removing user {user_id}: {e}")
+        
+        # Clean up any remaining data directories
+        try:
+            import shutil
+            
+            # Clean up models directory
+            models_dir = "models/user_models"
+            if os.path.exists(models_dir):
+                shutil.rmtree(models_dir)
+                os.makedirs(models_dir, exist_ok=True)
+            
+            # Clean up data directory
+            data_dir = "data/user_data"
+            if os.path.exists(data_dir):
+                shutil.rmtree(data_dir)
+                os.makedirs(data_dir, exist_ok=True)
+                
+            logger.info("Cleaned up remaining user directories")
+            
+        except Exception as e:
+            logger.error(f"Error cleaning up directories: {e}")
+        
+        # Clear all collections
+        self.active_users.clear()
+        self.user_pipelines.clear()
+        if hasattr(self, 'user_model_trainers'):
+            self.user_model_trainers.clear()
+        
+        result['success'] = len(result['failed_users']) == 0
+        
+        logger.info(f"Removal completed. Success: {result['success']}, "
+                   f"Removed: {len(result['removed_users'])}, "
+                   f"Failed: {len(result['failed_users'])}")
+        
+        return result
     
     def get_pipeline_status(self, user_id: str) -> Optional[Dict[str, Any]]:
         """

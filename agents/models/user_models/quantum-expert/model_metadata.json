@@ -1,8 +1,0 @@
-{
-  "user_id": "quantum-expert",
-  "model_type": "tfidf_similarity",
-  "training_pairs_count": 2,
-  "trained_at": "2025-09-27T22:51:51.253234",
-  "model_file": "models/user_models/quantum-expert/trained_model.pkl",
-  "status": "trained"
-}

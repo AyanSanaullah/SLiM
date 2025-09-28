@@ -122,11 +122,11 @@ class AgentsService {
       for (const agentType of agentTypes) {
         const userId = `${agentType.name}_${i + 1}`;
         
-        const request: CreateAgentRequest = {
-          user_id: userId,
-          training_data: `I am a ${agentType.type} with specialized knowledge in my field.`,
-          base_model: 'distilbert-base-uncased',
-        };
+      const request: CreateAgentRequest = {
+        user_id: userId,
+        training_data: `I am a ${agentType.type} with extensive experience and specialized knowledge in my field. I can help with technical questions, best practices, implementation guidance, troubleshooting, and providing expert insights in ${agentType.name.toLowerCase()} domain.`,
+        base_model: 'distilbert-base-uncased',
+      };
 
         promises.push(this.createAgent(request));
       }
@@ -294,22 +294,28 @@ class AgentsService {
       const metricsPromises = agents.map(async (agent) => {
         try {
           const status = await this.getAgentStatus(agent.user_id);
+          // Extract data from the nested status object
+          const agentStatus = status.status || status;
+          const currentAccuracy = agentStatus.current_accuracy || agentStatus.final_accuracy;
+          const trainingCycle = agentStatus.continuous_training_cycle || agentStatus.training_progress || 1;
+          
           return {
             user_id: agent.user_id,
-            accuracy: status.accuracy || (agent.test_results?.overall_similarity * 100 || 85),
-            confidence: status.confidence || (agent.test_results?.model_confidence * 100 || 90),
-            similarity: status.similarity || (agent.test_results?.semantic_similarity * 100 || 88),
-            training_rounds: status.training_rounds || agent.training_progress || 1,
+            accuracy: currentAccuracy || (agent.test_results?.overall_similarity * 100 || 85),
+            confidence: agentStatus.test_results?.model_confidence * 100 || (agent.test_results?.model_confidence * 100 || 90),
+            similarity: agentStatus.test_results?.semantic_similarity * 100 || (agent.test_results?.semantic_similarity * 100 || 88),
+            training_rounds: trainingCycle,
             last_updated: new Date().toISOString(),
           };
         } catch (error) {
           // Return data from agent object if agent status is not available
+          console.warn(`Failed to get status for ${agent.user_id}, using fallback data:`, error);
           return {
             user_id: agent.user_id,
-            accuracy: agent.test_results?.overall_similarity * 100 || 85,
+            accuracy: agent.current_accuracy || agent.test_results?.overall_similarity * 100 || 85,
             confidence: agent.test_results?.model_confidence * 100 || 90,
             similarity: agent.test_results?.semantic_similarity * 100 || 88,
-            training_rounds: agent.training_progress || 1,
+            training_rounds: agent.continuous_training_cycle || agent.training_progress || 1,
             last_updated: new Date().toISOString(),
           };
         }
@@ -345,6 +351,50 @@ class AgentsService {
       return true;
     } catch (error) {
       console.error('Error starting training:', error);
+      return false;
+    }
+  }
+
+  // Get training status for continuous training
+  async getTrainingStatus(): Promise<any> {
+    try {
+      const response = await fetch(apiUtils.buildAgentsBackendUrl('/api/v1/training/status'), {
+        method: 'GET',
+        headers: API_CONFIG.DEFAULT_HEADERS,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to get training status: ${response.statusText}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error getting training status:', error);
+      return {
+        training_active: false,
+        message: 'Failed to get training status',
+        error: error
+      };
+    }
+  }
+
+  // Stop continuous training
+  async stopTraining(): Promise<boolean> {
+    try {
+      const response = await fetch(apiUtils.buildAgentsBackendUrl('/api/v1/training/stop'), {
+        method: 'POST',
+        headers: API_CONFIG.DEFAULT_HEADERS,
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to stop training: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      console.log('Training stopped:', result);
+      return true;
+    } catch (error) {
+      console.error('Error stopping training:', error);
       return false;
     }
   }

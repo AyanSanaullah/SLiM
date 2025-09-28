@@ -1,8 +1,0 @@
-{
-  "user_id": "cybersecurity_expert_3",
-  "model_type": "tfidf_similarity",
-  "training_pairs_count": 2,
-  "trained_at": "2025-09-28T08:36:28.961470",
-  "model_file": "models/user_models/cybersecurity_expert_3/trained_model.pkl",
-  "status": "trained"
-}

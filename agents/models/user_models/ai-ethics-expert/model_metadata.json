@@ -1,8 +1,0 @@
-{
-  "user_id": "ai-ethics-expert",
-  "model_type": "tfidf_similarity",
-  "training_pairs_count": 2,
-  "trained_at": "2025-09-27T22:51:45.116536",
-  "model_file": "models/user_models/ai-ethics-expert/trained_model.pkl",
-  "status": "trained"
-}
