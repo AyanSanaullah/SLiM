@@ -133,7 +133,7 @@ class SupabaseChatService {
       // Get messages for each chat
       const chatsWithMessages = await Promise.all(
         chatsData.map(async (chat) => {
-          const { data: messagesData, error: messagesError } = await supabase
+          const { data: messagesData, error: messagesError } = await supabase!
             .from('messages')
             .select('*')
             .eq('chat_id', chat.id)
@@ -313,9 +313,9 @@ class SupabaseChatService {
       // Save user message first
       await this.saveMessage(chatId, message, true);
 
-      // Try to get AI response from LLM backend
+      // Try to get AI response from Gemini API
       try {
-        const response = await fetch('http://localhost:5000/run_llm', {
+        const response = await fetch('/api/gemini', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -323,47 +323,32 @@ class SupabaseChatService {
           body: JSON.stringify({ prompt: message }),
         });
 
+        const data = await response.json();
+
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(data.error || `HTTP error! status: ${response.status}`);
         }
 
-        let fullResponse = '';
+        if (!data.success) {
+          throw new Error(data.error || 'API request failed');
+        }
 
-        // Handle streaming response
-        if (response.body && onStream) {
-          const reader = response.body.getReader();
-          const decoder = new TextDecoder();
-          let buffer = '';
+        const fullResponse = data.response;
 
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split('\n');
-            buffer = lines.pop() || ''; // Keep the last incomplete line
-
-            for (const line of lines) {
-              if (line.startsWith('data: ')) {
-                try {
-                  const data = JSON.parse(line.slice(6));
-                  
-                  if (data.text) {
-                    fullResponse += data.text;
-                    onStream(data.text); // Stream to UI
-                  } else if (data.error) {
-                    throw new Error(data.error);
-                  }
-                } catch (e) {
-                  // Skip invalid JSON lines
-                }
-              }
+        // If streaming callback is provided, simulate streaming for better UX
+        if (onStream && fullResponse) {
+          const words = fullResponse.split(' ');
+          let currentText = '';
+          
+          for (let i = 0; i < words.length; i++) {
+            currentText += (i > 0 ? ' ' : '') + words[i];
+            onStream(i > 0 ? ' ' + words[i] : words[i]);
+            
+            // Small delay to simulate streaming
+            if (i < words.length - 1) {
+              await new Promise(resolve => setTimeout(resolve, 50));
             }
           }
-        } else {
-          // Fallback for non-streaming
-          const data = await response.json();
-          fullResponse = data.response || data.text || 'No response received';
         }
 
         // Save AI response
@@ -377,7 +362,7 @@ class SupabaseChatService {
         };
 
       } catch (apiError) {
-        console.error('LLM API error, using fallback:', apiError);
+        console.error('Gemini API error, using fallback:', apiError);
         
         // Generate fallback response
         const fallbackResponses = [
@@ -416,6 +401,11 @@ class SupabaseChatService {
   // Update chat title
   async updateChatTitle(chatId: string, title: string): Promise<boolean> {
     try {
+      if (!supabase) {
+        console.log('Supabase not configured, skipping chat title update');
+        return false;
+      }
+
       const { error } = await supabase
         .from('chats')
         .update({ 
@@ -435,6 +425,11 @@ class SupabaseChatService {
   // Delete a chat and all its messages
   async deleteChat(chatId: string): Promise<boolean> {
     try {
+      if (!supabase) {
+        console.log('Supabase not configured, skipping chat deletion');
+        return false;
+      }
+
       // Messages will be deleted automatically due to CASCADE
       const { error } = await supabase
         .from('chats')
@@ -481,10 +476,10 @@ class SupabaseChatService {
     };
   }
 
-  // Test LLM backend connection
+  // Test Gemini API backend connection
   async testLLMBackend(): Promise<{ success: boolean; message: string }> {
     try {
-      const response = await fetch('http://localhost:5000/test', {
+      const response = await fetch('/api/gemini', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -492,21 +487,21 @@ class SupabaseChatService {
       });
 
       if (response.ok) {
-        const data = await response.text();
+        const data = await response.json();
         return {
           success: true,
-          message: `LLM Backend is running! Response: ${data}`
+          message: `Gemini API is working! Status: ${data.status}`
         };
       } else {
         return {
           success: false,
-          message: `LLM Backend responded with status: ${response.status}`
+          message: `Gemini API responded with status: ${response.status}`
         };
       }
     } catch (error) {
       return {
         success: false,
-        message: `Error connecting to LLM backend: ${error instanceof Error ? error.message : 'Unknown error'}`
+        message: `Error connecting to Gemini API: ${error instanceof Error ? error.message : 'Unknown error'}`
       };
     }
   }
