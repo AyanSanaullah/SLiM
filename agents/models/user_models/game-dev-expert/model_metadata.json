@@ -2,7 +2,7 @@
   "user_id": "game-dev-expert",
   "model_type": "tfidf_similarity",
   "training_pairs_count": 2,
-  "trained_at": "2025-09-27T21:30:03.548962",
+  "trained_at": "2025-09-27T22:51:48.230722",
   "model_file": "models/user_models/game-dev-expert/trained_model.pkl",
   "status": "trained"
 }

@@ -1,0 +1,28 @@
+{
+  "user_id": "python_expert_2",
+  "raw_data": "I am a Python Expert with specialized knowledge in my field.",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre i am a python expert with specialized knowledge in my field?",
+      "answer": "I am a Python Expert with specialized knowledge in my field",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre i am a python expert with specialized knowledge in my field",
+      "answer": "I am a Python Expert with specialized knowledge in my field",
+      "type": "explanation"
+    },
+    {
+      "prompt": "Como criar uma função em Python?",
+      "answer": "Para criar uma função em Python, use 'def nome_funcao():' seguido do código indentado.",
+      "type": "general"
+    },
+    {
+      "prompt": "O que são list comprehensions?",
+      "answer": "List comprehensions são uma forma concisa de criar listas em Python usando a sintaxe [expressao for item in iteravel].",
+      "type": "general"
+    }
+  ],
+  "processed_at": "2025-09-28T08:36:27.961238",
+  "total_pairs": 4
+}

@@ -1,0 +1,77 @@
+{
+  "overall_metrics": {
+    "total_samples": 5,
+    "successful_evaluations": 5,
+    "failed_evaluations": 0,
+    "average_string_similarity": 1.000000035762787,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0000000596046448,
+    "min_string_similarity": 1.0,
+    "high_similarity_count": 5,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-28T07:38:37.835137"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "O que é HTML?",
+      "expected_answer": "HTML é a linguagem de marcação para estruturar conteúdo web usando tags e elementos.",
+      "model_response": "HTML é a linguagem de marcação para estruturar conteúdo web usando tags e elementos.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "semantic_similarity": 1.0000000596046448
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "Como funciona CSS?",
+      "expected_answer": "CSS define a apresentação visual de elementos HTML através de seletores e propriedades de estilo.",
+      "model_response": "CSS define a apresentação visual de elementos HTML através de seletores e propriedades de estilo.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "semantic_similarity": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "O que é JavaScript?",
+      "expected_answer": "JavaScript é uma linguagem de programação para adicionar interatividade e dinamismo a páginas web.",
+      "model_response": "JavaScript é uma linguagem de programação para adicionar interatividade e dinamismo a páginas web.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "semantic_similarity": 1.0000000596046448
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "O que são APIs?",
+      "expected_answer": "APIs são interfaces que permitem comunicação entre diferentes sistemas e aplicações.",
+      "model_response": "APIs são interfaces que permitem comunicação entre diferentes sistemas e aplicações.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "semantic_similarity": 1.0000000596046448
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "Como usar React?",
+      "expected_answer": "React é uma biblioteca para construir interfaces de usuário baseada em componentes.",
+      "model_response": "React é uma biblioteca para construir interfaces de usuário baseada em componentes.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "semantic_similarity": 1.0
+      }
+    }
+  ]
+}

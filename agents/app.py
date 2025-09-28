@@ -10,6 +10,7 @@ import logging
 import yaml
 from datetime import datetime
 import json
+import numpy as np
 from typing import Dict, Any, Optional
 import traceback
 
@@ -346,13 +347,57 @@ def create_advanced_agent():
 
 @app.route('/api/v1/agents', methods=['GET'])
 def list_all_agents():
-    """List all active user agents"""
+    """List all active user agents with training metrics"""
     try:
         all_users = user_agent_manager.get_all_users()
         
+        # Enhance user data with training metrics from database
+        from adk_agents.training_database import TrainingDatabase
+        training_db = TrainingDatabase()
+        
+        enhanced_users = {}
+        for user_id, user_data in all_users.items():
+            enhanced_users[user_id] = user_data.copy()
+            
+            # Get training sessions for this user
+            sessions = training_db.get_user_sessions(user_id)
+            if sessions:
+                # Get metrics from the most recent completed session
+                latest_session = None
+                for session in sessions:
+                    if session['status'] == 'completed':
+                        latest_session = session
+                        break
+                
+                if latest_session:
+                    session_metrics = training_db.get_session_metrics(latest_session['session_id'])
+                    if session_metrics and 'metrics' in session_metrics:
+                        metrics = session_metrics['metrics']
+                        # Convert similarity to percentage for accuracy display
+                        enhanced_users[user_id]['accuracy'] = metrics.get('avg_similarity', 0) * 100
+                        enhanced_users[user_id]['max_accuracy'] = metrics.get('max_similarity', 0) * 100
+                        enhanced_users[user_id]['min_accuracy'] = metrics.get('min_similarity', 0) * 100
+                        enhanced_users[user_id]['high_quality_count'] = metrics.get('high_quality_count', 0)
+                        enhanced_users[user_id]['medium_quality_count'] = metrics.get('medium_quality_count', 0)
+                        enhanced_users[user_id]['low_quality_count'] = metrics.get('low_quality_count', 0)
+                        enhanced_users[user_id]['total_training_cycles'] = metrics.get('total_cycles', 0)
+                        enhanced_users[user_id]['has_real_metrics'] = True
+                    else:
+                        # No metrics available yet
+                        enhanced_users[user_id]['accuracy'] = 0
+                        enhanced_users[user_id]['has_real_metrics'] = False
+                else:
+                    # No completed sessions yet
+                    enhanced_users[user_id]['accuracy'] = 0
+                    enhanced_users[user_id]['has_real_metrics'] = False
+            else:
+                # No sessions at all
+                enhanced_users[user_id]['accuracy'] = 0
+                enhanced_users[user_id]['has_real_metrics'] = False
+        
         return jsonify({
-            'users': all_users,
-            'total_users': len(all_users),
+            'users': enhanced_users,
+            'total_users': len(enhanced_users),
             'timestamp': datetime.now().isoformat()
         }), 200
         
@@ -563,6 +608,182 @@ def vertex_inference():
         logger.error(f"Error making Vertex AI inference: {e}")
         return jsonify({
             'error': f'Failed to make inference: {str(e)}'
+        }), 500
+
+@app.route('/api/v1/training/metrics', methods=['GET'])
+def get_training_metrics():
+    """Get real-time training metrics from database"""
+    try:
+        from adk_agents.training_database import TrainingDatabase
+        training_db = TrainingDatabase()
+        
+        # Get all users
+        all_users = user_agent_manager.get_all_users()
+        
+        metrics_summary = {
+            'total_users': len(all_users),
+            'users_with_metrics': 0,
+            'average_accuracy': 0,
+            'high_performers': 0,
+            'users': {}
+        }
+        
+        total_accuracy = 0
+        users_with_data = 0
+        
+        for user_id, user_data in all_users.items():
+            user_metrics = {
+                'user_id': user_id,
+                'status': user_data.get('status', 'unknown'),
+                'accuracy': 0,
+                'has_metrics': False,
+                'session_count': 0,
+                'last_training': None
+            }
+            
+            # Get training sessions
+            sessions = training_db.get_user_sessions(user_id)
+            user_metrics['session_count'] = len(sessions)
+            
+            if sessions:
+                # Find most recent completed session
+                for session in sessions:
+                    if session['status'] == 'completed':
+                        session_metrics = training_db.get_session_metrics(session['session_id'])
+                        if session_metrics and 'metrics' in session_metrics:
+                            metrics = session_metrics['metrics']
+                            accuracy = metrics.get('avg_similarity', 0) * 100
+                            user_metrics['accuracy'] = accuracy
+                            user_metrics['has_metrics'] = True
+                            user_metrics['last_training'] = session['completed_at']
+                            
+                            total_accuracy += accuracy
+                            users_with_data += 1
+                            
+                            if accuracy > 80:
+                                metrics_summary['high_performers'] += 1
+                            break
+            
+            metrics_summary['users'][user_id] = user_metrics
+        
+        metrics_summary['users_with_metrics'] = users_with_data
+        if users_with_data > 0:
+            metrics_summary['average_accuracy'] = total_accuracy / users_with_data
+        
+        return jsonify({
+            'metrics': metrics_summary,
+            'timestamp': datetime.now().isoformat()
+        }), 200
+        
+    except Exception as e:
+        logger.error(f"Error getting training metrics: {e}")
+        return jsonify({
+            'error': f'Failed to get training metrics: {str(e)}'
+        }), 500
+
+@app.route('/api/v1/training/live-cycles', methods=['GET'])
+def get_live_training_cycles():
+    """Get live training cycles with real-time string comparison data"""
+    try:
+        from adk_agents.training_database import TrainingDatabase
+        import sqlite3
+        
+        training_db = TrainingDatabase()
+        
+        # Get all users
+        all_users = user_agent_manager.get_all_users()
+        
+        live_data = {
+            'users': {},
+            'timestamp': datetime.now().isoformat()
+        }
+        
+        with sqlite3.connect(training_db.db_path) as conn:
+            cursor = conn.cursor()
+            
+            for user_id in all_users.keys():
+                # Get the most recent training session for this user
+                cursor.execute("""
+                    SELECT session_id, started_at, status, total_cycles
+                    FROM training_sessions 
+                    WHERE user_id = ? 
+                    ORDER BY started_at DESC 
+                    LIMIT 1
+                """, (user_id,))
+                
+                session_info = cursor.fetchone()
+                
+                if session_info:
+                    session_id, started_at, status, total_cycles = session_info
+                    
+                    # Get the most recent training cycles for this session
+                    cursor.execute("""
+                        SELECT cycle_number, similarity_score, quality_label, 
+                               model_confidence, timestamp, prompt, model_response
+                        FROM training_cycles 
+                        WHERE session_id = ?
+                        ORDER BY cycle_number DESC
+                        LIMIT 10
+                    """, (session_id,))
+                    
+                    recent_cycles = cursor.fetchall()
+                    
+                    if recent_cycles:
+                        # Calculate current metrics from recent cycles
+                        similarities = [cycle[1] for cycle in recent_cycles]
+                        confidences = [cycle[3] or 0 for cycle in recent_cycles]
+                        
+                        current_accuracy = np.mean(similarities) * 100 if similarities else 0
+                        current_confidence = np.mean(confidences) if confidences else 0
+                        last_cycle_time = recent_cycles[0][4] if recent_cycles else started_at
+                        
+                        # Count quality distribution
+                        quality_counts = {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0}
+                        for cycle in recent_cycles:
+                            quality_label = cycle[2]
+                            if quality_label in quality_counts:
+                                quality_counts[quality_label] += 1
+                        
+                        live_data['users'][user_id] = {
+                            'session_id': session_id,
+                            'status': status,
+                            'current_accuracy': current_accuracy,
+                            'current_confidence': current_confidence,
+                            'total_cycles': total_cycles,
+                            'last_cycle_time': last_cycle_time,
+                            'quality_distribution': quality_counts,
+                            'recent_cycles': [
+                                {
+                                    'cycle': cycle[0],
+                                    'similarity': cycle[1] * 100,
+                                    'quality': cycle[2],
+                                    'confidence': cycle[3] * 100 if cycle[3] else 0,
+                                    'timestamp': cycle[4],
+                                    'prompt_preview': cycle[5][:50] + '...' if len(cycle[5]) > 50 else cycle[5],
+                                    'response_preview': cycle[6][:50] + '...' if len(cycle[6]) > 50 else cycle[6]
+                                }
+                                for cycle in recent_cycles[:5]  # Only show last 5 cycles
+                            ]
+                        }
+                    else:
+                        # Session exists but no cycles yet
+                        live_data['users'][user_id] = {
+                            'session_id': session_id,
+                            'status': status,
+                            'current_accuracy': 0,
+                            'current_confidence': 0,
+                            'total_cycles': total_cycles,
+                            'last_cycle_time': started_at,
+                            'quality_distribution': {'HIGH': 0, 'MEDIUM': 0, 'LOW': 0},
+                            'recent_cycles': []
+                        }
+        
+        return jsonify(live_data), 200
+        
+    except Exception as e:
+        logger.error(f"Error getting live training cycles: {e}")
+        return jsonify({
+            'error': f'Failed to get live training cycles: {str(e)}'
         }), 500
 
 @app.route('/api/v1/config', methods=['GET'])

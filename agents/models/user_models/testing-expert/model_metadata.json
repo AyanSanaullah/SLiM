@@ -2,7 +2,7 @@
   "user_id": "testing-expert",
   "model_type": "tfidf_similarity",
   "training_pairs_count": 2,
-  "trained_at": "2025-09-27T21:30:05.683182",
+  "trained_at": "2025-09-27T22:51:51.240953",
   "model_file": "models/user_models/testing-expert/trained_model.pkl",
   "status": "trained"
 }

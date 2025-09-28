@@ -1,0 +1,77 @@
+{
+  "overall_metrics": {
+    "total_samples": 5,
+    "successful_evaluations": 5,
+    "failed_evaluations": 0,
+    "average_string_similarity": 0.9999999880790711,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0,
+    "min_string_similarity": 0.9999999403953552,
+    "high_similarity_count": 5,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-28T07:38:41.549703"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "Como criar uma função?",
+      "expected_answer": "Para criar uma função, defina o nome, parâmetros e o corpo da função seguindo a sintaxe da linguagem.",
+      "model_response": "Para criar uma função, defina o nome, parâmetros e o corpo da função seguindo a sintaxe da linguagem.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "semantic_similarity": 1.0
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "O que são variáveis?",
+      "expected_answer": "Variáveis são espaços na memória para armazenar dados que podem ser modificados durante a execução.",
+      "model_response": "Variáveis são espaços na memória para armazenar dados que podem ser modificados durante a execução.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "semantic_similarity": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "Como usar loops?",
+      "expected_answer": "Loops permitem executar código repetidamente usando for, while ou foreach dependendo da linguagem.",
+      "model_response": "Loops permitem executar código repetidamente usando for, while ou foreach dependendo da linguagem.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "semantic_similarity": 1.0
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "O que são arrays?",
+      "expected_answer": "Arrays são estruturas de dados que armazenam múltiplos valores em uma única variável indexada.",
+      "model_response": "Arrays são estruturas de dados que armazenam múltiplos valores em uma única variável indexada.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 0.9999999403953552,
+      "string_comparison_details": {
+        "similarity": 0.9999999403953552,
+        "semantic_similarity": 0.9999999403953552
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "Como usar cloud?",
+      "expected_answer": "Cloud computing oferece recursos computacionais sob demanda via AWS, Azure, GCP.",
+      "model_response": "Cloud computing oferece recursos computacionais sob demanda via AWS, Azure, GCP.",
+      "model_confidence": 1.0000000000000002,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "semantic_similarity": 1.0
+      }
+    }
+  ]
+}

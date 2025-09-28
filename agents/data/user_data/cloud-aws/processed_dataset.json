@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "total_samples": 5,
+    "valid_samples": 5,
+    "invalid_samples": 0,
+    "avg_prompt_length": 18.2,
+    "avg_answer_length": 94.4,
+    "max_prompt_length": 22,
+    "max_answer_length": 101,
+    "processed_at": "2025-09-28T07:38:18.586536"
+  },
+  "data": [
+    {
+      "id": 0,
+      "prompt": "Como criar uma função?",
+      "answer": "Para criar uma função, defina o nome, parâmetros e o corpo da função seguindo a sintaxe da linguagem.",
+      "prompt_length": 22,
+      "answer_length": 101
+    },
+    {
+      "id": 1,
+      "prompt": "O que são variáveis?",
+      "answer": "Variáveis são espaços na memória para armazenar dados que podem ser modificados durante a execução.",
+      "prompt_length": 20,
+      "answer_length": 99
+    },
+    {
+      "id": 2,
+      "prompt": "Como usar loops?",
+      "answer": "Loops permitem executar código repetidamente usando for, while ou foreach dependendo da linguagem.",
+      "prompt_length": 16,
+      "answer_length": 98
+    },
+    {
+      "id": 3,
+      "prompt": "O que são arrays?",
+      "answer": "Arrays são estruturas de dados que armazenam múltiplos valores em uma única variável indexada.",
+      "prompt_length": 17,
+      "answer_length": 94
+    },
+    {
+      "id": 4,
+      "prompt": "Como usar cloud?",
+      "answer": "Cloud computing oferece recursos computacionais sob demanda via AWS, Azure, GCP.",
+      "prompt_length": 16,
+      "answer_length": 80
+    }
+  ]
+}

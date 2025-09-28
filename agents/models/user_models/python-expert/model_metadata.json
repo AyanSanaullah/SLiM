@@ -2,7 +2,7 @@
   "user_id": "python-expert",
   "model_type": "tfidf_similarity",
   "training_pairs_count": 6,
-  "trained_at": "2025-09-27T21:30:05.669059",
+  "trained_at": "2025-09-27T22:51:48.283710",
   "model_file": "models/user_models/python-expert/trained_model.pkl",
   "status": "trained"
 }

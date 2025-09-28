@@ -1,0 +1,18 @@
+{
+  "user_id": "agent-14",
+  "raw_data": "I am a Network Engineer with extensive experience in my field.",
+  "training_pairs": [
+    {
+      "prompt": "O que você sabe sobre i am a network engineer with extensive experience in my field?",
+      "answer": "I am a Network Engineer with extensive experience in my field",
+      "type": "definition"
+    },
+    {
+      "prompt": "Explique sobre i am a network engineer with extensive experience in my field",
+      "answer": "I am a Network Engineer with extensive experience in my field",
+      "type": "explanation"
+    }
+  ],
+  "processed_at": "2025-09-28T07:58:02.992998",
+  "total_pairs": 2
+}

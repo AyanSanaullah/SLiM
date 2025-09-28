@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "total_samples": 5,
+    "valid_samples": 5,
+    "invalid_samples": 0,
+    "avg_prompt_length": 26.0,
+    "avg_answer_length": 94.2,
+    "max_prompt_length": 31,
+    "max_answer_length": 99,
+    "processed_at": "2025-09-28T07:38:16.795019"
+  },
+  "data": [
+    {
+      "id": 0,
+      "prompt": "O que é análise de dados?",
+      "answer": "Análise de dados é o processo de examinar, limpar e modelar dados para descobrir insights úteis.",
+      "prompt_length": 25,
+      "answer_length": 96
+    },
+    {
+      "id": 1,
+      "prompt": "Como funciona machine learning?",
+      "answer": "Machine learning usa algoritmos para permitir que computadores aprendam padrões a partir de dados.",
+      "prompt_length": 31,
+      "answer_length": 98
+    },
+    {
+      "id": 2,
+      "prompt": "O que são algoritmos?",
+      "answer": "Algoritmos são sequências de instruções para resolver problemas ou executar tarefas específicas.",
+      "prompt_length": 21,
+      "answer_length": 96
+    },
+    {
+      "id": 3,
+      "prompt": "Como visualizar dados?",
+      "answer": "Visualização de dados usa gráficos, charts e diagramas para representar informações de forma clara.",
+      "prompt_length": 22,
+      "answer_length": 99
+    },
+    {
+      "id": 4,
+      "prompt": "Como fazer testes estatísticos?",
+      "answer": "Testes estatísticos verificam hipóteses sobre populações usando amostras de dados.",
+      "prompt_length": 31,
+      "answer_length": 82
+    }
+  ]
+}

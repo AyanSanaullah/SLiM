@@ -1,0 +1,8 @@
+{
+  "user_id": "ml_expert_4",
+  "model_type": "tfidf_similarity",
+  "training_pairs_count": 2,
+  "trained_at": "2025-09-28T08:36:28.745342",
+  "model_file": "models/user_models/ml_expert_4/trained_model.pkl",
+  "status": "trained"
+}

@@ -1,0 +1,77 @@
+{
+  "overall_metrics": {
+    "total_samples": 5,
+    "successful_evaluations": 5,
+    "failed_evaluations": 0,
+    "average_string_similarity": 1.0000000476837159,
+    "average_model_confidence": 1.0,
+    "max_string_similarity": 1.0000001192092896,
+    "min_string_similarity": 1.0,
+    "high_similarity_count": 5,
+    "medium_similarity_count": 0,
+    "low_similarity_count": 0,
+    "evaluated_at": "2025-09-28T07:38:41.226773"
+  },
+  "detailed_results": [
+    {
+      "id": 0,
+      "prompt": "O que é análise de dados?",
+      "expected_answer": "Análise de dados é o processo de examinar, limpar e modelar dados para descobrir insights úteis.",
+      "model_response": "Análise de dados é o processo de examinar, limpar e modelar dados para descobrir insights úteis.",
+      "model_confidence": 0.9999999999999999,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "semantic_similarity": 1.0000000596046448
+      }
+    },
+    {
+      "id": 1,
+      "prompt": "Como funciona machine learning?",
+      "expected_answer": "Machine learning usa algoritmos para permitir que computadores aprendam padrões a partir de dados.",
+      "model_response": "Machine learning usa algoritmos para permitir que computadores aprendam padrões a partir de dados.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000001192092896,
+      "string_comparison_details": {
+        "similarity": 1.0000001192092896,
+        "semantic_similarity": 1.0000001192092896
+      }
+    },
+    {
+      "id": 2,
+      "prompt": "O que são algoritmos?",
+      "expected_answer": "Algoritmos são sequências de instruções para resolver problemas ou executar tarefas específicas.",
+      "model_response": "Algoritmos são sequências de instruções para resolver problemas ou executar tarefas específicas.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0000000596046448,
+      "string_comparison_details": {
+        "similarity": 1.0000000596046448,
+        "semantic_similarity": 1.0000000596046448
+      }
+    },
+    {
+      "id": 3,
+      "prompt": "Como visualizar dados?",
+      "expected_answer": "Visualização de dados usa gráficos, charts e diagramas para representar informações de forma clara.",
+      "model_response": "Visualização de dados usa gráficos, charts e diagramas para representar informações de forma clara.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "semantic_similarity": 1.0
+      }
+    },
+    {
+      "id": 4,
+      "prompt": "Como fazer análise exploratória?",
+      "expected_answer": "Análise exploratória examina dados para entender padrões, tendências e anomalias.",
+      "model_response": "Análise exploratória examina dados para entender padrões, tendências e anomalias.",
+      "model_confidence": 1.0,
+      "string_similarity": 1.0,
+      "string_comparison_details": {
+        "similarity": 1.0,
+        "semantic_similarity": 1.0
+      }
+    }
+  ]
+}

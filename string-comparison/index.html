@@ -169,87 +169,27 @@
             color: #666;
         }
 
-        .word-analysis {
+        .sentence-info {
             margin-top: 20px;
             padding: 20px;
             background: #f8f9fa;
             border-radius: 10px;
-            display: none;
         }
 
-        .word-analysis h3 {
+        .sentence-info h3 {
             color: #333;
             margin-bottom: 15px;
         }
 
-        .word-item {
-            padding: 12px;
+        .sentence-info h4 {
+            color: #667eea;
             margin-bottom: 10px;
-            background: white;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .word-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .word-text {
-            font-weight: 600;
-            color: #333;
             font-size: 16px;
         }
 
-        .pos-tag {
-            background: #667eea;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 10px;
-            font-weight: 500;
-        }
-
-        .word-scores {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
+        .sentence-info p {
             margin-bottom: 8px;
-        }
-
-        .score-item {
-            text-align: center;
-            padding: 4px;
-            background: #f8f9fa;
-            border-radius: 4px;
-        }
-
-        .score-label {
-            font-size: 10px;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .score-value {
-            font-size: 12px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .semantic-score { color: #667eea; }
-        .wordnet-score { color: #28a745; }
-        .embedding-score { color: #ff6b6b; }
-
-        .explanation {
-            font-size: 12px;
-            color: #666;
-            font-style: italic;
-            margin-top: 8px;
-            padding-top: 8px;
-            border-top: 1px solid #eee;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -281,9 +221,9 @@
             <div class="similarity-label" id="similarityLabel"></div>
         </div>
 
-        <div class="word-analysis" id="wordAnalysis">
-            <h3>📊 Word-by-Word Analysis</h3>
-            <div id="wordList"></div>
+        <div class="sentence-info" id="sentenceInfo" style="display: none;">
+            <h3>📊 Sentence Comparison Details</h3>
+            <div id="sentenceDetails"></div>
         </div>
 
         <div class="examples">
@@ -316,8 +256,8 @@
         const compareBtn = document.getElementById('compareBtn');
         const similarityScore = document.getElementById('similarityScore');
         const similarityLabel = document.getElementById('similarityLabel');
-        const wordAnalysis = document.getElementById('wordAnalysis');
-        const wordList = document.getElementById('wordList');
+        const sentenceInfo = document.getElementById('sentenceInfo');
+        const sentenceDetails = document.getElementById('sentenceDetails');
 
         function fillExample(sentence1, sentence2) {
             document.getElementById('sentence1').value = sentence1;
@@ -338,44 +278,28 @@
             return '#F44336';
         }
 
-        function displayWordAnalysis(wordAnalysisData) {
-            if (!wordAnalysisData || wordAnalysisData.length === 0) {
-                wordAnalysis.style.display = 'none';
+        function displaySentenceInfo(data) {
+            if (!data) {
+                sentenceInfo.style.display = 'none';
                 return;
             }
 
-            wordList.innerHTML = '';
+            sentenceDetails.innerHTML = `
+                <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                    <h4>📝 Sentence Details</h4>
+                    <p><strong>Sentence 1:</strong> "${data.sentence1}" (${data.sentence1.length} characters)</p>
+                    <p><strong>Sentence 2:</strong> "${data.sentence2}" (${data.sentence2.length} characters)</p>
+                </div>
+                <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
+                    <h4>🎯 Similarity Analysis</h4>
+                    <p><strong>Similarity Score:</strong> ${(data.similarity * 100).toFixed(2)}%</p>
+                    <p><strong>Quality:</strong> ${data.similarity >= 0.8 ? '🟢 HIGH' : data.similarity >= 0.5 ? '🟡 MEDIUM' : '🔴 LOW'}</p>
+                    <p><strong>Model:</strong> sentence-transformers/all-MiniLM-L6-v2</p>
+                    <p><strong>Method:</strong> Cosine similarity on sentence embeddings</p>
+                </div>
+            `;
             
-            wordAnalysisData.forEach(word => {
-                const wordItem = document.createElement('div');
-                wordItem.className = 'word-item';
-                
-                wordItem.innerHTML = `
-                    <div class="word-header">
-                        <div class="word-text">${word.word}</div>
-                        <div class="pos-tag">${word.pos_tag}</div>
-                    </div>
-                    <div class="word-scores">
-                        <div class="score-item">
-                            <div class="score-label">Semantic</div>
-                            <div class="score-value semantic-score">${(word.semantic_similarity * 100).toFixed(0)}%</div>
-                        </div>
-                        <div class="score-item">
-                            <div class="score-label">WordNet</div>
-                            <div class="score-value wordnet-score">${(word.wordnet_similarity * 100).toFixed(0)}%</div>
-                        </div>
-                        <div class="score-item">
-                            <div class="score-label">Embedding</div>
-                            <div class="score-value embedding-score">${(word.embedding_similarity * 100).toFixed(0)}%</div>
-                        </div>
-                    </div>
-                    <div class="explanation">${word.explanation}</div>
-                `;
-                
-                wordList.appendChild(wordItem);
-            });
-            
-            wordAnalysis.style.display = 'block';
+            sentenceInfo.style.display = 'block';
         }
 
         form.addEventListener('submit', async (e) => {
@@ -392,7 +316,7 @@
             // Show loading
             loading.style.display = 'block';
             result.style.display = 'none';
-            wordAnalysis.style.display = 'none';
+            sentenceInfo.style.display = 'none';
             compareBtn.disabled = true;
 
             try {
@@ -420,8 +344,8 @@
                 result.className = 'result success';
                 result.style.display = 'block';
 
-                // Show word analysis
-                displayWordAnalysis(data.word_analysis);
+                // Show sentence information
+                displaySentenceInfo(data);
 
             } catch (error) {
                 console.error('Error:', error);

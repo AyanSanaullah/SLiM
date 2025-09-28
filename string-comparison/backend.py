@@ -10,10 +10,14 @@ import numpy as np
 from typing import List, Dict
 # import spacy  # Temporarily disabled due to compatibility issues
 from sklearn.metrics.pairwise import cosine_similarity
-import nltk
-from nltk.corpus import wordnet
-from collections import defaultdict
 import re
+import json
+from datetime import datetime
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Initialize FastAPI app
 app = FastAPI(title="Semantic Comparison API")
@@ -22,30 +26,30 @@ app = FastAPI(title="Semantic Comparison API")
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 # nlp = spacy.load("en_core_web_sm")  # Temporarily disabled
 
-# Download NLTK data
-try:
-    nltk.data.find('corpora/wordnet')
-except LookupError:
-    nltk.download('wordnet')
+def print_interaction_json(interaction_type: str, data: dict):
+    """Print detailed JSON for each interaction"""
+    interaction_log = {
+        "timestamp": datetime.now().isoformat(),
+        "interaction_type": interaction_type,
+        "data": data
+    }
+    
+    print("\n" + "="*80)
+    print("🔍 STRING COMPARISON INTERACTION")
+    print("="*80)
+    print(json.dumps(interaction_log, indent=2, ensure_ascii=False))
+    print("="*80 + "\n")
+
+# No additional data downloads needed for sentence-level comparison
 
 class ComparisonRequest(BaseModel):
     sentence1: str
     sentence2: str
 
-class WordAnalysis(BaseModel):
-    word: str
-    pos_tag: str
-    semantic_similarity: float
-    wordnet_similarity: float
-    embedding_similarity: float
-    overall_score: float
-    explanation: str
-
 class ComparisonResponse(BaseModel):
     similarity: float
     sentence1: str
     sentence2: str
-    word_analysis: List[WordAnalysis]
 
 def semantic_similarity(a: str, b: str) -> float:
     """Calculate semantic similarity between two sentences"""
@@ -56,152 +60,7 @@ def semantic_similarity(a: str, b: str) -> float:
     # Map from [-1,1] to [0,1] if you prefer
     return (sim + 1) / 2
 
-def get_wordnet_similarity(word1: str, word2: str) -> float:
-    """Calculate WordNet-based semantic similarity between two words"""
-    try:
-        synsets1 = wordnet.synsets(word1)
-        synsets2 = wordnet.synsets(word2)
-        
-        if not synsets1 or not synsets2:
-            return 0.0
-        
-        max_similarity = 0.0
-        for syn1 in synsets1:
-            for syn2 in synsets2:
-                similarity = syn1.wup_similarity(syn2)
-                if similarity is not None:
-                    max_similarity = max(max_similarity, similarity)
-        
-        return max_similarity
-    except:
-        return 0.0
-
-def analyze_words_importance(sentence1: str, sentence2: str) -> List[WordAnalysis]:
-    """Analyze word-by-word semantic importance by comparing words between the two sentences"""
-    # Simple word extraction without spaCy (basic approach)
-    import string
-    
-    # Remove punctuation and convert to lowercase
-    translator = str.maketrans('', '', string.punctuation)
-    clean_sentence1 = sentence1.translate(translator).lower()
-    clean_sentence2 = sentence2.translate(translator).lower()
-    
-    # Get words from each sentence (filtering out common stop words)
-    stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'must', 'can', 'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them'}
-    
-    words1 = [word for word in clean_sentence1.split() if word not in stop_words and len(word) > 2]
-    words2 = [word for word in clean_sentence2.split() if word not in stop_words and len(word) > 2]
-    
-    # Simple POS mapping (basic approach)
-    word_pos_map = {word: "UNKNOWN" for word in set(words1 + words2)}
-    
-    word_analyses = []
-    
-    # Compare each word from sentence1 with words from sentence2
-    for word1 in set(words1):
-        best_match = ""
-        max_embedding_sim = 0.0
-        max_wordnet_sim = 0.0
-        
-        # Check for exact match first
-        if word1 in words2:
-            max_embedding_sim = 1.0
-            max_wordnet_sim = 1.0
-            best_match = word1
-        else:
-            # Find best semantic match in sentence2
-            for word2 in set(words2):
-                # Calculate embedding similarity
-                word1_emb = model.encode([word1], convert_to_tensor=True, normalize_embeddings=True)
-                word2_emb = model.encode([word2], convert_to_tensor=True, normalize_embeddings=True)
-                embedding_sim = torch.matmul(word1_emb[0], word2_emb[0]).item()
-                embedding_sim = (embedding_sim + 1) / 2  # Normalize to [0,1]
-                
-                # Calculate WordNet similarity
-                wordnet_sim = get_wordnet_similarity(word1, word2)
-                
-                # Keep track of best match
-                combined_score = embedding_sim * 0.6 + wordnet_sim * 0.4
-                if combined_score > (max_embedding_sim * 0.6 + max_wordnet_sim * 0.4):
-                    max_embedding_sim = embedding_sim
-                    max_wordnet_sim = wordnet_sim
-                    best_match = word2
-        
-        # Calculate semantic similarity
-        semantic_sim = max_embedding_sim * 0.7 + max_wordnet_sim * 0.3
-        
-        # Calculate overall score
-        overall_score = semantic_sim
-        
-        # Generate explanation
-        if word1 == best_match:
-            explanation = f"Exact match: '{word1}' appears in both sentences"
-        elif best_match:
-            explanation = f"'{word1}' (sentence 1) ↔ '{best_match}' (sentence 2) - Similarity: {semantic_sim:.2f}"
-        else:
-            explanation = f"'{word1}' has no semantic match in sentence 2"
-        
-        word_analyses.append(WordAnalysis(
-            word=word1,
-            pos_tag=word_pos_map.get(word1, "UNKNOWN"),
-            semantic_similarity=semantic_sim,
-            wordnet_similarity=max_wordnet_sim,
-            embedding_similarity=max_embedding_sim,
-            overall_score=overall_score,
-            explanation=explanation
-        ))
-    
-    # Also compare words from sentence2 that don't have matches in sentence1
-    for word2 in set(words2):
-        if word2 not in [analysis.word for analysis in word_analyses]:
-            best_match = ""
-            max_embedding_sim = 0.0
-            max_wordnet_sim = 0.0
-            
-            # Find best semantic match in sentence1
-            for word1 in set(words1):
-                # Calculate embedding similarity
-                word1_emb = model.encode([word1], convert_to_tensor=True, normalize_embeddings=True)
-                word2_emb = model.encode([word2], convert_to_tensor=True, normalize_embeddings=True)
-                embedding_sim = torch.matmul(word1_emb[0], word2_emb[0]).item()
-                embedding_sim = (embedding_sim + 1) / 2  # Normalize to [0,1]
-                
-                # Calculate WordNet similarity
-                wordnet_sim = get_wordnet_similarity(word1, word2)
-                
-                # Keep track of best match
-                combined_score = embedding_sim * 0.6 + wordnet_sim * 0.4
-                if combined_score > (max_embedding_sim * 0.6 + max_wordnet_sim * 0.4):
-                    max_embedding_sim = embedding_sim
-                    max_wordnet_sim = wordnet_sim
-                    best_match = word1
-            
-            # Calculate semantic similarity
-            semantic_sim = max_embedding_sim * 0.7 + max_wordnet_sim * 0.3
-            
-            # Calculate overall score
-            overall_score = semantic_sim
-            
-            # Generate explanation
-            if best_match:
-                explanation = f"'{word2}' (sentence 2) ↔ '{best_match}' (sentence 1) - Similarity: {semantic_sim:.2f}"
-            else:
-                explanation = f"'{word2}' has no semantic match in sentence 1"
-            
-            word_analyses.append(WordAnalysis(
-                word=word2,
-                pos_tag=word_pos_map.get(word2, "UNKNOWN"),
-                semantic_similarity=semantic_sim,
-                wordnet_similarity=max_wordnet_sim,
-                embedding_similarity=max_embedding_sim,
-                overall_score=overall_score,
-                explanation=explanation
-            ))
-    
-    # Sort by overall score
-    word_analyses.sort(key=lambda x: x.overall_score, reverse=True)
-    
-    return word_analyses[:15]  # Return top 15 most semantically important words
+# Removed word-level analysis functions - focusing only on sentence-level comparison
 
 @app.get("/")
 async def read_index():
@@ -215,22 +74,75 @@ async def compare_sentences(request: ComparisonRequest):
         if not request.sentence1.strip() or not request.sentence2.strip():
             raise HTTPException(status_code=400, detail="Both sentences must be provided")
         
-        similarity = semantic_similarity(request.sentence1, request.sentence2)
-        word_analysis = analyze_words_importance(request.sentence1, request.sentence2)
+        # Log the incoming request
+        print_interaction_json("REQUEST_RECEIVED", {
+            "sentence1": request.sentence1,
+            "sentence2": request.sentence2
+        })
         
-        return ComparisonResponse(
+        similarity = semantic_similarity(request.sentence1, request.sentence2)
+        
+        # Create response
+        response = ComparisonResponse(
             similarity=similarity,
             sentence1=request.sentence1,
-            sentence2=request.sentence2,
-            word_analysis=word_analysis
+            sentence2=request.sentence2
         )
+        
+        # Log the simplified response
+        print_interaction_json("COMPARISON_COMPLETED", {
+            "similarity_score": similarity,
+            "similarity_percentage": f"{similarity * 100:.2f}%",
+            "quality_label": "HIGH" if similarity >= 0.8 else "MEDIUM" if similarity >= 0.5 else "LOW"
+        })
+        
+        return response
+        
     except Exception as e:
+        # Log the error
+        print_interaction_json("ERROR", {
+            "error_message": str(e),
+            "error_type": type(e).__name__,
+            "sentence1": request.sentence1 if 'request' in locals() else "N/A",
+            "sentence2": request.sentence2 if 'request' in locals() else "N/A"
+        })
         raise HTTPException(status_code=500, detail=f"Error processing comparison: {str(e)}")
 
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
+    # Log health check requests
+    print_interaction_json("HEALTH_CHECK", {
+        "status": "healthy",
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "message": "String Comparison Service is running"
+    })
     return {"status": "healthy", "model": "sentence-transformers/all-MiniLM-L6-v2"}
 
 if __name__ == "__main__":
+    # Log startup information
+    print_interaction_json("SERVICE_STARTUP", {
+        "service_name": "String Comparison API",
+        "host": "0.0.0.0",
+        "port": 8000,
+        "model": "sentence-transformers/all-MiniLM-L6-v2",
+        "endpoints": [
+            {"method": "GET", "path": "/", "description": "Serve HTML interface"},
+            {"method": "POST", "path": "/compare", "description": "Compare two sentences semantically"},
+            {"method": "GET", "path": "/health", "description": "Health check endpoint"}
+        ],
+        "features": [
+            "Semantic similarity using sentence transformers",
+            "Sentence-level comparison only",
+            "Cosine similarity on sentence embeddings",
+            "Quality assessment (HIGH/MEDIUM/LOW)",
+            "Detailed JSON logging",
+            "Fast and focused comparison"
+        ]
+    })
+    
+    print("\n🚀 Starting String Comparison Service...")
+    print("📊 All interactions will be logged in JSON format")
+    print("🔍 Watch for detailed comparison analytics\n")
+    
     uvicorn.run(app, host="0.0.0.0", port=8000)

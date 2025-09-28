@@ -2,7 +2,7 @@
   "user_id": "javascript-expert",
   "model_type": "tfidf_similarity",
   "training_pairs_count": 6,
-  "trained_at": "2025-09-27T21:30:04.049014",
+  "trained_at": "2025-09-27T22:51:48.252613",
   "model_file": "models/user_models/javascript-expert/trained_model.pkl",
   "status": "trained"
 }
